@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmilioColor® México</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Modal del Carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tu Carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="cart-tabs mb-4">
+                        <button class="btn btn-sm btn-outline-primary active cart-tab" data-tab="products-cart">Productos</button>
+                        <button class="btn btn-sm btn-outline-primary cart-tab" data-tab="services-cart">Servicios</button>
+                    </div>
+                    
+                    <div class="cart-content">
+                        <div class="cart-items active" id="products-cart">
+                            <p class="empty-cart-message">No hay productos en el carrito</p>
+                        </div>
+                        <div class="cart-items" id="services-cart">
+                            <p class="empty-cart-message">No hay servicios en el carrito</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-summary mt-4 border-top pt-3">
+                        <div class="cart-total d-flex justify-content-between mb-3">
+                            <span class="fw-bold">Total:</span>
+                            <span id="cart-total" class="fw-bold">$0.00 MXN</span>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-primary flex-grow-1" id="generate-pdf">Generar PDF</button>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com&su=Envío%20mi%20carrito%20EmilioColor&body=Hola%2C%20adjunto%20mi%20carrito%20en%20PDF." target="_blank" class="btn btn-primary flex-grow-1" id="checkout-btn">
+                                Mandar PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <p style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.2rem; text-align: center;">
+                    <i class="" style="display: block; font-size: 2rem; margin-bottom: 0.2rem;"></i>
+                    EmilioColor®
+                </p>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Soluciones a tu medida</p>
+                <button class="btn btn-sm btn-outline-light mt-2" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <i class="fas fa-shopping-cart me-1"></i> Ver Carrito
+                </button>
+                <!-- Botón de menú para móviles -->
+                <button class="sidebar-toggle d-lg-none" id="sidebarToggle">
+                    <i class="fas fa-bars"></i> Menú
+                </button>
+            </div>
+            
+            <div class="sidebar-content" id="sidebarContent">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a href="#inicio" class="sidebar-nav-link active" data-section="inicio">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#productos" class="sidebar-nav-link" data-section="productos">
+                            <i class="fas fa-pen"></i> Productos
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#servicios" class="sidebar-nav-link" data-section="servicios">
+                            <i class="fas fa-laptop-code"></i> Servicios
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#entorno" class="sidebar-nav-link" data-section="entorno">
+                            <i class="fas fa-cloud"></i> ClassCloud Pro™
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#impacto" class="sidebar-nav-link" data-section="impacto">
+                            <i class="fas fa-hands-helping"></i> Impacto Social
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#nosotros" class="sidebar-nav-link" data-section="nosotros">
+                            <i class="fas fa-building"></i> Nosotros
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#marcas" class="sidebar-nav-link" data-section="marcas">
+                            <i class="fas fa-tags"></i> Marcas
+                        </a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="#contacto" class="sidebar-nav-link" data-section="contacto">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <!-- Sección Inicio -->
+            <div id="inicio-section" class="active-section">
+<div class="home-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/mnh4.jpg'); background-size: cover; background-position: center;">
+    <h1>EmilioColor México</h1>
+                    <p>Conoce nuestros productos y servicios de calidad.</p>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-explore">Productos</a>
+                        <a href="#servicios" class="btn btn-explore">Servicios Web</a>
+                        <a href="#entorno" class="btn btn-explore">ClassCloud</a>
+                    </div>
+                    <div class="reminder-bubble">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Desde 2017</span>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-4 mb-3">
+                        <div class="home-card">
+                            <h3>Productos</h3>
+                            <div class="stat-number">6</div>
+                            <p class="stat-label">Artículos de papelería de alta calidad</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="home-card">
+                            <h3>Servicios</h3>
+                            <div class="stat-number">8</div>
+                            <p class="stat-label">Opciones de desarrollo web</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="home-card">
+                            <h3>ClassCloud Pro™</h3>
+                            <div class="stat-number">+40 cursos</div>
+                            <p class="stat-label">Tu app web educativa y recreativa todo en uno (disponible en dispositivos móviles y computadoras.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rounded-container mb-4">
+                    <h3 class="section-title">Novedades</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="alert alert-custom mb-3">
+                                <strong>Nuevos productos:</strong> Estilógrafos y papelería de alta calidad ahora disponibles.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-custom">
+                                <strong>Servicios web:</strong> Desarrollo de páginas estáticas y portafolios profesionales.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+<!-- Sección Productos -->
+<div id="productos-section" class="hidden-section">
+    <div class="rounded-container mb-4">
+        <h2 class="section-title"><i class="fas fa-pen"></i> Productos de Papelería</h2>
+        <p class="mb-4">Productos de escritura y organización de la más alta calidad</p>
+
+        <div class="alert alert-info small" role="alert">
+            Si deseas más imágenes de cualquier producto, puedes solicitarlas por <strong>correo</strong> o <strong>WhatsApp</strong>.
+        </div>
+
+        <div class="row g-4">
+            <!-- Producto 1 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="product-images">
+                                <img src="img/negro-1.jpg" alt="Estilografo Negro" class="img-fluid rounded mb-2">
+                                <p class="small text-muted">+ 2 imágenes disponibles</p>
+                                <a href="#" class="btn btn-outline-secondary btn-sm w-100">Ver más imágenes</a>
+                            </div>
+                            <div class="product-star mt-2" style="font-weight: bold; color: #be9a22; text-shadow: 1px 1px 2px rgba(29, 24, 24, 0.2); font-size: 0.9rem; letter-spacing: 0.5px;">
+                                PRODUCTO ESTRELLA
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Estilografo EmilioColor Inkspire Negro</h5>
+                            <p class="small">Tinta automática color negro de secado rápido. Ideal para escritura profesional y académica.</p>
+                            <ul class="small">
+                                <li><strong>Grosor:</strong> 0.5 mm</li>
+                                <li><strong>Distancia de escritura:</strong> Hasta 500 metros</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2">$10.00 MXN</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="1" data-name="Estilografo EmilioColor Inkspire Negro" data-price="10.00">Agregar al carrito</button>
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=PEDIDO PERSONALIZADO de Estilografo EmilioColor Inkspire Negro" class="btn btn-outline-primary btn-sm">Personalizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="product-images">
+                                <img src="img/principal.jpg" alt="Paquete de estilografos" class="img-fluid rounded mb-2">
+                                <p class="small text-muted">+ 2 imágenes disponibles</p>
+                                <a href="#" class="btn btn-outline-secondary btn-sm w-100">Ver más imágenes</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Paquete de estilografos de colores</h5>
+                            <p class="small">Set completo de 8 estilógrafos en colores variados para todas tus necesidades de escritura.</p>
+                            <ul class="small">
+                                <li><strong>Colores incluidos:</strong> Rojo, azul, verde, amarillo, morado, naranja, rosa, turquesa</li>
+                                <li><strong>Grosor:</strong> 0.5 mm uniforme</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2">$100.00 MXN</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="2" data-name="Paquete de estilografos de colores" data-price="100.00">Agregar al carrito</button>
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=PEDIDO PERSONALIZADO de Paquete de estilografos de colores" class="btn btn-outline-primary btn-sm">Personalizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="product-images">
+                                <img src="img/nota.png" alt="Block de notas" class="img-fluid rounded mb-2">
+                                <p class="small text-muted">+ 2 imágenes disponibles</p>
+                                <a href="#" class="btn btn-outline-secondary btn-sm w-100">Ver más imágenes</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Block de notas de oficina</h5>
+                            <p class="small">Cuaderno profesional con hojas de alta calidad para tus apuntes y recordatorios.</p>
+                            <ul class="small">
+                                <li><strong>Cantidad:</strong> 300 hojas</li>
+                                <li><strong>Tamaño:</strong> 8.5 x 8.5 cm</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2">$100.00 MXN</p>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="3" data-name="Block de notas de oficina" data-price="100.00">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="product-images">
+                                <img src="img/cuadriculado-normal.png" alt="Hojas cuadriculadas" class="img-fluid rounded mb-2">
+                                <p class="small text-muted">+ 2 imágenes disponibles</p>
+                                <a href="#" class="btn btn-outline-secondary btn-sm w-100">Ver más imágenes</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Paquete de hojas cuadriculadas</h5>
+                            <p class="small">Hojas cuadriculadas de alta calidad para tus proyectos, tareas y apuntes.</p>
+                            <ul class="small">
+                                <li><strong>Cantidad:</strong> 100 hojas</li>
+                                <li><strong>Tamaño:</strong> Carta (21.6 x 27.9 cm)</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2">$60.00 MXN</p>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="4" data-name="Paquete de hojas cuadriculadas" data-price="60.00">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="product-images">
+                                <img src="img/cuadriculado-carpeta.png" alt="Hojas para carpeta" class="img-fluid rounded mb-2">
+                                <p class="small text-muted">+ 2 imágenes disponibles</p>
+                                <a href="#" class="btn btn-outline-secondary btn-sm w-100">Ver más imágenes</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Paquete de Hojas para Carpeta</h5>
+                            <p class="small">Hojas tamaño carta con perforaciones para carpeta, papel de 80 g/m² de alta calidad.</p>
+                            <ul class="small">
+                                <li><strong>Cantidad:</strong> 100 hojas</li>
+                                <li><strong>Tamaño:</strong> Carta (21.6 x 27.9 cm)</li>
+                                <li><strong>Gramaje:</strong> 80 g/m²</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2">$60.00 MXN</p>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="5" data-name="Paquete de Hojas para Carpeta" data-price="60.00">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="product-images">
+                                <img src="img/isometrico.png" alt="Plantillas isométricas" class="img-fluid rounded mb-2">
+                                <p class="small text-muted">+ 2 imágenes disponibles</p>
+                                <a href="#" class="btn btn-outline-secondary btn-sm w-100">Ver más imágenes</a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Paquete de Plantillas Isométricas</h5>
+                            <p class="small">Hojas con cuadrícula isométrica para dibujo técnico y diseño, papel translúcido de alta calidad.</p>
+                            <ul class="small">
+                                <li><strong>Cantidad:</strong> 50 hojas</li>
+                                <li><strong>Tamaño:</strong> Carta (21.6 x 27.9 cm)</li>
+                                <li><strong>Cuadrícula:</strong> Isométrica de 5 mm</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2">$30.00 MXN</p>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="6" data-name="Paquete de Plantillas Isométricas" data-price="30.00">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+            <!-- Sección Servicios -->
+            <div id="servicios-section" class="hidden-section">
+                <div class="rounded-container mb-4">
+                    <h2 class="section-title"><i class="fas fa-laptop-code"></i> Servicios Web</h2>
+                    <p class="mb-4">Sitios web rápidos, seguros y sin mantenimiento. Con o sin dominio, tú eliges.</p>
+                    
+                    <div class="row g-4">
+                        <!-- Servicio 1 -->
+                        <div class="col-md-6">
+                            <div class="card tool-card p-3 h-100">
+                                <div class="service-header">
+                                    <h5>Landing Page Básica</h5>
+                                    <p class="small text-muted">Ideal para: promocionar un producto, servicio, evento o perfil profesional.</p>
+                                    <p class="service-price fw-bold">$800 MXN</p>
+                                    <p class="small text-muted"><i class="far fa-clock me-1"></i> Entrega: 1-2 días</p>
+                                </div>
+                                <div class="service-body mt-3">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>4-5 secciones (Hero, Beneficios, Sobre ti, CTA, Contacto)</li>
+                                        <li>Botón a WhatsApp o enlace externo</li>
+                                        <li>Diseño responsive (adaptable a móviles)</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="1" data-name="Landing Page Básica" data-price="800.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Servicio 2 -->
+                        <div class="col-md-6">
+                            <div class="card tool-card p-3 h-100">
+                                <div class="service-header">
+                                    <h5>Portafolio Creativo Personal</h5>
+                                    <p class="small text-muted">Ideal para: artistas visuales, fotógrafos, diseñadores, programadores.</p>
+                                    <p class="service-price fw-bold">$1,200 MXN</p>
+                                    <p class="small text-muted"><i class="far fa-clock me-1"></i> Entrega: 2-3 días</p>
+                                </div>
+                                <div class="service-body mt-3">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>Página única tipo galería (hasta 6 proyectos)</li>
+                                        <li>Hover effects, modales para ver detalles</li>
+                                        <li>Sobre mí + contacto + redes sociales</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="2" data-name="Portafolio Creativo Personal" data-price="1200.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Servicio 3 -->
+                        <div class="col-md-6">
+                            <div class="card tool-card p-3 h-100">
+                                <div class="service-header">
+                                    <h5>CV / Bio Profesional Online</h5>
+                                    <p class="small text-muted">Ideal para: freelancers, postulantes, consultores, coaches.</p>
+                                    <p class="service-price fw-bold">$900 MXN</p>
+                                    <p class="small text-muted"><i class="far fa-clock me-1"></i> Entrega: 1-2 días</p>
+                                </div>
+                                <div class="service-body mt-3">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>Secciones: Perfil, Experiencia, Habilidades, Educación, Contacto</li>
+                                        <li>Botones de redes, WhatsApp y descarga de CV en PDF</li>
+                                        <li>Estilo profesional, simple y moderno</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="3" data-name="CV / Bio Profesional Online" data-price="900.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Servicio 4 -->
+                        <div class="col-md-6">
+                            <div class="card tool-card p-3 h-100">
+                                <div class="service-header">
+                                    <h5>Mini Sitio Web Empresarial</h5>
+                                    <p class="small text-muted">Ideal para: negocios pequeños, consultorías, tiendas físicas.</p>
+                                    <p class="service-price fw-bold">$2,500 MXN</p>
+                                    <p class="small text-muted"><i class="far fa-clock me-1"></i> Entrega: 3-4 días</p>
+                                </div>
+                                <div class="service-body mt-3">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>Secciones: Inicio, Servicios, Contacto</li>
+                                        <li>Mapa de ubicación (Google Maps)</li>
+                                        <li>Botón flotante de WhatsApp</li>
+                                        <li>Galería de productos/servicios</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="4" data-name="Mini Sitio Web Empresarial" data-price="2500.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Servicio 5 (Nuevo) -->
+                        <div class="col-md-6">
+                            <div class="card tool-card p-3 h-100">
+                                <div class="service-header">
+                                    <h5>Mini Blog Estático</h5>
+                                    <p class="small text-muted">Ideal para: publicar artículos sin necesidad de base de datos.</p>
+                                    <p class="service-price fw-bold">$1,300 MXN</p>
+                                    <p class="small text-muted"><i class="far fa-clock me-1"></i> Entrega: 2-3 días</p>
+                                </div>
+                                <div class="service-body mt-3">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>Hasta 5 artículos iniciales</li>
+                                        <li>Diseño de blog con categorías</li>
+                                        <li>Sistema de navegación entre posts</li>
+                                        <li>Sin funcionalidad de comentarios</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="5" data-name="Mini Blog Estático" data-price="1300.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Servicio 6 (Nuevo) -->
+                        <div class="col-md-6">
+                            <div class="card tool-card p-3 h-100">
+                                <div class="service-header">
+                                    <h5>Menú Digital para Restaurantes / Cafés</h5>
+                                    <p class="small text-muted">Ideal para: cafeterías, taquerías, dark kitchens.</p>
+                                    <p class="service-price fw-bold">$1,000 MXN</p>
+                                    <p class="small text-muted"><i class="far fa-clock me-1"></i> Entrega: 2-3 días</p>
+                                </div>
+                                <div class="service-body mt-3">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>Diseño atractivo de menú digital</li>
+                                        <li>Categorías de productos</li>
+                                        <li>Botón de WhatsApp para pedidos</li>
+                                        <li>Optimizado para móviles</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="6" data-name="Menú Digital para Restaurantes / Cafés" data-price="1000.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Servicio 7 (Nuevo) -->
+                        <div class="col-md-6">
+                            <div class="card tool-card p-3 h-100">
+                                <div class="service-header">
+                                    <h5>Página de Servicios Profesionales</h5>
+                                    <p class="small text-muted">Ideal para: abogados, psicólogos, coaches, programadores.</p>
+                                    <p class="service-price fw-bold">$1,400 MXN</p>
+                                    <p class="small text-muted"><i class="far fa-clock me-1"></i> Entrega: 3-4 días</p>
+                                </div>
+                                <div class="service-body mt-3">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>Presentación profesional</li>
+                                        <li>Descripción detallada de servicios</li>
+                                        <li>Formulario de contacto</li>
+                                        <li>Testimonios y credenciales</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="7" data-name="Página de Servicios Profesionales / Freelance" data-price="1400.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Servicio 8 (Nuevo) -->
+                        <div class="col-md-6">
+                            <div class="card tool-card p-3 h-100">
+                                <div class="service-header">
+                                    <h5>Simulación de Tienda (sin pagos)</h5>
+                                    <p class="small text-muted">Ideal para: mostrar productos sin sistema de venta integrado.</p>
+                                    <p class="service-price fw-bold">$1,500 MXN</p>
+                                    <p class="small text-muted"><i class="far fa-clock me-1"></i> Entrega: 4-5 días</p>
+                                </div>
+                                <div class="service-body mt-3">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>Catálogo de productos</li>
+                                        <li>Detalles de producto</li>
+                                        <li>Botón de contacto para pedidos</li>
+                                        <li>Sin carrito de compras funcional</li>
+                                    </ul>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="8" data-name="Simulación de Tienda (sin pagos)" data-price="1500.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sección de Extras -->
+                    <div class="mt-5">
+                        <h3 class="section-title"><i class="fas fa-plus-circle"></i> Extras Opcionales para Tu Sitio Web</h3>
+                        <p class="mb-4">Mejora tu sitio web con estos extras opcionales</p>
+                        
+                        <div class="row g-4">
+                            <!-- Extra 1 -->
+                            <div class="col-md-6">
+                                <div class="card tool-card p-3 h-100">
+                                    <div class="service-header">
+                                        <h5>Subida a GitHub Pages o Netlify</h5>
+                                        <p class="small text-muted">Publicación rápida y gratuita en la web</p>
+                                        <p class="service-price fw-bold">$200 MXN</p>
+                                    </div>
+                                    <div class="service-body mt-3">
+                                        <ul class="small">
+                                            <li>Configuración de dominio personalizado (si se proporciona)</li>
+                                            <li>Instrucciones básicas de mantenimiento</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="9" data-name="Subida a GitHub Pages o Netlify" data-price="200.00">Agregar al carrito</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Extra 2 -->
+                            <div class="col-md-6">
+                                <div class="card tool-card p-3 h-100">
+                                    <div class="service-header">
+                                        <h5>Modo oscuro con toggle</h5>
+                                        <p class="small text-muted">Tema oscuro para mejorar la experiencia visual</p>
+                                        <p class="service-price fw-bold">$250 MXN</p>
+                                    </div>
+                                    <div class="service-body mt-3">
+                                        <ul class="small">
+                                            <li>Interruptor para cambiar entre modo claro/oscuro</li>
+                                            <li>Diseño adaptado para ambas modalidades</li>
+                                            <li>Preferencia guardada en el navegador</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="10" data-name="Modo oscuro con toggle" data-price="250.00">Agregar al carrito</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Extra 3 -->
+                            <div class="col-md-6">
+                                <div class="card tool-card p-3 h-100">
+                                    <div class="service-header">
+                                        <h5>Redacción de textos o corrección</h5>
+                                        <p class="small text-muted">Revisión o creación de textos profesionales</p>
+                                        <p class="service-price fw-bold">$150 – $300 MXN</p>
+                                    </div>
+                                    <div class="service-body mt-3">
+                                        <ul class="small">
+                                            <li>Corrección ortográfica y gramatical</li>
+                                            <li>Redacción de contenido profesional</li>
+                                            <li>Optimización SEO básica</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="11" data-name="Redacción de textos o corrección (básico)" data-price="150.00">Agregar básico ($150)</button>
+                                    <button class="btn btn-primary btn-sm mt-2 add-to-cart" data-type="service" data-id="12" data-name="Redacción de textos o corrección (completo)" data-price="300.00">Agregar completo ($300)</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Extra 4 -->
+                            <div class="col-md-6">
+                                <div class="card tool-card p-3 h-100">
+                                    <div class="service-header">
+                                        <h5>Optimización de imágenes y almacenamiento</h5>
+                                        <p class="small text-muted">Reducción de peso de archivos, mejora de rendimiento</p>
+                                        <p class="service-price fw-bold">$500 MXN</p>
+                                    </div>
+                                    <div class="service-body mt-3">
+                                        <ul class="small">
+                                            <li>Compresión de imágenes sin pérdida de calidad</li>
+                                            <li>Optimización para carga rápida</li>
+                                            <li>Solución de almacenamiento en la nube</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="13" data-name="Optimización de imágenes y almacenamiento" data-price="500.00">Agregar al carrito</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Extra 5 -->
+                            <div class="col-md-6">
+                                <div class="card tool-card p-3 h-100">
+                                    <div class="service-header">
+                                        <h5>Formulario funcional con Netlify</h5>
+                                        <p class="small text-muted">Envío de formularios a tu correo sin backend</p>
+                                        <p class="service-price fw-bold">$250 MXN</p>
+                                    </div>
+                                    <div class="service-body mt-3">
+                                        <ul class="small">
+                                            <li>Configuración de formulario funcional</li>
+                                            <li>Integración con Netlify Forms</li>
+                                            <li>Notificaciones por correo electrónico</li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm mt-3 add-to-cart" data-type="service" data-id="14" data-name="Formulario funcional con Netlify" data-price="250.00">Agregar al carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección ClassCloud -->
+            <div id="entorno-section" class="hidden-section">
+                <!-- Contenedor 1: ClassCloud Pro™ -->
+                <div class="rounded-container mb-5">
+                    <h2 class="section-title"><i class="fas fa-cloud"></i> ClassCloud Pro™</h2>
+                    <p>Tu plataforma integral de desarrollo profesional con recursos y herramientas especializadas</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card tool-card p-4 h-100">
+                                <h3 class="text-center mb-4">ClassCloud Pro™</h3>
+                                <p class="text-center text-muted mb-4">Ideal para: profesionales, emprendedores y equipos que buscan desarrollo integral</p>
+
+                                <div class="text-center mb-4">
+                                    <span class="display-4 fw-bold">$500</span>
+                                    <span class="text-muted">MXN</span>
+                                    <p class="small text-muted"><i class="fas fa-sync-alt me-1"></i> Actualización constante</p>
+                                </div>
+
+                                <div class="service-includes">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>Acceso a más de 40 recursos de desarrollo profesional</li>
+                                        <li>+25 herramientas especializadas para crecimiento integral</li>
+                                        <li>Multiples accesos con la misma cuenta de ClassCloud Pro™</li>
+                                        <li>Áreas: Liderazgo, Habilidades Blandas, Técnicas Profesionales</li>
+                                        <li>Actualizaciones semanales de contenido relevante</li>
+                                        <li>Servicio técnico profesional en horario de servicio</li>
+                                    </ul>
+                                </div>
+<div class="d-flex gap-2 mt-4">
+    <!-- Botón para agregar al carrito -->
+    <button class="btn btn-primary flex-grow-1 add-to-cart" 
+            data-type="service" 
+            data-id="classcloud" 
+            data-name="Acceso Completo a ClassCloud Pro™" 
+            data-price="500.00">
+        Agregar al carrito
+    </button>
+
+    <!-- Botón para contacto por Gmail -->
+    <a href="mailto:emiliocolormexico@gmail.com?subject=Consulta sobre Classcloud Pro™" 
+       class="btn btn-outline-primary flex-grow-1">
+        <i class="fas fa-envelope me-1"></i> Comprar por Gmail
+    </a>
+</div>
+
+<!-- Botón de compra directa por WhatsApp -->
+<div class="mt-3 text-center">
+    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Acceso%20Completo%20a%20ClassCloud%20Pro™%20($500.00%20MXN)" 
+       class="btn btn-success btn-sm w-100">
+        <i class="fab fa-whatsapp me-1"></i> Comprar por WhatsApp
+    </a>
+    <p class="mt-2 small text-muted">
+        También puedes hacer preguntas y aclaraciones por Gmail o WhatsApp. ¡Con gusto te ayudamos!
+    </p>
+</div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card tool-card p-4 h-100">
+                                <h3 class="text-center mb-4">¿Qué es ClassCloud Pro™?</h3>
+                                <p class="text-center mb-4">Tu ecosistema en <strong>constante evolución</strong> para el desarrollo profesional</p>
+
+                                <div class="text-center mb-4">
+                                    <a href="https://emiliocolor.github.io/classcloudpro/" class="btn btn-primary mb-2">ACCEDER A CLASSCLOUD PRO™</a>
+                                    <p class="small text-muted">* Contenido actualizado semanalmente</p>
+                                </div>
+
+                                <div class="row mt-4">
+                                    <div class="col-6 mb-3">
+                                        <div class="text-center p-3 bg-light rounded">
+                                            <i class="fas fa-sync-alt text-primary mb-2" style="font-size: 1.5rem;"></i>
+                                            <h6>Actualizaciones Constantes</h6>
+                                            <p class="small text-muted">Nuevo contenido cada semana</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="text-center p-3 bg-light rounded">
+                                            <i class="fas fa-users text-primary mb-2" style="font-size: 1.5rem;"></i>
+                                            <h6>Comunidad Activa</h6>
+                                            <p class="small text-muted">Interacción con profesionales</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="text-center p-3 bg-light rounded">
+                                            <i class="fas fa-lightbulb text-primary mb-2" style="font-size: 1.5rem;"></i>
+                                            <h6>Innovación Continua</h6>
+                                            <p class="small text-muted">Últimas tendencias</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="text-center p-3 bg-light rounded">
+                                            <i class="fas fa-chart-line text-primary mb-2" style="font-size: 1.5rem;"></i>
+                                            <h6>Seguimiento de Progreso</h6>
+                                            <p class="small text-muted">Mide tu crecimiento</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-light mt-4">
+                                    <h6 class="alert-heading"><i class="fas fa-bolt text-primary me-2"></i>Plataforma en crecimiento</h6>
+                                    <p class="small mb-0">Classcloud Pro™ se actualiza semanalmente con nuevos recursos, herramientas y contenido relevante.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenedor 2: ClassCloud Gratuito -->
+                <div class="rounded-container">
+                    <h2 class="section-title"><i class="fas fa-cloud"></i> ClassCloud™ Gratuito</h2>
+                    <p>Plataforma gratuita desarrollada por EmilioColor para facilitar el acceso y organización de guías y material de apoyo</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="card tool-card p-4 h-100">
+                                <div class="text-center mb-4">
+                                    <a href="https://emiliocolor.github.io/classcloud/" target="_blank" class="btn btn-primary mb-2">ACCEDER A CLASSCLOUD GRATUITO</a>
+                                    <p class="small text-muted">* Guías y recursos para distintas áreas del conocimiento</p>
+                                </div>
+
+                                <div class="service-includes">
+                                    <h6 class="includes-title"><i class="fas fa-check-circle text-primary me-2"></i>Incluye:</h6>
+                                    <ul class="small">
+                                        <li>Acceso gratuito a material educativo</li>
+                                        <li>Material educativo con acceso rápido a páginas, documentos, PDFs, videos y más</li>
+                                        <li>Recursos para estudiantes y profesores</li>
+                                    </ul>
+                                </div>
+
+                                <div class="alert alert-light mt-4">
+                                    <h6 class="alert-heading"><i class="fas fa-heart text-danger me-2"></i>Nuestro compromiso social</h6>
+                                    <p class="small mb-0">ClassCloud es nuestro aporte gratuito a la comunidad educativa, desarrollado para facilitar el acceso al conocimiento.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección Impacto Social -->
+            <div id="impacto-section" class="hidden-section">
+                <div class="rounded-container">
+                    <h2 class="section-title"><i class="fas fa-hands-helping"></i> Impacto Social</h2>
+                    <p>Proyectos y colaboraciones que generan un cambio positivo en la comunidad</p>
+                    
+                    <div class="row mt-4 g-4">
+                        <!-- Proyecto 1 -->
+                        <div class="col-md-6">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="project-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                            <i class="fas fa-graduation-cap"></i>
+                                        </div>
+                                        <h4 class="mb-0">Comunidad de Estudio CECyT 9</h4>
+                                    </div>
+                                    <p>Contribuimos activamente a una comunidad en línea con herramientas educativas diseñadas específicamente para estudiantes del CECyT 9.</p>
+                                        <div class="project-images d-flex justify-content-center align-items-center gap-3 mt-3">
+                                            <img src="proyectos/cececyt9.png" alt="CECyT 9" class="img-small rounded">
+                                            <img src="proyectos/escudocecyt9.png" alt="Escudo CECyT 9" class="img-small rounded">
+                                        </div>                  
+                                    <div class="project-actions mt-3 d-flex flex-wrap gap-2">
+                                        <a href="https://sites.google.com/view/comunidad-de-estudio-cecyt9/Home" target="_blank" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-external-link-alt me-1"></i> Visitar sitio
+                                        </a>
+                                        <a href="https://drive.google.com/file/d/1oEeC94PBjurxAQa4H-AeQbCJbNXDRbMy/view?usp=sharing" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-file-pdf me-1"></i> Documentación
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Proyecto 2 -->
+                        <div class="col-md-6">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="project-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                            <i class="fas fa-project-diagram"></i>
+                                        </div>
+                                        <h4 class="mb-0">Proyecto SOCE</h4>
+                                    </div>
+                                    <p>Sistema Organizador para el Contexto Educativo y Empresarial, una iniciativa para mejorar la gestión académica y organizacional.</p>
+                                    
+                                    <div class="project-actions mt-3 d-flex flex-wrap gap-2">
+                                        <a href="https://emiliocolor.github.io/proyecto_soce/" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-file-alt me-1"></i> Consultar página
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Proyecto 3 -->
+                        <div class="col-md-6">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="project-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                            <i class="fas fa-venus-mars"></i>
+                                        </div>
+                                        <h4 class="mb-0">Manual de Apoyo Integral para las Redes de Género</h4>
+                                    </div>
+                                    <p>Desarrollo de material educativo para promover la equidad de género y la inclusión en diversos ámbitos.</p>
+                                        <div class="project-images d-flex justify-content-center align-items-center gap-3 mt-3">
+                                            <img src="proyectos/rdg.png" alt="Escudo Red de Género" class="img-small rounded">
+                                            <img src="proyectos/rdgb.png" alt="Escudo Red de Género Bátiz" class="img-small rounded">
+                                        </div>  
+                                    <div class="project-actions mt-3 d-flex flex-wrap gap-2">
+                                        <a href="https://drive.google.com/file/d/1CbMQDGozJqgLOt9poV6_qTtdHwbFQJbF/view?usp=sharing" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-file-pdf me-1"></i> Consultar manual
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Proyecto 4 -->
+                        <div class="col-md-6">
+                            <div class="card project-card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="project-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                            <i class="fas fa-chalkboard"></i>
+                                        </div>
+                                        <h4 class="mb-0">Plataforma de Asesorías CECyT 9</h4>
+                                    </div>
+                                    <p>Plataforma digital para facilitar el acceso a asesorías académicas y mejorar el rendimiento estudiantil.</p>
+                                        <div class="project-images d-flex justify-content-center align-items-center gap-3 mt-3">
+                                            <img src="proyectos/ASESORÍAS CECYT 9 (1).png" alt="Interfaz PdA" class="img-small rounded">
+                                        </div>  
+                                    <div class="project-actions mt-3 d-flex flex-wrap gap-2">
+                                        <a href="#" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-laptop-code me-1"></i> Acceder a plataforma
+                                        </a>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección Nosotros -->
+            <div id="nosotros-section" class="hidden-section">
+                <div class="rounded-container">
+                    <h2 class="section-title"><i class="fas fa-building"></i> Acerca del Equipo EmilioColor®</h2>
+                    <p>Conozca nuestra trayectoria, principios y áreas de impacto</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card tool-card p-4 h-100">
+                                <h4>Nuestra Historia</h4>
+                                <p>En EmilioColor® tomamos la decisión de iniciar operaciones el 9 de septiembre de 2017, con el objetivo de crear una plataforma integradora para múltiples industrias estratégicas. Nuestro equipo partió del concepto EmilioForma, enfocado inicialmente en papelería, que mantuvimos en desarrollo mientras perfeccionábamos nuestro modelo.</p>
+                                
+                                <p>Para 2023, consideramos necesario un reinicio con enfoque digital, implementando nuestra página web oficial y presencia en redes sociales. Al año siguiente, determinamos expandir nuestras operaciones mediante alianzas clave, como la colaboración con SÁENZ® para el sector transporte, demostrando nuestro compromiso con soluciones logísticas innovadoras.</p>
+                                
+                                <p>En paralelo, identificamos oportunidades en el sector alimenticio con distribución de aguas embotelladas en centros educativos, mientras desarrollábamos IPN Digitalizado para modernizar procesos administrativos del Instituto Politécnico Nacional.</p>
+                                
+                                <p>Para 2025, establecimos dos pilares educativos fundamentales:</p>
+                                <ul>
+                                    <li><strong>Classcloud®:</strong> Decidimos ofrecer acceso libre a materiales educativos compilados por nuestro equipo</li>
+                                    <li><strong>Classcloud Pro®:</strong> Implementamos un sistema de formación profesional continua</li>
+                                </ul>
+                                
+                                <p>Complementamos estas iniciativas con EMIVERSAL DATABASE®, solución tecnológica que diseñamos para gestión segura de datos educativos y multimedia.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card tool-card p-4 h-100">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="p-3 bg-light rounded h-100">
+                                            <h5 class="text-primary">Nuestra Misión</h5>
+                                            <p class="small">Como equipo, nos comprometemos a impulsar desarrollo social y económico mediante soluciones multisectoriales innovadoras. Priorizamos alianzas estratégicas que generen valor tangible para las comunidades donde operamos.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="p-3 bg-light rounded h-100">
+                                            <h5 class="text-primary">Nuestra Visión</h5>
+                                            <p class="small">Aspiramos colectivamente a posicionarnos como referente internacional en integración empresarial, siendo reconocidos por nuestra capacidad para transformar industrias mediante enfoques interdisciplinarios y sostenibles.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h5 class="mt-4">Áreas de Especialización</h5>
+                                <div class="row mt-3">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="p-2">
+                                            <h6><i class="fas fa-graduation-cap text-primary mr-2"></i> Educación</h6>
+                                            <p class="small">Hemos desarrollado plataformas adaptativas que responden a las necesidades formativas actuales</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="p-2">
+                                            <h6><i class="fas fa-truck text-primary mr-2"></i> Transportes</h6>
+                                            <p class="small">Implementamos soluciones logísticas en colaboración con especialistas del sector</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="p-2">
+                                            <h6><i class="fas fa-laptop-code text-primary mr-2"></i> Tecnología</h6>
+                                            <p class="small">Diseñamos herramientas digitales con enfoque en usabilidad y seguridad</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="p-2">
+                                            <h6><i class="fas fa-utensils text-primary mr-2"></i> Alimentos</h6>
+                                            <p class="small">Exploramos modelos de distribución con potencial de escalamiento sostenible</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="p-2">
+                                            <h6><i class="fas fa-pencil-ruler text-primary mr-2"></i> Papelería</h6>
+                                            <p class="small">Desarrollamos productos y soluciones útiles para entornos escolares y de oficina</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección Nuestros Principios -->
+                    <div class="card tool-card p-4 mt-5">
+                        <h4 class="mb-4"><i class="fas fa-heart text-primary mr-2"></i> Nuestros Principios</h4>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <div class="text-center p-2">
+                                    <i class="fas fa-users text-primary mb-2" style="font-size: 1.5rem;"></i>
+                                    <h6>Trabajo en Equipo</h6>
+                                    <p class="small">Valoramos la sinergia interdisciplinaria</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="text-center p-2">
+                                    <i class="fas fa-lightbulb text-primary mb-2" style="font-size: 1.5rem;"></i>
+                                    <h6>Innovación</h6>
+                                    <p class="small">Fomentamos soluciones creativas</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="text-center p-2">
+                                    <i class="fas fa-chart-line text-primary mb-2" style="font-size: 1.5rem;"></i>
+                                    <h6>Crecimiento</h6>
+                                    <p class="small">Nos adaptamos constantemente</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="text-center p-2">
+                                    <i class="fas fa-layer-group text-primary mb-2" style="font-size: 1.5rem;"></i>
+                                    <h6>Multisectorialidad</h6>
+                                    <p class="small">Integramos distintas industrias en cada proyecto</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      </div>
+                    </div>
+
+<!-- Sección Imagen Gráfica -->
+<div class="card tool-card p-4 mt-5">
+    <h4 class="mb-4"><i class="fas fa-images text-primary mr-2"></i> Imagen Gráfica</h4>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="text-center">
+                <img src="img/emilioforma.png" alt="2017" class="img-fluid rounded mb-2 img-40">
+                <p class="small"><strong>2017:</strong> Idea de marca EmilioForma</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="text-center">
+                <img src="img/emiliocolor_tm.png" alt="2024" class="img-fluid rounded mb-2 img-40">
+                <p class="small"><strong>2024:</strong> EmilioColor™</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="text-center">
+                <img src="img/viejo_emiliocolor.jpg" alt="2024" class="img-fluid rounded mb-2 img-40">
+                <p class="small"><strong>2024:</strong> Registro de EmilioColor®</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="text-center">
+                <img src="img/grupo_logo.png" alt="2025" style="width: 190px;" class="img-fluid rounded mb-2">
+                <p class="small"><strong>2025:</strong> Presentación como Grupo EmilioColor®</p>
+            </div>
+            <div class="text-center">
+                <img src="img/inkspire_logo.png" alt="2025" style="width: 180px;" class="img-fluid rounded mb-2">
+                <p class="small"><strong>2025:</strong> Adición temporal de Inkspire a EmilioColor®</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="text-center">
+                <img src="img/emiliocolor_1.png" alt="2025" style="width: 210px;" class="img-fluid rounded mb-2">
+                <p class="small"><strong>2025 (actualidad):</strong> Nueva imagen y actualización de registro de EmilioColor®</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Sección Marcas -->
+            <div id="marcas-section" class="hidden-section">
+                <div class="rounded-container">
+                    <h2 class="section-title"><i class="fas fa-tags"></i> Nuestras Marcas</h2>
+                    <p>Conoce las marcas que forman parte de nosotros</p>
+                    
+                    <div class="row mt-4 g-4">
+                        <div class="col-md-3 col-6">
+                            <div class="card tool-card p-3 text-center">
+                                <img src="marcas/5.png" alt="Marca 1" class="img-fluid mb-3">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="card tool-card p-3 text-center">
+                                <img src="marcas/6.png" alt="Marca 2" class="img-fluid mb-3">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Ver más</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="card tool-card p-3 text-center">
+                                <img src="marcas/4.png" alt="Marca 2" class="img-fluid mb-3">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección Contacto -->
+            <div id="contacto-section" class="hidden-section">
+                <div class="rounded-container">
+                    <h2 class="section-title"><i class="fas fa-envelope"></i> Contacto</h2>
+                    <p>¿Tienes alguna pregunta? No dudes en ponerte en contacto con nosotros.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card tool-card p-4 h-100">
+                                <div class="contact-method mb-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-envelope text-primary me-3" style="font-size: 1.5rem;"></i>
+                                        <div>
+                                            <h5>Correo Electrónico</h5>
+                                            <a href="mailto:emiliocolormexico@gmail.com">emiliocolormexico@gmail.com</a>
+                                        </div>
+                                    </div>
+                                    <a href="mailto:emiliocolormexico@gmail.com" class="btn btn-primary w-100">Enviar correo</a>
+                                </div>
+                                
+                                <div class="contact-method mb-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-phone-alt text-primary me-3" style="font-size: 1.5rem;"></i>
+                                        <div>
+                                            <h5>Teléfono</h5>
+                                            <a href="tel:+525625377747">+52 56 2537 7747</a>
+                                            <p class="small text-muted mb-0">Horario: Lunes a Viernes, 10am - 6pm</p>
+                                        </div>
+                                        <div>
+                                            <h5>WhatsApp</h5>
+                                            <a href="tel:+525625377747">+52 56 2537 7747</a>
+                                            <p class="small text-muted mb-0">Horario: Lunes a Viernes, 10am - 6pm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-map-marker-alt text-primary me-3" style="font-size: 1.5rem;"></i>
+                                        <div>
+                                            <h5>Ubicación</h5>
+                                            <p>Ciudad de México, México</p>
+                                            <p class="small text-muted mb-0">Atendemos a toda la República (con costo extra de envio).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card tool-card p-4 h-100">
+                                <h5 class="mb-4">Información Legal</h5>
+                                <div class="mb-4">
+                                    <a href="https://emiliocolor.github.io/mx/legalidad_y_garantia.html" target="_blank" class="d-block mb-3 p-3 bg-light rounded">
+                                        <i class="fas fa-file-contract text-primary me-2"></i> Legalidad y Garantía
+                                    </a>
+                                </div>
+                                
+                                <h5 class="mb-3">Redes Sociales</h5>
+                                <p>Empezamos en redes sociales de 2023 en adelante.</p>
+                                <div class="d-flex gap-3 mb-4">
+                                    <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-circle"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-circle"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-circle"><i class="fab fa-youtube"></i></a>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <img src="img/favicon.png" alt="EmilioColor Logo" class="footer-logo-favicon mb-3">
+                                    <img src="img/favicon_lyg.png" alt="EmilioColor Logo" class="footer-logo-favicon mb-3">
+                                    <p class="small">Este sitio es propiedad de EmilioColor® y fue desarrollado para ofrecer productos y servicios de alta calidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <div class="container">
+                    <img src="img/emiliocolor_1.png" alt="EmilioColor Logo" class="footer-logo">
+                    <p>© 2017-2025 EmilioColor® - Todos los derechos reservados.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="float-buttons">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script>
+        const cart = {
+            products: [],
+            services: [],
+            addProduct: function(product) {
+                this.products.push(product);
+                this.updateCart();
+                this.showNotification(`${product.name} agregado al carrito`);
+            },
+            addService: function(service) {
+                this.services.push(service);
+                this.updateCart();
+                this.showNotification(`${service.name} agregado al carrito`);
+            },
+            removeItem: function(type, id) {
+                if (type === 'product') {
+                    this.products = this.products.filter(item => item.id !== id);
+                } else if (type === 'service') {
+                    this.services = this.services.filter(item => item.id !== id);
+                }
+                this.updateCart();
+            },
+            getTotal: function() {
+                let total = 0;
+                this.products.forEach(item => total += parseFloat(item.price));
+                this.services.forEach(item => total += parseFloat(item.price));
+                return total.toFixed(2);
+            },
+            updateCart: function() {
+                const totalItems = this.products.length + this.services.length;
+                document.querySelector('.cart-count').textContent = totalItems;
+                
+                const productsCart = document.getElementById('products-cart');
+                if (this.products.length === 0) {
+                    productsCart.innerHTML = '<p class="empty-cart-message">No hay productos en el carrito</p>';
+                } else {
+                    productsCart.innerHTML = '';
+                    this.products.forEach(item => {
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item d-flex justify-content-between align-items-center p-3 mb-2 bg-light rounded';
+                        cartItem.innerHTML = `
+                            <div>
+                                <h6 class="mb-1">${item.name}</h6>
+                                <small class="text-muted">$${item.price} MXN</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-danger remove-item" data-type="product" data-id="${item.id}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        `;
+                        productsCart.appendChild(cartItem);
+                    });
+                }
+                
+                const servicesCart = document.getElementById('services-cart');
+                if (this.services.length === 0) {
+                    servicesCart.innerHTML = '<p class="empty-cart-message">No hay servicios en el carrito</p>';
+                } else {
+                    servicesCart.innerHTML = '';
+                    this.services.forEach(item => {
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item d-flex justify-content-between align-items-center p-3 mb-2 bg-light rounded';
+                        cartItem.innerHTML = `
+                            <div>
+                                <h6 class="mb-1">${item.name}</h6>
+                                <small class="text-muted">$${item.price} MXN</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-danger remove-item" data-type="service" data-id="${item.id}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        `;
+                        servicesCart.appendChild(cartItem);
+                    });
+                }
+                
+                document.getElementById('cart-total').textContent = `$${this.getTotal()} MXN`;
+                
+                localStorage.setItem('emiliocolorCart', JSON.stringify({
+                    products: this.products,
+                    services: this.services
+                }));
+            },
+            generatePDF: function() {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                doc.setFontSize(20);
+                doc.setTextColor(26, 86, 219);
+                doc.text('EmilioColor México - Resumen de Compra', 105, 20, { align: 'center' });
+                
+                doc.setFontSize(12);
+                doc.setTextColor(0, 0, 0);
+                const date = new Date();
+                doc.text(`Fecha: ${date.toLocaleDateString()} ${date.toLocaleTimeString()}`, 105, 30, { align: 'center' });
+                
+                let y = 50;
+                if (this.products.length > 0) {
+                    doc.setFontSize(16);
+                    doc.text('Productos', 14, y);
+                    y += 10;
+                    
+                    const productHeaders = [['Producto', 'Precio']];
+                    const productData = this.products.map(item => [item.name, `$${item.price} MXN`]);
+                    
+                    doc.autoTable({
+                        startY: y,
+                        head: productHeaders,
+                        body: productData,
+                        theme: 'grid',
+                        headStyles: { fillColor: [26, 86, 219], textColor: [255, 255, 255] }
+                    });
+                    
+                    y = doc.lastAutoTable.finalY + 10;
+                }
+                
+                if (this.services.length > 0) {
+                    doc.setFontSize(16);
+                    doc.text('Servicios', 14, y);
+                    y += 10;
+                    
+                    const serviceHeaders = [['Servicio', 'Precio']];
+                    const serviceData = this.services.map(item => [item.name, `$${item.price} MXN`]);
+                    
+                    doc.autoTable({
+                        startY: y,
+                        head: serviceHeaders,
+                        body: serviceData,
+                        theme: 'grid',
+                        headStyles: { fillColor: [26, 86, 219], textColor: [255, 255, 255] }
+                    });
+                    
+                    y = doc.lastAutoTable.finalY + 10;
+                }
+                
+                doc.setFontSize(18);
+                doc.setTextColor(26, 86, 219);
+                doc.text(`Total: $${this.getTotal()} MXN`, 105, y + 10, { align: 'center' });
+                
+                y += 25;
+                
+                doc.setFontSize(14);
+                doc.setTextColor(255, 0, 0);
+                doc.text('Instrucciones', 14, y);
+                y += 8;
+                
+                doc.setFontSize(11);
+                const instrucciones = [
+                    'Por favor, envía este PDF al correo:',
+                    'emiliocolormexico@gmail.com',
+                    'Utiliza el botón "MANDAR PDF" en tu carrito',
+                    'Nos pondremos en contacto contigo para finalizar tu pedido.'
+                ];
+                instrucciones.forEach(line => {
+                    doc.text(line, 14, y);
+                    y += 6;
+                });
+                
+                doc.save(`EmilioColor_Compra_${date.getTime()}.pdf`);
+            },
+            showNotification: function(message) {
+                const notification = document.createElement('div');
+                notification.className = 'notification alert alert-success';
+                notification.innerHTML = `
+                    <span>${message}</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('show');
+                }, 10);
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 3000);
+            },
+            loadFromStorage: function() {
+                const savedCart = localStorage.getItem('emiliocolorCart');
+                if (savedCart) {
+                    const cartData = JSON.parse(savedCart);
+                    this.products = cartData.products || [];
+                    this.services = cartData.services || [];
+                    this.updateCart();
+                }
+            }
+        };
+
+        const sectionManager = {
+            init: function() {
+                this.showSection(window.location.hash || '#inicio');
+                
+                document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const sectionId = link.getAttribute('href');
+                        this.showSection(sectionId);
+                        history.pushState(null, null, sectionId);
+                    });
+                });
+                
+                window.addEventListener('popstate', () => {
+                    this.showSection(window.location.hash || '#inicio');
+                });
+            },
+            showSection: function(sectionId) {
+                document.querySelectorAll('.main-content > div').forEach(section => {
+                    section.classList.add('hidden-section');
+                    section.classList.remove('active-section');
+                });
+                
+                const targetSection = document.querySelector(`${sectionId}-section`);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden-section');
+                    targetSection.classList.add('active-section');
+                }
+                
+                document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            sectionManager.init();
+            
+            cart.loadFromStorage();
+            
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('add-to-cart')) {
+                    const type = e.target.getAttribute('data-type');
+                    const id = e.target.getAttribute('data-id');
+                    const name = e.target.getAttribute('data-name');
+                    const price = e.target.getAttribute('data-price');
+                    
+                    if (type === 'product') {
+                        cart.addProduct({ id, name, price });
+                    } else if (type === 'service') {
+                        cart.addService({ id, name, price });
+                    }
+                }
+                
+                if (e.target.classList.contains('remove-item') || e.target.closest('.remove-item')) {
+                    const button = e.target.classList.contains('remove-item') ? e.target : e.target.closest('.remove-item');
+                    const type = button.getAttribute('data-type');
+                    const id = button.getAttribute('data-id');
+                    
+                    cart.removeItem(type, id);
+                }
+                
+                if (e.target.classList.contains('cart-tab')) {
+                    const tabId = e.target.getAttribute('data-tab');
+                    
+                    document.querySelectorAll('.cart-tab').forEach(tab => {
+                        tab.classList.remove('active');
+                        tab.classList.remove('btn-primary');
+                        tab.classList.add('btn-outline-primary');
+                    });
+                    
+                    e.target.classList.add('active');
+                    e.target.classList.remove('btn-outline-primary');
+                    e.target.classList.add('btn-primary');
+                    
+                    document.querySelectorAll('.cart-items').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    document.getElementById(tabId).classList.add('active');
+                }
+            });
+            
+            document.getElementById('generate-pdf').addEventListener('click', function() {
+                const total = parseFloat(cart.getTotal());
+                if (total > 0) {
+                    cart.generatePDF();
+                } else {
+                    alert('El carrito está vacío');
+                }
+            });
+        });
+
+    // Modo oscuro
+    document.addEventListener('DOMContentLoaded', function() {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            enableDarkMode();
+        }
+        
+        darkModeToggle.addEventListener('click', function() {
+            if (document.body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        });
+        
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem('darkMode', 'enabled');
+        }
+        
+        function disableDarkMode() {
+            document.body.classList.remove('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebarContent = document.getElementById('sidebarContent');
+    
+    if (sidebarToggle && sidebarContent) {
+        sidebarToggle.addEventListener('click', function() {
+            sidebarContent.classList.toggle('active');
+            
+            // Cambiar el ícono
+            const icon = this.querySelector('i');
+            if (sidebarContent.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+    
+    // Cerrar el menú al hacer clic en un enlace (en móviles)
+    document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 992) {
+                sidebarContent.classList.remove('active');
+                const icon = sidebarToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    });
+});
+</script>
+</body>
+<a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20los%20productos%20y%20servicios%20de%20EmilioColor®"
+   class="float-btn whatsapp-btn"
+   target="_blank"
+   title="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="mailto:emiliocolormexico@gmail.com?subject=Consulta%20sobre%20productos%20y%20servicios%20EmilioColor®&body=Hola,%20me%20interesan%20sus%20productos%20y%20servicios.%20Me%20gustaría%20más%20información."
+   class="float-btn gmail-btn"
+   target="_blank"
+   title="Enviar correo">
+    <i class="fas fa-envelope"></i>
+</a>
+<button id="darkModeToggle" class="float-btn darkmode-btn" title="Cambiar modo claro/oscuro">
+    <i class="fas fa-moon"></i>
+</button>
+</html>
