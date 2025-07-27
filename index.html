@@ -1175,358 +1175,373 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
-    <script>
-        const cart = {
-            products: [],
-            services: [],
-            addProduct: function(product) {
-                this.products.push(product);
-                this.updateCart();
-                this.showNotification(`${product.name} agregado al carrito`);
-            },
-            addService: function(service) {
-                this.services.push(service);
-                this.updateCart();
-                this.showNotification(`${service.name} agregado al carrito`);
-            },
-            removeItem: function(type, id) {
-                if (type === 'product') {
-                    this.products = this.products.filter(item => item.id !== id);
-                } else if (type === 'service') {
-                    this.services = this.services.filter(item => item.id !== id);
-                }
-                this.updateCart();
-            },
-            getTotal: function() {
-                let total = 0;
-                this.products.forEach(item => total += parseFloat(item.price));
-                this.services.forEach(item => total += parseFloat(item.price));
-                return total.toFixed(2);
-            },
-            updateCart: function() {
-                const totalItems = this.products.length + this.services.length;
-                document.querySelector('.cart-count').textContent = totalItems;
-                
-                const productsCart = document.getElementById('products-cart');
-                if (this.products.length === 0) {
-                    productsCart.innerHTML = '<p class="empty-cart-message">No hay productos en el carrito</p>';
-                } else {
-                    productsCart.innerHTML = '';
-                    this.products.forEach(item => {
-                        const cartItem = document.createElement('div');
-                        cartItem.className = 'cart-item d-flex justify-content-between align-items-center p-3 mb-2 bg-light rounded';
-                        cartItem.innerHTML = `
-                            <div>
-                                <h6 class="mb-1">${item.name}</h6>
-                                <small class="text-muted">$${item.price} MXN</small>
-                            </div>
-                            <button class="btn btn-sm btn-outline-danger remove-item" data-type="product" data-id="${item.id}">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        `;
-                        productsCart.appendChild(cartItem);
-                    });
-                }
-                
-                const servicesCart = document.getElementById('services-cart');
-                if (this.services.length === 0) {
-                    servicesCart.innerHTML = '<p class="empty-cart-message">No hay servicios en el carrito</p>';
-                } else {
-                    servicesCart.innerHTML = '';
-                    this.services.forEach(item => {
-                        const cartItem = document.createElement('div');
-                        cartItem.className = 'cart-item d-flex justify-content-between align-items-center p-3 mb-2 bg-light rounded';
-                        cartItem.innerHTML = `
-                            <div>
-                                <h6 class="mb-1">${item.name}</h6>
-                                <small class="text-muted">$${item.price} MXN</small>
-                            </div>
-                            <button class="btn btn-sm btn-outline-danger remove-item" data-type="service" data-id="${item.id}">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        `;
-                        servicesCart.appendChild(cartItem);
-                    });
-                }
-                
-                document.getElementById('cart-total').textContent = `$${this.getTotal()} MXN`;
-                
-                localStorage.setItem('emiliocolorCart', JSON.stringify({
-                    products: this.products,
-                    services: this.services
-                }));
-            },
-            generatePDF: function() {
-                const { jsPDF } = window.jspdf;
-                const doc = new jsPDF();
-                
-                doc.setFontSize(20);
-                doc.setTextColor(26, 86, 219);
-                doc.text('EmilioColor México - Resumen de Compra', 105, 20, { align: 'center' });
-                
-                doc.setFontSize(12);
-                doc.setTextColor(0, 0, 0);
-                const date = new Date();
-                doc.text(`Fecha: ${date.toLocaleDateString()} ${date.toLocaleTimeString()}`, 105, 30, { align: 'center' });
-                
-                let y = 50;
-                if (this.products.length > 0) {
-                    doc.setFontSize(16);
-                    doc.text('Productos', 14, y);
-                    y += 10;
-                    
-                    const productHeaders = [['Producto', 'Precio']];
-                    const productData = this.products.map(item => [item.name, `$${item.price} MXN`]);
-                    
-                    doc.autoTable({
-                        startY: y,
-                        head: productHeaders,
-                        body: productData,
-                        theme: 'grid',
-                        headStyles: { fillColor: [26, 86, 219], textColor: [255, 255, 255] }
-                    });
-                    
-                    y = doc.lastAutoTable.finalY + 10;
-                }
-                
-                if (this.services.length > 0) {
-                    doc.setFontSize(16);
-                    doc.text('Servicios', 14, y);
-                    y += 10;
-                    
-                    const serviceHeaders = [['Servicio', 'Precio']];
-                    const serviceData = this.services.map(item => [item.name, `$${item.price} MXN`]);
-                    
-                    doc.autoTable({
-                        startY: y,
-                        head: serviceHeaders,
-                        body: serviceData,
-                        theme: 'grid',
-                        headStyles: { fillColor: [26, 86, 219], textColor: [255, 255, 255] }
-                    });
-                    
-                    y = doc.lastAutoTable.finalY + 10;
-                }
-                
-                doc.setFontSize(18);
-                doc.setTextColor(26, 86, 219);
-                doc.text(`Total: $${this.getTotal()} MXN`, 105, y + 10, { align: 'center' });
-                
-                y += 25;
-                
-                doc.setFontSize(14);
-                doc.setTextColor(255, 0, 0);
-                doc.text('Instrucciones', 14, y);
-                y += 8;
-                
-                doc.setFontSize(11);
-                const instrucciones = [
-                    'Por favor, envía este PDF al correo:',
-                    'emiliocolormexico@gmail.com',
-                    'Utiliza el botón "MANDAR PDF" en tu carrito',
-                    'Nos pondremos en contacto contigo para finalizar tu pedido.'
-                ];
-                instrucciones.forEach(line => {
-                    doc.text(line, 14, y);
-                    y += 6;
-                });
-                
-                doc.save(`EmilioColor_Compra_${date.getTime()}.pdf`);
-            },
-            showNotification: function(message) {
-                const notification = document.createElement('div');
-                notification.className = 'notification alert alert-success';
-                notification.innerHTML = `
-                    <span>${message}</span>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                `;
-                
-                document.body.appendChild(notification);
-                
-                setTimeout(() => {
-                    notification.classList.add('show');
-                }, 10);
-                
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                    setTimeout(() => {
-                        notification.remove();
-                    }, 300);
-                }, 3000);
-            },
-            loadFromStorage: function() {
-                const savedCart = localStorage.getItem('emiliocolorCart');
-                if (savedCart) {
-                    const cartData = JSON.parse(savedCart);
-                    this.products = cartData.products || [];
-                    this.services = cartData.services || [];
-                    this.updateCart();
+<script>
+    const cart = {
+        products: [],
+        services: [],
+        addProduct: function(product) {
+            this.products.push(product);
+            this.updateCart();
+            this.showNotification(`${product.name} agregado al carrito`);
+        },
+        addService: function(service) {
+            this.services.push(service);
+            this.updateCart();
+            this.showNotification(`${service.name} agregado al carrito`);
+        },
+        removeItem: function(type, id) {
+            if (type === 'product') {
+                this.products = this.products.filter(item => item.id !== id);
+            } else if (type === 'service') {
+                this.services = this.services.filter(item => item.id !== id);
+            }
+            this.updateCart();
+        },
+        getTotal: function() {
+            let total = 0;
+            this.products.forEach(item => total += parseFloat(item.price));
+            this.services.forEach(item => total += parseFloat(item.price));
+            return total.toFixed(2);
+        },
+        updateCart: function() {
+            const totalItems = this.products.length + this.services.length;
+            
+            // Crear el contador si no existe
+            let cartCount = document.querySelector('.cart-count');
+            if (!cartCount) {
+                const cartButton = document.querySelector('[data-bs-target="#cartModal"]');
+                if (cartButton) {
+                    cartCount = document.createElement('span');
+                    cartCount.className = 'cart-count';
+                    cartButton.appendChild(cartCount);
                 }
             }
-        };
+            
+            if (cartCount) {
+                cartCount.textContent = totalItems > 0 ? totalItems : '';
+            }
+            
+            const productsCart = document.getElementById('products-cart');
+            if (this.products.length === 0) {
+                productsCart.innerHTML = '<p class="empty-cart-message">No hay productos en el carrito</p>';
+            } else {
+                productsCart.innerHTML = '';
+                this.products.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item d-flex justify-content-between align-items-center p-3 mb-2 bg-light rounded';
+                    cartItem.innerHTML = `
+                        <div>
+                            <h6 class="mb-1">${item.name}</h6>
+                            <small class="text-muted">$${item.price} MXN</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger remove-item" data-type="product" data-id="${item.id}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    productsCart.appendChild(cartItem);
+                });
+            }
+            
+            const servicesCart = document.getElementById('services-cart');
+            if (this.services.length === 0) {
+                servicesCart.innerHTML = '<p class="empty-cart-message">No hay servicios en el carrito</p>';
+            } else {
+                servicesCart.innerHTML = '';
+                this.services.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item d-flex justify-content-between align-items-center p-3 mb-2 bg-light rounded';
+                    cartItem.innerHTML = `
+                        <div>
+                            <h6 class="mb-1">${item.name}</h6>
+                            <small class="text-muted">$${item.price} MXN</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger remove-item" data-type="service" data-id="${item.id}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    servicesCart.appendChild(cartItem);
+                });
+            }
+            
+            document.getElementById('cart-total').textContent = `$${this.getTotal()} MXN`;
+            
+            localStorage.setItem('emiliocolorCart', JSON.stringify({
+                products: this.products,
+                services: this.services
+            }));
+        },
+        generatePDF: function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            doc.setFontSize(20);
+            doc.setTextColor(26, 86, 219);
+            doc.text('EmilioColor México - Resumen de Compra', 105, 20, { align: 'center' });
+            
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0);
+            const date = new Date();
+            doc.text(`Fecha: ${date.toLocaleDateString()} ${date.toLocaleTimeString()}`, 105, 30, { align: 'center' });
+            
+            let y = 50;
+            if (this.products.length > 0) {
+                doc.setFontSize(16);
+                doc.text('Productos', 14, y);
+                y += 10;
+                
+                const productHeaders = [['Producto', 'Precio']];
+                const productData = this.products.map(item => [item.name, `$${item.price} MXN`]);
+                
+                doc.autoTable({
+                    startY: y,
+                    head: productHeaders,
+                    body: productData,
+                    theme: 'grid',
+                    headStyles: { fillColor: [26, 86, 219], textColor: [255, 255, 255] }
+                });
+                
+                y = doc.lastAutoTable.finalY + 10;
+            }
+            
+            if (this.services.length > 0) {
+                doc.setFontSize(16);
+                doc.text('Servicios', 14, y);
+                y += 10;
+                
+                const serviceHeaders = [['Servicio', 'Precio']];
+                const serviceData = this.services.map(item => [item.name, `$${item.price} MXN`]);
+                
+                doc.autoTable({
+                    startY: y,
+                    head: serviceHeaders,
+                    body: serviceData,
+                    theme: 'grid',
+                    headStyles: { fillColor: [26, 86, 219], textColor: [255, 255, 255] }
+                });
+                
+                y = doc.lastAutoTable.finalY + 10;
+            }
+            
+            doc.setFontSize(18);
+            doc.setTextColor(26, 86, 219);
+            doc.text(`Total: $${this.getTotal()} MXN`, 105, y + 10, { align: 'center' });
+            
+            y += 25;
+            
+            doc.setFontSize(14);
+            doc.setTextColor(255, 0, 0);
+            doc.text('Instrucciones', 14, y);
+            y += 8;
+            
+            doc.setFontSize(11);
+            const instrucciones = [
+                'Por favor, envía este PDF al correo:',
+                'emiliocolormexico@gmail.com',
+                'Utiliza el botón "MANDAR PDF" en tu carrito',
+                'Nos pondremos en contacto contigo para finalizar tu pedido.'
+            ];
+            instrucciones.forEach(line => {
+                doc.text(line, 14, y);
+                y += 6;
+            });
+            
+            doc.save(`EmilioColor_Compra_${date.getTime()}.pdf`);
+        },
+        showNotification: function(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification alert alert-success';
+            notification.innerHTML = `
+                <span>${message}</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        },
+        loadFromStorage: function() {
+            const savedCart = localStorage.getItem('emiliocolorCart');
+            if (savedCart) {
+                const cartData = JSON.parse(savedCart);
+                this.products = cartData.products || [];
+                this.services = cartData.services || [];
+                this.updateCart();
+            }
+        }
+    };
 
-        const sectionManager = {
-            init: function() {
+    const sectionManager = {
+        init: function() {
+            this.showSection(window.location.hash || '#inicio');
+            
+            document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sectionId = link.getAttribute('href');
+                    this.showSection(sectionId);
+                    history.pushState(null, null, sectionId);
+                });
+            });
+            
+            window.addEventListener('popstate', () => {
                 this.showSection(window.location.hash || '#inicio');
-                
-                document.querySelectorAll('.sidebar-nav-link').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const sectionId = link.getAttribute('href');
-                        this.showSection(sectionId);
-                        history.pushState(null, null, sectionId);
-                    });
-                });
-                
-                window.addEventListener('popstate', () => {
-                    this.showSection(window.location.hash || '#inicio');
-                });
-            },
-            showSection: function(sectionId) {
-                document.querySelectorAll('.main-content > div').forEach(section => {
-                    section.classList.add('hidden-section');
-                    section.classList.remove('active-section');
-                });
-                
-                const targetSection = document.querySelector(`${sectionId}-section`);
-                if (targetSection) {
-                    targetSection.classList.remove('hidden-section');
-                    targetSection.classList.add('active-section');
-                }
-                
-                document.querySelectorAll('.sidebar-nav-link').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === sectionId) {
-                        link.classList.add('active');
-                    }
-                });
-                
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+            });
+        },
+        showSection: function(sectionId) {
+            document.querySelectorAll('.main-content > div').forEach(section => {
+                section.classList.add('hidden-section');
+                section.classList.remove('active-section');
+            });
+            
+            const targetSection = document.querySelector(`${sectionId}-section`);
+            if (targetSection) {
+                targetSection.classList.remove('hidden-section');
+                targetSection.classList.add('active-section');
             }
-        };
+            
+            document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    };
 
-        document.addEventListener('DOMContentLoaded', function() {
-            sectionManager.init();
-            
-            cart.loadFromStorage();
-            
-            document.addEventListener('click', function(e) {
-                if (e.target.classList.contains('add-to-cart')) {
-                    const type = e.target.getAttribute('data-type');
-                    const id = e.target.getAttribute('data-id');
-                    const name = e.target.getAttribute('data-name');
-                    const price = e.target.getAttribute('data-price');
-                    
-                    if (type === 'product') {
-                        cart.addProduct({ id, name, price });
-                    } else if (type === 'service') {
-                        cart.addService({ id, name, price });
-                    }
-                }
+    document.addEventListener('DOMContentLoaded', function() {
+        sectionManager.init();
+        
+        cart.loadFromStorage();
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('add-to-cart') || e.target.closest('.add-to-cart')) {
+                const button = e.target.classList.contains('add-to-cart') ? e.target : e.target.closest('.add-to-cart');
+                const type = button.getAttribute('data-type');
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = button.getAttribute('data-price');
                 
-                if (e.target.classList.contains('remove-item') || e.target.closest('.remove-item')) {
-                    const button = e.target.classList.contains('remove-item') ? e.target : e.target.closest('.remove-item');
-                    const type = button.getAttribute('data-type');
-                    const id = button.getAttribute('data-id');
-                    
-                    cart.removeItem(type, id);
+                if (type === 'product') {
+                    cart.addProduct({ id, name, price });
+                } else if (type === 'service') {
+                    cart.addService({ id, name, price });
                 }
-                
-                if (e.target.classList.contains('cart-tab')) {
-                    const tabId = e.target.getAttribute('data-tab');
-                    
-                    document.querySelectorAll('.cart-tab').forEach(tab => {
-                        tab.classList.remove('active');
-                        tab.classList.remove('btn-primary');
-                        tab.classList.add('btn-outline-primary');
-                    });
-                    
-                    e.target.classList.add('active');
-                    e.target.classList.remove('btn-outline-primary');
-                    e.target.classList.add('btn-primary');
-                    
-                    document.querySelectorAll('.cart-items').forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    document.getElementById(tabId).classList.add('active');
-                }
-            });
-            
-            document.getElementById('generate-pdf').addEventListener('click', function() {
-                const total = parseFloat(cart.getTotal());
-                if (total > 0) {
-                    cart.generatePDF();
-                } else {
-                    alert('El carrito está vacío');
-                }
-            });
-        });
-
-        // Modo oscuro
-        document.addEventListener('DOMContentLoaded', function() {
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            
-            if (localStorage.getItem('darkMode') === 'enabled') {
-                enableDarkMode();
             }
             
-            darkModeToggle.addEventListener('click', function() {
-                if (document.body.classList.contains('dark-mode')) {
-                    disableDarkMode();
-                } else {
-                    enableDarkMode();
-                }
-            });
-            
-            function enableDarkMode() {
-                document.body.classList.add('dark-mode');
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('darkMode', 'enabled');
+            if (e.target.classList.contains('remove-item') || e.target.closest('.remove-item')) {
+                const button = e.target.classList.contains('remove-item') ? e.target : e.target.closest('.remove-item');
+                const type = button.getAttribute('data-type');
+                const id = button.getAttribute('data-id');
+                
+                cart.removeItem(type, id);
             }
             
-            function disableDarkMode() {
-                document.body.classList.remove('dark-mode');
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('darkMode', 'disabled');
+            if (e.target.classList.contains('cart-tab')) {
+                const tabId = e.target.getAttribute('data-tab');
+                
+                document.querySelectorAll('.cart-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                    tab.classList.remove('btn-primary');
+                    tab.classList.add('btn-outline-primary');
+                });
+                
+                e.target.classList.add('active');
+                e.target.classList.remove('btn-outline-primary');
+                e.target.classList.add('btn-primary');
+                
+                document.querySelectorAll('.cart-items').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                document.getElementById(tabId).classList.add('active');
             }
         });
         
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            const sidebarContent = document.getElementById('sidebarContent');
-            
-            if (sidebarToggle && sidebarContent) {
-                sidebarToggle.addEventListener('click', function() {
-                    sidebarContent.classList.toggle('active');
-                    
-                    // Cambiar el ícono
-                    const icon = this.querySelector('i');
-                    if (sidebarContent.classList.contains('active')) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
+        document.getElementById('generate-pdf').addEventListener('click', function() {
+            const total = parseFloat(cart.getTotal());
+            if (total > 0) {
+                cart.generatePDF();
+            } else {
+                alert('El carrito está vacío');
             }
-            
-            // Cerrar el menú al hacer clic en un enlace (en móviles)
-            document.querySelectorAll('.sidebar-nav-link').forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 992) {
-                        sidebarContent.classList.remove('active');
-                        const icon = sidebarToggle.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
+        });
+    });
+
+    // Modo oscuro
+    document.addEventListener('DOMContentLoaded', function() {
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            enableDarkMode();
+        }
+        
+        darkModeToggle.addEventListener('click', function() {
+            if (document.body.classList.contains('dark-mode')) {
+                disableDarkMode();
+            } else {
+                enableDarkMode();
+            }
+        });
+        
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem('darkMode', 'enabled');
+        }
+        
+        function disableDarkMode() {
+            document.body.classList.remove('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebarContent = document.getElementById('sidebarContent');
+        
+        if (sidebarToggle && sidebarContent) {
+            sidebarToggle.addEventListener('click', function() {
+                sidebarContent.classList.toggle('active');
+                
+                // Cambiar el ícono
+                const icon = this.querySelector('i');
+                if (sidebarContent.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+        
+        // Cerrar el menú al hacer clic en un enlace (en móviles)
+        document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 992) {
+                    sidebarContent.classList.remove('active');
+                    const icon = sidebarToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
