@@ -127,6 +127,11 @@
         <i class="fas fa-cloud"></i> ClassCloud™ Pro
     </a>
 </li>
+<li class="sidebar-nav-item">
+    <a href="#herramientas" class="sidebar-nav-link" data-section="herramientas">
+        <i class="fas fa-tools"></i> Herramientas
+    </a>
+</li>
                     <li class="sidebar-nav-item">
                         <a href="#impacto" class="sidebar-nav-link" data-section="impacto">
                             <i class="fas fa-hands-helping"></i> Impacto Social
@@ -928,7 +933,58 @@
                     </div>
                 </div>
             </div>
-            
+<!-- Sección Herramienta en contenedor doble -->
+<div id="herramientas-section" class="hidden-section">
+  <div class="rounded-container">
+    <h2 class="section-title"><i class="fas fa-tools"></i> Herramientas</h2>
+    <p>Herramientas prácticas y fáciles de usar para agilizar y mejorar tus proyectos digitales, desarrolladas por nosotros.</p>
+<style>
+.btn-link.text-danger {
+  color: #dc3545;
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-link.text-danger:hover,
+.btn-link.text-danger:focus {
+  background-color: #dc3545 !important;
+  color: white !important;           
+  text-decoration: none !important;
+  cursor: pointer;
+}
+</style>
+
+<a href="#contacto" class="btn btn-link text-danger mt-2">Reportar problema</a>
+
+    <!-- Contenedor principal con dos columnas -->
+    <div class="row mt-4">
+      <!-- Columna izquierda: herramienta -->
+      <div class="col-md-6">
+        <div class="card tool-card p-4 text-center h-100 d-flex flex-column justify-content-between">
+          <div>
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                 alt="GitHub Logo"
+                 class="img-fluid mb-3"
+                 style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px;">
+            <h5>Convertidor de GitHub a RAW</h5>
+            <p class="small text-muted">Herramienta para convertir enlaces <code>blob</code> de GitHub a enlaces RAW, copiar los resultados, guardarlos en PDF y gestionar múltiples enlaces con botones para convertir, guardar, reiniciar y agregar</p>
+          </div>
+          <a href="https://emiliocolor.com/github_a_raw" class="btn btn-outline-primary mt-3">Ir al convertidor</a>
+        </div>
+      </div>
+
+      <!-- Columna derecha: espacio reservado para otra herramienta -->
+      <div class="col-md-6">
+        <div class="card tool-card p-4 text-center h-100 d-flex align-items-center justify-content-center text-muted" style="border-style: dashed;">
+          <p>Espacio reservado para otra herramienta</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
             <!-- Sección Marcas -->
             <div id="marcas-section" class="hidden-section">
                 <div class="rounded-container">
@@ -1031,13 +1087,13 @@
             </div>
         </div>
     </div>
-</div>
-
-            
+</div>      
             <footer class="footer">
                 <div class="container">
                     <img src="img/emiliocolor_1.png" alt="EmilioColor Logo" class="footer-logo">
-                    <p>© 2023-2025 EmilioColor® - Todos los derechos reservados.</p>
+<p class="mb-0">
+  © 2023 EmilioColor® Todos los derechos reservados.
+</p>
                 </div>
             </footer>
         </div>
