@@ -218,9 +218,9 @@ body {
 }
 
 .home-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-    background-size: cover;
-    background-position: center;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('img/mnh4.jpg') center center / cover no-repeat; /* Elimina 'fixed' */
     color: white;
     padding: 80px 30px;
     border-radius: 16px;
@@ -250,7 +250,6 @@ body {
 }
 
 .home-hero .btn {
-    margin-top: 20px;
     padding: 10px 25px;
     font-size: 1.1rem;
     border-radius: 50px;
@@ -1108,6 +1107,8 @@ body {
     .home-hero {
         padding: 1px 10px 70px 10px;
         min-height: 400px;
+            padding-top: 80px; /* Ajusta este valor según necesites más o menos espacio */
+
     }
     
     .home-hero h1 {
@@ -1455,7 +1456,31 @@ body.dark-mode .rounded .btn-outline-primary:hover {
     transition: all 0.3s ease;
     overflow: hidden;
 }
+/* Estilos para títulos de productos y servicios */
+.tool-card h5, 
+.tool-card h3, 
+.tool-card h4,
+.service-header h5,
+.product-price,
+.service-price {
+    font-family: inherit; /* Hereda la fuente del padre (que debería ser Poppins) */
+    font-weight: 500; /* Ajusta el grosor para que coincida con otros títulos */
+    color: var(--text-dark); /* Usa la variable de color de texto principal */
+    margin-bottom: 0.5rem; /* Espaciado consistente */
+}
 
+/* Asegúrate de que los títulos en las cards también hereden la fuente */
+.home-card h3 {
+    font-family: inherit;
+    font-weight: 500;
+}
+
+/* Opcional: Si quieres que los precios también tengan un estilo consistente */
+.product-price, 
+.service-price {
+    font-size: 1.25rem;
+    color: var(--primary-blue);
+}
 /* Estilos para móviles */
 @media (max-width: 992px) {
     .sidebar {
@@ -1514,4 +1539,222 @@ body.dark-mode .rounded .btn-outline-primary:hover {
     align-items: center;
     justify-content: center;
     font-size: 12px;
+}
+/* Estilo para el título "¿Qué ofrecemos?" */
+.offer-title {
+    font-size: 1.3rem;
+    background: white;
+    color: var(--primary-blue);
+    padding: 10px 25px;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Ajustes para el carrusel */
+#infoCarousel {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.carousel-content {
+    padding: 25px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--card-gradient);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Video container */
+.video-container {
+    padding: 15px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    border-radius: 16px;
+}
+
+/* Controles del carrusel */
+.carousel-control-prev, 
+.carousel-control-next {
+    width: 8%;
+}
+
+.carousel-control-prev {
+    left: -5%;
+}
+
+.carousel-control-next {
+    right: -5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    padding: 12px;
+    background-size: 60%;
+}
+
+/* Modo oscuro */
+body.dark-mode .offer-title {
+    background: var(--medium-gray);
+    color: var(--primary-blue-light);
+}
+
+body.dark-mode .video-container {
+    background: var(--medium-gray);
+}
+
+body.dark-mode .carousel-content {
+    background: var(--card-gradient);
+}
+    .stat-number-1 {
+        font-size: 1.7rem !important;
+        
+    }
+    .stat-number-1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: var(--button-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover .stat-number-1 {
+    transform: none;
+}
+#inicio-section .stat-number-1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: var(--button-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 5px;
+}
+/* Reemplaza los estilos existentes de .home-card con esto: */
+.home-card {
+    border-radius: 16px;
+    height: 100%;
+    padding: 25px;
+    background: var(--card-gradient);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--medium-gray);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.home-card:hover {
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
+    border-color: var(--primary-blue-light);
+    transform: translateY(-5px);
+}
+
+.home-card h3 {
+    font-family: 'Roboto', 'Poppins', sans-serif; /* o la que uses en el resto */
+    font-weight: 500; /* o 400 si lo quieres aún más ligero */
+    font-size: 1.25rem; /* tamaño moderado */
+    margin-bottom: 0.5rem; /* espacio uniforme */
+    color: inherit; /* mantiene el color estándar */
+}
+
+.stat-number,
+.stat-number-1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: var(--button-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    opacity: 0.8;
+    margin: 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+}
+
+.home-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Reemplaza los estilos del hero-buttons y btn-explore con estos: */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Espacio entre botones */
+    margin-top: 20px;
+}
+
+.btn-explore {
+    padding: 10px 15px; /* Altura fija, ancho flexible */
+    min-width: 160px; /* Ancho mínimo */
+    flex: 1 1 auto; /* Crece pero no demasiado */
+    max-width: 220px; /* Ancho máximo */
+    font-size: 0.9rem;
+    line-height: 1.3;
+    white-space: nowrap; /* Evita saltos de línea */
+    height: auto; /* Altura automática según contenido */
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+    .hero-buttons {
+        gap: 8px; /* Menor separación entre botones */
+        margin-top: 15px;
+    }
+    
+    .btn-explore {
+        min-width: 140px; /* Ancho mínimo más pequeño */
+        font-size: 0.85rem;
+        white-space: normal; /* Permite saltos de línea si es necesario */
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .hero-buttons {
+        gap: 6px; /* Separación mínima */
+    }
+    
+    .btn-explore {
+        min-width: 120px;
+        padding: 7px 10px;
+    }
+    .home-hero .btn {
+    margin-top: 12px;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(26, 86, 219, 0.4);}
 }
