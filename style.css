@@ -219,7 +219,7 @@ body {
 
 .home-hero {
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        linear-gradient(rgba(0, 0, 0, 0.123), rgba(0, 0, 0, 0.301)),
         url('img/mnh4.jpg') center center / cover no-repeat; /* Elimina 'fixed' */
     color: white;
     padding: 80px 30px;
@@ -1757,4 +1757,28 @@ body.dark-mode .carousel-content {
     color: white;
     text-decoration: none;
     box-shadow: 0 4px 15px rgba(26, 86, 219, 0.4);}
+}
+    .btn-explore {
+    background-color: #1a56db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 5px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-explore:hover {
+    background-color: #1542a0;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-explore i {
+    margin-right: 8px;
+    font-size: 1rem;
 }
