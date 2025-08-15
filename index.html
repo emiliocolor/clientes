@@ -850,6 +850,59 @@
 
                 </div>
             </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const courseSearch = document.getElementById('courseSearch');
+    const clearSearch = document.getElementById('clearSearch');
+    const searchResultsCount = document.getElementById('searchResultsCount');
+    const courseCards = document.querySelectorAll('#cursos-section .tool-card');
+    
+    // Función para normalizar texto (quitar acentos y poner en minúsculas)
+    const normalizeText = (text) => {
+        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    };
+    
+    // Función de búsqueda
+    const searchCourses = () => {
+        const searchTerm = normalizeText(courseSearch.value);
+        let visibleCount = 0;
+        
+        courseCards.forEach(card => {
+            const title = normalizeText(card.querySelector('h5').textContent);
+            const description = normalizeText(card.querySelector('p.small').textContent);
+            const category = normalizeText(card.querySelector('ul.small li:first-child').textContent);
+            
+            if (searchTerm === '' || 
+                title.includes(searchTerm) || 
+                description.includes(searchTerm) || 
+                category.includes(searchTerm)) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Actualizar contador de resultados
+        if (searchTerm === '') {
+            searchResultsCount.textContent = `Mostrando todos los ${visibleCount} cursos`;
+        } else {
+            searchResultsCount.textContent = `${visibleCount} cursos encontrados`;
+        }
+    };
+    
+    // Event listeners
+    courseSearch.addEventListener('input', searchCourses);
+    clearSearch.addEventListener('click', () => {
+        courseSearch.value = '';
+        searchCourses();
+        courseSearch.focus();
+    });
+    
+    // Inicializar contador
+    searchResultsCount.textContent = `Mostrando todos los ${courseCards.length} cursos`;
+});
+</script>
 <!-- Sección Cursos -->
 <div id="cursos-section" class="hidden-section">
     <div class="rounded-container mb-4">
@@ -857,11 +910,27 @@
         <div class="mb-5">
             <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Sección 1/3: Mega Packs</h2>
             <p class="mb-4">Paquetes de cursos profesionales a un precio accesible</p>
-
             <div class="alert alert-info small" role="alert">
                 Todos los paquetes incluyen acceso inmediato y material descargable.
             </div>
-
+<!-- barra de busqueda -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="search-container mb-4">
+            <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                <input type="text" id="courseSearch" class="form-control" placeholder="Buscar cursos... (por nombre, categoría o descripción)">
+<button class="btn btn-outline-secondary square-btn" type="button" id="clearSearch">Limpiar</button>
+            </div>
+            <div id="searchResultsCount" class="small text-muted mt-2"></div>
+        </div>
+    </div>
+</div>
+<style>
+    .square-btn {   
+    border-radius: 0 !important;
+}
+</style>
             <div class="row g-4">
  <!-- Curso 1 -->
             <div class="col-md-6">
@@ -3255,4 +3324,3 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
-
