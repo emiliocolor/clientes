@@ -3135,21 +3135,34 @@ const cart = {
         
         doc.setFontSize(14);
         doc.setTextColor(255, 0, 0);
-        doc.text('Instrucciones', 14, y);
+        doc.text('INSTRUCCIONES', 14, y);
         y += 8;
         
         doc.setFontSize(11);
         const instrucciones = [
-            'Por favor, envía este PDF al correo:',
-            'emiliocolormexico@gmail.com',
-            'Utiliza el botón "MANDAR PDF" en tu carrito',
+            'Por favor, ENVIAR ESTE PDF al medio de tu preferencia, JUNTO CON COMPROBANTE DE PAGO.',
+            'Correo: emiliocolormexico@gmail.com',
+            'Whatsapp 56-2537-7747:',
             'Nos pondremos en contacto contigo para finalizar tu pedido.'
         ];
         instrucciones.forEach(line => {
             doc.text(line, 14, y);
             y += 6;
         });
-        
+// Después de las instrucciones
+y += 8; // un poquito más separado que antes
+
+doc.setFontSize(18); // texto más grande
+doc.setTextColor(0, 128, 0); // verde
+doc.text(
+    'Datos de depósito en tarjeta de crédito:', 
+    105, 
+    y, // posición vertical ajustada
+    { align: 'center' }
+);
+
+
+
         doc.save(`EmilioColor_Compra_${date.getTime()}.pdf`);
     },
     showNotification: function(message) {
