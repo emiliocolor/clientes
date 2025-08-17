@@ -593,19 +593,60 @@
                                 Se pueden otorgar apoyos en vales de descuento y productos.
                             </li>
                         </ul>
-                        <div class="row mt-4">
-                            <p class="mb-3">Completa el siguiente formulario para unirte a nuestro equipo:</p>
-
-                            <div class="col-lg-8 mx-auto">
-                                <div class="card border-primary">
-                                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf4ef4bv_0pDb8frp7Sa9gSx3FDBstCl_imV5lpYGPU_mO6zA/viewform?embedded=true" width="640" height="2700" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-                                </div>
-                            </div>
-                        </div>
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card border-primary">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Formulario de Colaboración</h5>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4ef4bv_0pDb8frp7Sa9gSx3FDBstCl_imV5lpYGPU_mO6zA/viewform" 
+                   target="_blank" 
+                   class="btn btn-sm btn-light">
+                    <i class="fas fa-external-link-alt me-1"></i> Abrir completo
+                </a>
+            </div>
+            <div class="card-body p-0">
+                <div class="responsive-form-container">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf4ef4bv_0pDb8frp7Sa9gSx3FDBstCl_imV5lpYGPU_mO6zA/viewform?embedded=true" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0"
+                            class="responsive-form-iframe">Cargando…</iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                     </div>
                 </div>
             </div>
+<style>/* Estilos para el formulario responsive */
+.responsive-form-container {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
 
+.responsive-form-iframe {
+    width: 100%;
+    min-height: 500px;
+    border: none;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .responsive-form-container {
+        height: auto;
+        max-height: 70vh;
+        overflow-y: auto; 
+    }
+    
+    .responsive-form-iframe {
+        min-width: 768px; 
+        min-height: 800px;
+    }
+}</style>
             <!-- Sección de Desarrolladores -->
             <div id="desarrolladores-section" class="hidden-section">
                 <div class="card">
