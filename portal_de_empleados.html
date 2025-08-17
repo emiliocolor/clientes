@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmilioColor® - Equipo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/jpeg" href="https://github.com/emiliocolor/mx/raw/2683006dbbc92ea02006bdc335a34042a0686bc5/img/soporte%20tecnico.jpg">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+            --primary-color: #1a56db;
+            --primary-light: #3b82f6;
+            --primary-dark: #93c5fd;
+            --secondary-color: #1d4ed8;
+            --accent-color: #448aff;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #212121;
+            --text-dark: #424242;
+            --text-light: #f5f5f5;
+            --sidebar-bg: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            --sidebar-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(235, 245, 255, 0.95) 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+        }
+
+        .sidebar {
+            background: var(--sidebar-bg);
+            color: white;
+        }
+
+        .sidebar-nav-link:hover, 
+        .sidebar-nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--button-gradient);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--button-hover-gradient);
+        }
+
+        .tool-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .home-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 30px !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .stat-number {
+            background: var(--button-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .reminder-bubble {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-dark);
+        }
+        
+        .shortcut-item {
+            transition: all 0.2s;
+        }
+        
+        .shortcut-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .shortcut-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        #settingsBtn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #shortcutsContainer {
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Modal para editar nombre -->
+    <div class="modal fade" id="nameModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar tu nombre</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="userNameInput" class="form-label">Tu nombre:</label>
+                        <input type="text" class="form-control" id="userNameInput">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="saveNameBtn">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <p style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.2rem; text-align: center;">
+                    <i class="fas fa-user-tie" style="display: block; font-size: 2rem; margin-bottom: 0.2rem;"></i>
+                    Equipo
+                </p>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">EmilioColor®</p>
+                <h4 id="userWelcome" style="display: none;">Equipo - EmilioColor®</h4>
+                <button class="btn btn-sm btn-outline-light mt-2" id="editNameBtn">
+                    <i class="fas fa-user-edit me-1"></i> Editar nombre
+                </button>
+            </div>
+            
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item">
+                    <a href="#inicio" class="sidebar-nav-link active" data-section="inicio">
+                        <i class="fas fa-home"></i> Inicio
+                    </a>
+                </li>
+                                <li class="sidebar-nav-item">
+                    <a href="#desarrolladores" class="sidebar-nav-link" data-section="desarrolladores">
+                        <i class="fas fa-code"></i> Desarrolladores
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#herramientas" class="sidebar-nav-link" data-section="herramientas">
+                        <i class="fas fa-tools"></i> Herramientas de Soporte
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#estudio" class="sidebar-nav-link" data-section="estudio">
+                        <i class="fas fa-briefcase"></i> Estudio de Trabajo
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#trabajo" class="sidebar-nav-link" data-section="trabajo">
+                        <i class="fas fa-handshake"></i> Únete a nuestro equipo
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="https://classcloud.emiliocolor.com/login.html" target="_blank" class="sidebar-nav-link">
+                        <i class="fas fa-medal"></i> Capacitaciones
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div id="inicio-section" class="active-section">
+                <div class="home-hero text-white text-center py-5 mb-4 rounded">
+                    <h1 id="welcomeTitle">Bienvenido al Portal del Equipo</h1>
+                    <p id="welcomeMessage" class="lead">Accede a todas las herramientas y recursos para tu trabajo</p>
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col-md-4 mb-3">
+                        <div class="card home-card h-100">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Herramientas Disponibles</h3>
+                                <div class="stat-number display-4">+30</div>
+                                <p class="stat-label">Plataformas y recursos para tu trabajo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card home-card h-100">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Capacitaciones</h3>
+                                <div class="stat-number display-4">+15,000</div>
+                                <p class="stat-label">En multiples áreas de trabajo diferentes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card home-card h-100">
+                            <div class="card-body text-center">
+                                <h3 class="card-title">Oportunidades</h3>
+                                <div class="stat-number display-4">+6</div>
+                                <p class="stat-label">Posiciones disponibles en diferentes áreas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="section-title card-title">Notas Personales</h3>
+                                <p class="card-text">Guarda tus notas personales aquí. Se guardarán automáticamente en tu navegador.</p>
+                                <textarea class="form-control notes-textarea mb-3" id="personalNotes" placeholder="Escribe tus notas aquí..."></textarea>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary" id="saveNotesBtn">
+                                        Guardar Notas
+                                    </button>
+                                    <button class="btn btn-warning text-white" id="openKeepBtn">
+                                        <i class="fas fa-external-link-alt me-1"></i> Acceder a Notas Keep
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h3 class="section-title card-title mb-0">Accesos Directos</h3>
+                                    <button class="btn btn-sm btn-outline-primary" id="configureShortcutsBtn">
+                                        <i class="fas fa-cog"></i> Configurar
+                                    </button>
+                                </div>
+                                <div id="shortcutsContainer" class="row g-2">
+                                    <!-- Accesos directos se cargarán aquí dinámicamente -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de Herramientas de Soporte -->
+            <div id="herramientas-section" class="hidden-section">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="section-title card-title"><i class="fas fa-tools me-2"></i> Herramientas de Soporte</h2>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    <input type="text" class="form-control" placeholder="Buscar herramientas...">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <!-- Herramientas de IA -->
+                            <div class="col-md-4 col-lg-3" data-category="ia">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-robot fa-3x mb-3 text-primary"></i>
+                                        <h5>DeepSeek</h5>
+                                        <p class="small">Plataforma avanzada de inteligencia artificial.</p>
+                                        <a href="https://chat.deepseek.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3" data-category="ia">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
+                                        <h5>ChatGPT</h5>
+                                        <p class="small">Asistente de IA para generación de texto.</p>
+                                        <a href="https://chat.openai.com" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3" data-category="ia">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-gem fa-3x mb-3 text-primary"></i>
+                                        <h5>Gemini AI</h5>
+                                        <p class="small">Modelo avanzado de IA de Google.</p>
+                                        <a href="https://gemini.google.com" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- GitHub Logo -->
+                            <div class="col-md-4 col-lg-3" data-category="utilidad">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fab fa-github fa-3x mb-3 text-primary"></i>
+                                        <h5>GitHub to RAW</h5>
+                                        <p class="small">Convertidor de GitHub a RAW.</p>
+                                        <a href="https://emiliocolor.com/github_a_raw" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dog Logo -->
+                            <div class="col-md-4 col-lg-3" data-category="utilidad">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-dog fa-3x mb-3 text-primary"></i>
+                                        <h5>Dog Backgrounds</h5>
+                                        <p class="small">Selector de imágenes de perros.</p>
+                                        <a href="https://emiliocolor.com/selector_de_fondos" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Herramientas de diseño -->
+                            <div class="col-md-4 col-lg-3" data-category="diseno">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-palette fa-3x mb-3 text-primary"></i>
+                                        <h5>Canva</h5>
+                                        <p class="small">Herramienta de diseño gráfico.</p>
+                                        <a href="https://www.canva.com" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3" data-category="diseno">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-images fa-3x mb-3 text-primary"></i>
+                                        <h5>Remove.bg</h5>
+                                        <p class="small">Elimina el fondo de imágenes.</p>
+                                        <a href="https://www.remove.bg/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-3" data-category="recursos">
+    <div class="card h-100 tool-card">
+        <div class="card-body text-center">
+            <i class="fas fa-image fa-3x mb-3 text-primary"></i>
+            <h5>Pixabay</h5>
+            <p class="small">Imágenes y videos de alta calidad.</p>
+            <a href="https://pixabay.com/es/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-lg-3" data-category="recursos">
+    <div class="card h-100 tool-card">
+        <div class="card-body text-center">
+            <i class="fas fa-photo-video fa-3x mb-3 text-primary"></i>
+            <h5>Pexels</h5>
+            <p class="small">Imágenes y videos libres de derechos.</p>
+            <a href="https://www.pexels.com/es-es/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-lg-3" data-category="recursos">
+    <div class="card h-100 tool-card">
+        <div class="card-body text-center">
+            <i class="fas fa-icons fa-3x mb-3 text-primary"></i>
+            <h5>W3Schools Icons</h5>
+            <p class="small">Referencia de íconos Font Awesome.</p>
+            <a href="https://www.w3schools.com/icons/icons_reference.asp" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+        </div>
+    </div>
+</div>
+
+                            
+                            <!-- Herramientas de productividad -->
+                            <div class="col-md-4 col-lg-3" data-category="productividad">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-file-pdf fa-3x mb-3 text-primary"></i>
+                                        <h5>iLovePDF</h5>
+                                        <p class="small">Herramientas para archivos PDF.</p>
+                                        <a href="https://www.ilovepdf.com/es" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3" data-category="productividad">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-file-audio fa-3x mb-3 text-primary"></i>
+                                        <h5>123 Apps</h5>
+                                        <p class="small">Herramientas para audio y video.</p>
+                                        <a href="https://123apps.com/es/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de Estudio de Trabajo -->
+            <div id="estudio-section" class="hidden-section">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="section-title card-title"><i class="fas fa-briefcase me-2"></i> Estudio de Trabajo</h2>
+                        <p class="card-text">Accede a todas las herramientas de Google Workspace para tu trabajo diario.</p>
+                        
+                        <div class="row g-4 mt-3">
+                            <!-- Herramientas de Google Workspace -->
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
+                                        <h5>Gmail</h5>
+                                        <p class="small">Correo electrónico profesional.</p>
+                                        <a href="https://mail.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fab fa-google-drive fa-3x mb-3 text-primary"></i>
+                                        <h5>Drive</h5>
+                                        <p class="small">Almacenamiento en la nube.</p>
+                                        <a href="https://drive.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-file-word fa-3x mb-3 text-primary"></i>
+                                        <h5>Docs</h5>
+                                        <p class="small">Procesador de textos en línea.</p>
+                                        <a href="https://docs.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-file-excel fa-3x mb-3 text-primary"></i>
+                                        <h5>Sheets</h5>
+                                        <p class="small">Hojas de cálculo en línea.</p>
+                                        <a href="https://sheets.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-file-powerpoint fa-3x mb-3 text-primary"></i>
+                                        <h5>Slides</h5>
+                                        <p class="small">Presentaciones profesionales.</p>
+                                        <a href="https://slides.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-poll fa-3x mb-3 text-primary"></i>
+                                        <h5>Forms</h5>
+                                        <p class="small">Crea encuestas y formularios.</p>
+                                        <a href="https://forms.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-video fa-3x mb-3 text-primary"></i>
+                                        <h5>Meet</h5>
+                                        <p class="small">Videoconferencias y reuniones.</p>
+                                        <a href="https://meet.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-calendar-alt fa-3x mb-3 text-primary"></i>
+                                        <h5>Calendar</h5>
+                                        <p class="small">Organiza tu agenda.</p>
+                                        <a href="https://calendar.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-chalkboard-teacher fa-3x mb-3 text-primary"></i>
+                                        <h5>Classroom</h5>
+                                        <p class="small">Plataforma educativa.</p>
+                                        <a href="https://classroom.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-map-marked-alt fa-3x mb-3 text-primary"></i>
+                                        <h5>Maps</h5>
+                                        <p class="small">Plataforma de mapas.</p>
+                                        <a href="https://maps.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-photo-video fa-3x mb-3 text-primary"></i>
+                                        <h5>Photos</h5>
+                                        <p class="small">Almacenamiento de fotos.</p>
+                                        <a href="https://photos.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-lg-3">
+                                <div class="card h-100 tool-card">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-address-book fa-3x mb-3 text-primary"></i>
+                                        <h5>Contacts</h5>
+                                        <p class="small">Administrador de contactos.</p>
+                                        <a href="https://contacts.google.com/" target="_blank" class="btn btn-sm btn-primary">Acceder</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de Colabora con Nosotros -->
+            <div id="trabajo-section" class="hidden-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-title card-title">
+                            <i class="fas fa-handshake me-2"></i>Colabora con Nosotros
+                        </h2>
+                        <p class="card-text">
+                            ¿Te gustaría colaborar en nuestros proyectos? Tenemos diferentes modalidades de participación. 
+                            No se trata de una relación laboral, sino de espacios de colaboración con beneficios formativos, comunitarios o comerciales.
+                        </p>
+                        <h4 class="text-center mb-4">Modalidades de Colaboración</h4>
+
+                        <ul class="list-group mb-4">
+                            <li class="list-group-item">
+                                <strong>👩‍🎓 Embajador/a de Marca:</strong> 
+                                Promueve y vende todo lo relacionado a <strong>EmilioColor</strong>. 
+                                Genera un <u>20% de comisión por cada producto vendido</u>.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>🔗 Afiliado/a:</strong> 
+                                Su colaboración dependerá de la <strong>submarca de EmilioColor</strong> a la que esté afiliado/a. 
+                                Genera un <u>20% de comisión por cada producto vendido</u>.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>🤝 Colaborador/a:</strong> 
+                                Participa en proyectos y apoya en tareas específicas. 
+                                Se pueden otorgar apoyos en vales de descuento y productos.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>💙 Voluntario/a:</strong> 
+                                Contribuye en iniciativas sociales o comunitarias. 
+                                Se pueden otorgar apoyos en vales de descuento y productos.
+                            </li>
+                        </ul>
+                        <div class="row mt-4">
+                            <p class="mb-3">Completa el siguiente formulario para unirte a nuestro equipo:</p>
+
+                            <div class="col-lg-8 mx-auto">
+                                <div class="card border-primary">
+                                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf4ef4bv_0pDb8frp7Sa9gSx3FDBstCl_imV5lpYGPU_mO6zA/viewform?embedded=true" width="640" height="2700" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Desarrolladores -->
+            <div id="desarrolladores-section" class="hidden-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-title card-title"><i class="fas fa-code me-2"></i> Desarrolladores</h2>
+                        <p class="card-text">Accede a recursos útiles para el desarrollo y diseño en Emiversal Database.</p>
+                        
+                        <div class="row mt-4 g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Manual de Identidad Gráfica</h4>
+                                        <p class="card-text">Documentación completa sobre la identidad visual de la marca.</p>
+                                        <div class="d-grid gap-2">
+                                            <a href="#" target="_blank" class="btn btn-primary">
+                                                <i class="fas fa-book me-2"></i> Ver Manual
+                                            </a>
+                                            <a href="#" target="_blank" class="btn btn-primary">
+                                                <i class="fas fa-file-pdf me-2"></i> Descargar PDF
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Recursos y Logos Oficiales</h4>
+                                        <p class="card-text">Enlaces con logos para desarrollo web.</p>
+  <div class="copy-container">
+    <p id="text1">EMIVERSAL DATABASE℠</p>
+    <button onclick="copiarTexto('text1')">Copiar</button>
+  </div>
+
+  <div class="copy-container">
+    <p id="text2">EmilioColor®</p>
+    <button onclick="copiarTexto('text2')">Copiar</button>
+  </div>
+
+  <div class="copy-container">
+    <p id="text3">ClassCloud℠</p>
+    <button onclick="copiarTexto('text3')">Copiar</button>
+  </div>
+
+  <script>
+    function copiarTexto(id) {
+      const texto = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        alert("Texto copiado: " + texto);
+      });
+    }
+  </script>
+    <style>
+    .copy-container {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 400px;
+    }
+    button {
+      padding: 6px 12px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+                                        <div class="d-grid gap-2">
+                                            <a href="https://docs.google.com/document/d/1tAEnFsZk-LJmkgihKKSs8YiER2o0qC8n1EhhvQbAM04/edit?usp=sharing" target="_blank" class="btn btn-primary">
+                                                <i class="fas fa-file-code me-2"></i>Abrir Documento
+                                            </a>
+                                           <!-- <a href="#" target="_blank" class="btn btn-primary">
+                                                <i class="fas fa-puzzle-piece me-2"></i> Componentes UI
+                                            </a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Documentación Técnica</h4>
+                                        <p class="card-text">Guías y documentación para desarrolladores.</p>
+                                        <div class="d-grid gap-2">
+                                            <a href="#" target="_blank" class="btn btn-primary">
+                                                <i class="fas fa-file-alt me-2"></i> Wiki del Proyecto
+                                            </a>
+                                            <a href="#" target="_blank" class="btn btn-primary">
+                                                <i class="fas fa-code-branch me-2"></i> Documentación API
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Recursos Multimedia</h4>
+                                        <p class="card-text">Assets gráficos y multimedia para proyectos.</p>
+                                        <div class="d-grid gap-2">
+                                            <a href="#" target="_blank" class="btn btn-primary">
+                                                <i class="fas fa-images me-2"></i> Imágenes
+                                            </a>
+                                            <a href="#" target="_blank" class="btn btn-primary">
+                                                <i class="fas fa-icons me-2"></i> Iconos y SVG
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mt-4">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">Contacto para Desarrolladores</h4>
+                                <p>¿Necesitas ayuda con algún recurso o tienes sugerencias?</p>
+                                <a href="https://emiliocolor.com/#contacto" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-envelope me-2"></i> Contactar al Equipo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de configuración -->
+    <div class="position-fixed bottom-0 end-0 m-3">
+        <button class="btn btn-primary rounded-circle" id="settingsBtn">
+            <i class="fas fa-cog"></i>
+        </button>
+    </div>
+    
+    <!-- Modal de configuración -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-cog me-2"></i> Configuración</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="mb-3"><i class="fas fa-rocket me-2"></i> Accesos Directos</h4>
+                    <p class="text-muted mb-4">Selecciona las herramientas que quieres tener como accesos directos en tu panel principal.</p>
+                    
+                    <div class="row" id="shortcuts-selection-container">
+                        <!-- Las herramientas se cargarán aquí dinámicamente -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="saveShortcutsBtn">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-4">
+        <div class="container text-center">
+            <img src="https://github.com/emiliocolor/mx/raw/2683006dbbc92ea02006bdc335a34042a0686bc5/img/emiliocolor_2-removebg-preview.png" alt="EmilioColor Logo" height="30" class="mb-3">
+            <p class="mb-0">© 2025 EmilioColor® - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuración inicial
+            const nameModal = new bootstrap.Modal(document.getElementById('nameModal'));
+            const settingsModal = new bootstrap.Modal(document.getElementById('settingsModal'));
+            
+            // Datos de herramientas disponibles
+            const toolsData = [
+                { name: 'Gmail', icon: 'fas fa-envelope', url: 'https://mail.google.com/', category: 'google' },
+                { name: 'Drive', icon: 'fab fa-google-drive', url: 'https://drive.google.com/', category: 'google' },
+                { name: 'Docs', icon: 'fas fa-file-word', url: 'https://docs.google.com/', category: 'google' },
+                { name: 'Sheets', icon: 'fas fa-file-excel', url: 'https://sheets.google.com/', category: 'google' },
+                { name: 'Slides', icon: 'fas fa-file-powerpoint', url: 'https://slides.google.com/', category: 'google' },
+                { name: 'Forms', icon: 'fas fa-poll', url: 'https://forms.google.com/', category: 'google' },
+                { name: 'Meet', icon: 'fas fa-video', url: 'https://meet.google.com/', category: 'google' },
+                { name: 'Calendar', icon: 'fas fa-calendar-alt', url: 'https://calendar.google.com/', category: 'google' },
+                { name: 'Classroom', icon: 'fas fa-chalkboard-teacher', url: 'https://classroom.google.com/', category: 'google' },
+                { name: 'Maps', icon: 'fas fa-map-marked-alt', url: 'https://maps.google.com/', category: 'google' },
+                { name: 'Photos', icon: 'fas fa-photo-video', url: 'https://photos.google.com/', category: 'google' },
+                { name: 'Contacts', icon: 'fas fa-address-book', url: 'https://contacts.google.com/', category: 'google' },
+                { name: 'DeepSeek', icon: 'fas fa-robot', url: 'https://chat.deepseek.com/', category: 'ia' },
+                { name: 'ChatGPT', icon: 'fas fa-brain', url: 'https://chat.openai.com', category: 'ia' },
+                { name: 'Gemini AI', icon: 'fas fa-gem', url: 'https://gemini.google.com', category: 'ia' },
+                { name: 'Canva', icon: 'fab fa-canva', url: 'https://www.canva.com', category: 'diseno' },
+                { name: 'Remove.bg', icon: 'fas fa-images', url: 'https://www.remove.bg/', category: 'diseno' },
+                { name: 'iLovePDF', icon: 'fas fa-file-pdf', url: 'https://www.ilovepdf.com/es', category: 'productividad' },
+                { name: '123 Apps', icon: 'fas fa-file-audio', url: 'https://123apps.com/es/', category: 'productividad' },
+                { name: 'GitHub to RAW', icon: 'fab fa-github', url: 'https://emiliocolor.com/github_a_raw', category: 'utilidad' },
+                { name: 'Pixabay', icon: 'fas fa-image', url: 'https://pixabay.com/es/', category: 'recursos' },
+{ name: 'Pexels', icon: 'fas fa-photo-video', url: 'https://www.pexels.com/es-es/', category: 'recursos' },
+{ name: 'W3Schools Icons', icon: 'fas fa-icons', url: 'https://www.w3schools.com/icons/icons_reference.asp', category: 'recursos' },
+                { name: 'Dog backgrounds', icon: 'fas fa-dog', url: 'https://emiliocolor.com/selector_de_fondos', category: 'utilidad' }
+            ];
+            
+            // Función para actualizar el nombre de usuario
+            function updateUserName() {
+                const savedName = localStorage.getItem('userName') || 'Usuario';
+                document.getElementById('userWelcome').textContent = `Bienvenido, ${savedName}`;
+                document.getElementById('welcomeTitle').textContent = `Bienvenido, ${savedName}`;
+                document.getElementById('welcomeMessage').textContent = `Accede a todas las herramientas y recursos para tu trabajo en EmilioColor®.`;
+            }
+            
+            // Inicializar nombre de usuario
+            updateUserName();
+            
+            // Botón para editar nombre
+            document.getElementById('editNameBtn').addEventListener('click', function() {
+                const currentName = localStorage.getItem('userName') || '';
+                document.getElementById('userNameInput').value = currentName;
+                nameModal.show();
+            });
+            
+            // Guardar nombre
+            document.getElementById('saveNameBtn').addEventListener('click', function() {
+                const newName = document.getElementById('userNameInput').value.trim();
+                if (newName) {
+                    localStorage.setItem('userName', newName);
+                    updateUserName();
+                    nameModal.hide();
+                    showNotification('Nombre actualizado correctamente');
+                }
+            });
+            
+            // Botón de configuración
+            document.getElementById('settingsBtn').addEventListener('click', function() {
+                loadShortcutsSelection();
+                settingsModal.show();
+            });
+            
+            // Botón para abrir Google Keep
+            document.getElementById('openKeepBtn').addEventListener('click', function() {
+                window.open('https://keep.google.com/', '_blank');
+            });
+            
+            // Botón para configurar accesos directos
+            document.getElementById('configureShortcutsBtn').addEventListener('click', function() {
+                settingsModal.show();
+            });
+            
+            // Navegación entre secciones
+            const navLinks = document.querySelectorAll('.sidebar-nav-link');
+            const sections = document.querySelectorAll('[id$="-section"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Evitar comportamiento predeterminado para enlaces internos
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                    }
+                    
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const sectionId = this.getAttribute('data-section') + '-section';
+                    sections.forEach(section => {
+                        section.classList.remove('active-section');
+                        section.classList.add('hidden-section');
+                    });
+                    
+                    if (sectionId) {
+                        document.getElementById(sectionId).classList.remove('hidden-section');
+                        document.getElementById(sectionId).classList.add('active-section');
+                    }
+                    
+                    // Cerrar sidebar en móviles
+                    if (window.innerWidth < 992) {
+                        document.getElementById('sidebar').classList.remove('show');
+                    }
+                });
+            });
+            
+            // Función para mostrar notificaciones
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'position-fixed bottom-0 end-0 m-3 alert alert-success';
+                notification.style.zIndex = '1100';
+                notification.innerHTML = `
+                    <i class="fas fa-check-circle me-2"></i> ${message}
+                `;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            }
+            
+            // Toggle sidebar en móviles
+            document.getElementById('toggleSidebar').addEventListener('click', function() {
+                document.getElementById('sidebar').classList.toggle('show');
+            });
+            
+            // Guardar notas personales
+            document.getElementById('saveNotesBtn').addEventListener('click', function() {
+                const notes = document.getElementById('personalNotes').value;
+                localStorage.setItem('personalNotes', notes);
+                showNotification('Notas guardadas correctamente');
+            });
+            
+            // Cargar notas guardadas
+            const savedNotes = localStorage.getItem('personalNotes');
+            if (savedNotes) {
+                document.getElementById('personalNotes').value = savedNotes;
+            }
+            
+            // Cargar accesos directos guardados
+            function loadSavedShortcuts() {
+                const savedShortcuts = JSON.parse(localStorage.getItem('userShortcuts')) || [];
+                const container = document.getElementById('shortcutsContainer');
+                container.innerHTML = '';
+                
+                if (savedShortcuts.length === 0) {
+                    container.innerHTML = `
+                        <div class="col-12 text-center py-4 text-muted">
+                            <i class="fas fa-rocket fa-2x mb-2"></i>
+                            <p>No tienes accesos directos configurados</p>
+                            <button class="btn btn-sm btn-primary" id="configureShortcutsBtn">
+                                <i class="fas fa-cog me-1"></i> Configurar ahora
+                            </button>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                savedShortcuts.forEach(toolName => {
+                    const tool = toolsData.find(t => t.name === toolName);
+                    if (tool) {
+                        const col = document.createElement('div');
+                        col.className = 'col-6 col-md-4 col-lg-3';
+                        col.innerHTML = `
+                            <div class="card shortcut-item h-100">
+                                <a href="${tool.url}" target="_blank" class="text-decoration-none text-dark">
+                                    <div class="card-body text-center">
+                                        <i class="${tool.icon} shortcut-icon text-primary"></i>
+                                        <h6 class="card-title mb-0">${tool.name}</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        `;
+                        container.appendChild(col);
+                    }
+                });
+            }
+            
+            // Cargar selección de accesos directos en el modal
+            function loadShortcutsSelection() {
+                const container = document.getElementById('shortcuts-selection-container');
+                container.innerHTML = '';
+                
+                const savedShortcuts = JSON.parse(localStorage.getItem('userShortcuts')) || [];
+                
+                toolsData.forEach(tool => {
+                    const col = document.createElement('div');
+                    col.className = 'col-md-6 col-lg-4 mb-3';
+                    col.innerHTML = `
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" 
+                                           id="shortcut-${tool.name.replace(/\s+/g, '-').toLowerCase()}" 
+                                           value="${tool.name}" ${savedShortcuts.includes(tool.name) ? 'checked' : ''}>
+                                    <label class="form-check-label d-flex align-items-center" 
+                                           for="shortcut-${tool.name.replace(/\s+/g, '-').toLowerCase()}">
+                                        <i class="${tool.icon} me-2"></i> ${tool.name}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(col);
+                });
+            }
+            
+            // Guardar accesos directos seleccionados
+            document.getElementById('saveShortcutsBtn').addEventListener('click', function() {
+                const selectedShortcuts = [];
+                document.querySelectorAll('#shortcuts-selection-container input[type="checkbox"]:checked').forEach(checkbox => {
+                    selectedShortcuts.push(checkbox.value);
+                });
+                
+                localStorage.setItem('userShortcuts', JSON.stringify(selectedShortcuts));
+                settingsModal.hide();
+                showNotification('Accesos directos actualizados');
+                loadSavedShortcuts();
+            });
+            
+            // Inicializar los accesos directos
+            loadSavedShortcuts();
+        });
+    </script>
+</body>
+</html>
