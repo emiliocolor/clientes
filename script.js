@@ -313,7 +313,7 @@ function loadCursosContentDirectly() {
 
             <div class="mt-4 mb-3">
                 <audio controls>
-                    <source src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/f83684352a059772f1c64a3d094d4a61ac0cf06a/cursos_audio.mp3" type="audio/mpeg">
+                    <source src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/cursos_audio.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
                 </audio>
             </div>
@@ -344,7 +344,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 1" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 1" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -370,7 +370,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 2" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 2" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -396,7 +396,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 3" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 3" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -422,7 +422,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 4" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 4" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -448,7 +448,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 1" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 1" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -474,7 +474,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 2" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 2" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -500,7 +500,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 3" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 3" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -526,7 +526,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 1" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 1" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -552,7 +552,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 2" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 2" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -578,7 +578,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 3" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 3" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -604,7 +604,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Diseño Gráfico" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Diseño Gráfico" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -630,7 +630,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Esquemático de Celulares" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Esquemático de Celulares" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -656,7 +656,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Mind Valley 1" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -682,7 +682,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Mind Valley 2" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -708,7 +708,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Reparación de Celulares" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -734,7 +734,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Variados 1" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -760,7 +760,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Variados 2" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -786,7 +786,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/ab0db694fbc973450e9a140562952459da817dc0/megapacks_emiliocolor.png" alt="Mega Pack Cursos Variados 3" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -817,7 +817,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/2fb53a48907c05a0455f93d786085a499249f7e0/packs_azul_emiliocolor.png" alt="Curso Arduino" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -842,7 +842,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/2fb53a48907c05a0455f93d786085a499249f7e0/packs_azul_emiliocolor.png" alt="Curso Arduino y Microcontrolador PIC" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -868,7 +868,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/2fb53a48907c05a0455f93d786085a499249f7e0/packs_azul_emiliocolor.png" alt="Curso Arduino Interactivo" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -894,7 +894,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/2fb53a48907c05a0455f93d786085a499249f7e0/packs_azul_emiliocolor.png" alt="Curso Robótica con MATLAB y Arduino" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -920,7 +920,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/2fb53a48907c05a0455f93d786085a499249f7e0/packs_azul_emiliocolor.png" alt="Curso Robótica y Hardware" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -946,7 +946,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/2fb53a48907c05a0455f93d786085a499249f7e0/packs_azul_emiliocolor.png" alt="Curso Sistemas Técnicos en la Edificación" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -972,7 +972,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/2fb53a48907c05a0455f93d786085a499249f7e0/packs_azul_emiliocolor.png" alt="Curso Domótica" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -998,7 +998,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/2fb53a48907c05a0455f93d786085a499249f7e0/packs_azul_emiliocolor.png" alt="Curso Electrónica Desde Cero" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1024,7 +1024,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/2fb53a48907c05a0455f93d786085a499249f7e0/packs_azul_emiliocolor.png" alt="Curso Electrónica, Robótica, Domótica" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1050,7 +1050,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Programación explicada paso a paso" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1076,7 +1076,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Curso principal: Guía para tus primeros pasos" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1102,7 +1102,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Fundamentos de Windows 10" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1128,7 +1128,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Aprende desde cero absoluto hasta trainee" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1154,7 +1154,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Curso de accesibilidad web" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1180,7 +1180,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Diseño responsivo con cajas flexibles" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1206,7 +1206,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="PrimeFaces y Spring Boot" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1232,7 +1232,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Curso de diseño web con Bootstrap" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1258,7 +1258,7 @@ function loadCursosContentDirectly() {
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Crea aplicaciones iOS y Android con Angular" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -1284,7 +1284,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Aprende 5 lenguajes de programación desde cero" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1310,7 +1310,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Comienza a programar en Python desde cero" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1336,7 +1336,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Java SE: Taller de programación" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1362,7 +1362,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Colección de libros esenciales de programación" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1388,7 +1388,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Proceso CRUD con C# y Oracle Database" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1414,7 +1414,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Proceso CRUD con C# y PostgreSQL" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1440,7 +1440,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Proceso CRUD con C# y Visual FoxPro" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1466,7 +1466,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Visual FoxPro - Clases visuales" class="img-fluid rounded mb-2">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_emiliocolor.png" alt="Programación" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1492,7 +1492,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Curso completo de SolidWorks" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1518,7 +1518,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Curso completo de AutoCAD" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1544,7 +1544,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Especialización en AutoCAD Electrical" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1570,7 +1570,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Minitab para control de calidad" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1596,7 +1596,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Control de motores con variadores de frecuencia" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1622,7 +1622,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Fundamentos de mecánica industrial" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1648,7 +1648,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Programación de PLCs industriales" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1674,7 +1674,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Programación CNC avanzada" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1700,7 +1700,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Biblioteca de ingeniería" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1726,7 +1726,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Core Tools para gestión de calidad" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
@@ -1752,7 +1752,7 @@ function loadCursosContentDirectly() {
         <div class="row g-3">
             <div class="col-md-4">
                 <div class="product-images">
-                    <img src="https://raw.githubusercontent.com/emiliocolor/imagenes-repo/1ae349410f7edc2ee42038da7b542314d23257a6/packs_emiliocolor.png" alt="Técnicas de balanceo de líneas de producción" class="img-fluid rounded mb-2">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/packs_azul_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
                 </div>
             </div>
             <div class="col-md-8">
