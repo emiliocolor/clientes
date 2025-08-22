@@ -110,7 +110,7 @@
 
         <!-- Qué ofrecemos -->
 <li class="sidebar-nav-item">
-    <a href="https://transportes.emiliocolor.com" class="sidebar-nav-link" target="_blank">
+    <a href="#transportes" class="sidebar-nav-link" data-section="transportes">
         <i class="fas fa-truck"></i> Transportes
     </a>
 </li>
@@ -804,7 +804,7 @@
                 <div class="service-body mt-3">
                     <ul class="small">
                         <li>Registro e inicio de sesión de usuarios</li>
-                        <li>Recuperación de contraseña</li>
+                        <li>Anidación con página extra</li>
                     </ul>
                 </div>
                 <div class="d-flex gap-2 mt-3">
@@ -858,6 +858,28 @@
                 </div>
             </div>
         </div>
+<!-- Extra 11: Generación de PDFs -->
+<div class="col-md-6">
+    <div class="card tool-card p-3 h-100">
+        <div class="service-header">
+            <h5>Generación de PDFs dentro de la Página</h5>
+            <p class="small text-muted">Exportar información en formato PDF sin depender de software externo</p>
+            <p class="service-price fw-bold">$350 MXN</p>
+        </div>
+        <div class="service-body mt-3">
+            <ul class="small">
+                <li>Descarga directa de reportes en PDF</li>
+                <li>Diseños personalizados con HTML y CSS</li>
+                <li>Integración con librerías como jsPDF</li>
+            </ul>
+        </div>
+        <div class="d-flex gap-2 mt-3">
+            <a href="mailto:emiliocolormexico@gmail.com?subject=Generación de PDFs en la página" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Generación%20de%20PDFs%20(350.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+            <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="19" data-name="Generación de PDFs dentro de la página" data-price="350.00">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
 
     </div>
 </div>
@@ -888,13 +910,577 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 </style>
+
+<!-- Sección Transportes -->
+<div id="transportes-section" class="hidden-section">
+    <!-- Hero con video -->
+    <div class="home-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('img_transportes/banner_transportes.jpg') center center / cover no-repeat;">
+        <div class="hero-content">
+            <h1>Camionetas seminuevas listas para trabajar</h1>
+            <p>La Mejor Calidad al Mejor Precio</p>
+            <div class="hero-buttons">
+                <a href="#vehiculos" class="btn btn-explore">Ver Vehículos</a>
+                <a href="#nosotros-transportes" class="btn btn-explore">Nuestra Historia</a>
+                <a href="#contacto-transportes" class="btn btn-explore">Contacto</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="rounded-container mb-4">
+        <h2 class="section-title"><i class="fas fa-truck"></i> Nuestros Vehículos</h2>
+        <p class="mb-4">Camionetas de carga en excelente estado, listas para trabajar</p>
+
+        <div class="alert alert-info small" role="alert">
+            <i class="fas fa-info-circle me-2"></i>
+            Todos nuestros vehículos pasan por una rigurosa inspección mecánica antes de su venta.
+        </div>
+
+        <div class="row g-4" id="vehiculos">
+            <!-- Vehículo 5 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-5">
+                            <div class="product-images position-relative">
+                                <img src="img_transportes/ford-removebg-preview.png" alt="Ford F-350 2016" class="img-fluid rounded mb-2 vehicle-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img_transportes/ford-removebg-preview.png" data-bs-title="Ford F-350 2016">
+                                <a href="https://www.facebook.com/marketplace/item/1534107097774888/?rdid=4Sqlxc5UME0Xkpzx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CUuERs9RG%2F#" target="_blank" class="btn btn-outline-secondary btn-sm w-100 mt-2 d-none d-md-block">Ver en Marketplace</a>
+                                <a href="https://www.facebook.com/marketplace/item/1534107097774888/?rdid=4Sqlxc5UME0Xkpzx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CUuERs9RG%2F#" target="_blank" class="btn btn-outline-secondary btn-sm w-100 mt-2 d-md-none">Marketplace</a>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>Ford F-350 2016</h5>
+                            <p class="small">Camioneta robusta de trabajo pesado, lista para seguir rindiendo.</p>
+                            <ul class="small">
+                                <li><strong>Modelo:</strong> 2016</li>
+                                <li><strong>Kilometraje:</strong> 95,000 km</li>
+                                <li><strong>Transmisión:</strong> Estándar</li>
+                                <li><strong>Capacidad de carga:</strong> 3.5 toneladas</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2">DISPONIBLE</p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Ford F-350 2016" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525575586810?text=Hola,%20estoy%20interesado%20en%20la%20Ford%20F-350%202016%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehículo 6 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-5">
+                            <div class="product-images position-relative">
+                                <img src="img_transportes/ram-removebg-preview.png" alt="RAM 4000 2019" class="img-fluid rounded mb-2 vehicle-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img_transportes/ram-removebg-preview.png" data-bs-title="RAM 4000 2019">
+                                <a href="https://www.facebook.com/marketplace/item/1099107112126744/?rdid=mpuh9gggoJflTBms&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1B45xFcyqi%2F#" target="_blank" class="btn btn-outline-secondary btn-sm w-100 mt-2 d-none d-md-block">Ver en Marketplace</a>
+                                <a href="https://www.facebook.com/marketplace/item/1099107112126744/?rdid=mpuh9gggoJflTBms&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1B45xFcyqi%2F#" target="_blank" class="btn btn-outline-secondary btn-sm w-100 mt-2 d-md-none">Marketplace</a>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>RAM 4000 2019</h5>
+                            <p class="small">Camioneta de gran capacidad con excelente desempeño y estado.</p>
+                            <ul class="small">
+                                <li><strong>Modelo:</strong> 2019</li>
+                                <li><strong>Kilometraje:</strong> 85,000 km</li>
+                                <li><strong>Transmisión:</strong> Estándar</li>
+                                <li><strong>Capacidad de carga:</strong> 4 toneladas</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2">DISPONIBLE</p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=RAM 4000 2019" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525575586810?text=Hola,%20estoy%20interesado%20en%20la%20RAM%204000%202019%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehículo 7 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-5">
+                            <div class="product-images position-relative">
+                                <img src="img_transportes/izusu-removebg-preview.png" alt="Isuzu Elf 2018" class="img-fluid rounded mb-2 vehicle-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img_transportes/izusu-removebg-preview.png" data-bs-title="Isuzu Elf 2018">
+                                <span class="btn btn-outline-danger btn-sm w-100 mt-2 disabled">VENDIDO</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>Isuzu Elf 2018</h5>
+                            <p class="small">Camión confiable, vendido recientemente.</p>
+                            <ul class="small">
+                                <li><strong>Modelo:</strong> 2018</li>
+                                <li><strong>Kilometraje:</strong> 90,000 km</li>
+                                <li><strong>Transmisión:</strong> Estándar</li>
+                                <li><strong>Capacidad de carga:</strong> 3 toneladas</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2 text-danger">VENDIDO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehículo 8 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-5">
+                            <div class="product-images position-relative">
+                                <img src="img_transportes/nissan-removebg-preview.png" alt="Nissan Cabstar NT400 2018" class="img-fluid rounded mb-2 vehicle-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img_transportes/nissan-removebg-preview.png" data-bs-title="Nissan Cabstar NT400 2018">
+                                <span class="btn btn-outline-danger btn-sm w-100 mt-2 disabled">VENDIDO</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>Nissan Cabstar NT400 2018</h5>
+                            <p class="small">Camión de carga, ya vendido.</p>
+                            <ul class="small">
+                                <li><strong>Modelo:</strong> 2018</li>
+                                <li><strong>Kilometraje:</strong> 95,000 km</li>
+                                <li><strong>Transmisión:</strong> Estándar</li>
+                                <li><strong>Capacidad de carga:</strong> 3.5 toneladas</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2 text-danger">VENDIDO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vehículo 9 -->
+            <div class="col-md-6">
+                <div class="card tool-card p-3">
+                    <div class="row g-3">
+                        <div class="col-md-5">
+                            <div class="product-images position-relative">
+                                <img src="img_transportes/ram2-removebg-preview.png" alt="RAM Pickup 2017" class="img-fluid rounded mb-2 vehicle-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img_transportes/ram2-removebg-preview.png" data-bs-title="RAM Pickup 2017">
+                                <span class="btn btn-outline-danger btn-sm w-100 mt-2 disabled">VENDIDO</span>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>RAM Pickup 2017</h5>
+                            <p class="small">Camioneta pickup confiable, ya no disponible.</p>
+                            <ul class="small">
+                                <li><strong>Modelo:</strong> 2017</li>
+                                <li><strong>Kilometraje:</strong> 86,000 km</li>
+                                <li><strong>Transmisión:</strong> Estándar</li>
+                                <li><strong>Capacidad de carga:</strong> 1.5 toneladas</li>
+                            </ul>
+                            <p class="product-price fw-bold mt-2 text-danger">VENDIDO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para imágenes ampliadas -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Vista ampliada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="" class="img-fluid" id="modalImage" alt="Vista ampliada del vehículo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Nosotros -->
+    <div class="rounded-container mb-4" id="nosotros-transportes">
+        <h2 class="section-title"><i class="fas fa-building"></i> Excelencia en Transporte de Carga</h2>
+        <p class="lead">Líderes en soluciones logísticas con más de cuatro décadas de experiencia en el mercado</p>
+        
+        <div class="row my-4">
+            <div class="col-md-6 text-center">
+                <div class="counter-box">
+                    <h2 class="display-4 text-primary">+44</h2>
+                    <h5>Años en el mercado</h5>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="counter-box">
+                    <h2 class="display-4 text-primary">98%</h2>
+                    <h5>Clientes satisfechos</h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="history-section mt-4">
+            <h3>Nuestra Historia y Compromiso</h3>
+            <p>Fundada en 1980, Saénz Comercializadora se consolidó como referente en el sector de transporte de carga en México, siendo absorbida por EmilioColor® en 2025 para ampliar su alcance y servicios. Nuestra misión es proporcionar soluciones vehiculares que impulsen la productividad de nuestros clientes, combinando calidad, innovación y servicio excepcional.</p>
+        </div>
+    </div>
+
+    <!-- Sección de Ubicaciones -->
+    <div class="rounded-container mb-4" id="ubicaciones">
+        <h2 class="section-title"><i class="fas fa-map-marker-alt"></i> Nuestras Ubicaciones</h2>
+        <p>Visítanos en cualquiera de nuestras sucursales para conocer nuestros vehículos y recibir asesoría personalizada.</p>
+        
+        <div class="alert alert-info mt-4">
+            <i class="fas fa-info-circle me-2"></i>
+            <span>Para visitar nuestras instalaciones, primero debes <a href="#contacto" class="alert-link">contactarnos</a>.</span>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4">
+                <div class="card tool-card h-100">
+                    <div class="location-map" style="height: 250px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218.002110991965!2d-99.15920865116172!3d19.51567451779101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f825269fe25d%3A0x598c1529a798834f!2sTres%20Anegas%2069%2C%20Ampliaci%C3%B3n%20Progreso%20Nacional%2C%20Gustavo%20A.%20Madero%2C%2007650%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e1!3m2!1ses-419!2smx!4v1713945036671!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h3>Sucursal de Ventas</h3>
+                        <p class="card-text">Avenida Tres Anegas, Número 69, Progreso Nacional, Gustavo A. Madero, Código postal 07600, Ciudad de México, CDMX</p>
+                        <a href="#contacto" class="btn btn-primary">Cómo llegar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="card tool-card h-100">
+                    <div class="location-map" style="height: 250px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d259.2422680835573!2d-99.15418615889128!3d19.520284219430216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f82f29b7cb53%3A0xd09cb4969276a6b6!2sAv.%20Guadalupe%2055%2C%20Guadalupe%20Proletaria%2C%20Gustavo%20A.%20Madero%2C%2007670%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e1!3m2!1ses-419!2smx!4v1713944805942!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="card-body">
+                        <h3>Almacén</h3>
+                        <p class="card-text">Av. Guadalupe 55, Guadalupe Proletaria, Gustavo A. Madero, 07670 Ciudad de México, CDMX</p>
+                        <a href="#contacto" class="btn btn-primary">Cómo llegar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <div class="rounded-container mb-4" id="contacto-transportes">
+        <h2 class="section-title"><i class="fas fa-envelope"></i> Contacto</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h4>¿Necesitas más información?</h4>
+                    <p>Estamos aquí para ayudarte a encontrar la camioneta perfecta para tus necesidades.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item d-flex align-items-center mb-3">
+                            <i class="fas fa-phone-alt text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <div>
+                                <h5>Teléfono</h5>
+                                <p><a href="tel:+525575586810">+52 55 7558 6810</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex align-items-center mb-3">
+                            <i class="fab fa-whatsapp text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <div>
+                                <h5>WhatsApp</h5>
+                                <p>
+                                    <a href="https://wa.me/525575586810?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20camionetas%20de%20EmilioColor." target="_blank">
+                                        +52 55 7558 6810
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex align-items-center mb-3">
+                            <i class="fas fa-envelope text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p><a href="mailto:emiliocolormexico@gmail.com">emiliocolormexico@gmail.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex align-items-center mb-3">
+                            <i class="fas fa-clock text-primary me-3" style="font-size: 1.5rem;"></i>
+                            <div>
+                                <h5>Horario de atención</h5>
+                                <p>Lunes a Domingo: 9:00 am - 5:00 pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('#transportes-section .hero-buttons a').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault(); // Evita el salto normal
+
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Configurar modal para imágenes ampliadas
+    const imageModal = document.getElementById('imageModal');
+    if (imageModal) {
+        imageModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const imageSrc = button.getAttribute('data-bs-image');
+            const imageTitle = button.getAttribute('data-bs-title');
+            
+            const modalTitle = imageModal.querySelector('.modal-title');
+            const modalImage = imageModal.querySelector('#modalImage');
+            
+            modalTitle.textContent = imageTitle;
+            modalImage.src = imageSrc;
+            modalImage.alt = imageTitle;
+        });
+    }
+</script>
+<style>
+    /* Estilos para la sección de Transportes */
+    .vehicle-image {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    .vehicle-image:hover {
+        transform: scale(1.05);
+    }
+    
+    .counter-box {
+        padding: 20px;
+        background: var(--card-gradient);
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin-bottom: 20px;
+    }
+    
+    .counter-box h2 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    
+    .counter-box h5 {
+        color: var(--text-dark);
+        opacity: 0.8;
+    }
+
+.history-section {
+    padding: 20px;
+    background: var(--card-gradient);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.history-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.location-card .card-body {
+    padding: 20px;
+}
+
+.location-card h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.contact-item {
+    padding: 15px;
+    background: var(--card-gradient);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item h5 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+/* Ajustes para modo oscuro */
+body.dark-mode .counter-box,
+body.dark-mode .history-section,
+body.dark-mode .contact-item {
+    background: var(--card-gradient);
+    color: var(--text-dark);
+}
+
+body.dark-mode .counter-box h5,
+body.dark-mode .history-section h3,
+body.dark-mode .contact-item h5 {
+    color: var(--primary-blue-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vehicle-image {
+        height: 150px;
+    }
+    
+    .counter-box {
+        padding: 15px;
+    }
+    
+    .counter-box h2 {
+        font-size: 2rem;
+    }
+}
+</style>
+
 <!-- Sección Más sobre nosotros -->
 <div id="nosotros-section" class="hidden-section">
     <div class="rounded-container">
         
         <h2 class="section-title"><i class="fas fa-info-circle"></i> Sobre nosotros</h2>
         <p>Conoce nuestra trayectoria, impacto social y herramientas disponibles</p>
-        
+
+        <!-- Subsección Acerca del Equipo -->
+        <h3 class="mt-5 mb-4"><i class="fas fa-building"></i> Acerca del Equipo EmilioColor®</h3>
+        <p>Conozca nuestra trayectoria, principios y áreas de impacto</p>
+
+        <!-- Nuestra Historia con contenedor y ícono -->
+            <!-- Nuestra Historia ocupa toda la fila arriba -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h4><i class="fas fa-history text-primary mr-2"></i> Nuestra Historia</h4>
+                    <p>EmilioColor® inició como una idea en 2017, con el objetivo de crear una marca integradora para diversas industrias, comenzando con papelería bajo el concepto EmilioForma.
+                    En 2023 tomamos la decisión de renombrarnos como EmilioColor™, retomando el enfoque en productos de papelería y añadiendo servicios educativos de alta calidad, estableciendo un pilar fundamental: ClassCloud℠, para ofrecer servicios digitales educativos, incluyendo sitio web y redes sociales.
+                    En 2024 nos consolidamos como EmilioColor® y expandimos nuestras operaciones en el ámbito digital, desarrollando plataformas para el Instituto Politécnico Nacional. También incursionamos en los sectores alimenticio y de transporte.
+                    Para 2025 establecimos EMIVERSAL DATABASE℠ como nuestro pilar de gestión segura de datos.</p>
+                </div>
+            </div>
+
+            <!-- Misión y Visión en dos columnas -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="p-3 bg-light rounded h-100">
+                        <h5 class="text-primary">Nuestra Misión</h5>
+                        <p class="small">Como equipo, nos comprometemos a impulsar desarrollo social y económico mediante soluciones multisectoriales innovadoras. Priorizamos alianzas estratégicas que generen valor tangible para las comunidades donde operamos.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="p-3 bg-light rounded h-100">
+                        <h5 class="text-primary">Nuestra Visión</h5>
+                        <p class="small">Aspiramos colectivamente a posicionarnos como referente internacional en integración empresarial, siendo reconocidos por nuestra capacidad para transformar industrias mediante enfoques interdisciplinarios y sostenibles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Nuestros Principios -->
+            <div class="mt-5">
+                <h4 class="mb-4"><i class="fas fa-heart text-primary mr-2"></i> Nuestros Principios</h4>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <div class="text-center p-2">
+                            <i class="fas fa-users text-primary mb-2" style="font-size: 1.5rem;"></i>
+                            <h6>Trabajo en Equipo</h6>
+                            <p class="small">Valoramos la sinergia interdisciplinaria</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="text-center p-2">
+                            <i class="fas fa-lightbulb text-primary mb-2" style="font-size: 1.5rem;"></i>
+                            <h6>Innovación</h6>
+                            <p class="small">Fomentamos soluciones creativas</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="text-center p-2">
+                            <i class="fas fa-chart-line text-primary mb-2" style="font-size: 1.5rem;"></i>
+                            <h6>Crecimiento</h6>
+                            <p class="small">Nos adaptamos constantemente</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="text-center p-2">
+                            <i class="fas fa-layer-group text-primary mb-2" style="font-size: 1.5rem;"></i>
+                            <h6>Multisectorialidad</h6>
+                            <p class="small">Integramos distintas industrias en cada proyecto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mt-4">Áreas de Especialización en línea</h5>
+            <div class="row mt-3">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="p-2">
+                        <h6><i class="fas fa-graduation-cap text-primary mr-2"></i> Educación</h6>
+                        <p class="small">Hemos desarrollado plataformas adaptativas que responden a las necesidades formativas actuales</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="p-2">
+                        <h6><i class="fas fa-pencil-ruler text-primary mr-2"></i> Papelería</h6>
+                        <p class="small">Desarrollamos productos y soluciones útiles para entornos escolares y de oficina</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="p-2">
+                        <h6><i class="fas fa-laptop-code text-primary mr-2"></i> Tecnología</h6>
+                        <p class="small">Diseñamos herramientas digitales con enfoque en usabilidad y seguridad</p>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="mt-4">Áreas de Especialización con sede física</h5>
+            <div class="row mt-3">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="p-2">
+                        <h6><i class="fas fa-truck text-primary mr-2"></i> Transportes</h6>
+                        <p class="small">Implementamos soluciones logísticas en colaboración con especialistas del sector</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="p-2">
+                        <h6><i class="fas fa-utensils text-primary mr-2"></i> Alimentos</h6>
+                        <p class="small">Exploramos modelos de distribución con potencial de escalamiento sostenible</p>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Sección Imagen Gráfica -->
+            <h4 class="mb-4"><i class="fas fa-images text-primary mr-2"></i> Imagen Gráfica</h4>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="text-center">
+                        <img src="img-logos/emilioforma.png" alt="2017" class="img-fluid rounded mb-2 img-40">
+                        <p class="small"><strong>2017:</strong> Idea de marca EmilioForma</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="text-center">
+                        <img src="img-logos/emiliocolor_tm.png" alt="2024" class="img-fluid rounded mb-2 img-40">
+                        <p class="small"><strong>2023:</strong> EmilioColor™</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="text-center">
+                        <img src="img-logos/emiliocolor_r.jpg" alt="2024" class="img-fluid rounded mb-2 img-40">
+                        <p class="small"><strong>2024:</strong> Registro de EmilioColor®</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="text-center">
+                        <img src="img-logos/grupo_logo.png" alt="2025" style="width: 190px;" class="img-fluid rounded mb-2">
+                        <p class="small"><strong>2025:</strong> Presentación como Grupo EmilioColor®</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="img-logos/inkspire_logo.png" alt="2025" style="width: 180px;" class="img-fluid rounded mb-2">
+                        <p class="small"><strong>2025:</strong> Adición temporal de Inkspire a EmilioColor®</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="text-center">
+                        <img src="img-logos/logo_azul_alargado.png" alt="2025" style="width: 210px;" class="img-fluid rounded mb-2">
+                        <p class="small"><strong>2025 (actualidad):</strong> Nueva imagen y actualización de registro de EmilioColor®</p>
+                    </div>
+                </div>
+            </div>
         <!-- Subsección Impacto Social -->
         <h3 class="mt-5 mb-4"><i class="fas fa-hands-helping"></i> Impacto Social</h3>
         <p>Proyectos y colaboraciones que generan un cambio positivo en la comunidad</p>
@@ -1013,155 +1599,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Subsección Acerca del Equipo -->
-        <h3 class="mt-5 mb-4"><i class="fas fa-building"></i> Acerca del Equipo EmilioColor®</h3>
-        <p>Conozca nuestra trayectoria, principios y áreas de impacto</p>
-
-        <!-- Nuestra Historia con contenedor y ícono -->
-        <div class="card tool-card p-4 mt-4">
-            <!-- Nuestra Historia ocupa toda la fila arriba -->
-            <div class="row mb-4">
-                <div class="col-12">
-                    <h4><i class="fas fa-history text-primary mr-2"></i> Nuestra Historia</h4>
-                    <p>EmilioColor® inició como una idea en 2017, con el objetivo de crear una marca integradora para diversas industrias, comenzando con papelería bajo el concepto EmilioForma.
-                    En 2023 tomamos la decisión de renombrarnos como EmilioColor™, retomando el enfoque en productos de papelería y añadiendo servicios educativos de alta calidad, estableciendo un pilar fundamental: ClassCloud℠, para ofrecer servicios digitales educativos, incluyendo sitio web y redes sociales.
-                    En 2024 nos consolidamos como EmilioColor® y expandimos nuestras operaciones en el ámbito digital, desarrollando plataformas para el Instituto Politécnico Nacional. También incursionamos en los sectores alimenticio y de transporte.
-                    Para 2025 establecimos EMIVERSAL DATABASE℠ como nuestro pilar de gestión segura de datos.</p>
-                </div>
-            </div>
-
-            <!-- Misión y Visión en dos columnas -->
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="p-3 bg-light rounded h-100">
-                        <h5 class="text-primary">Nuestra Misión</h5>
-                        <p class="small">Como equipo, nos comprometemos a impulsar desarrollo social y económico mediante soluciones multisectoriales innovadoras. Priorizamos alianzas estratégicas que generen valor tangible para las comunidades donde operamos.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="p-3 bg-light rounded h-100">
-                        <h5 class="text-primary">Nuestra Visión</h5>
-                        <p class="small">Aspiramos colectivamente a posicionarnos como referente internacional en integración empresarial, siendo reconocidos por nuestra capacidad para transformar industrias mediante enfoques interdisciplinarios y sostenibles.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sección Nuestros Principios -->
-            <div class="mt-5">
-                <h4 class="mb-4"><i class="fas fa-heart text-primary mr-2"></i> Nuestros Principios</h4>
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <div class="text-center p-2">
-                            <i class="fas fa-users text-primary mb-2" style="font-size: 1.5rem;"></i>
-                            <h6>Trabajo en Equipo</h6>
-                            <p class="small">Valoramos la sinergia interdisciplinaria</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="text-center p-2">
-                            <i class="fas fa-lightbulb text-primary mb-2" style="font-size: 1.5rem;"></i>
-                            <h6>Innovación</h6>
-                            <p class="small">Fomentamos soluciones creativas</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="text-center p-2">
-                            <i class="fas fa-chart-line text-primary mb-2" style="font-size: 1.5rem;"></i>
-                            <h6>Crecimiento</h6>
-                            <p class="small">Nos adaptamos constantemente</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="text-center p-2">
-                            <i class="fas fa-layer-group text-primary mb-2" style="font-size: 1.5rem;"></i>
-                            <h6>Multisectorialidad</h6>
-                            <p class="small">Integramos distintas industrias en cada proyecto</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <h5 class="mt-4">Áreas de Especialización en línea</h5>
-            <div class="row mt-3">
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="p-2">
-                        <h6><i class="fas fa-graduation-cap text-primary mr-2"></i> Educación</h6>
-                        <p class="small">Hemos desarrollado plataformas adaptativas que responden a las necesidades formativas actuales</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="p-2">
-                        <h6><i class="fas fa-pencil-ruler text-primary mr-2"></i> Papelería</h6>
-                        <p class="small">Desarrollamos productos y soluciones útiles para entornos escolares y de oficina</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="p-2">
-                        <h6><i class="fas fa-laptop-code text-primary mr-2"></i> Tecnología</h6>
-                        <p class="small">Diseñamos herramientas digitales con enfoque en usabilidad y seguridad</p>
-                    </div>
-                </div>
-            </div>
-
-            <h5 class="mt-4">Áreas de Especialización con sede física</h5>
-            <div class="row mt-3">
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="p-2">
-                        <h6><i class="fas fa-truck text-primary mr-2"></i> Transportes</h6>
-                        <p class="small">Implementamos soluciones logísticas en colaboración con especialistas del sector</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-3">
-                    <div class="p-2">
-                        <h6><i class="fas fa-utensils text-primary mr-2"></i> Alimentos</h6>
-                        <p class="small">Exploramos modelos de distribución con potencial de escalamiento sostenible</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sección Imagen Gráfica -->
-        <div class="card tool-card p-4 mt-5">
-            <h4 class="mb-4"><i class="fas fa-images text-primary mr-2"></i> Imagen Gráfica</h4>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
-                        <img src="img-logos/emilioforma.png" alt="2017" class="img-fluid rounded mb-2 img-40">
-                        <p class="small"><strong>2017:</strong> Idea de marca EmilioForma</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
-                        <img src="img-logos/emiliocolor_tm.png" alt="2024" class="img-fluid rounded mb-2 img-40">
-                        <p class="small"><strong>2023:</strong> EmilioColor™</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
-                        <img src="img-logos/emiliocolor_r.jpg" alt="2024" class="img-fluid rounded mb-2 img-40">
-                        <p class="small"><strong>2024:</strong> Registro de EmilioColor®</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
-                        <img src="img-logos/grupo_logo.png" alt="2025" style="width: 190px;" class="img-fluid rounded mb-2">
-                        <p class="small"><strong>2025:</strong> Presentación como Grupo EmilioColor®</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="img-logos/inkspire_logo.png" alt="2025" style="width: 180px;" class="img-fluid rounded mb-2">
-                        <p class="small"><strong>2025:</strong> Adición temporal de Inkspire a EmilioColor®</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
-                        <img src="img-logos/logo_azul_alargado.png" alt="2025" style="width: 210px;" class="img-fluid rounded mb-2">
-                        <p class="small"><strong>2025 (actualidad):</strong> Nueva imagen y actualización de registro de EmilioColor®</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Subsección Herramientas -->
         <h3 class="mt-5 mb-4"><i class="fas fa-tools"></i> Herramientas</h3>
         <p>Herramientas prácticas y fáciles de usar para agilizar y mejorar tus proyectos digitales</p>
@@ -1243,87 +1680,98 @@
                     </div>
                 </div>
             </div>
+            <style>
+                @media (max-width: 767.98px) {
+  .contact-container {
+    margin-bottom: 20px; /* ajusta el valor según lo que necesites */
+  }
+}
+            </style>
             
-            <!-- Sección Contacto -->
-            <div id="contacto-section" class="hidden-section">
-                <div class="rounded-container">
-                    <h2 class="section-title"><i class="fas fa-envelope"></i> Contacto</h2>
-                    <p>¿Tienes alguna pregunta? No dudes en ponerte en contacto con nosotros.</p>
+<!-- Sección Contacto -->
+<section id="contacto-section" class="page-section hidden-section">
+  <div class="rounded-container">
+    <h2 class="section-title"><i class="fas fa-envelope"></i> Contacto</h2>
+    <p class="section-subtitle">¿Tienes alguna pregunta? No dudes en ponerte en contacto con nosotros.</p>
 
-                    <div class="row mt-4">
-                        <div class="col-md-6">
-                            <div class="card tool-card p-4 h-100">
-                                <div class="contact-method mb-4">
-                                    <h5 class="d-flex align-items-center mb-2">
-                                        <i class="fas fa-envelope text-primary me-2" style="font-size: 1.2rem;"></i>
-                                        Correo Electrónico
-                                    </h5>
-                                    <a href="mailto:emiliocolormexico@gmail.com">emiliocolormexico@gmail.com</a>
-                                    <a href="mailto:emiliocolormexico@gmail.com" target="_blank" class="btn btn-primary d-block mb-3 mt-3">
-                                        <i class="fas fa-paper-plane me-2"></i> Enviar correo (celular)
-                                    </a>
-                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolor@gmail.com" target="_blank" class="btn btn-primary d-block mb-3">
-                                        <i class="fas fa-paper-plane me-2"></i> Enviar correo (computadora)
-                                    </a>
-                                </div>
+    <div class="row mt-4 g-4">
+      <!-- Columna Izquierda: Métodos de Contacto -->
+      <div class="col-md-6">
+          
+          <!-- Correo -->
+          <div class="contact-method mb-4">
+            <h5 class="d-flex align-items-center mb-2">
+              <i class="fas fa-envelope text-primary me-2" style="font-size: 1.2rem;"></i>
+              Correo Electrónico
+            </h5>
+            <a href="mailto:emiliocolormexico@gmail.com">emiliocolormexico@gmail.com</a>
+            <a href="mailto:emiliocolormexico@gmail.com" target="_blank" class="btn btn-primary d-block mt-3 mb-2">
+              <i class="fas fa-paper-plane me-2"></i> Enviar correo (Celular)
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com" target="_blank" class="btn btn-primary d-block">
+              <i class="fas fa-paper-plane me-2"></i> Enviar correo (Computadora)
+            </a>
+          </div>
 
-                                <div class="contact-method mb-4">
-                                    <h5 class="d-flex align-items-center mb-1">
-                                        <i class="fas fa-phone-alt text-primary me-2" style="font-size: 1.2rem;"></i>
-                                        Teléfono
-                                    </h5>
-                                    <a href="tel:+525625377747">+52 56 2537 7747</a>
-                                    <p class="small text-muted mb-3">Horario: Lunes a Viernes, 10am - 6pm</p>
+          <!-- Teléfono y WhatsApp -->
+          <div class="contact-method mb-4">
+            <h5 class="d-flex align-items-center mb-1">
+              <i class="fas fa-phone-alt text-primary me-2" style="font-size: 1.2rem;"></i>
+              Teléfono
+            </h5>
+            <a href="tel:+525625377747">+52 56 2537 7747</a>
+            <p class="small text-muted mb-3">Horario: Lunes a Viernes, 10am - 6pm</p>
 
-                                    <h5 class="d-flex align-items-center mb-1">
-                                        <i class="fab fa-whatsapp text-primary me-2" style="font-size: 1.2rem;"></i>
-                                        WhatsApp
-                                    </h5>
-                                    <a href="https://wa.me/525625377747" target="_blank">+52 56 2537 7747</a>
-                                    <p class="small text-muted mb-0">Horario: Lunes a Viernes, 10am - 6pm</p>
-                                </div>
+            <h5 class="d-flex align-items-center mb-1">
+              <i class="fab fa-whatsapp text-primary me-2" style="font-size: 1.2rem;"></i>
+              WhatsApp
+            </h5>
+            <a href="https://wa.me/525625377747" target="_blank">+52 56 2537 7747</a>
+            <p class="small text-muted mb-0">Horario: Lunes a Viernes, 10am - 6pm</p>
+          </div>
 
-                                <div class="contact-method">
-                                    <h5 class="d-flex align-items-center mb-2">
-                                        <i class="fas fa-map-marker-alt text-primary me-2" style="font-size: 1.2rem;"></i>
-                                        Ubicación
-                                    </h5>
-                                    <p>Operando desde México</p>
-                                </div>
-                            </div>
-                        </div>
+          <!-- Ubicación -->
+          <div class="contact-method">
+            <h5 class="d-flex align-items-center mb-2">
+              <i class="fas fa-map-marker-alt text-primary me-2" style="font-size: 1.2rem;"></i>
+              Ubicación
+            </h5>
+            <p>Operando desde México</p>
+          </div>
+      </div>
 
-                        <div class="col-md-6">
-                            <div class="card tool-card p-4 h-100">
-                                <h5 class="mb-4">Información Adicional</h5>
-<div class="mb-2">
-    <a href="https://emiliocolor.com/legalidad_y_garantias.html" target="_blank" class="d-block mb-1 p-2 bg-light rounded">
-        <i class="fas fa-file-contract text-primary me-2"></i> Legalidad y Garantía
-    </a>
-</div>
-<div class="mb-2">
-    <a href="https://emiliocolor.com/equipo.html" target="_blank" class="d-block mb-1 p-2 bg-light rounded">
-        <i class="fas fa-file-contract text-primary me-2"></i> Únete a nuestro equipo
-    </a>
-</div>
+      <!-- Columna Derecha: Info adicional y redes -->
+      <div class="col-md-6">
+          <h5 class="mb-4">Información Adicional</h5>
 
-                                <h5 class="mb-3">Redes Sociales</h5>
-                                <div class="d-flex gap-3 mb-4">
-                                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-circle"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.instagram.com/emiliocolormx/" class="social-circle"><i class="fab fa-instagram"></i></a>
-                                </div>
+          <div class="mb-2">
+            <a href="https://emiliocolor.com/legalidad_y_garantias.html" target="_blank" class="d-block p-2 bg-light rounded">
+              <i class="fas fa-file-contract text-primary me-2"></i> Legalidad y Garantía
+            </a>
+          </div>
 
-                    <div class="text-center mt-4">
-                        <img src="img-logos/favicon.png" alt="EmilioColor Logo" class="footer-logo-favicon mb-3">
-                        <img src="img-logos/favicon_lyg.png" alt="Legalidad y Garantía" class="footer-logo-favicon mb-3">
-                        <img src="img-logos/favicon_st.jpg" alt="EmilioColor Soporte" class="footer-logo-favicon mb-3">
-                        <p class="small">Este sitio es propiedad de EmilioColor®</p>
-                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <div class="mb-4">
+            <a href="https://emiliocolor.com/equipo.html" target="_blank" class="d-block p-2 bg-light rounded">
+              <i class="fas fa-users text-primary me-2"></i> Únete a nuestro equipo
+            </a>
+          </div>
+
+          <h5 class="mb-3">Redes Sociales</h5>
+          <div class="d-flex gap-3 mb-4">
+            <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/emiliocolormx/" class="social-circle"><i class="fab fa-instagram"></i></a>
+          </div>
+
+          <div class="text-center mt-4">
+            <img src="img-logos/favicon.png" alt="EmilioColor Logo" class="footer-logo-favicon mb-2">
+            <img src="img-logos/favicon_lyg.png" alt="Legalidad y Garantía" class="footer-logo-favicon mb-2">
+            <img src="img-logos/favicon_st.jpg" alt="EmilioColor Soporte" class="footer-logo-favicon mb-2">
+            <p class="small">Este sitio es propiedad de EmilioColor®</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
             
             <footer class="footer">
                 <div class="container">
@@ -1364,4 +1812,3 @@
 </style>
 </body>
 </html>
-
