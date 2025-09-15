@@ -317,7 +317,9 @@ function loadCursosContentDirectly() {
                     Tu navegador no soporta el elemento de audio.
                 </audio>
             </div>
-
+<button class="btn btn-outline-primary btn-sm mb-3" onclick="generateGeneralQuotation()">
+    <i class="fas fa-file-invoice-dollar"></i> Cotización General de Todos los Cursos
+</button>
             <div class="alert alert-info small mt-2 mb-3" role="alert">
                 Todos incluyen acceso inmediato y de por vida con material descargable.
             </div>
@@ -5915,3 +5917,112 @@ document.addEventListener('DOMContentLoaded', function() {
         loadCursosSection();
     }
 });
+// Función para generar la cotización general de todos los cursos
+function generateGeneralQuotation() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    // Título
+    doc.setFontSize(20);
+    doc.setTextColor(26, 86, 219);
+    doc.text('EmilioColor - Cotización General de Cursos', 105, 20, { align: 'center' });
+    
+    // Fecha
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    const date = new Date();
+    doc.text(`Fecha: ${date.toLocaleDateString()} ${date.toLocaleTimeString()}`, 105, 30, { align: 'center' });
+    
+    let y = 50;
+    
+    // Resumen de cursos por sección
+    doc.setFontSize(16);
+    doc.text('Resumen de Cursos por Sección', 14, y);
+    y += 15;
+    
+    const sectionHeaders = [['Sección', 'Cantidad de Cursos', 'Valor Total']];
+    const sectionData = [
+        ['Mega Packs (Sección 1/3)', '18', '$1,258.20 MXN'],
+        ['Cursos Destacados (Sección 2/3)', '37', '$2,212.60 MXN'],
+        ['Colección Completa (Sección 3/3)', '153', '$7,604.10 MXN'],
+        ['TOTAL GENERAL', '208', '$11,074.90 MXN']
+    ];
+    
+    doc.autoTable({
+        startY: y,
+        head: sectionHeaders,
+        body: sectionData,
+        theme: 'grid',
+        headStyles: { fillColor: [26, 86, 219], textColor: [255, 255, 255] },
+        footStyles: { fillColor: [40, 167, 69], textColor: [255, 255, 255] },
+        foot: [['', 'TOTAL GENERAL', '$11,074.90 MXN']]
+    });
+    
+    y = doc.lastAutoTable.finalY + 15;
+    
+    // Información de contacto
+    doc.setFontSize(16);
+    doc.setTextColor(26, 86, 219);
+    doc.text('Para concluir su compra:', 14, y);
+    y += 10;
+    
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.text('• Contacte por WhatsApp: 56-2537-7747', 14, y);
+    y += 7;
+    doc.text('• O envíe un correo a: emiliocolormexico@gmail.com', 14, y);
+    y += 15;
+    
+    // Nota importante
+    doc.setFontSize(14);
+    doc.setTextColor(255, 0, 0);
+    doc.text('NOTA IMPORTANTE:', 14, y);
+    y += 8;
+    
+    doc.setFontSize(11);
+    doc.setTextColor(0, 0, 0);
+    const instrucciones = [
+        'Esta cotización incluye acceso a TODOS los cursos disponibles en el catálogo.',
+        'Al contactarnos, mencione que está interesado en la "COTIZACIÓN GENERAL"',
+        'y adjunte este PDF para agilizar el proceso de compra.',
+        'Le proporcionaremos instrucciones para el pago y entrega de los cursos.'
+    ];
+    
+    instrucciones.forEach(line => {
+        doc.text(line, 14, y);
+        y += 6;
+    });
+    
+    // Guardar el PDF
+    doc.save(`EmilioColor_Cotizacion_General_${date.getTime()}.pdf`);
+}
+
+// Agregar el botón de cotización general a la sección de cursos
+function addGeneralQuotationButton() {
+    // Buscar el contenedor de la sección de cursos
+    const cursosContainer = document.getElementById('cursos-section');
+    if (!cursosContainer) return;
+    
+    // Buscar el primer contenedor rounded-container
+    const roundedContainer = cursosContainer.querySelector('.rounded-container');
+    if (!roundedContainer) return;
+    
+    // Crear el botón de cotización general
+    const quotationButton = document.createElement('button');
+    quotationButton.className = 'btn btn-warning mb-4';
+    quotationButton.innerHTML = '<i class="fas fa-file-invoice-dollar"></i> Cotización General de Todos los Cursos';
+    quotationButton.onclick = generateGeneralQuotation;
+    
+    // Insertar el botón después del título de la sección
+    const sectionTitle = roundedContainer.querySelector('.section-title');
+    if (sectionTitle) {
+        sectionTitle.parentNode.insertBefore(quotationButton, sectionTitle.nextSibling);
+    } else {
+        // Si no encuentra el título, insertar al principio del contenedor
+        roundedContainer.insertBefore(quotationButton, roundedContainer.firstChild);
+    }
+}
+
+// Modificar la función loadCursosContentDirectly para agregar el botón
+// Busca esta función en tu código y modifícala o agrega la llamada a addGeneralQuotationButton
+// Después de cargar el contenido de cursos, llama a addGeneralQuotationButton
