@@ -27,7 +27,7 @@
 
     <link rel="alternate" href="https://classcloud.emiliocolor.com/" hreflang="es" />
 <link rel="alternate" href="https://transportes.emiliocolor.com/" hreflang="es" />
-    
+
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
@@ -36,7 +36,7 @@
       "name": "EmilioColor",
       "url": "https://emiliocolor.com/",
       "logo": "https://raw.githubusercontent.com/emiversal/database/334d5dd44377663b5e46c9ae6d77582e33ee7281/favicon.png",
-      "description": "Productos de papelería, servicios web profesionales. Acceso a ClassCloud℠ con más de 110,000 recursos en linea.",
+      "description": "Productos de papelería, servicios web profesionales. Acceso a ClassCloud℠ con más de 100,000 recursos en linea.",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+525625377747",
@@ -91,11 +91,11 @@
     <div class="main-container">
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <p style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.2rem; text-align: center;">
-                    <i class="" style="display: block; font-size: 2rem; margin-bottom: 0.2rem;"></i>
-                    EmilioColor®
-                </p>
-                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Soluciones a tu medida</p>
+<p style="text-align: center; margin-bottom: 1rem;">
+  <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" 
+       alt="EmilioColor®" 
+       style="max-width: 220px; height: auto;">
+</p>
                 <button class="btn btn-sm btn-outline-light mt-2" data-bs-toggle="modal" data-bs-target="#cartModal">
                     <i class="fas fa-shopping-cart me-1"></i> Ver Carrito
                 </button>
@@ -119,6 +119,12 @@
         <i class="fas fa-truck"></i> Transportes
     </a>
 </li>
+<li class="sidebar-nav-item">
+    <a href="#classcloud" class="sidebar-nav-link" data-section="classcloud">
+        <i class="fas fa-cloud"></i> ClassCloud
+    </a>
+</li>
+
                  <li class="sidebar-nav-item">
             <a href="#servicios" class="sidebar-nav-link" data-section="servicios">
                 <i class="fas fa-laptop-code"></i> Tecnología
@@ -134,16 +140,16 @@
                 <i class="fas fa-pen"></i> Papelería
             </a>
         </li>
-        <li class="sidebar-nav-item">
-            <a href="#marcas" class="sidebar-nav-link" data-section="marcas">
-                <i class="fas fa-tags"></i> Marcas
-            </a>
-        </li>
 
         <!-- Quiénes somos -->
         <li class="sidebar-nav-item">
             <a href="#nosotros" class="sidebar-nav-link" data-section="nosotros">
                 <i class="fas fa-building"></i> Nosotros
+            </a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a href="#apoyos" class="sidebar-nav-link" data-section="apoyos">
+                <i class="fas fa-hand-holding-heart"></i> Apoyos
             </a>
         </li>
         <li class="sidebar-nav-item">
@@ -164,12 +170,31 @@
         <h1>EmilioColor® México</h1>
         <p>Explora todo lo que tenemos para ofrecerte.</p>
 <div class="hero-buttons">
-    <a href="#transportes" class="btn btn-explore">Transportes</a>
-    <a href="#servicios" class="btn btn-explore">Tecnología</a>
-    <!-- <a href="#servicios" class="btn btn-explore">Diseño Gráfico</a>-->
-    <a href="#cursos" class="btn btn-explore">Educación</a>
+<a href="#transportes" class="btn btn-explore btn-silver">Transportes</a>
+<a href="#classcloud" class="btn btn-explore btn-silver">ClassCloud</a>
+<style>
+    .btn-silver {
+  background: linear-gradient(135deg, #ffffff 0%, #d9d9d9 25%, #bfbfbf 50%, #e6e6e6 75%, #a6a6a6 100%);
+  color: #000; /* contraste fuerte */
+  border: 1px solid #999;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 1px 2px rgba(255,255,255,0.8);
+  transition: all 0.3s ease;
+}
+
+.btn-silver:hover {
+  background: linear-gradient(135deg, #f2f2f2 0%, #c0c0c0 25%, #a6a6a6 50%, #d9d9d9 75%, #8c8c8c 100%);
+  color: #000;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.9);
+  transform: scale(1.05);
+}
+
+</style>
+
+    <a href="#servicios" class="btn btn-explore">Desarollo Web</a>
+    <a href="#cursos" class="btn btn-explore">Cursos Pregrabados</a>
     <a href="#productos" class="btn btn-explore">Papelería</a>
-    <a href="https://classcloud.emiliocolor.com/" class="btn btn-explore" target="_blank" rel="noopener noreferrer">ClassCloud™</a>
 </div>
     </div>
 </div>
@@ -185,7 +210,7 @@
 <hr>
             <h5 style="color: inherit;">Plataforma educativa y recreativa todo en uno</h5>
             <p style="color: inherit; font-size: 1rem; margin-bottom: 20px;">
-                ClassCloud℠ es tu plataforma todo en uno. Accede a más de 110,000 recursos digitales desde cualquier dispositivo. Contamos con herramientas interactivas y contenido adaptado a tus necesidades.
+                <strong>TÚ MEJOR OPCIÓN:</strong> Accede a más de <strong>100,000 recursos digitales</strong> desde cualquier dispositivo. Contamos con herramientas interactivas y contenido adaptado a tus necesidades.
             </p>
             <p>Además, <strong>por cada curso o recurso</strong> adquirido podrás obtener una <strong>constancia de participación</strong>.</p>
         </div>
@@ -257,7 +282,6 @@
         </div>
     </div>
 </div>
-
             </div>
 
            <!-- Sección Productos -->
@@ -1080,7 +1104,31 @@
         </div>
     </div>
 </div>
+<!-- Sección Transportes -->
+<div id="classcloud-section" class="hidden-section">
+    <div class="rounded-container mb-4 text-center">
+        <h2 class="section-title"><i class="fas fa-school"></i> ClassCloud</h2>
 
+        <!-- Botón siempre visible -->
+        <a href="https://classcloud.emiliocolor.com" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-primary btn-lg my-3">
+            Abrir en nueva pestaña
+        </a>
+
+        <!-- iframe visible en todas las pantallas -->
+        <div class="mt-4">
+            <iframe src="https://classcloud.emiliocolor.com" 
+                    width="100%" 
+                    style="border:0;" 
+                    allowfullscreen 
+                    loading="lazy"
+                    class="iframe-transportes">
+            </iframe>
+        </div>
+    </div>
+</div>
 <!-- Estilos responsivos -->
 <style>
     .iframe-transportes {
@@ -1110,10 +1158,9 @@
             <div class="row mb-4">
                 <div class="col-12">
                     <h4><i class="fas fa-history text-primary mr-2"></i> Nuestra Historia</h4>
-                    <p>EmilioColor® inició como una idea en 2017, con el objetivo de crear una marca integradora para diversas industrias, comenzando con papelería bajo el concepto EmilioForma.
-                    En 2023 tomamos la decisión de renombrarnos como EmilioColor™, retomando el enfoque en productos de papelería y añadiendo servicios educativos de alta calidad, estableciendo un pilar fundamental: ClassCloud℠, para ofrecer servicios digitales educativos, incluyendo sitio web y redes sociales.
-                    En 2024 nos consolidamos como EmilioColor® y expandimos nuestras operaciones en el ámbito digital, desarrollando plataformas para el Instituto Politécnico Nacional. También incursionamos en los sectores alimenticio y de transporte.
-                    Para 2025 establecimos EMIVERSAL DATABASE℠ como nuestro pilar de gestión segura de datos.</p>
+                    <p>
+                        EmilioColor® es una marca registrada desde 2023. Iniciamos con la venta de papelería, expandimos nuestras operaciones hacia el sector de la tecnología, posteriormente nos enfocamos en educación, continuamos con transportes y actualmente estamos incursionando en el área de alimentos.
+                    </p>
                 </div>
             </div>
 
@@ -1211,164 +1258,106 @@
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="text-center">
-                        <img src="img-logos/emilioforma.png" alt="2017" class="img-fluid rounded mb-2 img-40">
-                        <p class="small"><strong>2017:</strong> Idea de marca EmilioForma</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
-                        <img src="img-logos/emiliocolor_tm.png" alt="2024" class="img-fluid rounded mb-2 img-40">
-                        <p class="small"><strong>2023:</strong> EmilioColor™</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
                         <img src="img-logos/emiliocolor_r.jpg" alt="2024" class="img-fluid rounded mb-2 img-40">
-                        <p class="small"><strong>2024:</strong> Registro de EmilioColor®</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
-                        <img src="img-logos/grupo_logo.png" alt="2025" style="width: 190px;" class="img-fluid rounded mb-2">
-                        <p class="small"><strong>2025:</strong> Presentación como Grupo EmilioColor®</p>
-                    </div>
-                    <div class="text-center">
-                        <img src="img-logos/inkspire_logo.png" alt="2025" style="width: 180px;" class="img-fluid rounded mb-2">
-                        <p class="small"><strong>2025:</strong> Adición temporal de Inkspire a EmilioColor®</p>
+                        <p class="small"><strong>2023:</strong> Inicio de operaciones</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
                     <div class="text-center">
                         <img src="img-logos/logo_azul_alargado.png" alt="2025" style="width: 210px;" class="img-fluid rounded mb-2">
-                        <p class="small"><strong>2025 (actualidad):</strong> Nueva imagen y actualización de registro de EmilioColor®</p>
+                        <p class="small"><strong>2025 (actualidad):</strong> Nueva imagen y actualización de registro</p>
                     </div>
                 </div>
             </div>
-        <!-- Subsección Impacto Social -->
-        <h3 class="mt-5 mb-4"><i class="fas fa-hands-helping"></i> Impacto Social</h3>
+    </div>
+</div>
+
+<!-- ========================= -->
+<!-- Sección: Apoyos y Herramientas -->
+<!-- ========================= -->
+<div id="apoyos-section" class="rounded-container p-4" style="border-radius:1rem; background-color:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+
+    <!-- Impacto Social / Apoyos -->
+    <div class="apoyos-community mb-5">
+        <h2 class="mb-3"><i class="fas fa-users"></i> Impacto Social</h2>
         <p>Proyectos y colaboraciones que generan un cambio positivo en la comunidad</p>
-<style>
-.project-images img {
-    width: 100%;   
-    max-width: 1200px; 
-    height: 100px;       
-    object-fit: cover;     
-    border-radius: 0.25rem; 
-}
-</style>
 
-<div class="row">
-
-    <!-- Proyecto 1 -->
-    <div class="col-md-6">
-        <div class="card project-card h-100">
-            <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="project-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h4 class="mb-0">Comunidad de Estudio CECyT 9</h4>
-                </div>
-                <p>Contribuimos activamente a una comunidad en línea con herramientas educativas diseñadas específicamente para estudiantes del CECyT 9.</p>
-                <div class="project-images d-flex justify-content-center align-items-center gap-3 mt-3">
-                    <img src="img_proyectos/cececyt9.png" alt="Comunidad de Estudio CECyT 9" class="img-small rounded">
-                </div>                  
-                <div class="project-actions mt-3 d-flex flex-wrap gap-2">
-                    <a href="https://sites.google.com/view/comunidad-de-estudio-cecyt9/Home" target="_blank" class="btn btn-sm btn-primary">
-                        <i class="fas fa-external-link-alt me-1"></i> Visitar sitio
-                    </a>
-                    <a href="https://drive.google.com/file/d/1oEeC94PBjurxAQa4H-AeQbCJbNXDRbMy/view?usp=sharing" class="btn btn-sm btn-outline-primary">
-                        <i class="fas fa-file-pdf me-1"></i> Documentación
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Proyecto 2 -->
-    <div class="col-md-6">
-        <div class="card project-card h-100">
-            <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="project-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h4 class="mb-0">Apoyo Económico al Club de Robótica CECyT 9</h4>
-                </div>
-                <p>Realizamos un apoyo económico al Club de Robótica del CECyT 9 IPN, con el fin de contribuir a la cobertura de los costos relacionados con su participación en la Posada de Robótica celebrada en el ITAM, campus Ciudad de México.</p>
-                <div class="project-images d-flex justify-content-center align-items-center gap-3 mt-3">
-                    <img src="img_proyectos/banner-cecyt9-1920-500.jpg" alt="Club de Robótica CECyT 9" class="img-small rounded">
-                </div>  
-                <div class="project-actions mt-3 d-flex flex-wrap gap-2">
-                    <a href="https://www.ipn.mx/sip/noticias/ver-comunicado.html?y=2024&n=2&t=15&u=11" target="_blank" class="btn btn-sm btn-primary">
-                        <i class="fas fa-external-link-alt me-1"></i> Visitar página oficial
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Proyecto 4 -->
-    <div class="col-md-6">
-        <div class="card project-card h-100">
-            <div class="card-body">
-                <div class="d-flex align-items-center mb-3">
-                    <div class="project-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h4 class="mb-0">CAPES - Clasificador Automatizado para Educación STEM</h4>
-                </div>
-                <p>Automatización en la organización y clasificación de componentes electrónicos con fines didácticos en robótica y electrónica educativa.</p>
-                <div class="project-images d-flex justify-content-center align-items-center gap-3 mt-3">
-                    <img src="https://media.istockphoto.com/id/1654943682/es/foto/brazos-rob%C3%B3ticos-avanzados-de-alta-precisi%C3%B3n-en-una-l%C3%ADnea-de-ensamblaje-de-pcb-totalmente.jpg?s=612x612&w=0&k=20&c=OSC119IA905DLwOwfAUl5gHMsc4DxJ_tvSMr3KRzHjQ=" alt="CAPES - Clasificador Automatizado" class="img-small rounded">
-                </div>
-                <p style="color: #daa300;">En proceso de desarrollo.</p>
-                <div class="project-actions mt-3 d-flex flex-wrap gap-2">
-                    <a href="https://emiliocolor.com/proyectos/" class="btn btn-sm btn-primary">
-                        <i class="fas fa-file-alt me-1"></i> Consultar página
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-        <!-- Subsección Herramientas -->
-        <h3 class="mt-5 mb-4"><i class="fas fa-tools"></i> Herramientas</h3>
-        <p>Herramientas prácticas y fáciles de usar para agilizar y mejorar tus proyectos digitales</p>
-        
-<style>
-.btn-link.text-danger {
-    color: #dc3545;
-    border-radius: 4px;
-    padding: 0.25rem 0.6rem;
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: inline-block;
-    width: auto !important;
-    white-space: nowrap;
-    margin-left: 10px; /* ajusta este valor para moverlo más o menos a la derecha */
-}
-
-.btn-link.text-danger:hover,
-.btn-link.text-danger:focus {
-    background-color: #dc3545 !important;
-    color: white !important;
-    text-decoration: none !important;
-    cursor: pointer;
-}
-</style>
-
-<a href="#contacto" class="btn btn-link text-danger mt-2">Reportar problema</a>
-
-
-        <div class="row mt-4">
+        <div class="row g-4">
+            <!-- Proyecto 1 -->
             <div class="col-md-6">
-                <div class="card tool-card p-4 text-center h-100 d-flex flex-column justify-content-between">
+                <div class="card h-100 shadow-sm rounded-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:50px; height:50px;">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h5 class="mb-0">Comunidad de Estudio CECyT 9</h5>
+                        </div>
+                        <p>Contribuimos activamente a una comunidad en línea con herramientas educativas diseñadas para estudiantes del CECyT 9.</p>
+                        <img src="img_proyectos/cececyt9.png" alt="Comunidad de Estudio CECyT 9" class="img-fluid rounded-3 mb-3" style="height:120px; object-fit:cover;">
+                        <div class="d-flex gap-2">
+                            <a href="https://sites.google.com/view/comunidad-de-estudio-cecyt9/Home" target="_blank" class="btn btn-sm btn-primary">
+                                <i class="fas fa-external-link-alt me-1"></i> Sitio
+                            </a>
+                            <a href="https://drive.google.com/file/d/1oEeC94PBjurxAQa4H-AeQbCJbNXDRbMy/view?usp=sharing" class="btn btn-sm btn-outline-primary">
+                                <i class="fas fa-file-pdf me-1"></i> Documentación
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm rounded-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:50px; height:50px;">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h5 class="mb-0">Apoyo al Club de Robótica CECyT 9</h5>
+                        </div>
+                        <p>Brindamos apoyo económico al Club de Robótica del CECyT 9 para cubrir costos de participación en la Posada de Robótica en el ITAM, Ciudad de México.</p>
+                        <img src="img_proyectos/banner-cecyt9-1920-500.jpg" alt="Club de Robótica CECyT 9" class="img-fluid rounded-3 mb-3" style="height:120px; object-fit:cover;">
+                        <a href="https://www.ipn.mx/sip/noticias/ver-comunicado.html?y=2024&n=2&t=15&u=11" target="_blank" class="btn btn-sm btn-primary">
+                            <i class="fas fa-external-link-alt me-1"></i> Página oficial
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm rounded-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:50px; height:50px;">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h5 class="mb-0">Clasificador Automatizado para la Educación STEAM (CAPES)</h5>
+                        </div>
+                        <p>Desarrollamos un sistema automatizado para la organización y clasificación con fines didácticos en áreas de robótica y educación STEAM.</p>
+                        <p class="text-warning"><i class="fas fa-tools me-1"></i> En desarrollo</p>
+                        <a href="https://emiliocolor.com/proyectos/" target="_blank" class="btn btn-sm btn-primary">
+                            <i class="fas fa-file-alt me-1"></i> Ver proyecto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Herramientas a la Comunidad -->
+    <div class="herramientas-community">
+        <h2 class="mb-3"><i class="fas fa-toolbox"></i> Herramientas a la Comunidad</h2>
+        <p>Plataformas y utilidades para ayudar a la comunidad a desarrollar proyectos y gestionar recursos.</p>
+
+        <div class="row g-4 mt-3">
+            <!-- Herramienta 1 -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm rounded-3 p-4 text-center d-flex flex-column justify-content-between">
                     <div>
-                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                             alt="GitHub Logo"
-                             class="img-fluid mb-3"
-                             style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px;">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="img-fluid mb-3 rounded-3" style="width:120px; height:120px; object-fit:cover;">
                         <h5>Convertidor de GitHub a RAW</h5>
                         <p class="small text-muted">Convierte enlaces blob de GitHub a enlaces RAW</p>
                     </div>
@@ -1376,142 +1365,153 @@
                 </div>
             </div>
 
+            <!-- Herramienta 2 -->
             <div class="col-md-6">
-                <div class="card tool-card p-4 text-center h-100 d-flex flex-column justify-content-between">
+                <div class="card h-100 shadow-sm rounded-3 p-4 text-center d-flex flex-column justify-content-between">
                     <div>
-                        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png"
-                             alt="Dog Logo"
-                             class="img-fluid mb-3"
-                             style="width: 120px; height: 120px; object-fit: cover; border-radius: 8px;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Dog Logo" class="img-fluid mb-3 rounded-3" style="width:120px; height:120px; object-fit:cover;">
                         <h5>Selector de imágenes de perros</h5>
                         <p class="small text-muted">Elige imágenes de perros como fondo</p>
                     </div>
                     <a href="https://emiliocolor.com/herramientas/selector_de_fondos" class="btn btn-outline-primary mt-3">Ir al selector</a>
                 </div>
             </div>
+
+            <!-- Herramienta 3 -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm rounded-3 p-4 text-center d-flex flex-column justify-content-between">
+                    <div>
+                        <img src="https://raw.githubusercontent.com/emiversal/database/80260d9f8b6bafa416ea3660193ee5d16dde3f55/img_classcloud/favicon_blanco.png" alt="IDE Logo" class="img-fluid mb-3 rounded-3" style="width:120px; height:120px; object-fit:cover;">
+                        <h5>Entorno de Desarrollo Integral EmilioColor</h5>
+                        <p class="small text-muted">Plataforma completa para gestionar y desarrollar tus proyectos</p>
+                    </div>
+<a href="#" class="btn btn-outline-primary mt-3">Ingresar</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-            </div>
 
-            <!-- Sección Marcas -->
-            <div id="marcas-section" class="hidden-section">
-                <div class="rounded-container">
-                    <h2 class="section-title"><i class="fas fa-tags"></i> Nuestras Marcas</h2>
-                    <p>Conoce las marcas que forman parte de nosotros</p>
-                    
-                    <div class="row mt-4 g-4">
-                                                <div class="col-md-3 col-6">
-                            <div class="card tool-card p-3 text-center">
-                                <p>ClassCloud℠</p>
-                                <img src="img_marcas/favicon_azul_classcloud.png" alt="Marca 2" class="img-fluid mb-3">
-                                <a href="https://classcloud.emiliocolor.com/" class="btn btn-sm btn-outline-primary">Ver más</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="card tool-card p-3 text-center">
-                                <p>EMIVERSAL DATABASE℠</p>
-                                <img src="img_marcas/logo_emiversal.png" alt="Marca 1" class="img-fluid mb-3">
-                                <a href="#" class="btn btn-sm btn-outline-primary">Ver más</a>
-                            </div>
-                        </div>
-                        <!-- agregar más marcas aquí -->
-                    </div>
-                </div>
-            </div>
-            <style>
-                @media (max-width: 767.98px) {
-  .contact-container {
-    margin-bottom: 20px; /* ajusta el valor según lo que necesites */
-  }
-}
-            </style>
-            
 <!-- Sección Contacto -->
-<section id="contacto-section" class="page-section hidden-section">
-  <div class="rounded-container">
+<div id="contacto-section" class="rounded-container">
     <h2 class="section-title"><i class="fas fa-envelope"></i> Contacto</h2>
     <p class="section-subtitle">¿Tienes alguna pregunta? No dudes en ponerte en contacto con nosotros.</p>
 
     <div class="row mt-4 g-4">
-      <!-- Columna Izquierda: Métodos de Contacto -->
-      <div class="col-md-6">
-          
-          <!-- Correo -->
-          <div class="contact-method mb-4">
-            <h5 class="d-flex align-items-center mb-2">
-              <i class="fas fa-envelope text-primary me-2" style="font-size: 1.2rem;"></i>
-              Correo Electrónico
-            </h5>
-            <a href="mailto:emiliocolormexico@gmail.com">emiliocolormexico@gmail.com</a>
-            <a href="mailto:emiliocolormexico@gmail.com" target="_blank" class="btn btn-primary d-block mt-3 mb-2">
-              <i class="fas fa-paper-plane me-2"></i> Enviar correo (Celular)
-            </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com" target="_blank" class="btn btn-primary d-block">
-              <i class="fas fa-paper-plane me-2"></i> Enviar correo (Computadora)
-            </a>
-          </div>
+        <!-- Columna Izquierda: Métodos de Contacto -->
+        <div class="col-md-6">
+            <!-- Correo -->
+            <div class="contact-method mb-4">
+                <h5 class="d-flex align-items-center mb-2">
+                    <i class="fas fa-envelope text-primary me-2" style="font-size: 1.2rem;"></i>
+                    Correo Electrónico
+                </h5>
+                <a href="mailto:emiliocolormexico@gmail.com">emiliocolormexico@gmail.com</a>
+                <p class="small text-muted mb-3">Disponibles las 24 horas, todos los días</p>
+            </div>
 
-          <!-- Teléfono y WhatsApp -->
-          <div class="contact-method mb-4">
-            <h5 class="d-flex align-items-center mb-1">
-              <i class="fas fa-phone-alt text-primary me-2" style="font-size: 1.2rem;"></i>
-              Teléfono
-            </h5>
-            <a href="tel:+525625377747">+52 56 2537 7747</a>
-            <p class="small text-muted mb-3">Horario: Lunes a Viernes, 10am - 6pm</p>
+            <!-- Teléfono y WhatsApp -->
+            <div class="contact-method mb-4">
+                <h5 class="d-flex align-items-center mb-1">
+                    <i class="fas fa-phone-alt text-primary me-2" style="font-size: 1.2rem;"></i>
+                    Teléfono
+                </h5>
+                <a href="tel:+525625377747">+52 56 2537 7747</a>
+                <p class="small text-muted mb-3">Horario: Lunes a Viernes, 10am - 6pm</p>
 
-            <h5 class="d-flex align-items-center mb-1">
-              <i class="fab fa-whatsapp text-primary me-2" style="font-size: 1.2rem;"></i>
-              WhatsApp
-            </h5>
-            <a href="https://wa.me/525625377747" target="_blank">+52 56 2537 7747</a>
-            <p class="small text-muted mb-0">Horario: Lunes a Viernes, 10am - 6pm</p>
-          </div>
+                <h5 class="d-flex align-items-center mb-1">
+                    <i class="fab fa-whatsapp text-primary me-2" style="font-size: 1.2rem;"></i>
+                    WhatsApp
+                </h5>
+                <a href="https://wa.me/525625377747" target="_blank">+52 56 2537 7747</a>
+                <p class="small text-muted mb-0">Horario: Lunes a Viernes, 10am - 6pm</p>
+            </div>
 
-          <!-- Ubicación -->
-          <div class="contact-method">
-            <h5 class="d-flex align-items-center mb-2">
-              <i class="fas fa-map-marker-alt text-primary me-2" style="font-size: 1.2rem;"></i>
-              Ubicación
-            </h5>
-            <p>Operando desde México</p>
-          </div>
-      </div>
+            <!-- Ubicación -->
+            <div class="contact-method">
+                <h5 class="d-flex align-items-center mb-2">
+                    <i class="fas fa-map-marker-alt text-primary me-2" style="font-size: 1.2rem;"></i>
+                    Ubicación
+                </h5>
+                <p>Operando desde México</p>
+            </div>
+        </div>
 
-      <!-- Columna Derecha: Info adicional y redes -->
-      <div class="col-md-6">
-          <h5 class="mb-4">Información Adicional</h5>
+<!-- Columna Derecha: Servicios Post Compra, Información Adicional y Redes -->
+<div class="col-md-6">
 
-          <div class="mb-2">
-            <a href="https://emiliocolor.com/legalidad_y_garantias.html" target="_blank" class="d-block p-2 bg-light rounded">
-              <i class="fas fa-file-contract text-primary me-2"></i> Legalidad y Garantía
-            </a>
-          </div>
-
-          <div class="mb-4">
-            <a href="https://emiliocolor.com/equipo.html" target="_blank" class="d-block p-2 bg-light rounded">
-              <i class="fas fa-users text-primary me-2"></i> Únete a nuestro equipo
-            </a>
-          </div>
-
-          <h5 class="mb-3">Redes Sociales</h5>
-          <div class="d-flex gap-3 mb-4">
-            <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-circle"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/emiliocolormx/" class="social-circle"><i class="fab fa-instagram"></i></a>
-          </div>
-
-          <div class="text-center mt-4">
-            <img src="img-logos/favicon.png" alt="EmilioColor Logo" class="footer-logo-favicon mb-2">
-            <img src="img-logos/favicon_lyg.png" alt="Legalidad y Garantía" class="footer-logo-favicon mb-2">
-            <img src="img-logos/favicon_st.jpg" alt="EmilioColor Soporte" class="footer-logo-favicon mb-2">
-            <p class="small">Este sitio es propiedad de EmilioColor®</p>
-          </div>
-      </div>
+    <!-- Servicios Post Compra -->
+    <h5 class="mb-3">Servicios Post Compra</h5>
+    <div class="d-flex flex-column gap-2 mb-4">
+        <a href="#" class="d-block p-2 bg-light rounded text-decoration-none d-flex align-items-center">
+            <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:40px; height:40px;">
+                <i class="fas fa-ticket-alt"></i>
+            </div>
+            <span>Solicitar Ticket Digital</span>
+        </a>
+        <a href="#" class="d-block p-2 bg-light rounded text-decoration-none d-flex align-items-center">
+            <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:40px; height:40px;">
+                <i class="fas fa-certificate"></i>
+            </div>
+            <span>Solicitar Certificación de Curso</span>
+        </a>
+        <a href="#" class="d-block p-2 bg-light rounded text-decoration-none d-flex align-items-center">
+            <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:40px; height:40px;">
+                <i class="fas fa-headset"></i>
+            </div>
+            <span>Servicio al Cliente</span>
+        </a>
     </div>
-  </div>
-</section>
-            
+
+    <!-- Información Adicional -->
+    <h5 class="mb-3">Información Adicional</h5>
+    <div class="mb-1">
+        <a href="https://emiliocolor.com/legalidad_y_garantias.html" target="_blank" class="d-block p-2 bg-light rounded text-decoration-none">
+            <i class="fas fa-file-contract text-primary me-2"></i>Legalidad y Garantía
+        </a>
+    </div>
+
+    <div class="mb-2">
+        <a href="https://emiliocolor.com/equipo.html" target="_blank" class="d-block p-2 bg-light rounded text-decoration-none">
+            <i class="fas fa-users text-primary me-2"></i>Únete a nuestro equipo
+        </a>
+    </div>
+
+    <!-- Redes Sociales -->
+    <h5 class="mb-3">Redes Sociales</h5>
+    <div class="d-flex gap-3 mb-4">
+        <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/emiliocolormx/" class="social-circle"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Footer Logos -->
+    <div class="text-center mt-4">
+        <img src="img-logos/favicon.png" alt="EmilioColor Logo" class="footer-logo-favicon mb-2">
+        <img src="img-logos/favicon_lyg.png" alt="Legalidad y Garantía" class="footer-logo-favicon mb-2">
+        <img src="img-logos/favicon_st.jpg" alt="EmilioColor Soporte" class="footer-logo-favicon mb-2">
+        <p class="small mb-0">¡Gracias por elegir nuestra marca!</p>
+    </div>
+
+</div>
+
+    </div>
+</div>
+
+<style>
+/* Íconos dentro de círculo azul para servicios */
+.service-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+}
+
+/* Opcional: hover ligero */
+.service-item:hover .service-icon {
+    background-color: #0056b3;
+}
+</style>
+
+
             <footer class="footer">
                 <div class="container">
                     <img src="img-logos/logo_azul_alargado.png" alt="EmilioColor Logo" class="footer-logo">
@@ -1551,5 +1551,4 @@
 </style>
 </body>
 </html>
-
 
