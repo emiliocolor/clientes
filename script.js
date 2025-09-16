@@ -310,7 +310,6 @@ function loadCursosContentDirectly() {
     cursosContainer.innerHTML = `
         <div class="rounded-container mb-4">
             <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Cursos Pregrabados</h2>
-
             <div class="mt-4 mb-3">
                 <audio controls>
                     <source src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/cursos_audio.mp3" type="audio/mpeg">
@@ -333,6 +332,7 @@ function loadCursosContentDirectly() {
                             <button class="btn btn-outline-secondary square-btn" type="button" id="clearSearch">Limpiar</button>
                         </div>
                         <div id="searchResultsCount" class="small text-muted mt-2"></div>
+                        <p>Dentro de esta sección, cualquiera es producto particpante.</p>
                     </div>
                 </div>
             </div>
