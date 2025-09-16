@@ -332,7 +332,7 @@ function loadCursosContentDirectly() {
                             <button class="btn btn-outline-secondary square-btn" type="button" id="clearSearch">Limpiar</button>
                         </div>
                         <div id="searchResultsCount" class="small text-muted mt-2"></div>
-                        <p>Dentro de esta sección, cualquiera es producto particpante.</p>
+                        <p>Dentro de esta sección, cualquiera es producto participante.</p>
                     </div>
                 </div>
             </div>
