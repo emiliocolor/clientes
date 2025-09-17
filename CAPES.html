@@ -1576,9 +1576,9 @@
     });
     </script>
 <script>
-// Verificar autenticación al cargar la página - VERSIÓN MEJORADA
+// Verificar autenticación al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
-    // Solo verificar si estamos en la página principal de CAPES
+    // Verificar si estamos en CAPES.html
     const isCapesPage = window.location.pathname.endsWith('CAPES.html') || 
                         window.location.pathname.endsWith('/') || 
                         window.location.pathname === '';
@@ -1586,20 +1586,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isCapesPage) {
         // Verificar si el usuario está autenticado
         if (localStorage.getItem('capes_authenticated') !== 'true') {
-            // Redirigir a la página de login
-            window.location.href = 'https://emiversal.github.io/database/login_CAPES.html';
-        } else {
-            // Usuario autenticado, mostrar posible opción de logout
-            console.log('Usuario autenticado correctamente');
+            // Redirigir a la página de login en emiversal.github.io
+            window.location.href = 'login_CAPES.html';
         }
     }
 });
 
-// Función para cerrar sesión (si es necesaria)
+// Función para cerrar sesión
 function logout() {
     localStorage.removeItem('capes_authenticated');
     localStorage.removeItem('username');
-            window.location.href = 'https://emiversal.github.io/database/login_CAPES.html';
+    window.location.href = 'login_CAPES.html';
 }
 </script>
 </body>
