@@ -1575,5 +1575,24 @@
         });
     });
     </script>
+    <script>
+// Verificar autenticación al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname.includes('CAPES.html')) {
+        if (localStorage.getItem('capes_authenticated') !== 'true') {
+            // Redirigir a la ruta correcta
+            window.location.href = 'proyectos/login_CAPES.html';
+        }
+    }
+});
+
+// Función para cerrar sesión
+function logout() {
+    localStorage.removeItem('capes_authenticated');
+    // Redirigir a la ruta correcta
+    window.location.href = 'proyectos/login_CAPES.html';
+}
+</script>
+
 </body>
 </html>
