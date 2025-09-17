@@ -1578,37 +1578,25 @@
     <script>
 // Verificar autenticación al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname.includes('CAPES.html')) {
+    // Verificar si estamos en CAPES.html
+    if (window.location.pathname.endsWith('CAPES.html') || 
+        window.location.pathname.endsWith('/') || 
+        window.location.pathname === '') {
+        
+        // Verificar si el usuario está autenticado
         if (localStorage.getItem('capes_authenticated') !== 'true') {
-            // Redirigir a la ruta correcta
-            window.location.href = 'proyectos/login_CAPES.html';
+            // Redirigir a la página de login
+            window.location.href = 'https://emiliocolor.com/proyectos/login_CAPES.html';
         }
-    }
-});
-
-// Función para cerrar sesión
-function logout() {
-    localStorage.removeItem('capes_authenticated');
-    // Redirigir a la ruta correcta
-    window.location.href = 'proyectos/login_CAPES.html';
-}
-</script>
-<script>
-// Verificar autenticación al cargar la página
-document.addEventListener('DOMContentLoaded', function() {
-    // Verificar si el usuario está autenticado
-    if (sessionStorage.getItem('capes_authenticated') !== 'true') {
-        // Redirigir a la página de login
-        window.location.href = 'https://emiliocolor.com/proyectos/login_CAPES.html';
     }
 });
 
 // Función para cerrar sesión (si es necesaria)
 function logout() {
-    sessionStorage.removeItem('capes_authenticated');
+    localStorage.removeItem('capes_authenticated');
+    localStorage.removeItem('username');
     window.location.href = 'https://emiliocolor.com/proyectos/login_CAPES.html';
 }
 </script>
 </body>
 </html>
-
