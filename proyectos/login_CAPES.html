@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso | CAPES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/favicon_st.jpg" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #292929;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .background-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .background-slider img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .background-slider img.active {
+            opacity: 1;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.178);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(2px);
+        }
+        
+        .login-header {
+            background-color: rgba(7, 28, 214, 0.178);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .login-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .login-body {
+            padding: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.5s ease;
+            background-color: rgba(255, 255, 255, 0.589);
+        }
+        
+        .input-group input:focus {
+            background-color: #071cd669;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(7, 28, 214, 0.1);
+            background-color: white;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #071cd633;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+        
+        .login-btn:hover {
+            background-color: #061581b0;
+        }
+        
+        .clear-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(248, 249, 250, 0.7);
+            color: #495057;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .clear-btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .login-footer {
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #ffffff;
+        }
+        
+        .login-footer a {
+            color: #0a25f0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .logo-login {
+            width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-slider">
+<img src="https://raw.githubusercontent.com/emiversal/database/82e46224a535efc7eec6d57d0c88d5cafae1743f/img_background_logins/perro.jpg" alt="Fondo 0">
+<img src="https://raw.githubusercontent.com/emiversal/database/82e46224a535efc7eec6d57d0c88d5cafae1743f/img_background_logins/perro1.jpg" class="active" alt="Fondo 1">
+<img src="https://raw.githubusercontent.com/emiversal/database/82e46224a535efc7eec6d57d0c88d5cafae1743f/img_background_logins/perro2.jpg" alt="Fondo 2">
+<img src="https://raw.githubusercontent.com/emiversal/database/82e46224a535efc7eec6d57d0c88d5cafae1743f/img_background_logins/perro3.jpg" alt="Fondo 3">
+<img src="https://raw.githubusercontent.com/emiversal/database/82e46224a535efc7eec6d57d0c88d5cafae1743f/img_background_logins/perro4.jpg" alt="Fondo 4">
+<img src="https://raw.githubusercontent.com/emiversal/database/82e46224a535efc7eec6d57d0c88d5cafae1743f/img_background_logins/perro5.jpg" alt="Fondo 5">
+<img src="https://raw.githubusercontent.com/emiversal/database/82e46224a535efc7eec6d57d0c88d5cafae1743f/img_background_logins/perro6.jpg" alt="Fondo 6">
+<img src="https://raw.githubusercontent.com/emiversal/database/82e46224a535efc7eec6d57d0c88d5cafae1743f/img_background_logins/perro7.jpg" alt="Fondo 7">
+    </div>
+    <div class="overlay"></div>
+    
+    <div class="login-container">
+        <div class="login-header">
+            <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo" class="logo-login">
+            <h2>Acceso al sistema</h2>
+            <p>Ingresa tus credenciales</p>
+        </div>
+        
+        <div class="login-body">
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" placeholder="Ingresa tu usuario" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+                    <div id="errorMessage" class="error-message">Usuario o contraseña incorrectos</div>
+                </div>
+                
+                <div class="buttons-container">
+                    <button type="submit" class="login-btn">Iniciar Sesión</button>
+                    <button type="button" id="clearBtn" class="clear-btn">Limpiar autocompletado</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="login-footer">
+            ¿Problemas para acceder? <a href="mailto:emiliocolormexico@gmail.com">Contacta a soporte</a>
+        </div>
+    </div>
+    <script src="script_login_CAPES.js" ></script>
+
+</body>
+
+</html>
