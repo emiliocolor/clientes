@@ -1575,18 +1575,22 @@
         });
     });
     </script>
-    <script>
-// Verificar autenticación al cargar la página
+<script>
+// Verificar autenticación al cargar la página - VERSIÓN MEJORADA
 document.addEventListener('DOMContentLoaded', function() {
-    // Verificar si estamos en CAPES.html
-    if (window.location.pathname.endsWith('CAPES.html') || 
-        window.location.pathname.endsWith('/') || 
-        window.location.pathname === '') {
-        
+    // Solo verificar si estamos en la página principal de CAPES
+    const isCapesPage = window.location.pathname.endsWith('CAPES.html') || 
+                        window.location.pathname.endsWith('/') || 
+                        window.location.pathname === '';
+    
+    if (isCapesPage) {
         // Verificar si el usuario está autenticado
         if (localStorage.getItem('capes_authenticated') !== 'true') {
             // Redirigir a la página de login
-            window.location.href = 'https://emiliocolor.com/proyectos/login_CAPES.html';
+            window.location.href = 'https://emiversal.github.io/database/login_CAPES.html';
+        } else {
+            // Usuario autenticado, mostrar posible opción de logout
+            console.log('Usuario autenticado correctamente');
         }
     }
 });
@@ -1595,7 +1599,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function logout() {
     localStorage.removeItem('capes_authenticated');
     localStorage.removeItem('username');
-    window.location.href = 'https://emiliocolor.com/proyectos/login_CAPES.html';
+            window.location.href = 'https://emiversal.github.io/database/login_CAPES.html';
 }
 </script>
 </body>
