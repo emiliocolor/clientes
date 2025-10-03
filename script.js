@@ -210,7 +210,7 @@ const sectionManager = {
                 this.showSection(sectionId);
                 history.pushState(null, null, sectionId);
                 
-                if (sectionId === '#cursos') {
+                if (sectionId === '#educacion') {
                     loadCursosSection();
                 }
             });
@@ -219,7 +219,7 @@ const sectionManager = {
         window.addEventListener('popstate', () => {
             this.showSection(window.location.hash || '#inicio');
             
-            if (window.location.hash === '#cursos') {
+            if (window.location.hash === '#educacion') {
                 loadCursosSection();
             }
         });
@@ -257,7 +257,7 @@ function loadCursosSection() {
         return;
     }
     
-    const cursosContainer = document.getElementById('cursos-section');
+    const cursosContainer = document.getElementById('educacion-section');
     if (!cursosContainer) {
         console.error("No se encontró el contenedor de cursos");
         return;
@@ -278,7 +278,7 @@ function loadCursosSection() {
     `;
     
     // Intentar cargar desde archivo externo
-    fetch('cursos-section.html')
+    fetch('educacion-section.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Archivo no encontrado. Cargando contenido alternativo.');
@@ -304,12 +304,13 @@ function loadCursosSection() {
 
 // Función para cargar el contenido de cursos directamente como fallback
 function loadCursosContentDirectly() {
-    const cursosContainer = document.getElementById('cursos-section');
+    const cursosContainer = document.getElementById('educacion-section');
     if (!cursosContainer) return;
     
     cursosContainer.innerHTML = `
         <div class="rounded-container mb-4">
             <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Cursos Pregrabados</h2>
+
             <div class="mt-4 mb-3">
                 <audio controls>
                     <source src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/cursos_audio.mp3" type="audio/mpeg">
@@ -332,7 +333,6 @@ function loadCursosContentDirectly() {
                             <button class="btn btn-outline-secondary square-btn" type="button" id="clearSearch">Limpiar</button>
                         </div>
                         <div id="searchResultsCount" class="small text-muted mt-2"></div>
-                        <p>Dentro de esta sección, cualquiera es producto participante.</p>
                     </div>
                 </div>
             </div>
@@ -5769,7 +5769,7 @@ function initCourseSearch() {
     const courseSearch = document.getElementById('courseSearch');
     const clearSearch = document.getElementById('clearSearch');
     const searchResultsCount = document.getElementById('searchResultsCount');
-    const courseCards = document.querySelectorAll('#cursos-section .tool-card');
+    const courseCards = document.querySelectorAll('#educacion-section .tool-card');
     
     if (!courseSearch || !clearSearch || !searchResultsCount || courseCards.length === 0) {
         console.log("Elementos de búsqueda no encontrados, reintentando...");
@@ -5913,7 +5913,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Cargar la sección de cursos si ya estamos en ella al cargar la página
-    if (window.location.hash === '#cursos') {
+    if (window.location.hash === '#educacion') {
         loadCursosSection();
     }
 });
@@ -6000,7 +6000,7 @@ function generateGeneralQuotation() {
 // Agregar el botón de cotización general a la sección de cursos
 function addGeneralQuotationButton() {
     // Buscar el contenedor de la sección de cursos
-    const cursosContainer = document.getElementById('cursos-section');
+    const cursosContainer = document.getElementById('educacion-section');
     if (!cursosContainer) return;
     
     // Buscar el primer contenedor rounded-container
@@ -6022,7 +6022,3 @@ function addGeneralQuotationButton() {
         roundedContainer.insertBefore(quotationButton, roundedContainer.firstChild);
     }
 }
-
-// Modificar la función loadCursosContentDirectly para agregar el botón
-// Busca esta función en tu código y modifícala o agrega la llamada a addGeneralQuotationButton
-// Después de cargar el contenido de cursos, llama a addGeneralQuotationButton
