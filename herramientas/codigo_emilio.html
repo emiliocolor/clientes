@@ -605,13 +605,16 @@
                         Grupo 1 (B-K): # + (posición × 6)<br>
                         Grupo 2 (L-T): $ + (posición × 5) [Regla Calep]<br>
                         Grupo 3 (U-Z): & + (posición × 6)<br><br>
-                        <strong>Espacio:</strong> |
+                        <strong>Espacio:</strong> |<br>
+                        <strong>Signos:</strong><br>
+                        ¿ = ?33, ¡ = !33, ? = ?63, ! = !63
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
+
 
 <!-- Footer -->
 <footer class="main-footer">
@@ -640,9 +643,6 @@
                 </a>
                 <a href="https://emiliocolor.com/#classcloud" class="footer-nav-link" data-section="classcloud" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-cloud"></i> ClassCloud℠
-                </a>
-                <a href="https://emiliocolor.com/#nosotros" class="footer-nav-link" data-section="nosotros">
-                    <i class="fas fa-users"></i> Nosotros
                 </a>
                 <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link" data-section="nosotros">
                     <i class="fas fa-hands-helping"></i> Apoyos
@@ -723,7 +723,7 @@
     }
 
     function encodeToEmilio() {
-        const text = document.getElementById("text-to-encode").value.trim().toUpperCase();
+        const text = document.getElementById("text-to-encode").value.trim();
         const errorElement = document.getElementById("error");
         const resultElement = document.getElementById("result");
         
@@ -742,32 +742,69 @@
                 continue;
             }
             
-            if (!/[A-Z]/.test(char)) {
-                encodedText += char;
-                continue;
-            }
-            
-            const position = char.charCodeAt(0) - 64; // A=1, B=2, etc.
-            
-            // Vocales
-            if ('AEIOU'.includes(char)) {
-                switch(char) {
-                    case 'A': encodedText += '@6'; break;
-                    case 'E': encodedText += '#30'; break;
-                    case 'I': encodedText += '$54'; break;
-                    case 'O': encodedText += '%84'; break;
-                    case 'U': encodedText += '&126'; break;
+            // Verificar si es una letra mayúscula
+            if (/[A-Z]/.test(char)) {
+                const position = char.charCodeAt(0) - 64; // A=1, B=2, etc.
+                
+                // Vocales
+                if ('AEIOU'.includes(char)) {
+                    switch(char) {
+                        case 'A': encodedText += '@6'; break;
+                        case 'E': encodedText += '#30'; break;
+                        case 'I': encodedText += '$54'; break;
+                        case 'O': encodedText += '%84'; break;
+                        case 'U': encodedText += '&126'; break;
+                    }
+                    continue;
                 }
-                continue;
+                
+                // Consonantes
+                if (char >= 'B' && char <= 'K') {
+                    encodedText += `#${position * 6}`;
+                } else if (char >= 'L' && char <= 'T') {
+                    encodedText += `$${position * 5}`;
+                } else if (char >= 'U' && char <= 'Z') {
+                    encodedText += `&${position * 6}`;
+                }
             }
-            
-            // Consonantes
-            if (char >= 'B' && char <= 'K') {
-                encodedText += `#${position * 6}`;
-            } else if (char >= 'L' && char <= 'T') {
-                encodedText += `$${position * 5}`;
-            } else if (char >= 'U' && char <= 'Z') {
-                encodedText += `&${position * 6}`;
+            // Verificar si es una letra minúscula
+            else if (/[a-z]/.test(char)) {
+                const upperChar = char.toUpperCase();
+                const position = upperChar.charCodeAt(0) - 64; // A=1, B=2, etc.
+                
+                // Vocales
+                if ('AEIOU'.includes(upperChar)) {
+                    switch(upperChar) {
+                        case 'A': encodedText += '@6'; break;
+                        case 'E': encodedText += '#30'; break;
+                        case 'I': encodedText += '$54'; break;
+                        case 'O': encodedText += '%84'; break;
+                        case 'U': encodedText += '&126'; break;
+                    }
+                    continue;
+                }
+                
+                // Consonantes
+                if (upperChar >= 'B' && upperChar <= 'K') {
+                    encodedText += `#${position * 6}`;
+                } else if (upperChar >= 'L' && upperChar <= 'T') {
+                    encodedText += `$${position * 5}`;
+                } else if (upperChar >= 'U' && upperChar <= 'Z') {
+                    encodedText += `&${position * 6}`;
+                }
+            }
+            // Signos de interrogación y exclamación
+            else if (char === '¿') {
+                encodedText += '?33';
+            } else if (char === '¡') {
+                encodedText += '!33';
+            } else if (char === '?') {
+                encodedText += '?63';
+            } else if (char === '!') {
+                encodedText += '!63';
+            } else {
+                // Si no es un carácter reconocido, mantenerlo como está
+                encodedText += char;
             }
         }
         
@@ -786,7 +823,7 @@
         }
         
         // Mejoramos la separación de tokens
-        const tokenRegex = /([@#$%&]\d+|\|)|./g;
+        const tokenRegex = /([@#$%&]\d+|\?33|\!33|\?63|\!63|\|)|./g;
         const tokens = code.match(tokenRegex) || [];
         let decodedText = '';
         
@@ -802,78 +839,73 @@
                 continue;
             }
             
+            // Verificar si es un token de signos de interrogación/exclamación
+            if (token === '?33') {
+                decodedText += '¿';
+            } else if (token === '!33') {
+                decodedText += '¡';
+            } else if (token === '?63') {
+                decodedText += '?';
+            } else if (token === '!63') {
+                decodedText += '!';
+            }
             // Verificar si es un token válido del código Emilio
-            const emilioPattern = /^([@#$%&])(\d+)$/;
-            const match = token.match(emilioPattern);
-            
-            if (match) {
-                const symbol = match[1];
-                const number = parseInt(match[2]);
-                let position;
+            else {
+                const emilioPattern = /^([@#$%&])(\d+)$/;
+                const match = token.match(emilioPattern);
                 
-                // Determinar la posición según el símbolo
-                if (symbol === '$') {
-                    // Grupo 2 (L-T) usa multiplicador 5
-                    position = number / 5;
-                } else {
-                    // Otros grupos usan multiplicador 6
-                    position = number / 6;
-                }
-                
-                // Redondear por si hay decimales
-                position = Math.round(position);
-                
-                // Verificar vocales primero
-                if (symbol === '@' && number === 6) {
-                    decodedText += 'A';
-                } else if (symbol === '#' && number === 30) {
-                    decodedText += 'E';
-                } else if (symbol === '$' && number === 54) {
-                    decodedText += 'I';
-                } else if (symbol === '%' && number === 84) {
-                    decodedText += 'O';
-                } else if (symbol === '&' && number === 126) {
-                    decodedText += 'U';
-                }
-                // Consonantes
-                else if (position >= 1 && position <= 26) {
-                    // Asegurarnos que la posición es válida
-                    const letter = String.fromCharCode(64 + position);
+                if (match) {
+                    const symbol = match[1];
+                    const number = parseInt(match[2]);
+                    let position;
                     
-                    // Verificar que la letra corresponde al grupo correcto
-                    if (symbol === '#' && letter >= 'B' && letter <= 'K') {
-                        decodedText += letter;
-                    } else if (symbol === '$' && letter >= 'L' && letter <= 'T') {
-                        decodedText += letter;
-                    } else if (symbol === '&' && letter >= 'U' && letter <= 'Z') {
-                        decodedText += letter;
+                    // Determinar la posición según el símbolo
+                    if (symbol === '$') {
+                        // Grupo 2 (L-T) usa multiplicador 5
+                        position = number / 5;
                     } else {
-                        // Si no coincide, mantener el token original
+                        // Otros grupos usan multiplicador 6
+                        position = number / 6;
+                    }
+                    
+                    // Redondear por si hay decimales
+                    position = Math.round(position);
+                    
+                    // Verificar vocales primero
+                    if (symbol === '@' && number === 6) {
+                        decodedText += 'A';
+                    } else if (symbol === '#' && number === 30) {
+                        decodedText += 'E';
+                    } else if (symbol === '$' && number === 54) {
+                        decodedText += 'I';
+                    } else if (symbol === '%' && number === 84) {
+                        decodedText += 'O';
+                    } else if (symbol === '&' && number === 126) {
+                        decodedText += 'U';
+                    }
+                    // Consonantes
+                    else if (position >= 1 && position <= 26) {
+                        // Asegurarnos que la posición es válida
+                        const charCode = 64 + position;
+                        if (charCode >= 65 && charCode <= 90) {
+                            decodedText += String.fromCharCode(charCode);
+                        } else {
+                            // Si no es un carácter válido, mantener el token original
+                            decodedText += token;
+                        }
+                    } else {
+                        // Si no es un número válido, mantener el token original
                         decodedText += token;
                     }
                 } else {
-                    // Posición inválida
+                    // Si no es un token reconocido, mantenerlo como está
                     decodedText += token;
                 }
-            } else {
-                // Si no es un token válido, mantenerlo como está
-                decodedText += token;
             }
         }
         
         document.getElementById("converted-result").textContent = decodedText;
         resultElement.style.display = "block";
-    }
-
-    function copyResult() {
-        const resultText = document.getElementById("converted-result").textContent;
-        navigator.clipboard.writeText(resultText).then(() => {
-            const copyBtn = document.getElementById("copy-btn");
-            copyBtn.textContent = "¡Copiado!";
-            setTimeout(() => {
-                copyBtn.textContent = "Copiar resultado";
-            }, 2000);
-        });
     }
 
     function showError(message) {
@@ -882,32 +914,22 @@
         errorElement.style.display = "block";
     }
 
-    // Navegación activa
-    document.addEventListener('DOMContentLoaded', function() {
-        const navLinks = document.querySelectorAll('.header-nav-link');
-        
-        function setActiveNavLink() {
-            const scrollPosition = window.scrollY;
-            
-            document.querySelectorAll('section[id], div[id]').forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + sectionId) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
+    function copyResult() {
+        const resultText = document.getElementById("converted-result").textContent;
+        navigator.clipboard.writeText(resultText)
+            .then(() => {
+                const copyBtn = document.getElementById("copy-btn");
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = "¡Copiado!";
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Error al copiar: ', err);
+                showError("Error al copiar el resultado");
             });
-        }
-        
-        window.addEventListener('scroll', setActiveNavLink);
-        setActiveNavLink();
-    });
+    }
 </script>
 </body>
 </html>
