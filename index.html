@@ -3,6 +3,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <style>
+/* Estilos para escritorio */
+.btn-silver {
+  background: linear-gradient(135deg, #ffffff 0%, #d9d9d9 25%, #bfbfbf 50%, #e6e6e6 75%, #a6a6a6 100%);
+  color: #000; /* contraste fuerte */
+  border: 1px solid #999;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 1px 2px rgba(255,255,255,0.8);
+  transition: all 0.3s ease;
+}
+
+.btn-silver:hover {
+  background: linear-gradient(135deg, #f2f2f2 0%, #c0c0c0 25%, #a6a6a6 50%, #d9d9d9 75%, #8c8c8c 100%);
+  color: #000;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.9);
+  transform: scale(1.05);
+}
+
+/* Ocultar todos los botones en móviles */
+@media screen and (max-width: 768px) {
+  .hero-buttons .btn {
+    display: none !important; /* todos los botones dentro de hero-buttons */
+  }
+}
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="EmilioColor® – Productos y servicios adaptados a ti">
@@ -303,7 +329,7 @@ EmilioColor® es una marca multisectorial de vanguardia que se dedica principalm
 
 
         <!-- Sección Imagen Gráfica -->
-            <h4 class="mb-4"><i class="fas fa-images text-primary mr-2"></i> Imagen Gráfica</h4>
+            <h4 class="mb-4"><i class="fas fa-images text-primary mr-2"></i> Imagen Gráfica Anterior</h4>
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <div class="text-center">
@@ -311,29 +337,86 @@ EmilioColor® es una marca multisectorial de vanguardia que se dedica principalm
                         <p class="small"><strong>2023:</strong> Inicio de operaciones</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
-                        <img src="img-logos/logo_azul_alargado.png" alt="2025" style="width: 210px;" class="img-fluid rounded mb-2">
-                        <p class="small"><strong>2025 (actualidad):</strong> Nueva imagen y actualización de registro</p>
-                    </div>
-                </div>
             </div>
     </div>
 </div>
 
             </div>
-
- <!-- SECCIÓN PRODUCTOS -->
+<!-- SECCIÓN PRODUCTOS -->
 <div id="productos-section" class="hidden-section">
+<!-- FILTRO DE PRODUCTOS -->
+<div class="text-center my-4">
+  <h3 class="fw-bold mb-3">Filtrar Productos</h3>
+  <div class="btn-group" role="group" aria-label="Filtro de productos">
+    <button type="button" class="btn btn-outline-primary square-btn" id="btn-basicos">Oficina y Especializados</button>
+    <button type="button" class="btn btn-outline-success square-btn" id="btn-inkspire">Línea Inkspire™</button>
+    <button type="button" class="btn btn-outline-secondary square-btn active" id="btn-todos">Ver Todos</button>
+  </div>
+</div>
+<!-- ESTILOS PERSONALIZADOS -->
+<style>
+  .square-btn {
+    border-radius: 0 !important;
+    padding: 10px 20px;
+    font-weight: 500;
+  }
 
-  <!-- Navegación interna
-  <div class="text-center mb-4">
-    <div class="btn-group" role="group" aria-label="Navegación de productos">
-      <a href="#basicos" class="btn btn-outline-primary">Productos Básicos</a>
-      <a href="#inkspire" class="btn btn-outline-primary">Colección INKSPIRE</a>
-    </div>
-  </div>-->
+  .btn-group .btn.active {
+    background-color: #0d6efd !important;
+    color: white !important;
+    border-color: #0d6efd !important;
+  }
 
+  #btn-inkspire.active {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+  }
+
+  #btn-todos.active {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+  }
+</style>
+
+<!-- SCRIPT DE FILTRO -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const btnBasicos = document.getElementById("btn-basicos");
+    const btnInkspire = document.getElementById("btn-inkspire");
+    const btnTodos = document.getElementById("btn-todos");
+
+    const basicos = document.getElementById("basicos");
+    const inkspire = document.getElementById("inkspire");
+
+    function setActive(button) {
+      [btnBasicos, btnInkspire, btnTodos].forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+    }
+
+    btnBasicos.addEventListener("click", () => {
+      basicos.style.display = "block";
+      inkspire.style.display = "none";
+      setActive(btnBasicos);
+    });
+
+    btnInkspire.addEventListener("click", () => {
+      basicos.style.display = "none";
+      inkspire.style.display = "block";
+      setActive(btnInkspire);
+    });
+
+    btnTodos.addEventListener("click", () => {
+      basicos.style.display = "block";
+      inkspire.style.display = "block";
+      setActive(btnTodos);
+    });
+
+    // Mostrar todo por defecto
+    basicos.style.display = "block";
+    inkspire.style.display = "block";
+    setActive(btnTodos);
+  });
+</script>
   <!-- SECCIÓN PRODUCTOS BÁSICOS -->
   <div id="basicos" class="rounded-container mb-4">
     <h2 class="section-title"><i class="fas fa-pen"></i> 1/2: Productos de Oficina y Especializados</h2>
