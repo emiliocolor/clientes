@@ -119,12 +119,11 @@
         <i class="fas fa-truck"></i> Transportes
     </a>
 </li>
-<li class="sidebar-nav-item">
-    <a href="#classcloud" class="sidebar-nav-link" data-section="classcloud">
-        <i class="fas fa-cloud"></i> ClassCloud
-    </a>
-</li>
-
+        <li class="sidebar-nav-item">
+            <a href="#productos" class="sidebar-nav-link" data-section="productos">
+                <i class="fas fa-pen"></i> Papelería
+            </a>
+        </li>
                  <li class="sidebar-nav-item">
             <a href="#servicios" class="sidebar-nav-link" data-section="servicios">
                 <i class="fas fa-laptop-code"></i> Tecnología
@@ -136,10 +135,10 @@
             </a>
         </li>
         <li class="sidebar-nav-item">
-            <a href="#productos" class="sidebar-nav-link" data-section="productos">
-                <i class="fas fa-pen"></i> Papelería
-            </a>
-        </li>
+    <a href="#classcloud" class="sidebar-nav-link" data-section="classcloud">
+        <i class="fas fa-cloud"></i> ClassCloud
+    </a>
+</li>
 
         <!-- Quiénes somos -->
         <li class="sidebar-nav-item">
@@ -335,22 +334,49 @@ EmilioColor® es una marca multisectorial de vanguardia que se dedica principalm
     font-weight: 500;
   }
 
+  /* Botones activos generales */
   .btn-group .btn.active {
     background-color: #0d6efd !important;
     color: white !important;
     border-color: #0d6efd !important;
   }
 
+  /* Botón Inkspire activo */
   #btn-inkspire.active {
     background-color: #198754 !important;
     border-color: #198754 !important;
   }
 
+  /* Botón Todos activo */
   #btn-todos.active {
     background-color: #6c757d !important;
     border-color: #6c757d !important;
   }
+
+  /* Nuevo: Botón Todos Servicios */
+  #btn-todos-servicios {
+    background-color: white !important;
+    color: #6c757d !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease-in-out;
+  }
+
+  #btn-todos-servicios:hover {
+    background-color: #6c757d !important;
+    color: white !important;
+  }
+
+  #btn-todos-servicios:active,
+  #btn-todos-servicios:focus,
+  #btn-todos-servicios.active {
+    background-color: #6c757d !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
 </style>
+
 
 <!-- SCRIPT DE FILTRO -->
 <script>
@@ -393,7 +419,7 @@ EmilioColor® es una marca multisectorial de vanguardia que se dedica principalm
 </script>
   <!-- SECCIÓN PRODUCTOS BÁSICOS -->
   <div id="basicos" class="rounded-container mb-4">
-    <h2 class="section-title"><i class="fas fa-pen"></i> 1/2: Productos de Oficina y Especializados</h2>
+    <h2 class="section-title"><i class="fas fa-pen"></i> Productos de Oficina y Especializados</h2>
     <p class="mb-4">Productos para escritura y organización de la más alta calidad</p>
 
     <div class="alert alert-info small" role="alert">
@@ -781,427 +807,621 @@ EmilioColor® es una marca multisectorial de vanguardia que se dedica principalm
 </style>
 </div>
 
-            <!-- Sección Servicios -->
-            <div id="servicios-section" class="hidden-section">
-                <div class="rounded-container mb-4">
-                    <h2 class="section-title"><i class="fas fa-laptop-code"></i> Sitios Web</h2>
-                    <p class="mb-4">Sitios web rápidos, seguros y sin mantenimiento. Con o sin dominio, tú eliges.</p>
-                    
-<!-- Servicios Principales -->
-<div class="row g-4">
-    <!-- Servicio 1 -->
-    <div class="col-md-6">
-        <div class="card tool-card p-3 h-100">
-            <div class="service-header">
-                <h5>Landing Page Básica</h5>
-                <p class="small text-muted">Página sencilla de presentación</p>
-                <p class="service-price fw-bold">$800 MXN</p>
-            </div>
-            <div class="service-body mt-3">
-                <ul class="small">
-                    <li>Diseño responsivo</li>
-                    <li>Hasta 3 secciones</li>
-                </ul>
-            </div>
-            <div class="d-flex gap-2 mt-3">
-                <a href="mailto:emiliocolormexico@gmail.com?subject=Landing Page Básica" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Landing%20Page%20Básica%20(800.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s1" data-name="Landing Page Básica" data-price="800.00">Agregar al carrito</button>
-            </div>
+<!-- Sección Servicios -->
+<div id="servicios-section" class="hidden-section">
+    <!-- BOTONES DE FILTRO DE SERVICIOS -->
+    <div class="text-center mb-4">
+        <h3 class="fw-bold mb-3">Filtrar Servicios</h3>
+        <div class="btn-group" role="group" aria-label="Filtro de servicios">
+            <button type="button" class="btn btn-outline-primary square-btn" id="btn-web">Sitios Web</button>
+            <button type="button" class="btn btn-outline-success square-btn" id="btn-extras">Extras para Sitios Web</button>
+            <button type="button" class="btn btn-outline-warning square-btn" id="btn-programas">Programas Informáticos</button>
+            <button type="button" class="btn btn-outline-secondary square-btn active" id="btn-todos-servicios">Ver Todos</button>
         </div>
     </div>
-
-    <!-- Servicio 2 -->
-    <div class="col-md-6">
-        <div class="card tool-card p-3 h-100">
-            <div class="service-header">
-                <h5>Portafolio Creativo Personal</h5>
-                <p class="small text-muted">Muestra tu trabajo profesional</p>
-                <p class="service-price fw-bold">$1200 MXN</p>
-            </div>
-            <div class="service-body mt-3">
-                <ul class="small">
-                    <li>Galería de proyectos</li>
-                    <li>Sección de contacto</li>
-                </ul>
-            </div>
-            <div class="d-flex gap-2 mt-3">
-                <a href="mailto:emiliocolormexico@gmail.com?subject=Portafolio Creativo Personal" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Portafolio%20Creativo%20Personal%20(1200.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s2" data-name="Portafolio Creativo Personal" data-price="1200.00">Agregar al carrito</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Servicio 3 -->
-    <div class="col-md-6">
-        <div class="card tool-card p-3 h-100">
-            <div class="service-header">
-                <h5>CV / Bio Profesional Online</h5>
-                <p class="small text-muted">Presencia profesional en la web</p>
-                <p class="service-price fw-bold">$900 MXN</p>
-            </div>
-            <div class="service-body mt-3">
-                <ul class="small">
-                    <li>Sección de experiencia y habilidades</li>
-                    <li>Diseño limpio y profesional</li>
-                </ul>
-            </div>
-            <div class="d-flex gap-2 mt-3">
-                <a href="mailto:emiliocolormexico@gmail.com?subject=CV / Bio Profesional Online" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20CV%20/%20Bio%20Profesional%20Online%20(900.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s3" data-name="CV / Bio Profesional Online" data-price="900.00">Agregar al carrito</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Servicio 4 -->
-    <div class="col-md-6">
-        <div class="card tool-card p-3 h-100">
-            <div class="service-header">
-                <h5>Mini Sitio Web Empresarial</h5>
-                <p class="small text-muted">Pequeño sitio para negocios</p>
-                <p class="service-price fw-bold">$2500 MXN</p>
-            </div>
-            <div class="service-body mt-3">
-                <ul class="small">
-                    <li>Sección de servicios</li>
-                    <li>Formulario de contacto</li>
-                </ul>
-            </div>
-            <div class="d-flex gap-2 mt-3">
-                <a href="mailto:emiliocolormexico@gmail.com?subject=Mini Sitio Web Empresarial" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Mini%20Sitio%20Web%20Empresarial%20(2500.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s4" data-name="Mini Sitio Web Empresarial" data-price="2500.00">Agregar al carrito</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Servicio 5 -->
-    <div class="col-md-6">
-        <div class="card tool-card p-3 h-100">
-            <div class="service-header">
-                <h5>Mini Blog Estático</h5>
-                <p class="small text-muted">Blog simple y funcional</p>
-                <p class="service-price fw-bold">$1300 MXN</p>
-            </div>
-            <div class="service-body mt-3">
-                <ul class="small">
-                    <li>Publicaciones básicas</li>
-                    <li>Diseño responsive</li>
-                </ul>
-            </div>
-            <div class="d-flex gap-2 mt-3">
-                <a href="mailto:emiliocolormexico@gmail.com?subject=Mini Blog Estático" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Mini%20Blog%20Estático%20(1300.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s5" data-name="Mini Blog Estático" data-price="1300.00">Agregar al carrito</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Servicio 6 -->
-    <div class="col-md-6">
-        <div class="card tool-card p-3 h-100">
-            <div class="service-header">
-                <h5>Menú Digital para Restaurantes / Cafés</h5>
-                <p class="small text-muted">Muestra tu menú online</p>
-                <p class="service-price fw-bold">$1000 MXN</p>
-            </div>
-            <div class="service-body mt-3">
-                <ul class="small">
-                    <li>Visualización de productos</li>
-                    <li>Diseño adaptado a móviles</li>
-                </ul>
-            </div>
-            <div class="d-flex gap-2 mt-3">
-                <a href="mailto:emiliocolormexico@gmail.com?subject=Menú Digital para Restaurantes / Cafés" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Menú%20Digital%20para%20Restaurantes%20/%20Cafés%20(1000.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s6" data-name="Menú Digital para Restaurantes / Cafés" data-price="1000.00">Agregar al carrito</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Servicio 7 -->
-    <div class="col-md-6">
-        <div class="card tool-card p-3 h-100">
-            <div class="service-header">
-                <h5>Página de Servicios Profesionales</h5>
-                <p class="small text-muted">Presenta tus servicios online</p>
-                <p class="service-price fw-bold">$1400 MXN</p>
-            </div>
-            <div class="service-body mt-3">
-                <ul class="small">
-                    <li>Sección de servicios detallados</li>
-                    <li>Formulario de contacto integrado</li>
-                </ul>
-            </div>
-            <div class="d-flex gap-2 mt-3">
-                <a href="mailto:emiliocolormexico@gmail.com?subject=Página de Servicios Profesionales" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Página%20de%20Servicios%20Profesionales%20(1400.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s7" data-name="Página de Servicios Profesionales" data-price="1400.00">Agregar al carrito</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Servicio 8 -->
-    <div class="col-md-6">
-        <div class="card tool-card p-3 h-100">
-            <div class="service-header">
-                <h5>Simulación de Tienda (sin pagos)</h5>
-                <p class="small text-muted">Tienda demo sin pasarela de pago</p>
-                <p class="service-price fw-bold">$1500 MXN</p>
-            </div>
-            <div class="service-body mt-3">
-                <ul class="small">
-                    <li>Visualización de productos</li>
-                    <li>Carrito de compras simulado</li>
-                </ul>
-            </div>
-            <div class="d-flex gap-2 mt-3">
-                <a href="mailto:emiliocolormexico@gmail.com?subject=Simulación de Tienda (sin pagos)" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Simulación%20de%20Tienda%20(sin%20pagos)%20(1500.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s8" data-name="Simulación de Tienda (sin pagos)" data-price="1500.00">Agregar al carrito</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Sección de Extras -->
-<div class="mt-5">
-    <h3 class="section-title"><i class="fas fa-plus-circle"></i> Extras Opcionales para Tu Sitio Web</h3>
-    <p class="mb-4">Mejora tu sitio web con estos extras opcionales</p>
     
-    <div class="row g-4">
-        <!-- Extra 1 -->
-        <div class="col-md-6">
-            <div class="card tool-card p-3 h-100">
-                <div class="service-header">
-                    <h5>Subida a GitHub Pages o Netlify</h5>
-                    <p class="small text-muted">Publicación rápida y gratuita en la web</p>
-                    <p class="service-price fw-bold">$200 MXN</p>
+    <div class="rounded-container mb-4">
+<style>
+    #btn-todos-servicios {
+        background-color: white !important;
+        color: #6c757d !important;
+        border: none !important;
+        box-shadow: none !important;
+        transition: all 0.2s ease-in-out;
+    }
+
+    #btn-todos-servicios:hover {
+        background-color: #6c757d !important;
+        color: white !important;
+    }
+
+    #btn-todos-servicios:active,
+    #btn-todos-servicios:focus,
+    #btn-todos-servicios.active {
+        background-color: #6c757d !important;
+        color: white !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+</style>
+
+        
+        <!-- SCRIPT DEL FILTRO DE SERVICIOS -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const btnWeb = document.getElementById("btn-web");
+                const btnExtras = document.getElementById("btn-extras");
+                const btnProgramas = document.getElementById("btn-programas");
+                const btnTodos = document.getElementById("btn-todos-servicios");
+
+                const webSection = document.getElementById("servicios-section-web");
+                const extrasSection = document.getElementById("servicios-section-extras");
+                const programasSection = document.getElementById("servicios-section-programas");
+
+                function setActive(button) {
+                    [btnWeb, btnExtras, btnProgramas, btnTodos].forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+                }
+
+                btnWeb.addEventListener("click", () => {
+                    webSection.style.display = "block";
+                    extrasSection.style.display = "none";
+                    programasSection.style.display = "none";
+                    setActive(btnWeb);
+                });
+
+                btnExtras.addEventListener("click", () => {
+                    webSection.style.display = "none";
+                    extrasSection.style.display = "block";
+                    programasSection.style.display = "none";
+                    setActive(btnExtras);
+                });
+
+                btnProgramas.addEventListener("click", () => {
+                    webSection.style.display = "none";
+                    extrasSection.style.display = "none";
+                    programasSection.style.display = "block";
+                    setActive(btnProgramas);
+                });
+
+                btnTodos.addEventListener("click", () => {
+                    webSection.style.display = "block";
+                    extrasSection.style.display = "block";
+                    programasSection.style.display = "block";
+                    setActive(btnTodos);
+                });
+
+                // Mostrar todas las secciones por defecto
+                webSection.style.display = "block";
+                extrasSection.style.display = "block";
+                programasSection.style.display = "block";
+                setActive(btnTodos);
+            });
+        </script>
+
+        <!-- SECCIÓN SITIOS WEB -->
+        <div id="servicios-section-web">
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> Sitios Web</h2>
+            <p class="mb-4">Sitios web rápidos, seguros y sin mantenimiento. Con o sin dominio, tú eliges.</p>
+            
+            <!-- Servicios Principales -->
+            <div class="row g-4">
+                <!-- Servicio 1 -->
+                <div class="col-md-6">
+                    <div class="card tool-card p-3 h-100">
+                        <div class="service-header">
+                            <h5>Landing Page Básica</h5>
+                            <p class="small text-muted">Página sencilla de presentación</p>
+                            <p class="service-price fw-bold">$800 MXN</p>
+                        </div>
+                        <div class="service-body mt-3">
+                            <ul class="small">
+                                <li>Diseño responsivo</li>
+                                <li>Hasta 3 secciones</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="mailto:emiliocolormexico@gmail.com?subject=Landing Page Básica" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Landing%20Page%20Básica%20(800.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s1" data-name="Landing Page Básica" data-price="800.00">Agregar al carrito</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-body mt-3">
-                    <ul class="small">
-                        <li>Configuración de dominio personalizado (si se proporciona)</li>
-                        <li>Instrucciones básicas de mantenimiento</li>
-                    </ul>
+
+                <!-- Servicio 2 -->
+                <div class="col-md-6">
+                    <div class="card tool-card p-3 h-100">
+                        <div class="service-header">
+                            <h5>Portafolio Creativo Personal</h5>
+                            <p class="small text-muted">Muestra tu trabajo profesional</p>
+                            <p class="service-price fw-bold">$1200 MXN</p>
+                        </div>
+                        <div class="service-body mt-3">
+                            <ul class="small">
+                                <li>Galería de proyectos</li>
+                                <li>Sección de contacto</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="mailto:emiliocolormexico@gmail.com?subject=Portafolio Creativo Personal" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Portafolio%20Creativo%20Personal%20(1200.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s2" data-name="Portafolio Creativo Personal" data-price="1200.00">Agregar al carrito</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex gap-2 mt-3">
-                    <a href="mailto:emiliocolormexico@gmail.com?subject=Subida a GitHub Pages o Netlify" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Subida%20a%20GitHub%20Pages%20o%20Netlify%20(200.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                    <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="9" data-name="Subida a GitHub Pages o Netlify" data-price="200.00">Agregar al carrito</button>
+
+                <!-- Servicio 3 -->
+                <div class="col-md-6">
+                    <div class="card tool-card p-3 h-100">
+                        <div class="service-header">
+                            <h5>CV / Bio Profesional Online</h5>
+                            <p class="small text-muted">Presencia profesional en la web</p>
+                            <p class="service-price fw-bold">$900 MXN</p>
+                        </div>
+                        <div class="service-body mt-3">
+                            <ul class="small">
+                                <li>Sección de experiencia y habilidades</li>
+                                <li>Diseño limpio y profesional</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="mailto:emiliocolormexico@gmail.com?subject=CV / Bio Profesional Online" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20CV%20/%20Bio%20Profesional%20Online%20(900.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s3" data-name="CV / Bio Profesional Online" data-price="900.00">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="col-md-6">
+                    <div class="card tool-card p-3 h-100">
+                        <div class="service-header">
+                            <h5>Mini Sitio Web Empresarial</h5>
+                            <p class="small text-muted">Pequeño sitio para negocios</p>
+                            <p class="service-price fw-bold">$2500 MXN</p>
+                        </div>
+                        <div class="service-body mt-3">
+                            <ul class="small">
+                                <li>Sección de servicios</li>
+                                <li>Formulario de contacto</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="mailto:emiliocolormexico@gmail.com?subject=Mini Sitio Web Empresarial" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Mini%20Sitio%20Web%20Empresarial%20(2500.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s4" data-name="Mini Sitio Web Empresarial" data-price="2500.00">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="col-md-6">
+                    <div class="card tool-card p-3 h-100">
+                        <div class="service-header">
+                            <h5>Mini Blog Estático</h5>
+                            <p class="small text-muted">Blog simple y funcional</p>
+                            <p class="service-price fw-bold">$1300 MXN</p>
+                        </div>
+                        <div class="service-body mt-3">
+                            <ul class="small">
+                                <li>Publicaciones básicas</li>
+                                <li>Diseño responsive</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="mailto:emiliocolormexico@gmail.com?subject=Mini Blog Estático" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Mini%20Blog%20Estático%20(1300.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s5" data-name="Mini Blog Estático" data-price="1300.00">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="col-md-6">
+                    <div class="card tool-card p-3 h-100">
+                        <div class="service-header">
+                            <h5>Menú Digital para Restaurantes / Cafés</h5>
+                            <p class="small text-muted">Muestra tu menú online</p>
+                            <p class="service-price fw-bold">$1000 MXN</p>
+                        </div>
+                        <div class="service-body mt-3">
+                            <ul class="small">
+                                <li>Visualización de productos</li>
+                                <li>Diseño adaptado a móviles</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="mailto:emiliocolormexico@gmail.com?subject=Menú Digital para Restaurantes / Cafés" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Menú%20Digital%20para%20Restaurantes%20/%20Cafés%20(1000.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s6" data-name="Menú Digital para Restaurantes / Cafés" data-price="1000.00">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 7 -->
+                <div class="col-md-6">
+                    <div class="card tool-card p-3 h-100">
+                        <div class="service-header">
+                            <h5>Página de Servicios Profesionales</h5>
+                            <p class="small text-muted">Presenta tus servicios online</p>
+                            <p class="service-price fw-bold">$1400 MXN</p>
+                        </div>
+                        <div class="service-body mt-3">
+                            <ul class="small">
+                                <li>Sección de servicios detallados</li>
+                                <li>Formulario de contacto integrado</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="mailto:emiliocolormexico@gmail.com?subject=Página de Servicios Profesionales" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Página%20de%20Servicios%20Profesionales%20(1400.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s7" data-name="Página de Servicios Profesionales" data-price="1400.00">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 8 -->
+                <div class="col-md-6">
+                    <div class="card tool-card p-3 h-100">
+                        <div class="service-header">
+                            <h5>Simulación de Tienda (sin pagos)</h5>
+                            <p class="small text-muted">Tienda demo sin pasarela de pago</p>
+                            <p class="service-price fw-bold">$1500 MXN</p>
+                        </div>
+                        <div class="service-body mt-3">
+                            <ul class="small">
+                                <li>Visualización de productos</li>
+                                <li>Carrito de compras simulado</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="mailto:emiliocolormexico@gmail.com?subject=Simulación de Tienda (sin pagos)" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Simulación%20de%20Tienda%20(sin%20pagos)%20(1500.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="s8" data-name="Simulación de Tienda (sin pagos)" data-price="1500.00">Agregar al carrito</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Extra 2 -->
-        <div class="col-md-6">
-            <div class="card tool-card p-3 h-100">
-                <div class="service-header">
-                    <h5>Modo oscuro con toggle</h5>
-                    <p class="small text-muted">Tema oscuro para mejorar la experiencia visual</p>
-                    <p class="service-price fw-bold">$250 MXN</p>
-                </div>
-                <div class="service-body mt-3">
-                    <ul class="small">
-                        <li>Interruptor para cambiar entre modo claro/oscuro</li>
-                        <li>Diseño adaptado para ambas modalidades</li>
-                        <li>Preferencia guardada en el navegador</li>
-                    </ul>
-                </div>
-                <div class="d-flex gap-2 mt-3">
-                    <a href="mailto:emiliocolormexico@gmail.com?subject=Modo oscuro con toggle" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Modo%20oscuro%20con%20toggle%20(250.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                    <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="10" data-name="Modo oscuro con toggle" data-price="250.00">Agregar al carrito</button>
+        <!-- SECCIÓN EXTRAS -->
+        <div id="servicios-section-extras">
+            <div class="mt-5">
+<h2 class="section-title"><i class="fas fa-square-plus"></i> Extras Opcionales para Tu Sitio Web</h2>
+            <p class="mb-4">Mejora tu sitio web con estos extras opcionales</p>
+                <div class="row g-4">
+                    <!-- Extra 1 -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Subida a GitHub Pages o Netlify</h5>
+                                <p class="small text-muted">Publicación rápida y gratuita en la web</p>
+                                <p class="service-price fw-bold">$200 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Configuración de dominio personalizado (si se proporciona)</li>
+                                    <li>Instrucciones básicas de mantenimiento</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Subida a GitHub Pages o Netlify" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Subida%20a%20GitHub%20Pages%20o%20Netlify%20(200.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="9" data-name="Subida a GitHub Pages o Netlify" data-price="200.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra 2 -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Modo oscuro con toggle</h5>
+                                <p class="small text-muted">Tema oscuro para mejorar la experiencia visual</p>
+                                <p class="service-price fw-bold">$250 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Interruptor para cambiar entre modo claro/oscuro</li>
+                                    <li>Diseño adaptado para ambas modalidades</li>
+                                    <li>Preferencia guardada en el navegador</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Modo oscuro con toggle" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Modo%20oscuro%20con%20toggle%20(250.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="10" data-name="Modo oscuro con toggle" data-price="250.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra 3 -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Redacción de textos y corrección</h5>
+                                <p class="small text-muted">Revisión y creación de textos profesionales</p>
+                                <p class="service-price fw-bold">$300 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Corrección ortográfica y gramatical</li>
+                                    <li>Redacción de contenido profesional</li>
+                                    <li>Optimización de diseño en página web</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Redacción de textos o corrección" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Redacción%20de%20textos%20y%20corrección%20(básico)%20(150.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="10" data-name="Redacción de textos y corrección" data-price="300.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra 4 -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Optimización de imágenes y almacenamiento</h5>
+                                <p class="small text-muted">Reducción de peso de archivos, mejora de rendimiento</p>
+                                <p class="service-price fw-bold">$500 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Compresión de imágenes sin pérdida de calidad</li>
+                                    <li>Optimización para carga rápida</li>
+                                    <li>Solución de almacenamiento en la nube</li>
+                                    <li>Repositorio personalizado para imagenes en la nube</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Optimización de imágenes y almacenamiento" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Optimización%20de%20imágenes%20y%20almacenamiento%20(500.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="13" data-name="Optimización de imágenes y almacenamiento" data-price="500.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra 5 -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Formulario funcional con Netlify</h5>
+                                <p class="small text-muted">Envío de formularios a tu correo sin backend</p>
+                                <p class="service-price fw-bold">$250 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Configuración de formulario funcional</li>
+                                    <li>Integración con Netlify Forms</li>
+                                    <li>Notificaciones por correo electrónico</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Formulario funcional con Netlify" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Formulario%20funcional%20con%20Netlify%20(250.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="14" data-name="Formulario funcional con Netlify" data-price="250.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra 6: Formulario de Google -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Formulario de Google</h5>
+                                <p class="small text-muted">Formulario integrado con Google Forms</p>
+                                <p class="service-price fw-bold">$150 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Creación e integración con Google Forms</li>
+                                    <li>Envío de respuestas a tu correo</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Formulario de Google" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Formulario%20de%20Google%20(150.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="15" data-name="Formulario de Google" data-price="150.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra 7: Login -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Login de usuarios</h5>
+                                <p class="small text-muted">Sistema de autenticación seguro</p>
+                                <p class="service-price fw-bold">$300 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Registro e inicio de sesión de usuarios</li>
+                                    <li>Anidación con página extra</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Login de usuarios" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Login%20de%20usuarios%20(300.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="16" data-name="Login de usuarios" data-price="300.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra 8: Dominio Personalizado -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Asesoría y Registro de Dominio Personalizado</h5>
+                                <p class="small text-muted">Obtén tu dominio .com o .mx con asesoría profesional</p>
+                                <p class="service-price fw-bold">$500 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Asesoría en la selección y compra del dominio ideal</li>
+                                    <li>Configuración del dominio en hosting, Github, Netlify, Google Sites, etc.</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Dominio personalizado" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Dominio%20personalizado%20(500.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="17" data-name="Dominio personalizado" data-price="500.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra 9: Local Storage -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Almacenamiento Local: Guardado de Datos sin Necesidad de Base de Datos</h5>
+                                <p class="small text-muted">Guardar datos del usuario en el navegador</p>
+                                <p class="service-price fw-bold">$200 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Almacenamiento de preferencias y carrito</li>
+                                    <li>Integración con JavaScript y cookies</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Local Storage / Persistencia de datos" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Local%20Storage%20(200.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="18" data-name="Local Storage / Persistencia de datos" data-price="200.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra 10: Generación de PDFs -->
+                    <div class="col-md-6">
+                        <div class="card tool-card p-3 h-100">
+                            <div class="service-header">
+                                <h5>Generación de PDFs dentro de la Página</h5>
+                                <p class="small text-muted">Exportar información en formato PDF sin depender de software externo</p>
+                                <p class="service-price fw-bold">$350 MXN</p>
+                            </div>
+                            <div class="service-body mt-3">
+                                <ul class="small">
+                                    <li>Descarga directa de reportes en PDF</li>
+                                    <li>Diseños personalizados con HTML y CSS</li>
+                                    <li>Integración con librerías como jsPDF</li>
+                                </ul>
+                            </div>
+                            <div class="d-flex gap-2 mt-3">
+                                <a href="mailto:emiliocolormexico@gmail.com?subject=Generación de PDFs en la página" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
+                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Generación%20de%20PDFs%20(350.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
+                                <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="19" data-name="Generación de PDFs dentro de la página" data-price="350.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Extra 3 -->
-        <div class="col-md-6">
-            <div class="card tool-card p-3 h-100">
-                <div class="service-header">
-                    <h5>Redacción de textos y corrección</h5>
-                    <p class="small text-muted">Revisión y creación de textos profesionales</p>
-                    <p class="service-price fw-bold">$300 MXN</p>
-                </div>
-                <div class="service-body mt-3">
-                    <ul class="small">
-                        <li>Corrección ortográfica y gramatical</li>
-                        <li>Redacción de contenido profesional</li>
-                        <li>Optimización de diseño en página web</li>
-                    </ul>
-                </div>
-                <div class="d-flex gap-2 mt-3">
-                    <a href="mailto:emiliocolormexico@gmail.com?subject=Redacción de textos o corrección" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Redacción%20de%20textos%20y%20corrección%20(básico)%20(150.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                    <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="10" data-name="Redacción de textos y corrección" data-price="300.00">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Extra 4 -->
-        <div class="col-md-6">
-            <div class="card tool-card p-3 h-100">
-                <div class="service-header">
-                    <h5>Optimización de imágenes y almacenamiento</h5>
-                    <p class="small text-muted">Reducción de peso de archivos, mejora de rendimiento</p>
-                    <p class="service-price fw-bold">$500 MXN</p>
-                </div>
-                <div class="service-body mt-3">
-                    <ul class="small">
-                        <li>Compresión de imágenes sin pérdida de calidad</li>
-                        <li>Optimización para carga rápida</li>
-                        <li>Solución de almacenamiento en la nube</li>
-                        <li>Repositorio personalizado para imagenes en la nube</li>
-                    </ul>
-                </div>
-                <div class="d-flex gap-2 mt-3">
-                    <a href="mailto:emiliocolormexico@gmail.com?subject=Optimización de imágenes y almacenamiento" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Optimización%20de%20imágenes%20y%20almacenamiento%20(500.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                    <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="13" data-name="Optimización de imágenes y almacenamiento" data-price="500.00">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Extra 5 -->
-        <div class="col-md-6">
-            <div class="card tool-card p-3 h-100">
-                <div class="service-header">
-                    <h5>Formulario funcional con Netlify</h5>
-                    <p class="small text-muted">Envío de formularios a tu correo sin backend</p>
-                    <p class="service-price fw-bold">$250 MXN</p>
-                </div>
-                <div class="service-body mt-3">
-                    <ul class="small">
-                        <li>Configuración de formulario funcional</li>
-                        <li>Integración con Netlify Forms</li>
-                        <li>Notificaciones por correo electrónico</li>
-                    </ul>
-                </div>
-                <div class="d-flex gap-2 mt-3">
-                    <a href="mailto:emiliocolormexico@gmail.com?subject=Formulario funcional con Netlify" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Formulario%20funcional%20con%20Netlify%20(250.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                    <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="14" data-name="Formulario funcional con Netlify" data-price="250.00">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Extra 6: Formulario de Google -->
-        <div class="col-md-6">
-            <div class="card tool-card p-3 h-100">
-                <div class="service-header">
-                    <h5>Formulario de Google</h5>
-                    <p class="small text-muted">Formulario integrado con Google Forms</p>
-                    <p class="service-price fw-bold">$150 MXN</p>
-                </div>
-                <div class="service-body mt-3">
-                    <ul class="small">
-                        <li>Creación e integración con Google Forms</li>
-                        <li>Envío de respuestas a tu correo</li>
-                    </ul>
-                </div>
-                <div class="d-flex gap-2 mt-3">
-                    <a href="mailto:emiliocolormexico@gmail.com?subject=Formulario de Google" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Formulario%20de%20Google%20(150.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                    <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="15" data-name="Formulario de Google" data-price="150.00">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Extra 7: Login -->
-        <div class="col-md-6">
-            <div class="card tool-card p-3 h-100">
-                <div class="service-header">
-                    <h5>Login de usuarios</h5>
-                    <p class="small text-muted">Sistema de autenticación seguro</p>
-                    <p class="service-price fw-bold">$300 MXN</p>
-                </div>
-                <div class="service-body mt-3">
-                    <ul class="small">
-                        <li>Registro e inicio de sesión de usuarios</li>
-                        <li>Anidación con página extra</li>
-                    </ul>
-                </div>
-                <div class="d-flex gap-2 mt-3">
-                    <a href="mailto:emiliocolormexico@gmail.com?subject=Login de usuarios" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Login%20de%20usuarios%20(300.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                    <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="16" data-name="Login de usuarios" data-price="300.00">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-
-<!-- Servicio: Dominio Personalizado -->
-<div class="col-md-6">
-    <div class="card tool-card p-3 h-100">
-        <div class="service-header">
-            <h5>Asesoría y Registro de Dominio Personalizado</h5>
-            <p class="small text-muted">Obtén tu dominio .com o .mx con asesoría profesional</p>
-            <p class="service-price fw-bold">$500 MXN</p>
-        </div>
-        <div class="service-body mt-3">
+        <!-- SECCIÓN PROGRAMAS INFORMÁTICOS -->
+        <div id="servicios-section-programas">
+            <div class="mt-5">
+                <h2 class="section-title"><i class="fas fa-desktop"></i> Programas Informáticos</h2>
+                <p class="mb-4">Software especializado para diferentes necesidades profesionales</p>
+                
+            <div class="row g-4">
+  <div class="row g-3">
+    <!-- Programa 1: Office 365 -->
+    <div class="col-md-6">
+      <div class="card tool-card p-3">
+        <div class="row g-3">
+          <div class="col-md-4 text-center">
+            <img src="https://m.media-amazon.com/images/I/715aC08CD9S._UF894,1000_QL80_.jpg" alt="Office 365" class="img-fluid rounded cuadrada mb-2">
+          </div>
+          <div class="col-md-8">
+            <h5>Office 365</h5>
+            <p class="small">Suite de productividad completa con Word, Excel, PowerPoint y más.</p>
             <ul class="small">
-                <li>Asesoría en la selección y compra del dominio ideal</li>
-                <li>Configuración del dominio en hosting, Github, Netlify, Google Sites, etc.</li>
+              <li><strong>Versiones:</strong> de 2013 hasta 2024</li>
+              <li><strong>Compatibilidad:</strong> Windows</li>
+            <li><strong>Servicio:</strong> Apoyo en la instalación</li>
             </ul>
-        </div>
-        <div class="d-flex gap-2 mt-3">
-            <a href="mailto:emiliocolormexico@gmail.com?subject=Dominio personalizado" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Dominio%20personalizado%20(500.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-            <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="17" data-name="Dominio personalizado" data-price="500.00">Agregar al carrito</button>
-        </div>
-    </div>
-</div>
+<p class="product-price text-muted mb-0" style="text-decoration: line-through; font-size: 0.9rem;">$800 MXN</p>
+<p class="product-price text-danger fw-bold mb-0" style="font-size: 0.9rem;">90% de descuento</p>
 
-        <!-- Extra 9: Local Storage -->
-        <div class="col-md-6">
-            <div class="card tool-card p-3 h-100">
-                <div class="service-header">
-<h5>Almacenamiento Local: Guardado de Datos sin Necesidad de Base de Datos</h5>
-                    <p class="small text-muted">Guardar datos del usuario en el navegador</p>
-                    <p class="service-price fw-bold">$200 MXN</p>
-                </div>
-                <div class="service-body mt-3">
-                    <ul class="small">
-                        <li>Almacenamiento de preferencias y carrito</li>
-                        <li>Integración con JavaScript y cookies</li>
-                    </ul>
-                </div>
-                <div class="d-flex gap-2 mt-3">
-                    <a href="mailto:emiliocolormexico@gmail.com?subject=Local Storage / Persistencia de datos" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Local%20Storage%20(200.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-                    <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="18" data-name="Local Storage / Persistencia de datos" data-price="200.00">Agregar al carrito</button>
-                </div>
+            <p class="product-price fw-bold mt-2">$80.00 MXN</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="p1" data-name="Office 365" data-price="80.00">Agregar al carrito</button>
             </div>
+            <div class="d-flex gap-2 mt-2">
+              <a href="https://wa.me/525625377747?text=Hola,%20quiero%20comprar:%20Office%20365%20(80.00%20MXN)" class="btn btn-success-gradient btn-sm w-100" target="_blank">Comprar ahora por WhatsApp</a>
+            </div>
+          </div>
         </div>
-<!-- Extra 11: Generación de PDFs -->
-<div class="col-md-6">
-    <div class="card tool-card p-3 h-100">
-        <div class="service-header">
-            <h5>Generación de PDFs dentro de la Página</h5>
-            <p class="small text-muted">Exportar información en formato PDF sin depender de software externo</p>
-            <p class="service-price fw-bold">$350 MXN</p>
-        </div>
-        <div class="service-body mt-3">
+      </div>
+    </div>
+
+    <!-- Programa 4: Circuit Wizard -->
+    <div class="col-md-6">
+      <div class="card tool-card p-3">
+        <div class="row g-3">
+          <div class="col-md-4 text-center">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_947165-MLM46218944316_052021-O.webp" alt="Circuit Wizard" class="img-fluid rounded cuadrada mb-2">
+          </div>
+          <div class="col-md-8">
+            <h5>Circuit Wizard</h5>
+            <p class="small">Software educativo para diseño y simulación de circuitos electrónicos.</p>
             <ul class="small">
-                <li>Descarga directa de reportes en PDF</li>
-                <li>Diseños personalizados con HTML y CSS</li>
-                <li>Integración con librerías como jsPDF</li>
+              <li><strong>Versión:</strong> 3.0</li>
+              <li><strong>Compatibilidad:</strong> Windows</li>
+                            <li><strong>Incluye generación de licencia propia</strong></li>
             </ul>
-        </div>
-        <div class="d-flex gap-2 mt-3">
-            <a href="mailto:emiliocolormexico@gmail.com?subject=Generación de PDFs en la página" class="btn btn-outline-primary btn-sm">Contactar por Correo</a>
-            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20servicio:%20Generación%20de%20PDFs%20(350.00%20MXN)" class="btn btn-success-gradient btn-sm" target="_blank">Contactar por WhatsApp</a>
-            <button class="btn btn-primary btn-sm add-to-cart" data-type="service" data-id="19" data-name="Generación de PDFs dentro de la página" data-price="350.00">Agregar al carrito</button>
-        </div>
-    </div>
-</div>
+<p class="product-price text-muted mb-0" style="text-decoration: line-through; font-size: 0.9rem;">$700 MXN</p>
+<p class="product-price text-danger fw-bold mb-0" style="font-size: 0.9rem;">90% de descuento</p>
+            <p class="product-price fw-bold mt-2">$70.00 MXN</p>
 
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="p4" data-name="Circuit Wizard" data-price="70.00">Agregar al carrito</button>
+            </div>
+            <div class="d-flex gap-2 mt-2">
+              <a href="https://wa.me/525625377747?text=Hola,%20quiero%20comprar:%20Circuit%20Wizard%20(70.00%20MXN)" class="btn btn-success-gradient btn-sm w-100" target="_blank">Comprar ahora por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+
+    <!-- Programa 5: SolidWorks
+    <div class="col-md-6">
+      <div class="card tool-card p-3">
+        <div class="row g-3">
+          <div class="col-md-4 text-center">
+            <img src="img_productos_servicios/solidworks.png" alt="SolidWorks" class="img-fluid rounded cuadrada mb-2">
+          </div>
+          <div class="col-md-8">
+            <h5>SolidWorks</h5>
+            <p class="small">Software de diseño CAD 3D para modelado mecánico y de piezas.</p>
+            <ul class="small">
+              <li><strong>Versión:</strong> 2023</li>
+              <li><strong>Compatibilidad:</strong> Windows</li>
+            </ul>
+            <p class="product-price fw-bold mt-2">$1500.00 MXN</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="p5" data-name="SolidWorks" data-price="1500.00">Agregar al carrito</button>
+              <a href="https://wa.me/525625377747?text=Hola,%20quiero%20personalizar:%20SolidWorks" class="btn btn-outline-primary btn-sm" target="_blank">Personalizar</a>
+            </div>
+            <div class="d-flex gap-2 mt-2">
+              <a href="https://wa.me/525625377747?text=Hola,%20quiero%20comprar:%20SolidWorks%20(1500.00%20MXN)" class="btn btn-success-gradient btn-sm w-100" target="_blank">Comprar ahora por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
 
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
 <!-- Sección Educación (se cargará dinámicamente) -->
 <div id="educacion-section" class="hidden-section">
     <div class="text-center py-5">
