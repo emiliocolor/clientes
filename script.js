@@ -311,15 +311,19 @@ function loadCursosContentDirectly() {
         <div class="rounded-container mb-4">
             <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Cursos Pregrabados</h2>
 
-            <div class="mt-4 mb-3">
-                <audio controls>
-                    <source src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/cursos_audio.mp3" type="audio/mpeg">
-                    Tu navegador no soporta el elemento de audio.
-                </audio>
-            </div>
-<button class="btn btn-outline-primary btn-sm mb-3" onclick="generateGeneralQuotation()">
+ <div class="mt-4 mb-3">
+    <!-- <audio controls>
+        <source src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/cursos_audio.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio> -->
+</div>
+
+<button class="btn btn-outline-primary btn-sm mb-3" 
+        onclick="generateGeneralQuotation()" 
+        style="border-radius: 0 !important;">
     <i class="fas fa-file-invoice-dollar"></i> Cotización General de Todos los Cursos
 </button>
+
             <div class="alert alert-info small mt-2 mb-3" role="alert">
                 Todos incluyen acceso inmediato y de por vida con material descargable.
             </div>
