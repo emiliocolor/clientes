@@ -318,499 +318,725 @@ function loadCursosContentDirectly() {
     </audio> -->
 </div>
 
-<button class="btn btn-outline-primary btn-sm mb-3" 
+ <!-- <button class="btn btn-outline-primary btn-sm mb-3" 
         onclick="generateGeneralQuotation()" 
         style="border-radius: 0 !important;">
     <i class="fas fa-file-invoice-dollar"></i> Cotización General de Todos los Cursos
-</button>
+</button>  -->
 
             <div class="alert alert-info small mt-2 mb-3" role="alert">
                 Todos incluyen acceso inmediato y de por vida con material descargable.
             </div>
             
+            <!-- Filtros de búsqueda y categoría -->
             <div class="row mb-2">
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <div class="search-container">
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-search"></i></span>
                             <input type="text" id="courseSearch" class="form-control" placeholder="Buscar cursos... (por nombre, categoría o descripción)">
                             <button class="btn btn-outline-secondary square-btn" type="button" id="clearSearch">Limpiar</button>
                         </div>
-                        <div id="searchResultsCount" class="small text-muted mt-2"></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="border-radius: 0 !important;" class="category-filter-container">
+                        <select id="categoryFilter" class="form-select">
+                            <option value="">Todas las categorías</option>
+                            <option value="Platzi">Platzi</option>
+                            <option value="Udemy">Udemy</option>
+                            <option value="Varios">Varios</option>
+                            <option value="Diseño">Diseño</option>
+                            <option value="Tecnología">Tecnología</option>
+                            <option value="Desarrollo Personal">Desarrollo Personal</option>
+                            <option value="Robótica">Robótica</option>
+                            <option value="Domótica">Domótica</option>
+                            <option value="Electrónica">Electrónica</option>
+                            <option value="Programación">Programación</option>
+                            <option value="Ingeniería">Ingeniería</option>
+                            <option value="Manufactura">Manufactura</option>
+                            <option value="Idiomas">Idiomas</option>
+                            <option value="Negocios">Negocios</option>
+                            <option value="Música">Música</option>
+                        </select>
                     </div>
                 </div>
             </div>
+            <style>
+/* 🔥 Fuerza sin bordes redondeados en todo el bloque de filtros */
+.row.mb-2 .form-control,
+.row.mb-2 .form-select,
+.row.mb-2 .btn,
+.row.mb-2 .input-group-text,
+.row.mb-2 select {
+    border-radius: 0 !important;
+}
+
+/* También asegura que los grupos de input no se junten con esquinas redondeadas */
+.input-group > .form-control:not(:last-child),
+.input-group > .form-control:not(:first-child),
+.input-group > .input-group-text:not(:last-child),
+.input-group > .input-group-text:not(:first-child),
+.input-group > .btn:not(:last-child),
+.input-group > .btn:not(:first-child) {
+    border-radius: 0 !important;
+}
+
+/* Evita que Bootstrap 5.3+ agregue bordes en focus con radios */
+.form-control:focus,
+.form-select:focus,
+.btn:focus {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+</style>
+
+            <div id="searchResultsCount" class="small text-muted mt-2"></div>
         <div class="mb-5">
-            <h4 class="section-title"><i class="fas fa-book-open"></i> Sección 1/3: Mega Packs</h4>
-            <p class="mb-4">Mega Packs de cursos profesionales en distintas áreas</p>
+            <h4 class="section-title"><i class="fas fa-book-open"></i> Sección 1/3: Mega Packs Permanentes</h4>
+<p class="mb-4">Mega Packs de cursos en diversas áreas como tecnología, programación, ingeniería e informática. Todos los contenidos se entregan completos y en esta sección; se pueden revender.</p>
             <div class="row g-4">
- <!-- Curso 1 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 1" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Platzi 1</h5>
-                            <p class="small">Colección de cursos Platzi sobre tecnología, programación y negocios.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Platzi</li>
-                                <li><strong>Contenido:</strong> Cursos profesionales</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c1" data-name="Mega Pack Cursos Platzi 1" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Platzi%201%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 1 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 1" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack de Cursos Profesionales Platzi 1</h5>
+                <p class="small">Colección de cursos Platzi sobre tecnología, programación e informática.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Platzi</li>
+                    <li><strong>Tamaño:</strong> 14.1 TB</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$1400.00 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c1" data-name="Mega Pack Cursos Platzi 1" data-price="1400.00">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Platzi%201%20(1400.00%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c1" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 2 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 2" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Platzi 2</h5>
-                            <p class="small">Segunda parte de la colección de cursos Platzi con más contenido.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Platzi</li>
-                                <li><strong>Contenido:</strong> Cursos profesionales</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c2" data-name="Mega Pack Cursos Platzi 2" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Platzi%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 2 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 2" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Platzi 2</h5>
+                <p class="small">Segunda parte de la colección de cursos Platzi con más contenido.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Platzi</li>
+                    <li><strong>Contenido:</strong> Cursos profesionales</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c2" data-name="Mega Pack Cursos Platzi 2" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Platzi%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c2" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 3 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 3" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Platzi 3</h5>
-                            <p class="small">Tercera parte de la colección Platzi con cursos actualizados.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Platzi</li>
-                                <li><strong>Contenido:</strong> Cursos profesionales</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c3" data-name="Mega Pack Cursos Platzi 3" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Platzi%203%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 3 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 3" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Platzi 3</h5>
+                <p class="small">Tercera parte de la colección Platzi con cursos actualizados.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Platzi</li>
+                    <li><strong>Contenido:</strong> Cursos profesionales</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c3" data-name="Mega Pack Cursos Platzi 3" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Platzi%203%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c3" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 4 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 4" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Platzi 4</h5>
-                            <p class="small">Cuarta parte con más cursos Platzi para tu desarrollo profesional.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Platzi</li>
-                                <li><strong>Contenido:</strong> Cursos profesionales</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c4" data-name="Mega Pack Cursos Platzi 4" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Platzi%204%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 4 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Platzi 4" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Platzi 4</h5>
+                <p class="small">Cuarta parte con más cursos Platzi para tu desarrollo profesional.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Platzi</li>
+                    <li><strong>Contenido:</strong> Cursos profesionales</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c4" data-name="Mega Pack Cursos Platzi 4" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Platzi%204%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c4" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 5 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 1" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Udemy 1</h5>
-                            <p class="small">Colección de cursos Udemy sobre diversos temas profesionales.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Udemy</li>
-                                <li><strong>Contenido:</strong> Cursos variados</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c5" data-name="Mega Pack Cursos Udemy 1" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Udemy%201%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 5 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 1" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Udemy 1</h5>
+                <p class="small">Colección de cursos Udemy sobre diversos temas profesionales.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Udemy</li>
+                <li><strong>Equivalencia:</strong> 33 Cursos</li>
 
-            <!-- Curso 6 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 2" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Udemy 2</h5>
-                            <p class="small">Segunda parte de cursos Udemy con formación especializada.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Udemy</li>
-                                <li><strong>Contenido:</strong> Cursos variados</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c6" data-name="Mega Pack Cursos Udemy 2" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Udemy%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <li><strong>Contenido:</strong> Java, PHP, Android Studio, Hacking Ético, Python, MySQL, Web Scraping, Desarrollo Web, Ciberseguridad.</li>
+                </ul>
 
-            <!-- Curso 7 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 3" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Udemy 3</h5>
-                            <p class="small">Tercera parte con más cursos Udemy para tu crecimiento.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Udemy</li>
-                                <li><strong>Contenido:</strong> Cursos variados</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c7" data-name="Mega Pack Cursos Udemy 3" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Udemy%203%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <!-- Precio actualizado -->
+                <p class="product-price fw-bold mt-2 mb-1">
+                    <span style="text-decoration: line-through; color: gray;">$1,640.10 MXN</span>
+                </p>
+                <p class="product-price text-danger fw-bold mb-0" style="font-size: 0.9rem;">50% de descuento</p>
 
-            <!-- Curso 8 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 1" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Varios 1</h5>
-                            <p class="small">Colección variada de cursos sobre diferentes temas educativos.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Varios</li>
-                                <li><strong>Contenido:</strong> Cursos diversos</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c8" data-name="Mega Pack Cursos Varios 1" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Varios%201%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <p class="product-price fw-bold text-primary">$820.10 MXN</p>
 
-            <!-- Curso 9 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 2" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Varios 2</h5>
-                            <p class="small">Segunda parte de la colección variada de cursos educativos.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Varios</li>
-                                <li><strong>Contenido:</strong> Cursos diversos</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c9" data-name="Mega Pack Cursos Varios 2" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Varios%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c5" data-name="Mega Pack Cursos Udemy 1" data-price="820.00">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Udemy%201%20(820.00%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
                 </div>
-            </div>
 
-            <!-- Curso 10 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 3" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Varios 3</h5>
-                            <p class="small">Tercera parte con más cursos variados para tu aprendizaje.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Varios</li>
-                                <li><strong>Contenido:</strong> Cursos diversos</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c10" data-name="Mega Pack Cursos Varios 3" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Varios%203%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c5" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 11 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Diseño Gráfico" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Diseño Gráfico</h5>
-                            <p class="small">Colección completa de cursos sobre diseño gráfico y herramientas.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Diseño</li>
-                                <li><strong>Contenido:</strong> Cursos de diseño</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c11" data-name="Mega Pack Diseño Gráfico" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Diseño%20Gráfico%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Curso 12 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Esquemático de Celulares" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Esquemático de Celulares</h5>
-                            <p class="small">Recursos técnicos y esquemáticos para reparación de celulares.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Tecnología</li>
-                                <li><strong>Contenido:</strong> Reparación móvil</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c12" data-name="Mega Pack Esquemático de Celulares" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Esquemático%20de%20Celulares%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 6 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 2" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Udemy 2</h5>
+                <p class="small">Segunda parte de cursos Udemy con formación especializada.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Udemy</li>
+                    <li><strong>Contenido:</strong> Cursos variados</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$719.89 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c6" data-name="Mega Pack Cursos Udemy 2" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Udemy%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c6" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 13 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Mind Valley 1</h5>
-                            <p class="small">Primera parte de cursos de desarrollo personal de Mind Valley.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Desarrollo Personal</li>
-                                <li><strong>Contenido:</strong> Cursos motivacionales</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c13" data-name="Mega Pack Mind Valley 1" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Mind%20Valley%201%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 7 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Udemy 3" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Udemy 3</h5>
+                <p class="small">Tercera parte con más cursos Udemy para tu crecimiento.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Udemy</li>
+                    <li><strong>Contenido:</strong> Cursos variados</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c7" data-name="Mega Pack Cursos Udemy 3" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Udemy%203%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c7" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 14 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Mind Valley 2</h5>
-                            <p class="small">Segunda parte con más cursos de desarrollo personal.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Desarrollo Personal</li>
-                                <li><strong>Contenido:</strong> Cursos motivacionales</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c14" data-name="Mega Pack Mind Valley 2" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Mind%20Valley%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 8 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 1" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Varios 1</h5>
+                <p class="small">Colección variada de cursos sobre diferentes temas educativos.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Varios</li>
+                    <li><strong>Contenido:</strong> Cursos diversos</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c8" data-name="Mega Pack Cursos Varios 1" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Varios%201%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c8" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 15 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Reparación de Celulares</h5>
-                            <p class="small">Curso completo sobre reparación de celulares y dispositivos móviles.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Tecnología</li>
-                                <li><strong>Contenido:</strong> Reparación móvil</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c15" data-name="Mega Pack Reparación de Celulares" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Reparación%20de%20Celulares%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 9 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 2" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Varios 2</h5>
+                <p class="small">Segunda parte de la colección variada de cursos educativos.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Varios</li>
+                    <li><strong>Contenido:</strong> Cursos diversos</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c9" data-name="Mega Pack Cursos Varios 2" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Varios%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c9" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 16 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Variados 1</h5>
-                            <p class="small">Colección con cursos variados sobre múltiples temas.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Varios</li>
-                                <li><strong>Contenido:</strong> Cursos diversos</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c16" data-name="Mega Pack Cursos Variados 1" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Variados%201%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 10 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Cursos Varios 3" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Varios 3</h5>
+                <p class="small">Tercera parte con más cursos variados para tu aprendizaje.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Varios</li>
+                    <li><strong>Contenido:</strong> Cursos diversos</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c10" data-name="Mega Pack Cursos Varios 3" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Varios%203%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c10" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 17 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Variados 2</h5>
-                            <p class="small">Segunda colección con cursos variados sobre múltiples temas.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Varios</li>
-                                <li><strong>Contenido:</strong> Cursos diversos</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c17" data-name="Mega Pack Cursos Variados 2" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Variados%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 11 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Diseño Gráfico" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Diseño Gráfico</h5>
+                <p class="small">Colección completa de cursos sobre diseño gráfico y herramientas.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Diseño</li>
+                    <li><strong>Contenido:</strong> Cursos de diseño</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c11" data-name="Mega Pack Diseño Gráfico" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Diseño%20Gráfico%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c11" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!-- Curso 18 -->
-            <div class="col-md-6">
-                <div class="card tool-card p-3">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="product-images">
-                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <h5>Mega Pack Cursos Variados 3</h5>
-                            <p class="small">Tercera colección con cursos variados sobre múltiples temas.</p>
-                            <ul class="small">
-                                <li><strong>Categoría:</strong> Varios</li>
-                                <li><strong>Contenido:</strong> Cursos diversos</li>
-                            </ul>
-                            <p class="product-price fw-bold mt-2">$69.90 MXN</p>
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c18" data-name="Mega Pack Cursos Variados 3" data-price="69.90">Agregar al carrito</button>
-                                <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Variados%203%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
-                            </div>
-                        </div>
-                    </div>
+<!-- Curso 12 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="Mega Pack Esquemático de Celulares" class="img-fluid rounded mb-2">
                 </div>
             </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Esquemático de Celulares</h5>
+                <p class="small">Recursos técnicos y esquemáticos para reparación de celulares.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Tecnología</li>
+                    <li><strong>Contenido:</strong> Reparación móvil</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c12" data-name="Mega Pack Esquemático de Celulares" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Esquemático%20de%20Celulares%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c12" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Curso 13 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Mind Valley 1</h5>
+                <p class="small">Primera parte de cursos de desarrollo personal de Mind Valley.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Desarrollo Personal</li>
+                    <li><strong>Contenido:</strong> Cursos motivacionales</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c13" data-name="Mega Pack Mind Valley 1" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Mind%20Valley%201%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c13" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Curso 14 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Mind Valley 2</h5>
+                <p class="small">Segunda parte con más cursos de desarrollo personal.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Desarrollo Personal</li>
+                    <li><strong>Contenido:</strong> Cursos motivacionales</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c14" data-name="Mega Pack Mind Valley 2" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Mind%20Valley%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c14" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Curso 15 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Reparación de Celulares</h5>
+                <p class="small">Curso completo sobre reparación de celulares y dispositivos móviles.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Tecnología</li>
+                    <li><strong>Contenido:</strong> Reparación móvil</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c15" data-name="Mega Pack Reparación de Celulares" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Reparación%20de%20Celulares%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c15" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Curso 16 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Variados 1</h5>
+                <p class="small">Colección con cursos variados sobre múltiples temas.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Varios</li>
+                    <li><strong>Contenido:</strong> Cursos diversos</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c16" data-name="Mega Pack Cursos Variados 1" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Variados%201%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c16" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Curso 17 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Variados 2</h5>
+                <p class="small">Segunda colección con cursos variados sobre múltiples temas.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Varios</li>
+                    <li><strong>Contenido:</strong> Cursos diversos</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c17" data-name="Mega Pack Cursos Variados 2" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Variados%202%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c17" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Curso 18 -->
+<div class="col-md-6">
+    <div class="card tool-card p-3">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="product-images">
+                    <img src="https://raw.githubusercontent.com/emiliocolor/clientes/130ecae7f040f4799905c00d709d3d4feda5e9e5/img_productos_servicios/megapacks_emiliocolor.png" alt="" class="img-fluid rounded mb-2">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5>Mega Pack Cursos Variados 3</h5>
+                <p class="small">Tercera colección con cursos variados sobre múltiples temas.</p>
+                <ul class="small">
+                    <li><strong>Categoría:</strong> Varios</li>
+                    <li><strong>Contenido:</strong> Cursos diversos</li>
+                </ul>
+                <p class="product-price fw-bold mt-2">$69.90 MXN</p>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm add-to-cart" data-type="product" data-id="c18" data-name="Mega Pack Cursos Variados 3" data-price="69.90">Agregar al carrito</button>
+                    <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20el%20curso:%20Mega%20Pack%20Cursos%20Variados%203%20(69.90%20MXN)%20de%20EmilioColor®" class="btn btn-success-gradient btn-sm" target="_blank">Comprar ahora</a>
+                </div>
+                <!-- Botones secundarios -->
+                <div class="d-flex gap-2 mt-2 justify-content-center">
+                    <a href="#contenido-c18" class="btn btn-secondary btn-sm" style="max-width: 180px;">
+                        Conocer contenido
+                    </a>
+                    <a href="https://emiliocolor.com/#educacion" class="btn btn-outline-secondary btn-sm" style="max-width: 180px;">
+                        Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                     <!-- Parte 2/3: Más Mega Packs -->
         <div class="mt-5">
             <h4 class="section-title"><i class="fas fa-book-open"></i> Sección 2/3: Cursos Destacados</h4>
@@ -5762,10 +5988,100 @@ function loadCursosContentDirectly() {
     `;
     
     cursosCargados = true;
-    console.log("Sección de cursos cargada directamente");
     
-    // Inicializar la funcionalidad de búsqueda
-    initCourseSearch();
+    // Inicializar la funcionalidad de búsqueda y filtros
+    setTimeout(initCourseSearch, 100);
+}
+
+// Función para inicializar la búsqueda y filtros de cursos
+function initCourseSearch() {
+    const courseSearch = document.getElementById('courseSearch');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const clearSearch = document.getElementById('clearSearch');
+    const searchResultsCount = document.getElementById('searchResultsCount');
+    
+    if (!courseSearch || !categoryFilter) {
+        console.error('Elementos de búsqueda no encontrados');
+        return;
+    }
+    
+    function filterCourses() {
+        const searchTerm = courseSearch.value.toLowerCase();
+        const selectedCategory = categoryFilter.value;
+        const courseCards = document.querySelectorAll('#cursos-container .col-md-6');
+        let visibleCount = 0;
+        
+        courseCards.forEach(card => {
+            const title = card.querySelector('h5').textContent.toLowerCase();
+            const description = card.querySelector('p.small').textContent.toLowerCase();
+            const category = card.getAttribute('data-category');
+            const categoryText = card.querySelector('li:first-child').textContent.toLowerCase();
+            
+            const matchesSearch = !searchTerm || 
+                                title.includes(searchTerm) || 
+                                description.includes(searchTerm) ||
+                                categoryText.includes(searchTerm);
+            
+            const matchesCategory = !selectedCategory || category === selectedCategory;
+            
+            if (matchesSearch && matchesCategory) {
+                card.style.display = 'block';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Actualizar contador de resultados
+        if (searchResultsCount) {
+            searchResultsCount.textContent = `${visibleCount} cursos encontrados`;
+            
+            if (searchTerm || selectedCategory) {
+                searchResultsCount.innerHTML += ` 
+                    <button class="btn btn-outline-secondary btn-sm ms-2" onclick="clearFilters()">
+                        <i class="fas fa-times"></i> Limpiar filtros
+                    </button>
+                `;
+            }
+        }
+        
+        // Mostrar/ocultar secciones basado en si tienen cursos visibles
+        const sections = document.querySelectorAll('#cursos-container > div.mt-5, #cursos-container > div.mb-5');
+        sections.forEach(section => {
+            const visibleCoursesInSection = section.querySelectorAll('.col-md-6[style="display: block"]').length;
+            if (visibleCoursesInSection > 0) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    }
+    
+    // Event listeners
+    courseSearch.addEventListener('input', filterCourses);
+    categoryFilter.addEventListener('change', filterCourses);
+    
+    if (clearSearch) {
+        clearSearch.addEventListener('click', function() {
+            courseSearch.value = '';
+            filterCourses();
+        });
+    }
+    
+    // Función para limpiar todos los filtros
+    window.clearFilters = function() {
+        courseSearch.value = '';
+        categoryFilter.value = '';
+        filterCourses();
+    };
+    
+    // Aplicar filtro inicial si hay parámetros en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('categoria');
+    if (categoryParam && categoryFilter.querySelector(`option[value="${categoryParam}"]`)) {
+        categoryFilter.value = categoryParam;
+        filterCourses();
+    }
 }
 
 // Función para inicializar la búsqueda de cursos
