@@ -1,5 +1,3 @@
-
-// Variable para controlar si la sección de cursos ya se cargó
 let cursosCargados = false;
 
 const cart = {
@@ -6342,3 +6340,4 @@ function addGeneralQuotationButton() {
         roundedContainer.insertBefore(quotationButton, roundedContainer.firstChild);
     }
 }
+
