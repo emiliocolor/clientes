@@ -839,6 +839,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .info-card h3 {
@@ -1043,6 +1044,63 @@
                 align-items: center;
             }
         }
+
+        /* Estilos para botones de copiar */
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--button-gradient);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .copy-btn:hover {
+            background: var(--button-hover-gradient);
+            transform: translateY(-2px);
+        }
+
+        .copy-btn.copied {
+            background: var(--success-color);
+        }
+        
+        /* Estilos para el contenido existente */
+        .sponsor-note {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
+        .sponsor-note a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .sponsor-note a:hover {
+            color: white;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #128c7e, #25d366);
+            border: none;
+            border-radius: 50px !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
@@ -1124,22 +1182,6 @@
     legalidad y garantías
         </a>
 </p>
-
-            <style>
-                .sponsor-note {
-    font-size: 0.8rem;
-    color: #ffffffcc;
-    text-align: center;
-    margin-top: 50px;
-    font-style: italic;
-}
-.sponsor-note a {
-    color: inherit; 
-    text-decoration: underline; 
-    font-weight: normal; 
-}
-
-            </style>
         </div>
     </div>
 </section>
@@ -1154,45 +1196,54 @@
            <span class="ods8-badge">ODS 8</span>
            <span class="ods9-badge">ODS 9</span>
         </p>
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
     </div>
 <div class="info-card">
     <h3>Tema del Proyecto</h3>
     <p>Desarrollo de un kit educativo automatizado que integra robótica, programación y sistemas de clasificación de componentes metálicos para fomentar habilidades STEM en jóvenes.</p> 
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 <div class="info-card">
     <h3>Delimitación del Tema</h3>
     <p>El proyecto se centra en la creación de un brazo robótico de 3 grados de libertad, una banda transportadora y un sistema de identificación de componentes metálicos, complementado con una plataforma digital interactiva para el aprendizaje de robótica, automatización y programación dirigido a personas mayores de 13 años en México.</p> 
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 <div class="info-card">
     <h3>Reto</h3>
     <p>Reducir la brecha entre el conocimiento teórico y la aplicación práctica de la tecnología en educación STEM, ofreciendo un kit educativo accesible, seguro y motivador para jóvenes interesados en robótica y automatización.</p> 
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 <div class="info-card">
     <h3>Hipótesis</h3>
     <p>Si se desarrolla un kit educativo que combine un brazo robótico, una banda transportadora y una plataforma digital interactiva, entonces los estudiantes mayores de 13 años podrán aprender robótica, programación y automatización de manera práctica, progresiva y motivadora, fortaleciendo sus habilidades técnicas y competencias STEM.</p> 
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 <div class="info-card">
     <h3>Propósito</h3>
     <p>Fomentar el aprendizaje práctico de robótica, automatización y programación, promoviendo habilidades tecnológicas, competencias STEM y motivación hacia carreras científicas y tecnológicas, mediante un kit educativo accesible e interactivo.</p> 
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 <div class="info-card">
     <h3>Público Objetivo</h3>
     <p>Personas mayores de 13 años, especialmente jóvenes interesados en aprender robótica, programación y automatización, con acceso limitado a recursos educativos prácticos en México.</p> 
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 <div class="info-card">
     <h3>Impacto Social</h3>
     <p>Contribuir a la formación de habilidades técnicas y competencias STEM en jóvenes, facilitando el acceso a educación tecnológica práctica, motivando el interés por carreras científicas y tecnológicas, y apoyando el desarrollo de la innovación local.</p> 
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 <div class="info-card">
     <h3>Sustentabilidad</h3>
     <p>El proyecto promueve la sostenibilidad educativa al ofrecer un kit reutilizable y digital, reduciendo costos y dependencia de infraestructura, y fomentando un aprendizaje autónomo y escalable que puede adaptarse a diferentes contextos educativos.</p> 
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 </div>
@@ -1222,7 +1273,22 @@
     </div>
 </section>
 
+<!-- Descripción General -->
+<div class="content-section" id="proyecto">
+    <h2 class="section-title">Descripción General del Proyecto CAPES</h2>
+    <p>El <strong>Clasificador Automatizado para Educación STEM (CAPES)</strong> será un kit educativo que integrará un brazo robótico de 3 grados de libertad con una banda transportadora y un sistema de identificación de componentes metálicos.</p>
+    <p>Los componentes, incluyendo tuercas, pernos, rondanas y engranes, pasarán por uno o dos sensores según sea el caso, los cuales determinarán su tipo. El brazo robótico recibirá la información, utilizará un electroimán para sugetar la pieza metálica y la colocará en la caja correspondiente a su categoría, permitiendo que los usuarios observen cómo funcionarán los procesos automatizados y la implementación de su programación en tiempo real.</p>
+    <p>El kit CAPES incluirá:</p>
+    <ul>
+        <li>Un brazo robótico de 3 grados de libertad para la clasificación de piezas.</li>
+        <li>Una banda transportadora con sensores para la identificación de de componentes.</li>
+        <li>Juego de piezas metálicas: tuercas, pernos, rondanas y engranes.</li>
+        <li>Plataforma de aprendizaje, incluyendo material de apoyo y cursos de robótica, electronica y programación para su implementación dentro de CAPES.</li>
+    </ul>
+    <p>Este sistema permitirá a los usuarios aprender de manera práctica programación, robótica y automatización, reforzando competencias tecnológicas y motivando la exploración de carreras STEM.</p>
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 
+</div>
 <!-- Objetivos del Proyecto -->
 <div class="content-section" id="objetivos">
     <h2 class="section-title">Objetivos del Proyecto CAPES</h2>
@@ -1237,6 +1303,7 @@
         <li><strong>Experiencia práctica:</strong> Permitir a los usuarios interactuar directamente con la clasificación automatizada y comprender los principios de robótica aplicada.</li>
         <li><strong>Evaluación de impacto:</strong> Medir la efectividad del proyecto en el aprendizaje práctico, desarrollo de habilidades tecnológicas y motivación hacia carreras STEM.</li>
     </ul>
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 <!-- Justificación -->
@@ -1245,6 +1312,7 @@
     <p>En México, el acceso a la educación práctica en robótica y automatización sigue siendo limitado debido al alto costo de los equipos y a la escasa oferta de materiales interactivos que permitan aprender la práctica de la mano de la teoría. Esta situación genera una brecha entre el conocimiento teórico y la aplicación real de la tecnología, dificultando el desarrollo de habilidades técnicas en jóvenes interesados en áreas STEM.</p>
     <p>El proyecto <strong>CAPES (Clasificador Automatizado para Educación STEM)</strong> abordará esta problemática al ofrecer un kit educativo accesible y funcional que permitirá aprender robótica, electrónica y programación de manera práctica, didáctica y a bajo costo en comparación con los antecedentes del proyecto. Los usuarios experimentarán directamente cómo funcionan los procesos automatizados industriales de manera segura e interactiva, mediante un brazo robótico de 3 grados de libertad con electroimán, una banda transportadora y un sistema de identificación de componentes metálicos.</p>
     <p>Diseñado para personas mayores de 13 años, el proyecto CAPES incluirá una plataforma digital interactiva con materiales educativos que facilitarán el aprendizaje a su propio ritmo, sin necesidad de instrucción docente formal. De esta manera, el proyecto fomentará el desarrollo de habilidades tecnológicas y la formación en competencias STEM, contribuyendo al cumplimiento de los <strong>Objetivos de Desarrollo Sostenible (ODS) 8 y 9</strong>, relacionados con el trabajo decente, el crecimiento económico y la innovación tecnológica.</p>
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 <!-- Problemática -->
@@ -1265,71 +1333,10 @@
     </ul>
 
     <p>CAPES buscará superar estas limitaciones mediante la implementación de un prototipo funcional que integrará un brazo robótico de 2 ejes, una banda transportadora y un lector de componentes, ofreciendo una experiencia educativa práctica, segura, interactiva y alineada con los ODS 8 y 9.</p>
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
 </div>
 
 </div>
-
-        <!-- Sección Producto
-        <section id="producto" class="page-section product-section">
-            <span class="section-anchor" id="producto-section"></span>
-            <div class="square-container">
-                <h2 class="section-title">Nuestro Producto</h2>
-                <div class="product-container">
-                    <div class="product-gallery">
-                        <img id="main-product-image" src="https://via.placeholder.com/600x400?text=Imagen+1" alt="CAPES - Clasificador Automatizado" class="product-main-image">
-                        <div class="product-thumbnails">
-                            <img src="https://via.placeholder.com/600x400?text=Imagen+1" alt="Vista frontal" class="product-thumbnail active" data-image="https://via.placeholder.com/600x400?text=Imagen+1">
-                            <img src="https://via.placeholder.com/600x400?text=Imagen+2" alt="Vista lateral" class="product-thumbnail" data-image="https://via.placeholder.com/600x400?text=Imagen+2">
-                            <img src="https://via.placeholder.com/600x400?text=Imagen+3" alt="Detalle del brazo" class="product-thumbnail" data-image="https://via.placeholder.com/600x400?text=Imagen+3">
-                            <img src="https://via.placeholder.com/600x400?text=Imagen+4" alt="Sistema de visión" class="product-thumbnail" data-image="https://via.placeholder.com/600x400?text=Imagen+4">
-                            <img src="https://via.placeholder.com/600x400?text=Imagen+5" alt="Componentes clasificados" class="product-thumbnail" data-image="https://via.placeholder.com/600x400?text=Imagen+5">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>CAPES - Clasificador Automatizado para Educación STEM</h3>
-                        <div class="product-price">$1,600 MXN</div>
-                        <div class="product-description">
-                            <p>El CAPES es un sistema educativo innovador que combina robótica, visión artificial y automatización para enseñar conceptos STEM de manera práctica y atractiva.</p>
-                            <p>Ideal para instituciones educativas, laboratorios de robótica y centros de capacitación tecnológica.</p>
-                        </div>
-                        <div class="product-features">
-                            <h5>Características principales:</h5>
-                            <ul>
-                                <li>Brazo robótico de 2 ejes con precisión milimétrica</li>
-                                <li>Sistema de visión artificial para identificación de componentes</li>
-                                <li>Interfaz de programación gráfica y por código</li>
-                                <li>Capacidad para clasificar 5 tipos de componentes mecánicos</li>
-                                <li>Estructura robusta y duradera</li>
-                                <li>Documentación educativa completa</li>
-                            </ul>
-                        </div>
-                        <div class="product-contact">
-                            <h5>Contacto directo para compra o cotización:</h5>
-                            <p><i class="fas fa-envelope"></i> Email: emiliocolormexico@gmail.com</p>
-                            <p><i class="fas fa-phone"></i> Teléfono: +52 PRUEBA</p>
-                            <p><i class="fab fa-whatsapp"></i> WhatsApp: +52 PRUEBA</p>
-                            <a href="#contacto" class="btn btn-primary">Solicitar información</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="platform-access">
-                    <div class="platform-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Plataforma Educativa CAPES</h3>
-                    <p>Accede a nuestra plataforma educativa para consultar manuales digitales, tutoriales, guías de programación y recursos adicionales para el uso óptimo de tu sistema CAPES.</p>
-                    <div class="platform-buttons">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-book"></i> Manuales Digitales
-                        </a>
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-sign-in-alt"></i> Acceder a la plataforma
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>-->
 
         <!-- Sección ODS -->
         <section id="ods" class="page-section">
@@ -1346,6 +1353,7 @@
                             <li>Desarrollo de capacidades para la industria 4.0</li>
                             <li>Fomento de la innovación y productividad</li>
                         </ul>
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
                     </div>
                     <div class="square-item">
                         <h3>ODS 9: Industria, Innovación e Infraestructura</h3>
@@ -1356,6 +1364,7 @@
                             <li>Fomento de tecnologías sostenibles</li>
                             <li>Desarrollo de capacidades técnicas avanzadas</li>
                         </ul>
+<button class="copy-btn" onclick="copyText(this)" style="position: relative; top: 0; right: 0; margin-top: 15px; border-radius: 0;">Copiar texto</button>
                     </div>
                 </div>
             </div>
@@ -1412,22 +1421,6 @@
 
     </div>
 </section>
-
-<!-- CSS para WhatsApp button -->
-<style>
-.whatsapp-btn {
-    background: linear-gradient(135deg, #128c7e, #25d366);
-    border: none;
-    border-radius: 50px !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-</style>
-
 
     </main>
     
@@ -1566,6 +1559,34 @@
             alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
             this.reset();
         });
+
+        // Función para copiar texto sin formato
+        function copyText(button) {
+            // Obtener el contenedor padre (info-card o content-section)
+            const container = button.closest('.info-card, .content-section, .square-item');
+            
+            // Obtener todo el texto del contenedor excluyendo el botón
+            let textToCopy = container.innerText.replace('Copiar texto', '').trim();
+            
+            // Crear un elemento temporal para copiar al portapapeles
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            
+            // Cambiar temporalmente el texto del botón
+            const originalText = button.textContent;
+            button.textContent = '¡Copiado!';
+            button.classList.add('copied');
+            
+            // Restaurar el texto original después de 2 segundos
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('copied');
+            }, 2000);
+        }
     </script>
 </body>
 </html>
