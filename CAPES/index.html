@@ -445,6 +445,20 @@
             margin-right: 8px;
             font-size: 1rem;
         }
+.btn-explore.btn-green {
+    background: linear-gradient(145deg, #28a745, #45c36a);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-explore.btn-green:hover {
+    background: linear-gradient(145deg, #45c36a, #28a745);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 128, 0, 0.25);
+}
+
 
         .tool-card {
             height: 100%;
@@ -1253,6 +1267,13 @@
     <div class="square-container">
         <h2 class="section-title">Centro de Recursos del Proyecto</h2>
         <p>Accede fácilmente a los materiales esenciales del proyecto CAPES: antecedentes, guion de presentación y componentes principales.</p>
+<ul>
+    <li><strong style="color: #6c757d;">Gris:</strong> Páginas web con acceso libre para todos.</li>
+    <li><strong style="color: #28a745;">Verde:</strong> Documentos de acceso público.</li>
+    <li><strong style="color: #007bff;">Azul:</strong> Documentos a los que solo puede acceder el equipo.</li>
+    <li><strong style="color: #000000;">Blanco:</strong> Hojas de cálculo con acceso limitado.</li>
+</ul>
+
 
         <div class="platform-buttons">
             <a href="https://emiliocolor.com/CAPES/antecedentes.html" 
@@ -1267,8 +1288,13 @@
 
             <a href="https://docs.google.com/spreadsheets/d/1TNhPH6r87hKO4yda-QnikuJzpYqMMm9pfS8nhBiR58A/edit?usp=sharing" 
                class="btn-explore btn-white" target="_blank">
-                <i class="fas fa-boxes"></i> Accesos a Componentes
+                <i class="fas fa-boxes"></i> Lista de Componentes
             </a>
+            <a href="https://docs.google.com/document/d/1QwwtDsbgJBWUmDJrgQ_ECC6DqxWDgpc7/edit?usp=sharing&ouid=104544876122891177035&rtpof=true&sd=true" 
+   class="btn-explore btn-green" target="_blank">
+    <i class="fas fa-boxes"></i> Estado del Arte
+</a>
+
         </div>
     </div>
 </section>
