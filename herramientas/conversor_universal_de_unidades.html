@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EmilioColor® - Conversor Universal de Unidades">
+    <meta name="keywords" content="conversor, unidades, métrico, americano, longitud, peso, volumen, temperatura">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Conversor Universal de Unidades">
+    <meta property="og:description" content="Herramienta para convertir entre múltiples sistemas de unidades">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Conversor Universal de Unidades">
+    <meta name="twitter:description" content="Herramienta para convertir entre múltiples sistemas de unidades">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/favicon_herramientas.png" type="image/png">
+
+    <title>Conversor Universal de Unidades - EmilioColor®</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            background-color: var(--header-hover);
+            transform: translateY(-2px);
+        }
+
+        .header-nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Conversor Universal Styles */
+        .calculator-container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            border-radius: 0;
+        }
+
+        .calculator {
+            background-color: white;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            color: var(--text-dark);
+            border-radius: 0;
+        }
+        
+        .calculator h2 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        
+        .config-selector {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .conversion-type {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .conversion-type label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .calculator label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+        
+        .calculator input, .calculator select, .calculator textarea {
+            padding: 12px;
+            width: 100%;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0;
+            background-color: white;
+            color: var(--text-dark);
+            font-size: 16px;
+            transition: border 0.3s;
+            box-sizing: border-box;
+        }
+        
+        .calculator input:focus, .calculator select:focus, .calculator textarea:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+        }
+        
+        .calculator button {
+            background: var(--button-gradient);
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .calculator button:hover {
+            background: var(--button-hover-gradient);
+            transform: translateY(-2px);
+        }
+        
+        .calculator button:active {
+            transform: translateY(0);
+        }
+        
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: var(--light-gray);
+            border-radius: 0;
+            display: none;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .error {
+            color: white;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: var(--danger-color);
+            border-radius: 0;
+            display: none;
+            font-size: 15px;
+        }
+        
+        .conversion-value {
+            font-size: 22px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+        
+        .calculator hr {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+            margin: 18px 0;
+        }
+        
+        .conversion-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .conversion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .copy-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 0;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-blue-dark);
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        .home-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+
+        .home-btn:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        /* Botón de convertir más pequeño en computadora */
+        @media (min-width: 768px) {
+            .calculator button {
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+        }
+
+        /* Estilos para el conversor universal */
+        .unit-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .unit-input input {
+            flex: 1;
+        }
+        
+        .unit-selector {
+            width: 200px;
+        }
+        
+        .conversion-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-radius: 0;
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .conversion-info h4 {
+            color: var(--success-color);
+            margin-bottom: 10px;
+        }
+        
+        .formula {
+            font-family: 'Courier New', monospace;
+            background-color: var(--light-gray);
+            padding: 8px 12px;
+            border-radius: 0;
+            display: inline-block;
+            color: var(--text-dark);
+        }
+
+        .measurement-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .measurement-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .measurement-item label {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .measurement-item input {
+            text-align: center;
+        }
+
+        .result-unit {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 0;
+            border-left: 3px solid var(--success-color);
+        }
+
+        .result-unit h5 {
+            color: var(--success-color);
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .result-unit p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .result-category {
+            background-color: white;
+            padding: 15px;
+            border-radius: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .result-category h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-item .unit {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .result-item .value {
+            font-family: 'Courier New', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .measurement-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+            <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="https://emiliocolor.com/" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Página principal</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="calculator-container">
+        <div class="calculator">
+            
+            <h2>Conversor Universal de Unidades</h2>
+            
+            <div class="config-selector">
+                <label>Seleccione el tipo de unidad:</label>
+                <div class="conversion-type">
+                    <label>
+                        <input type="radio" name="unit-type" value="length" checked> Longitud
+                    </label>
+                    <label>
+                        <input type="radio" name="unit-type" value="weight"> Peso/Masa
+                    </label>
+                    <label>
+                        <input type="radio" name="unit-type" value="volume"> Volumen
+                    </label>
+                    <label>
+                        <input type="radio" name="unit-type" value="temperature"> Temperatura
+                    </label>
+                    <label>
+                        <input type="radio" name="unit-type" value="area"> Área
+                    </label>
+                    <label>
+                        <input type="radio" name="unit-type" value="speed"> Velocidad
+                    </label>
+                </div>
+            </div>
+            
+            <div class="measurement-group">
+                <div class="measurement-item">
+                    <label for="input-value">Valor a convertir:</label>
+                    <input type="number" id="input-value" placeholder="Ingrese el valor" step="any">
+                </div>
+                <div class="measurement-item">
+                    <label for="input-unit">Unidad de origen:</label>
+                    <select id="input-unit">
+                        <!-- Las opciones se llenarán dinámicamente según el tipo de unidad -->
+                    </select>
+                </div>
+            </div>
+            
+            <button id="convert-btn">Convertir</button>
+            
+            <div class="error" id="error"></div>
+            
+            <div class="result" id="result" style="display: none;">
+                <h3>RESULTADOS:</h3>
+                <hr>
+                <div class="results-container" id="results-container">
+                    <!-- Los resultados se mostrarán aquí dinámicamente -->
+                </div>
+                <button class="copy-btn" id="copy-btn">Copiar resultados</button>
+            </div>
+            
+            <div class="conversion-info">
+                <h4>Información sobre sistemas de unidades:</h4>
+                <p>Este conversor permite convertir entre múltiples sistemas de unidades:</p>
+                <ul>
+                    <li><strong>Sistema Métrico Decimal:</strong> Basado en múltiplos de 10</li>
+                    <li><strong>Sistema Imperial/Americano:</strong> Usado principalmente en Estados Unidos</li>
+                    <li><strong>Sistema Internacional (SI):</strong> Sistema estándar usado en ciencia</li>
+                </ul>
+                <p>Seleccione el tipo de unidad y la unidad de origen para ver todas las conversiones posibles.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación</h4>
+                <a href="https://emiliocolor.com#inicio" class="footer-nav-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="https://emiliocolor.com#servicios" class="footer-nav-link" data-section="tecnologia" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-laptop-code"></i> Tecnología
+                </a>
+                <a href="https://emiliocolor.com#cursos" class="footer-nav-link" data-section="educacion" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-graduation-cap"></i> Educación
+                </a>
+                <a href="https://emiliocolor.com#productos" class="footer-nav-link" data-section="productos" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-pencil-alt"></i> Papelería
+                </a>
+                <a href="https://emiliocolor.com#transportes" class="footer-nav-link" data-section="transportes" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-truck"></i> Transportes
+                </a>
+                <a href="https://emiliocolor.com/#classcloud" class="footer-nav-link" data-section="classcloud" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-cloud"></i> ClassCloud℠
+                </a>
+                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link" data-section="nosotros">
+                    <i class="fas fa-hands-helping"></i> Apoyos
+                </a>
+                <a href="https://emiliocolor.com/#contactos" class="footer-nav-link" data-section="contacto">
+                    <i class="fas fa-envelope"></i> Contacto
+                </a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +52 56 2537 7747</p>
+                <p><i class="fab fa-whatsapp"></i> +52 56 2537 7747</p>
+                <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolormx/" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 EmilioColor® - Conversor Universal de Unidades | Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Definición de unidades por categoría
+    const unitCategories = {
+        length: {
+            name: "Longitud",
+            units: {
+                "mm": { name: "Milímetros", factor: 0.001 },
+                "cm": { name: "Centímetros", factor: 0.01 },
+                "m": { name: "Metros", factor: 1 },
+                "km": { name: "Kilómetros", factor: 1000 },
+                "in": { name: "Pulgadas", factor: 0.0254 },
+                "ft": { name: "Pies", factor: 0.3048 },
+                "yd": { name: "Yardas", factor: 0.9144 },
+                "mi": { name: "Millas", factor: 1609.344 }
+            }
+        },
+        weight: {
+            name: "Peso/Masa",
+            units: {
+                "mg": { name: "Miligramos", factor: 0.000001 },
+                "g": { name: "Gramos", factor: 0.001 },
+                "kg": { name: "Kilogramos", factor: 1 },
+                "t": { name: "Toneladas", factor: 1000 },
+                "oz": { name: "Onzas", factor: 0.0283495 },
+                "lb": { name: "Libras", factor: 0.453592 },
+                "st": { name: "Stones", factor: 6.35029 }
+            }
+        },
+        volume: {
+            name: "Volumen",
+            units: {
+                "ml": { name: "Mililitros", factor: 0.001 },
+                "cl": { name: "Centilitros", factor: 0.01 },
+                "l": { name: "Litros", factor: 1 },
+                "m3": { name: "Metros cúbicos", factor: 1000 },
+                "floz": { name: "Onzas fluidas", factor: 0.0295735 },
+                "cup": { name: "Tazas", factor: 0.236588 },
+                "pt": { name: "Pintas", factor: 0.473176 },
+                "qt": { name: "Cuartos", factor: 0.946353 },
+                "gal": { name: "Galones", factor: 3.78541 }
+            }
+        },
+        temperature: {
+            name: "Temperatura",
+            units: {
+                "c": { name: "Celsius", factor: 1, offset: 0 },
+                "f": { name: "Fahrenheit", factor: 5/9, offset: -32 },
+                "k": { name: "Kelvin", factor: 1, offset: -273.15 }
+            }
+        },
+        area: {
+            name: "Área",
+            units: {
+                "mm2": { name: "Milímetros cuadrados", factor: 0.000001 },
+                "cm2": { name: "Centímetros cuadrados", factor: 0.0001 },
+                "m2": { name: "Metros cuadrados", factor: 1 },
+                "ha": { name: "Hectáreas", factor: 10000 },
+                "km2": { name: "Kilómetros cuadrados", factor: 1000000 },
+                "in2": { name: "Pulgadas cuadradas", factor: 0.00064516 },
+                "ft2": { name: "Pies cuadrados", factor: 0.092903 },
+                "yd2": { name: "Yardas cuadradas", factor: 0.836127 },
+                "ac": { name: "Acres", factor: 4046.86 },
+                "mi2": { name: "Millas cuadradas", factor: 2589988.11 }
+            }
+        },
+        speed: {
+            name: "Velocidad",
+            units: {
+                "mps": { name: "Metros por segundo", factor: 1 },
+                "kph": { name: "Kilómetros por hora", factor: 0.277778 },
+                "mph": { name: "Millas por hora", factor: 0.44704 },
+                "knot": { name: "Nudos", factor: 0.514444 },
+                "ftps": { name: "Pies por segundo", factor: 0.3048 }
+            }
+        }
+    };
+
+    // Configurar eventos para los radio buttons
+    document.querySelectorAll('input[name="unit-type"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            updateUnitOptions(this.value);
+            // Ocultar el contenedor de resultados al cambiar de opción
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('error').style.display = 'none';
+            // Limpiar el campo de entrada
+            document.getElementById('input-value').value = '';
+        });
+    });
+
+    // Inicializar con la primera categoría
+    updateUnitOptions('length');
+
+    // Configurar evento para el botón de conversión
+    document.getElementById('convert-btn').addEventListener('click', convertUnits);
+
+    // Configurar evento para el botón de copiar
+    document.getElementById('copy-btn').addEventListener('click', copyResults);
+
+    // Permitir conversión al presionar Enter
+    document.getElementById('input-value').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            convertUnits();
+        }
+    });
+
+    function updateUnitOptions(category) {
+        const unitSelect = document.getElementById('input-unit');
+        unitSelect.innerHTML = '';
+        
+        const units = unitCategories[category].units;
+        for (const unitKey in units) {
+            const option = document.createElement('option');
+            option.value = unitKey;
+            option.textContent = units[unitKey].name;
+            unitSelect.appendChild(option);
+        }
+    }
+
+    function convertUnits() {
+        const category = document.querySelector('input[name="unit-type"]:checked').value;
+        const inputValue = parseFloat(document.getElementById('input-value').value);
+        const inputUnit = document.getElementById('input-unit').value;
+        
+        const errorElement = document.getElementById("error");
+        const resultElement = document.getElementById("result");
+        
+        errorElement.style.display = "none";
+        resultElement.style.display = "none";
+        
+        if (isNaN(inputValue)) {
+            showError("Por favor ingrese un valor válido");
+            return;
+        }
+        
+        // Realizar la conversión
+        performConversion(category, inputValue, inputUnit);
+    }
+
+    function performConversion(category, value, fromUnit) {
+        const units = unitCategories[category].units;
+        const resultsContainer = document.getElementById('results-container');
+        resultsContainer.innerHTML = '';
+        
+        // Para temperatura, las conversiones son diferentes
+        if (category === 'temperature') {
+            convertTemperature(value, fromUnit, resultsContainer);
+            return;
+        }
+        
+        // Para otras categorías, usar factores de conversión
+        const baseValue = value * units[fromUnit].factor;
+        
+        // Agrupar resultados por sistema
+        const metricResults = [];
+        const imperialResults = [];
+        const otherResults = [];
+        
+        for (const unitKey in units) {
+            if (unitKey === fromUnit) continue;
+            
+            const convertedValue = baseValue / units[unitKey].factor;
+            const result = {
+                unit: unitKey,
+                name: units[unitKey].name,
+                value: convertedValue
+            };
+            
+            // Clasificar por sistema
+            if (['mm', 'cm', 'm', 'km', 'mg', 'g', 'kg', 't', 'ml', 'cl', 'l', 'm3', 'mm2', 'cm2', 'm2', 'ha', 'km2', 'mps', 'kph'].includes(unitKey)) {
+                metricResults.push(result);
+            } else if (['in', 'ft', 'yd', 'mi', 'oz', 'lb', 'st', 'floz', 'cup', 'pt', 'qt', 'gal', 'in2', 'ft2', 'yd2', 'ac', 'mi2', 'mph', 'ftps'].includes(unitKey)) {
+                imperialResults.push(result);
+            } else {
+                otherResults.push(result);
+            }
+        }
+        
+        // Mostrar resultados agrupados
+        if (metricResults.length > 0) {
+            displayResultGroup(resultsContainer, "Sistema Métrico", metricResults);
+        }
+        
+        if (imperialResults.length > 0) {
+            displayResultGroup(resultsContainer, "Sistema Imperial/Americano", imperialResults);
+        }
+        
+        if (otherResults.length > 0) {
+            displayResultGroup(resultsContainer, "Otras Unidades", otherResults);
+        }
+        
+        document.getElementById('result').style.display = 'block';
+    }
+
+    function convertTemperature(value, fromUnit, resultsContainer) {
+        const conversions = {
+            'c': {
+                'f': (c) => (c * 9/5) + 32,
+                'k': (c) => c + 273.15
+            },
+            'f': {
+                'c': (f) => (f - 32) * 5/9,
+                'k': (f) => (f - 32) * 5/9 + 273.15
+            },
+            'k': {
+                'c': (k) => k - 273.15,
+                'f': (k) => (k - 273.15) * 9/5 + 32
+            }
+        };
+        
+        const metricResults = [];
+        const imperialResults = [];
+        
+        for (const toUnit in conversions[fromUnit]) {
+            const convertedValue = conversions[fromUnit][toUnit](value);
+            const result = {
+                unit: toUnit,
+                name: unitCategories.temperature.units[toUnit].name,
+                value: convertedValue
+            };
+            
+            if (toUnit === 'c' || toUnit === 'k') {
+                metricResults.push(result);
+            } else {
+                imperialResults.push(result);
+            }
+        }
+        
+        // Mostrar resultados agrupados
+        if (metricResults.length > 0) {
+            displayResultGroup(resultsContainer, "Sistema Métrico/Internacional", metricResults);
+        }
+        
+        if (imperialResults.length > 0) {
+            displayResultGroup(resultsContainer, "Sistema Imperial/Americano", imperialResults);
+        }
+        
+        document.getElementById('result').style.display = 'block';
+    }
+
+    function displayResultGroup(container, title, results) {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.className = 'result-category';
+        
+        const titleEl = document.createElement('h4');
+        titleEl.textContent = title;
+        categoryDiv.appendChild(titleEl);
+        
+        results.forEach(result => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'result-item';
+            
+            const unitSpan = document.createElement('span');
+            unitSpan.className = 'unit';
+            unitSpan.textContent = result.name;
+            
+            const valueSpan = document.createElement('span');
+            valueSpan.className = 'value';
+            valueSpan.textContent = formatNumber(result.value);
+            
+            resultItem.appendChild(unitSpan);
+            resultItem.appendChild(valueSpan);
+            categoryDiv.appendChild(resultItem);
+        });
+        
+        container.appendChild(categoryDiv);
+    }
+
+    function formatNumber(value) {
+        if (Math.abs(value) < 0.001) {
+            return value.toExponential(4);
+        } else if (Math.abs(value) < 1) {
+            return value.toFixed(6);
+        } else if (Math.abs(value) < 1000) {
+            return value.toFixed(4);
+        } else if (Math.abs(value) < 1000000) {
+            return value.toFixed(2);
+        } else {
+            return value.toExponential(4);
+        }
+    }
+
+    function showError(message) {
+        const errorElement = document.getElementById("error");
+        errorElement.textContent = message;
+        errorElement.style.display = "block";
+    }
+
+    function copyResults() {
+        const resultsContainer = document.getElementById('results-container');
+        let resultText = `Conversión de Unidades - EmilioColor®\n\n`;
+        resultText += `Valor original: ${document.getElementById('input-value').value} ${document.getElementById('input-unit').selectedOptions[0].textContent}\n\n`;
+        
+        const categories = resultsContainer.querySelectorAll('.result-category');
+        categories.forEach(category => {
+            resultText += `${category.querySelector('h4').textContent}:\n`;
+            const items = category.querySelectorAll('.result-item');
+            items.forEach(item => {
+                const unit = item.querySelector('.unit').textContent;
+                const value = item.querySelector('.value').textContent;
+                resultText += `  ${unit}: ${value}\n`;
+            });
+            resultText += '\n';
+        });
+        
+        navigator.clipboard.writeText(resultText)
+            .then(() => {
+                const copyBtn = document.getElementById('copy-btn');
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = "¡Copiado!";
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Error al copiar: ', err);
+                showError("Error al copiar los resultados");
+            });
+    }
+</script>
+</body>
+</html>
