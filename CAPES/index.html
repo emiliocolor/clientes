@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clasificador Automatizado para Educación STEM (CAPES) - Contribuyendo al ODS 8: Trabajo Decente y Crecimiento Económico">
+    <meta name="keywords" content="CAPES, clasificador automatizado, educación STEM, ODS 8, trabajo decente, crecimiento económico, robótica educativa">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="CAPES - Clasificador Automatizado para Educación STEM">
+    <meta property="og:description" content="Sistema de clasificación automatizada que contribuye al ODS 8: Trabajo Decente y Crecimiento Económico">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/emiliocolor/database/main/favicon.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/emiversal/database/334d5dd44377663b5e46c9ae6d77582e33ee7281/favicon.png" type="image/png">
+
+    <title>CAPES - Clasificador Automatizado para Educación STEM | ODS 8</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_index.css">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com/">
+
+    <style>
+        /* Estilos para bordes uniformes en todas las secciones */
+        .content-section {
+            text-align: justify;
+            border: 1px solid #a0a0a0 !important;
+            padding: 25px;
+            background: #ffffff;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .square-container {
+            text-align: justify;
+            border: 1px solid #a0a0a0 !important;
+            padding: 25px;
+            background: #ffffff;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        /* Reducir separación entre secciones */
+        .page-section {
+            margin-bottom: 10px;
+        }
+        
+        /* Ajustes para botones en contacto */
+        #contacto .btn {
+            border-radius: 0 !important;
+        }
+
+        #contacto .btn,
+        #contacto .whatsapp-btn {
+            border-radius: 0 !important;
+        }
+        
+        /* Estilos para los kits */
+        .kit-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .kit-item {
+            flex: 1 1 calc(50% - 20px);
+            min-width: 300px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .kit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .kit-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .kit-features {
+            margin: 15px 0;
+        }
+        
+        .kit-features ul {
+            padding-left: 20px;
+        }
+        
+        .kit-features li {
+            margin-bottom: 8px;
+        }
+        
+        .kit-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        /* Galería de imágenes del kit */
+        .kit-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .kit-image {
+            flex: 1 1 calc(33.333% - 10px);
+            min-width: 120px;
+            height: 150px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        
+        .kit-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .kit-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .kit-item {
+                flex: 1 1 100%;
+            }
+            
+            .kit-image {
+                flex: 1 1 calc(50% - 10px);
+                height: 140px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .kit-image {
+                flex: 1 1 100%;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="#inicio" class="header-logo">
+            <img src="capes_logo2-removebg-preview.png" alt="CAPES Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="#inicio" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#proyecto" class="header-nav-link">
+                <i class="fas fa-cubes"></i>
+                <span>Kits</span>
+            </a>
+            <a href="#recursos" class="header-nav-link">
+                <i class="fas fa-desktop"></i>
+                <span>Plataformas</span>
+            </a>
+            <a href="#producto" class="header-nav-link">
+                <i class="fas fa-book"></i>
+                <span>Recursos</span>
+            </a>
+            <a href="#ods" class="header-nav-link">
+                <i class="fas fa-globe-americas"></i>
+                <span>ODS</span>
+            </a>
+            <a href="#contacto" class="header-nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contacto</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sección Inicio -->
+        <section id="inicio" class="page-section">
+            <span class="section-anchor" id="inicio-section"></span>
+            <div class="home-hero">
+                <video autoplay muted loop class="hero-video">
+                    <source src="banner_2.0.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>CAPES Robotics</h1>
+                    <h3>Innovación en Robótica Educativa y Plataformas de Aprendizaje</h3>
+
+                    <!-- Dos imágenes de los ODS debajo del subtítulo -->
+                    <div class="ods-image" style="display: flex; justify-content: center; gap: 20px; margin: 15px 0; flex-wrap: wrap;">
+                        <!-- Imagen 2 -->
+                        <a href="https://agenda2030.mx/#/home" target="_blank">
+                            <img src="https://agenda2030.mx/app/images/LogoODS2_es.png" 
+                                 alt="Objetivos de Desarrollo Sostenible 2"
+                                 style="max-width: 250px; height: auto; border-radius: 0px;">
+                        </a>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#proyecto" class="btn-explore">
+                            <i class="fas fa-cubes"></i>
+                            Kits Educativos
+                        </a>
+                        <a href="#recursos" class="btn-explore">
+                            <i class="fas fa-desktop"></i>
+                            Plataformas Educativas
+                        </a>
+                        <a href="#producto" class="btn-explore btn-gray">
+                            <i class="fas fa-book"></i>
+                            Centro de Recursos
+                        </a>
+                        <a href="#ods" class="btn-explore btn-white">
+                            <i class="fas fa-globe-americas"></i>
+                            Conocer ODS
+                        </a>
+                        <a href="#contacto" class="btn-explore btn-green">
+                            <i class="fas fa-phone"></i>
+                            Contacto
+                        </a>
+                    </div>
+
+                    <!-- Aclaración patrocinio -->
+                    <p class="sponsor-note">
+                        CAPES Robotics™ es una marca comercial, propiedad de EmilioColor®<br>Para más información consulta nuestros términos en
+                        <a href="https://emiliocolor.com/legalidad_y_garantias" target="_blank" rel="noopener noreferrer">
+                        legalidad y garantías.
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+<!-- Sección Kits -->
+<section id="proyecto" class="page-section">
+    <span class="section-anchor" id="proyecto-section"></span>
+
+    <div class="content-section">
+        <!-- Título principal de la sección -->
+        <h2 class="section-title">Kits Educativos CAPES</h2>
+        
+        <div class="kit-container">
+            <!-- Kit CAPES One -->
+            <div class="kit-item">
+                <div class="kit-header">
+                    <h3>Kit CAPES One</h3>
+                    <div class="kit-price">$2,499 MXN</div>
+                </div>
+                
+                <!-- Galería de 3 imágenes -->
+                <div class="kit-gallery">
+                    <div class="kit-image">
+                        <img src="https://creativashop.com/cdn/shop/products/97.jpg?v=1606802465" alt="Kit CAPES One - Vista frontal">
+                    </div>
+                    <div class="kit-image">
+                        <img src="https://creativashop.com/cdn/shop/products/97.jpg?v=1606802465" alt="Kit CAPES One - Vista lateral">
+                    </div>
+                    <div class="kit-image">
+                        <img src="https://creativashop.com/cdn/shop/products/97.jpg?v=1606802465" alt="Kit CAPES One - Detalle del brazo robótico">
+                    </div>
+                </div>
+                
+                <div class="product-description">
+                    <p>El Kit CAPES One es un sistema educativo completo que integra robótica, automatización y programación en una experiencia práctica y didáctica.</p>
+                </div>
+
+                <div class="kit-features">
+                    <h4>Características principales:</h4>
+                    <ul>
+                        <li>Brazo robótico de 4 grados de libertad</li>
+                        <li>Banda transportadora con sensores</li>
+                        <li>Sistema de identificación de componentes metálicos</li>
+                        <li>Electroimán para manipulación de piezas</li>
+                        <li>Plataforma digital de aprendizaje incluida</li>
+                        <li>Material didáctico paso a paso</li>
+                        <li>Compatibilidad con Arduino y otros microcontroladores</li>
+                    </ul>
+                </div>
+
+                <div class="kit-buttons">
+                    <a href="#contacto" class="btn-explore btn-gray">Solicitar Información</a>
+                    <a href="https://emiliocolor.com/CAPES/one" class="btn btn-primary">Página del Kit</a>
+                </div>
+            </div>
+                        <!-- Espaciado -->
+            <div class="kit-item">
+            </div>
+            
+            <!-- Kit CAPES Two
+            <div class="kit-item">
+                <div class="kit-header">
+                    <h3>Kit CAPES Two</h3>
+                    <div class="kit-price">$3,299 MXN</div>
+                </div>
+                
+                <div class="kit-gallery">
+                    <div class="kit-image">
+                        <img src="https://via.placeholder.com/300x200?text=CAPES+Two" alt="Kit CAPES Two">
+                    </div>
+                    <div class="kit-image">
+                        <img src="https://via.placeholder.com/300x200?text=CAPES+Two" alt="Kit CAPES Two">
+                    </div>
+                    <div class="kit-image">
+                        <img src="https://via.placeholder.com/300x200?text=CAPES+Two" alt="Kit CAPES Two">
+                    </div>
+                </div>
+                
+                <div class="product-description">
+                    <p>El Kit CAPES Two es una versión avanzada con mayor capacidad de clasificación y componentes mejorados para experiencias educativas más complejas.</p>
+                </div>
+
+                <div class="kit-features">
+                    <h4>Características principales:</h4>
+                    <ul>
+                        <li>Brazo robótico de 5 grados de libertad</li>
+                        <li>Doble banda transportadora con sensores avanzados</li>
+                        <li>Sistema de identificación por color y forma</li>
+                        <li>Electroimán de mayor potencia</li>
+                        <li>Plataforma digital premium con más contenidos</li>
+                        <li>Material didáctico avanzado</li>
+                        <li>Compatibilidad con Raspberry Pi y Arduino</li>
+                        <li>Contenedores más compactos y menos separados</li>
+                    </ul>
+                </div>
+
+                <div class="kit-buttons">
+                    <a href="#contacto" class="btn-explore btn-gray">Solicitar Información</a>
+                    <a href="https://emiliocolor.com/CAPES/two" class="btn btn-primary">Página del Kit</a>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</section>
+
+        <!-- Sección Plataformas -->
+        <section id="recursos" class="page-section">
+            <span class="section-anchor" id="recursos-section"></span>
+            <div class="square-container">
+                <h2 class="section-title">Plataformas Educativas</h2>
+                <p>Accede a nuestras plataformas digitales diseñadas para complementar el aprendizaje práctico con el kit CAPES.</p>
+                
+                <div class="platform-access">
+                    <div class="platform-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Plataforma CAPES Learning</h3>
+                    <p>Una plataforma interactiva que ofrece cursos, tutoriales y proyectos relacionados con robótica, programación y automatización.</p>
+                    
+                    <div class="platform-buttons">
+                        <a href="https://emiliocolor.com/CAPES/antecedentes.html" class="btn-explore btn-gray" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Acceder a la Plataforma
+                        </a>
+                        <a href="#contacto" class="btn-explore">
+                            <i class="fas fa-info-circle"></i> Solicitar Acceso
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+ <!-- Sección Recursos - Público -->
+<section id="recursos-publico" class="page-section">
+    <span class="section-anchor"></span>
+    <div class="square-container">
+        <h2 class="section-title">Recursos para el Público</h2>
+        <p>Documentos abiertos disponibles para cualquier usuario.</p>
+
+        <ul>
+            <li><strong style="color: #6c757d;">Gris:</strong> Página web de acceso libre.</li>
+
+        </ul>
+
+        <div class="platform-buttons">
+            <!-- Antecedentes (Gris) -->
+            <a href="https://emiliocolor.com/CAPES/antecedentes.html" 
+               class="btn-explore btn-gray" target="_blank">
+                <i class="fas fa-book"></i> Productos Similares <br> a los Kit CAPES
+            </a>
+        </div>
+    </div>
+</section>
+        
+        <!-- Sección Nosotros -->
+        <section id="nosotros" class="page-section">
+            <div class="content-section">
+                <h2 class="section-title">Sobre CAPES Robotics</h2>
+                <p>CAPES Robotics es una marca especializada en el desarrollo de soluciones educativas innovadoras en robótica y plataformas digitales. Nuestro objetivo es transformar la manera en que los estudiantes interactúan con la tecnología, fomentando el aprendizaje práctico y el desarrollo de habilidades STEM.</p>
+                
+                <h3>Nuestra Misión</h3>
+                <p>Desarrollar y ofrecer soluciones educativas innovadoras en robótica y plataformas digitales que inspiren a estudiantes de todas las edades a explorar, crear y aprender mediante experiencias prácticas y significativas.</p>
+                
+                <h3>Nuestra Visión</h3>
+                <p>Ser líderes en la transformación de la educación tecnológica, proporcionando herramientas accesibles y de alta calidad que preparen a las nuevas generaciones para los desafíos del futuro.</p>
+                
+                <h3>Nuestros Valores</h3>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovación</h4>
+                        <p>Creemos en el poder de la tecnología para transformar la educación.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Educación</h4>
+                        <p>Nos dedicamos a fomentar el aprendizaje significativo y práctico.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Colaboración</h4>
+                        <p>Trabajamos en conjunto con educadores y estudiantes.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Alcance</h4>
+                        <p>Nos esforzamos por ofrecer productos accesibles que lleguen a la mayor cantidad de lugares posibles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Sección ODS -->
+<section id="ods" class="page-section" style="text-align: left;">
+    <span class="section-anchor" id="ods-section"></span>
+    <div class="square-container">
+        <h2 class="section-title">Objetivos de Desarrollo Sostenible</h2>
+        <div class="content-grid">
+            <div class="square-item">
+                <h3>ODS 8: Trabajo Decente y Crecimiento Económico</h3>
+                <p>El proyecto CAPES contribuye al ODS 8 mediante:</p>
+                <ul>
+                    <li>Formación en habilidades tecnológicas para empleos del futuro</li>
+                    <li>Promoción del emprendimiento en el sector de la automatización</li>
+                    <li>Desarrollo de capacidades para la industria 4.0</li>
+                    <li>Fomento de la innovación y productividad</li>
+                </ul>
+            </div>
+            <div class="square-item">
+                <h3>ODS 9: Industria, Innovación e Infraestructura</h3>
+                <p>CAPES se alinea con el ODS 9 a través de:</p>
+                <ul>
+                    <li>Desarrollo de infraestructura educativa tecnológica</li>
+                    <li>Promoción de la investigación e innovación</li>
+                    <li>Fomento de tecnologías sostenibles</li>
+                    <li>Desarrollo de capacidades técnicas avanzadas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Contact Section -->
+        <section class="content-section" id="contacto">
+            <h2 class="section-title text-center mb-4">Contacto</h2>
+            <div class="evidence-grid">
+
+                <!-- Columna EmilioColor México -->
+                <div class="evidence-item">
+                    <div class="evidence-content text-center p-4 shadow-sm" style="border: none;">
+                        <div class="icon-circle mb-3 mx-auto">
+                            <i class="fas fa-headset fa-2x"></i>
+                        </div>
+                        <h5 class="mb-2">EmilioColor® México</h5>
+                        <p class="mb-3">Soporte general y otros servicios de la empresa</p>
+
+                        <p class="mb-2"><i class="fas fa-phone me-2"></i>+52 56 2537 7747</p>
+                        <p class="mb-3"><i class="fas fa-envelope me-2"></i>emiliocolormexico@gmail.com</p>
+
+                        <div class="d-flex justify-content-center flex-wrap gap-2">
+                            <a href="mailto:emiliocolormexico@gmail.com" class="btn btn-outline-primary btn-sm rounded-pill">
+                                <i class="fas fa-envelope me-1"></i> Correo
+                            </a>
+                            <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20los%20productos%20y%20servicios%20de%20EmilioColor®" 
+                               class="btn whatsapp-btn btn-sm text-white rounded-pill" target="_blank">
+                                <i class="fab fa-whatsapp me-1"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna responsable del proyecto -->
+                <div class="evidence-item">
+                    <div class="evidence-content text-center p-4 shadow-sm" style="border: none;">
+                        <div class="icon-circle mb-3 mx-auto">
+                            <i class="fas fa-user fa-2x"></i>
+                        </div>
+                        <h5 class="mb-2">Responsable del Desarrollo de Proyectos</h5>
+                        <p class="mb-3">Contacto directo para dudas o seguimiento de proyectos</p>
+                        <p class="mb-3"><i class="fas fa-envelope me-2"></i>vargasyanezemiliocalep@gmail.com</p>
+
+                        <div>
+                            <a href="mailto:vargasyanezemiliocalep@gmail.com" 
+                               class="btn btn-outline-primary btn-sm">
+                               <i class="fas fa-envelope me-1"></i> Correo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="capes_logo2-removebg-preview_-_copia-removebg-preview.png" alt="EmilioColor Logo">
+                </div>
+                
+<div class="footer-nav">
+    <h4>Navegación</h4>
+
+    <a href="#proyecto" class="footer-nav-link">
+        <i class="fas fa-cubes"></i> Kits Educativos
+    </a>
+
+    <a href="#recursos" class="footer-nav-link">
+        <i class="fas fa-desktop"></i> Plataformas Educativas
+    </a>
+
+    <a href="#producto" class="footer-nav-link">
+        <i class="fas fa-book"></i> Centro de Recursos
+    </a>
+
+    <a href="#ods" class="footer-nav-link">
+        <i class="fas fa-globe-americas"></i> Conocer ODS
+    </a>
+
+    <a href="#contacto" class="footer-nav-link">
+        <i class="fas fa-phone"></i> Contacto
+    </a>
+</div>
+
+
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +52 56 2537 7747</p>
+                    <p><i class="fab fa-whatsapp"></i> +52 56 2537 7747</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/emiliocolormx/" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 EmilioColor® - CAPES™ Robotics | Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navegación suave entre secciones
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Actualizar navegación activa
+                    document.querySelectorAll('.header-nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Desplazamiento suave
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Detectar sección activa al hacer scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.header-nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

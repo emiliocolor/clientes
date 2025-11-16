@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CAPES One - Kit de Clasificación Automatizada para Educación STEM | Contribuyendo al ODS 8: Trabajo Decente y Crecimiento Económico">
+    <meta name="keywords" content="CAPES, clasificador automatizado, educación STEM, ODS 8, trabajo decente, crecimiento económico, robótica educativa">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="CAPES One - Kit de Clasificación Automatizada para Educación STEM">
+    <meta property="og:description" content="Sistema de clasificación automatizada que contribuye al ODS 8: Trabajo Decente y Crecimiento Económico">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/emiliocolor/database/main/favicon.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/emiversal/database/334d5dd44377663b5e46c9ae6d77582e33ee7281/favicon.png" type="image/png">
+
+    <title>CAPES One - Kit de Clasificación Automatizada para Educación STEM</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com/">
+
+    <style>
+        :root {
+    --primary-blue: #284596;
+    --primary-blue-light: #1d4ed8;
+    --primary-blue-dark: #0d1d50;
+            --secondary-green: #2a2cb6;
+            --accent-yellow: #ffc107;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+    --header-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --header-hover: rgba(255, 255, 255, 0.15);
+            --button-gradient: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-green) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--secondary-green) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+    --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 65px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+.header-nav-link:hover,
+.header-nav-link.active {
+    text-decoration: underline;
+}
+
+
+        .header-nav-link i {
+            font-size: 1.1rem;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-btn {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Estilos para contenedores cuadrados y rectangulares */
+        .square-container {
+            background: var(--card-gradient);
+            margin-bottom: 25px;
+            padding: 25px;
+            border: none;
+            transition: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rectangular-container {
+            background: var(--card-gradient);
+            margin-bottom: 25px;
+            padding: 25px;
+            border: none;
+            transition: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            color: var(--primary-blue-dark);
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .home-hero {
+            position: relative;
+            color: white;
+            padding: 80px 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .home-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-hero h4 {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-explore {
+            padding: 10px 15px;
+            min-width: 160px;
+            flex: 1 1 auto;
+            max-width: 220px;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            white-space: nowrap;
+            height: auto;
+            background: var(--button-gradient);
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 98, 204, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-explore.btn-white {
+            background: white;
+            color: var(--primary-blue);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+        }
+.btn-explore.btn-gray {
+    background: linear-gradient(145deg, #7a7a7a, #9c9c9c); /* Gris degradado elegante */
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-explore.btn-gray:hover {
+    background: linear-gradient(145deg, #9c9c9c, #bfbfbf); /* Aclara el degradado */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+        .btn-explore.btn-white:hover {
+            background: #f8f9fa;
+            color: var(--primary-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-explore:hover {
+            background: var(--button-hover-gradient);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 98, 204, 0.2);
+        }
+
+        .btn-explore i {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+.btn-explore.btn-green {
+    background: linear-gradient(145deg, #28a745, #45c36a);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-explore.btn-green:hover {
+    background: linear-gradient(145deg, #45c36a, #28a745);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 128, 0, 0.25);
+}
+
+
+        .tool-card {
+            height: 100%;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: var(--card-gradient);
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--medium-gray);
+            padding: 20px;
+        }
+
+        .tool-card:hover {
+            box-shadow: 0 10px 20px rgba(0, 98, 204, 0.15);
+            border-color: var(--primary-blue-light);
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            border-radius: 50px !important;
+            font-weight: 500;
+            padding: 8px 20px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-size: 0.9rem;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--button-gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--button-hover-gradient);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 98, 204, 0.2);
+        }
+
+        .hidden-section {
+            display: none;
+        }
+
+        .active-section {
+            display: block;
+            animation: fadeInSection 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        @keyframes fadeInSection {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Float buttons */
+        .float-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
+        .whatsapp-btn:hover {
+            background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        .gmail-btn {
+            background: linear-gradient(135deg, #D44638 0%, #B23121 100%);
+        }
+
+        .gmail-btn:hover {
+            background: linear-gradient(135deg, #B23121 0%, #D44638 100%);
+        }
+
+        .phone-btn {
+            background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 100%);
+        }
+
+        .phone-btn:hover {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+        }
+
+        /* Grid para contenedores cuadrados y rectangulares */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .square-item {
+            background: var(--card-gradient);
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rectangular-item {
+            background: var(--card-gradient);
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            grid-column: span 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Ajuste para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .rectangular-item {
+                grid-column: span 1;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilos para la sección de contacto */
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-top: 5px;
+        }
+
+        .contact-item h5 {
+            margin-bottom: 5px;
+            color: var(--dark-gray);
+        }
+
+        .contact-form {
+            background: var(--card-gradient);
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Estilos para las tarjetas de ubicación */
+        .location-card {
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 98, 204, 0.15);
+        }
+
+        .location-map iframe {
+            border: none;
+        }
+
+        /* Estilos para los contadores */
+        .counter-box {
+            padding: 20px;
+        }
+
+        .counter-box h2 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .counter-box h5 {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Estilos para la sección de historia */
+        .history-section {
+            padding: 25px;
+        }
+
+        .history-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .history-section p {
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        /* Estilos para navegación por secciones */
+        .page-section {
+            padding: 30px 0;
+        }
+
+        .section-anchor {
+            display: block;
+            position: relative;
+            top: -100px;
+            visibility: hidden;
+        }
+
+        /* Estilos para la sección de evidencias */
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .evidence-item {
+            background-color: white;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .evidence-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cuando hay imagen */
+        .evidence-item img {
+            display: block;
+            width: 0%;
+            height: 0px;
+            object-fit: cover;
+        }
+
+        /* Cuando no hay imagen */
+        .evidence-item.no-image {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .evidence-item.no-image .evidence-content {
+            padding: 20px;
+        }
+
+        /* Contenido */
+        .evidence-content {
+            padding: 20px;
+        }
+
+        .evidence-title {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-blue-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .video-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Ajuste para la sección de inicio (hero) */
+        #inicio.page-section {
+            padding: 0 !important;
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .home-hero {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 80px 20px;
+        }
+
+        /* Asegurar que el video ocupe todo el ancho */
+        .hero-video {
+            width: 100%;
+        }
+
+        /* Contenedor de contenido del hero */
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Ajustes responsivos para el hero */
+        @media (max-width: 768px) {
+            .home-hero {
+                padding: 60px 15px;
+                min-height: 400px;
+            }
+            
+            .home-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .home-hero h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-hero {
+                padding: 40px 10px;
+                min-height: 350px;
+            }
+            
+            .home-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-explore {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Estilos para el contenido del segundo index (35.23) */
+        .content-section {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        /* Estilos para el grid de información */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: var(--card-gradient);
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .info-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary-blue-light);
+            padding-bottom: 10px;
+        }
+
+        .info-card p, .info-card ul {
+            flex-grow: 1;
+        }
+
+        .info-card ul {
+            padding-left: 20px;
+        }
+
+        .info-card li {
+            margin-bottom: 8px;
+        }
+
+        /* Para tarjetas más largas (rectangulares) */
+        .info-card-large {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .info-card-large {
+                grid-column: span 1;
+            }
+        }
+
+/* Estilos para ODS */
+.ods8-badge {
+    background-color: var(--secondary-green);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 0px; /* Reducido para acercar los badges */
+}
+
+.ods9-badge {
+    background-color: #ad1c1c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 5px; /* Espacio mínimo entre badges */
+}
+
+        /* Notas section */
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .note-card {
+            background: var(--card-gradient);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .note-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .note-card i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para la nueva sección de producto */
+        .product-section {
+            padding: 40px 0;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .product-gallery {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .product-thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .product-thumbnail:hover,
+        .product-thumbnail.active {
+            border-color: var(--primary-blue);
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 15px 0;
+        }
+
+        .product-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .product-features {
+            margin-bottom: 20px;
+        }
+
+        .product-features ul {
+            padding-left: 20px;
+        }
+
+        .product-features li {
+            margin-bottom: 8px;
+        }
+
+        .product-contact {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .platform-access {
+            background: var(--card-gradient);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .platform-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+            
+            .platform-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Estilos para el contenido existente */
+        .sponsor-note {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
+        .sponsor-note a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .sponsor-note a:hover {
+            color: white;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #128c7e, #25d366);
+            border: none;
+            border-radius: 50px !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="#inicio" class="header-logo">
+            <img src="capes_one-removebg-preview.png" alt="CAPES Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="#inicio" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#proyecto" class="header-nav-link">
+                <i class="fas fa-project-diagram"></i>
+                <span>Sobre el Kit</span>
+            </a>
+           <!-- <a href="#producto" class="header-nav-link">
+                <i class="fas fa-robot"></i>
+                <span>Producto</span>
+            </a>-->
+            <a href="#recursos" class="header-nav-link">
+    <i class="fas fa-book"></i>
+    <span>Recursos</span>
+</a>
+
+            <a href="#ods" class="header-nav-link">
+                <i class="fas fa-globe-americas"></i>
+                <span>ODS</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sección Inicio -->
+<section id="inicio" class="page-section">
+    <span class="section-anchor" id="inicio-section"></span>
+    <div class="home-hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="robotica_banner.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <div class="hero-overlay"></div>
+<div class="hero-content">
+
+    <h1>CAPES One | Teoría</h1>
+    <h2>Kit de Clasificación Automatizada para Educación STEM</h2>
+
+    <!-- Imagen ODS más arriba -->
+    <div class="ods-image" style="display: flex; justify-content: center; gap: 20px; margin: 10px 0; flex-wrap: wrap;">
+        <img src="https://agenda2030.mx/app/images/LogoODS2_es.png" 
+             alt="Objetivos de Desarrollo Sostenible 2"
+             style="max-width: 250px; height: auto; border-radius: 0px;">
+    </div>
+    <div class="hero-buttons">
+        <a href="#proyecto" class="btn-explore">
+            <i class="fas fa-project-diagram"></i>
+            Descripcion General
+        </a>
+
+        <a href="#recursos" class="btn-explore">
+            <i class="fas fa-book"></i>
+            Centro de Recursos
+        </a>
+
+        <a href="#ods" class="btn-explore btn-white">
+            <i class="fas fa-globe-americas"></i>
+            Conocer ODS
+        </a>
+        <a href="https://emiliocolor.com/CAPES/#proyecto" class="btn-explore btn-green">
+            <i class="fas fa-donate	"></i>
+            Adquirir
+        </a>
+    </div>
+
+    <!-- Aclaración patrocinio -->
+    <p class="sponsor-note">
+        EmilioColor® es patrocinador de esta página web
+        para fomentar su difusión. Consulta nuestros términos y condiciones en nuestra página de
+        <a href="https://emiliocolor.com/legalidad_y_garantias" target="_blank" rel="noopener noreferrer">
+            legalidad y garantías
+        </a>
+    </p>
+
+    <p class="product-id">
+        ID del producto: <strong>CAPES One</strong>
+    </p>
+
+</div>
+
+
+
+
+    </div>
+</section>
+
+        
+<!-- Información del proyecto en grid -->
+<div class="info-grid">
+    <!-- Título del proyecto -->
+    <div class="info-card">
+        <h3>Título</h3>
+        <p><strong>CAPES One - Kit de Clasificación Automatizada para Educación STEM</strong> 
+           <span class="ods8-badge">ODS 8</span>
+           <span class="ods9-badge">ODS 9</span>
+        </p>
+    </div>
+<div class="info-card">
+    <h3>Temática</h3>
+    <p>Desarrollo de un kit educativo automatizado que integra robótica, programación y sistemas de clasificación de componentes metálicos para fomentar habilidades STEM en jóvenes.</p> 
+</div>
+
+<div class="info-card">
+    <h3>Delimitación del Tema</h3>
+    <p>El proyecto se centra en la creación de un brazo robótico de 4 grados de libertad, una banda transportadora y un sistema de identificación de componentes metálicos, complementado con una plataforma digital interactiva para el aprendizaje de robótica, automatización y programación dirigido a personas mayores de 13 años en México.</p> 
+</div>
+
+<div class="info-card">
+    <h3>Reto</h3>
+    <p>Reducir la brecha entre el conocimiento teórico y la aplicación práctica de la tecnología en educación STEM, ofreciendo un kit educativo accesible, seguro y motivador para jóvenes interesados en robótica y automatización.</p> 
+</div>
+
+<div class="info-card">
+    <h3>Hipótesis</h3>
+    <p>Si se desarrolla un kit educativo que combine un brazo robótico, una banda transportadora y una plataforma digital interactiva, entonces los estudiantes mayores de 13 años podrán aprender robótica, programación y automatización de manera práctica, progresiva y motivadora, fortaleciendo sus habilidades técnicas y competencias STEM.</p> 
+</div>
+
+<div class="info-card">
+    <h3>Propósito</h3>
+    <p>Fomentar el aprendizaje práctico de robótica, automatización y programación, promoviendo habilidades tecnológicas, competencias STEM y motivación hacia carreras científicas y tecnológicas, mediante un kit educativo accesible e interactivo.</p> 
+</div>
+
+<div class="info-card">
+    <h3>Público Objetivo</h3>
+    <p>Personas mayores de 13 años, especialmente jóvenes interesados en aprender robótica, programación y automatización, con acceso limitado a recursos educativos prácticos en México.</p> 
+</div>
+
+<div class="info-card">
+    <h3>Impacto Social</h3>
+    <p>Contribuir a la formación de habilidades técnicas y competencias STEM en jóvenes, facilitando el acceso a educación tecnológica práctica, motivando el interés por carreras científicas y tecnológicas, y apoyando el desarrollo de la innovación local.</p> 
+</div>
+
+<div class="info-card">
+    <h3>Sustentabilidad</h3>
+    <p>El proyecto promueve la sostenibilidad educativa al ofrecer un kit reutilizable y digital, reduciendo costos y dependencia de infraestructura, y fomentando un aprendizaje autónomo y escalable que puede adaptarse a diferentes contextos educativos.</p> 
+</div>
+
+</div>
+<br>
+<!-- Descripción General -->
+<div class="content-section" id="proyecto">
+    <h2 class="section-title">Descripción General de CAPES One</h2>
+    <p>El <strong>Kit de Clasificación Automatizada para Educación STEM</strong> será un kit educativo que integrará un brazo robótico de 4 grados de libertad con una banda transportadora y un sistema de identificación de componentes metálicos.</p>
+    <p>Los componentes, incluyendo tuercas, pernos, rondanas y engranes, pasarán por uno o dos sensores según sea el caso, los cuales determinarán su tipo. El brazo robótico recibirá la información, utilizará un electroimán para sugetar la pieza metálica y la colocará en la caja correspondiente a su categoría, permitiendo que los usuarios observen cómo funcionarán los procesos automatizados y la implementación de su programación en tiempo real.</p>
+    <p>El kit CAPES One incluirá:</p>
+    <ul>
+        <li>Un brazo robótico de 4 grados de libertad para la clasificación de piezas.</li>
+        <li>Una banda transportadora con sensores para la identificación de de componentes.</li>
+        <li>Juego de piezas metálicas: tuercas, pernos, rondanas y engranes.</li>
+        <li>Plataforma de aprendizaje, incluyendo material de apoyo y cursos de robótica, electronica y programación para su implementación dentro de CAPES.</li>
+    </ul>
+    <p>Este sistema permitirá a los usuarios aprender de manera práctica programación, robótica y automatización, reforzando competencias tecnológicas y motivando la exploración de carreras STEM.</p>
+
+</div>
+        <!-- Sección Recursos - Acceso Limitado -->
+<section id="recursos" class="page-section">
+    <span class="section-anchor"></span>
+    <div class="square-container">
+        <h2 class="section-title">Recursos de Acceso Limitado</h2>
+        <p>Documentos y hojas de cálculo exclusivos para el personal autorizado.</p>
+
+        <ul>
+            <li><strong style="color: #000000;">Blanco:</strong> Hojas de cálculo con acceso restringido.</li>
+            <li><strong style="color: #28a745;">Verde:</strong> Documentos solo para el equipo.</li>
+                                <li><strong style="color: #007bff;">Azul:</strong> Documento de acceso controlado.</li>
+
+        </ul>
+
+        <div class="platform-buttons">
+            <!-- Lista de Componentes (Blanco - limitado) -->
+            <a href="https://docs.google.com/spreadsheets/d/1TNhPH6r87hKO4yda-QnikuJzpYqMMm9pfS8nhBiR58A/edit?usp=sharing" 
+               class="btn-explore btn-white" target="_blank">
+                <i class="fas fa-boxes"></i> Lista de Componentes
+            </a>
+            <!-- Guion de Presentaciones (Verde) -->
+            <a href="https://docs.google.com/document/d/1bWLz9_9Zp0MitOchSHJbJvva--sUkEiFtfhHjeupixo/edit?usp=sharing" 
+               class="btn-explore btn-green" target="_blank">
+                <i class="fas fa-microphone"></i> Guion de Presentaciones
+            </a>
+            <!-- Estado del Arte (Acceso limitado / puedes poner azul si quieres) -->
+            <a href="https://docs.google.com/document/d/1QwwtDsbgJBWUmDJrgQ_ECC6DqxWDgpc7/edit?usp=sharing&ouid=104544876122891177035&rtpof=true&sd=true" 
+               class="btn-explore btn-blue" target="_blank">
+                <i class="fas fa-file-alt"></i> Estado del Arte
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Objetivos del Proyecto -->
+<div class="content-section" id="objetivos">
+    <h2 class="section-title">Objetivos del Proyecto CAPES</h2>
+
+    <h3>Objetivo General</h3>
+    <p>Desarrollar e implementar un kit educativo que integre un brazo robótico de 4 grados de libertad, una banda transportadora y un sistema de identificación de componentes metálicos. Este kit permitirá a personas mayores de 13 años aprender robótica, programación y automatización mediante materiales digitales de aprendizaje disponibles en una plataforma digital interactiva, a su propio ritmo, fomentando el desarrollo de habilidades tecnológicas y competencias STEM.</p>
+
+    <h3>Objetivos Específicos</h3>
+    <ul>
+        <li><strong>Diseño del prototipo:</strong> Construir un brazo robótico de 4 grados de libertad que identifique y clasifique automáticamente tuercas, pernos, rondanas y engranes en cajas designadas, asegurando un diseño seguro y accesible para personas mayores de 13 años.</li>
+        <li><strong>Plataforma de aprendizaje:</strong> Desarrollar material didáctico digital interactivo que enseñe programación, control de sensores y automatización de manera progresiva, adaptada a la comprensión de los usuarios.</li>
+        <li><strong>Experiencia práctica:</strong> Permitir a los usuarios interactuar directamente con la clasificación automatizada y comprender los principios de robótica aplicada.</li>
+        <li><strong>Evaluación de impacto:</strong> Medir la efectividad del proyecto en el aprendizaje práctico, desarrollo de habilidades tecnológicas y motivación hacia carreras STEM.</li>
+    </ul>
+</div>
+
+<!-- Justificación -->
+<div class="content-section" id="justificacion">
+    <h2 class="section-title">Justificación</h2>
+    <p>En México, el acceso a la educación práctica en robótica y automatización sigue siendo limitado debido al alto costo de los equipos y a la escasa oferta de materiales interactivos que permitan aprender la práctica de la mano de la teoría. Esta situación genera una brecha entre el conocimiento teórico y la aplicación real de la tecnología, dificultando el desarrollo de habilidades técnicas en jóvenes interesados en áreas STEM.</p>
+    <p>El Kit <strong>CAPES One (Kit de Clasificación Automatizada para Educación STEM)</strong> abordará esta problemática al ofrecer un kit educativo accesible y funcional que permitirá aprender robótica, electrónica y programación de manera práctica, didáctica y a bajo costo en comparación con los antecedentes del proyecto. Los usuarios experimentarán directamente cómo funcionan los procesos automatizados industriales de manera segura e interactiva, mediante un brazo robótico de 4 grados de libertad con electroimán, una banda transportadora y un sistema de identificación de componentes metálicos.</p>
+    <p>Diseñado para personas mayores de 13 años, el proyecto CAPES incluirá una plataforma digital interactiva con materiales educativos que facilitarán el aprendizaje a su propio ritmo, sin necesidad de instrucción docente formal. De esta manera, el proyecto fomentará el desarrollo de habilidades tecnológicas y la formación en competencias STEM, contribuyendo al cumplimiento de los <strong>Objetivos de Desarrollo Sostenible (ODS) 8 y 9</strong>, relacionados con el trabajo decente, el crecimiento económico y la innovación tecnológica.</p>
+</div>
+
+<!-- Problemática -->
+<div class="content-section">
+    <h2 class="section-title">Problemática</h2>
+    <p>En México, la educación tradicional en robótica, electrónica y automatización seguirá enfrentando varios desafíos que limitarán el aprendizaje práctico y la formación de competencias tecnológicas en jóvenes y personas interesadas en áreas STEM:</p>
+
+    <ul>
+        <li><strong>Alto costo de los equipos:</strong> La mayoría de los kits y herramientas necesarios para la práctica en robótica son costosos, lo que restringirá el acceso a experiencias educativas reales.</li>
+
+        <li><strong>Falta de recursos didácticos accesibles:</strong> Existirá una escasa oferta de materiales interactivos y digitales que permitan aprender de manera autónoma y progresiva.</li>
+
+        <li><strong>Brecha entre teoría y práctica:</strong> La ausencia de entornos físicos limitará la aplicación de conocimientos teóricos en situaciones reales, dificultando el desarrollo de habilidades técnicas.</li>
+
+        <li><strong>Motivación reducida:</strong> La falta de experiencias prácticas disminuirá el interés de los usuarios por carreras STEM y la innovación tecnológica.</li>
+
+        <li><strong>Preparación insuficiente para el futuro:</strong> Sin acceso a sistemas automatizados reales, los usuarios tendrán dificultades para enfrentar retos tecnológicos y aplicar conocimientos en proyectos reales.</li>
+    </ul>
+
+    <p>CAPES buscará superar estas limitaciones mediante la implementación de un prototipo funcional que integrará un brazo robótico de 2 ejes, una banda transportadora y un lector de componentes, ofreciendo una experiencia educativa práctica, segura, interactiva y alineada con los ODS 8 y 9.</p>
+</div>
+
+</div>
+
+        <!-- Sección ODS -->
+        <section id="ods" class="page-section">
+            <span class="section-anchor" id="ods-section"></span>
+            <div class="square-container">
+                <h2 class="section-title">Objetivos de Desarrollo Sostenible</h2>
+                <div class="content-grid">
+                    <div class="square-item">
+                        <h3>ODS 8: Trabajo Decente y Crecimiento Económico</h3>
+                        <p>El Kit CAPES contribuye al ODS 8 mediante:</p>
+                        <ul>
+                            <li>Formación en habilidades tecnológicas para empleos del futuro</li>
+                            <li>Promoción del emprendimiento en el sector de la automatización</li>
+                            <li>Desarrollo de capacidades para la industria 4.0</li>
+                            <li>Fomento de la innovación y productividad</li>
+                        </ul>
+                    </div>
+                    <div class="square-item">
+                        <h3>ODS 9: Industria, Innovación e Infraestructura</h3>
+                        <p>CAPES se alinea con el ODS 9 a través de:</p>
+                        <ul>
+                            <li>Desarrollo de infraestructura educativa tecnológica</li>
+                            <li>Promoción de la investigación e innovación</li>
+                            <li>Fomento de tecnologías sostenibles</li>
+                            <li>Desarrollo de capacidades técnicas avanzadas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="capes_logo2-removebg-preview_-_copia-removebg-preview.png" alt="CAPES Logo">
+                </div>
+                
+<div class="footer-nav">
+    <h4>Navegación</h4>
+
+    <a href="#proyecto" class="footer-nav-link">
+        <i class="fas fa-cubes"></i> Kits Educativos
+    </a>
+
+    <a href="#recursos" class="footer-nav-link">
+        <i class="fas fa-desktop"></i> Plataformas Educativas
+    </a>
+
+    <a href="#producto" class="footer-nav-link">
+        <i class="fas fa-book"></i> Centro de Recursos
+    </a>
+
+    <a href="#ods" class="footer-nav-link">
+        <i class="fas fa-globe-americas"></i> Conocer ODS
+    </a>
+
+    <a href="#contacto" class="footer-nav-link">
+        <i class="fas fa-phone"></i> Contacto
+    </a>
+</div>
+
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +52 56 2537 7747</p>
+                    <p><i class="fab fa-whatsapp"></i> +52 56 2537 7747</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/emiliocolormx/" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 CAPES™ Robotics | Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navegación suave entre secciones
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Actualizar navegación activa
+                    document.querySelectorAll('.header-nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Desplazamiento suave
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Cambio de imágenes en la galería de productos
+        document.querySelectorAll('.product-thumbnail').forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                // Actualizar imagen principal
+                const mainImage = document.getElementById('main-product-image');
+                mainImage.src = this.getAttribute('data-image');
+                mainImage.alt = this.alt;
+                
+                // Actualizar miniatura activa
+                document.querySelectorAll('.product-thumbnail').forEach(thumb => {
+                    thumb.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Detectar sección activa al hacer scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.header-nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Manejo del formulario de contacto
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
