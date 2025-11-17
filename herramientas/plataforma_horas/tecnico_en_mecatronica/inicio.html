@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asesorías Mecatrónica CECyT 9 - Juan de Dios Bátiz</title>
-    <link rel="stylesheet" href="../style.css">
+     <link rel="stylesheet" href="../style_index.css">
     <link rel="shortcut icon" href="https://www.ipn.mx/assets/files/main/img/template/favicon.ico">
 </head>
 <body>
@@ -193,29 +193,80 @@
         function mostrarInicio() {
             const infoContainer = document.getElementById('info-container');
             infoContainer.innerHTML = `
-                <h1>Bienvenido a la página de horarios de asesorías</h1>
-                <h3>Objetivo</h3>
-                <p>
-                    El objetivo de esta página es facilitar a los estudiantes, maestros y personal administrativo del <strong>CECyT 9 "Juan de Dios Bátiz"</strong> el acceso a los horarios de asesorías de la unidad académcia de manera rápida y organizada. Con esta herramienta, se busca mejorar la comunicación y optimizar el tiempo de todos los miembros de la comunidad educativa.
-                </p>
-                <h3>Instrucciones de uso</h3>
-                <ol>
-                    <li>
-                        <strong>Selecciona el semestre</strong>: En el menú de la izquierda, elige el semestre del cual deseas consultar los horarios de asesorías.
-                    </li>
-                    <li>
-                        <strong>Elige una opción</strong>: Una vez seleccionado el semestre, se desplegarán las materias con asesoría disponibles. Haz clic en la que desees consultar.
-                    </li>
-                    <li>
-                        <strong>Consulta la información</strong>: En el contenedor de la derecha, se mostrará la información detallada sobre la opción seleccionada.
-                    </li>
-                    <li>
-                        <strong>Cerrar la vista</strong>: Si deseas regresar al menú principal, haz clic en el botón "Cerrar".
-                    </li>
-                </ol>
-                 <p>
-                 En caso de encontrar imprecisiones en la información, se deberá enviar una solicitud de corrección a través del botón correspondiente, el cual redirigirá al correo electrónico designado para este propósito.
-                </p>
+                <h1>Bienvenido a la Plataforma Horas</h1>
+                                    <h2 class="seccion-titulo">Objetivo</h2>
+<p style="text-align: justify;">
+    El objetivo de esta página es facilitar a los estudiantes, maestros y personal administrativo del 
+    <strong>CECyT 9 "Juan de Dios Bátiz"</strong> el acceso a los horarios de asesorías de la unidad académcia 
+    de manera rápida y organizada. Con esta herramienta, se busca mejorar la comunicación y optimizar el 
+    tiempo de todos los miembros de la comunidad educativa.
+</p>
+
+                
+<div class="seccion-inicio">
+    <h2 class="seccion-titulo">Video Informativo para Mecatrónica</h2>
+    <p>Mira nuestro video tutorial para aprender a utilizar correctamente la plataforma:</p>
+    <button class="video-button" onclick="window.open('https://www.youtube.com/watch?v=VIDEO_ID', '_blank')">
+        Ver Video Informativo
+    </button>
+    <p>Este video explica cómo utilizar correctamente la plataforma para obtener el máximo beneficio de las asesorías disponibles.</p>
+</div>
+                
+                <div class="seccion-inicio">
+                    <h2 class="seccion-titulo">Novedades en Mecatrónica</h2>
+                    <ul class="novedades-lista">
+                        <li>
+                            <strong>Nuevos horarios disponibles</strong><br>
+                            Se han actualizado los horarios de asesorías para el semestre 2025-2. Revisa las materias de tu interés.
+                            <div class="novedades-fecha">Publicado: 25 de mayo, 2025</div>
+                        </li>
+                        <li>
+                            <strong>Asesorías de Física</strong><br>
+                            Se han agregado nuevos horarios para asesorías de Física I, II, III y IV. Consulta la disponibilidad.
+                            <div class="novedades-fecha">Publicado: 20 de mayo, 2025</div>
+                        </li>
+                        <li>
+                            <strong>Proceso de actualización</strong><br>
+                            Si encuentras algún error en la información, utiliza el botón "Solicitar actualización" para notificarlo.
+                            <div class="novedades-fecha">Publicado: 15 de mayo, 2025</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="seccion-inicio">
+                    <h2 class="seccion-titulo">Herramientas Digitales para Estudiantes de Mecatrónica</h2>
+                    <p>Recursos útiles que pueden apoyar tu aprendizaje:</p>
+                    <div class="herramientas-grid">
+                        <div class="herramienta-item">
+                            <a href="https://sites.google.com/site/matematicasbatiz" target="_blank">Matemáticas Bátiz</a>
+                            <p>Página que ofrece apoyo para las Unidades de Aprendizaje de Matemáticas.</p>
+                        </div>
+                        <div class="herramienta-item">
+                            <a href="https://www.laligaquimica.com.mx/" target="_blank">Tu Aula 4.0 de Química</a>
+                            <p>Página educativa basada en los programas de estudio de Química I–IV.</p>
+                        </div>
+                    </div>
+                </div>
+<div style="text-align: justify;">
+    <h2 class="seccion-titulo">Instrucciones de uso</h2>
+    <ol>
+        <li>
+            <strong>Selecciona el semestre</strong>: En el menú de la izquierda, elige el semestre del cual deseas consultar los horarios de asesorías.
+        </li>
+        <li>
+            <strong>Elige una opción</strong>: Una vez seleccionado el semestre, se desplegarán las materias con asesoría disponibles. Haz clic en la que desees consultar.
+        </li>
+        <li>
+            <strong>Consulta la información</strong>: En el contenedor de la derecha, se mostrará la información detallada sobre la opción seleccionada.
+        </li>
+        <li>
+            <strong>Cerrar la vista</strong>: Si deseas regresar al menú principal, haz clic en el botón "Cerrar".
+        </li>
+    </ol>
+    <p>
+        En caso de encontrar imprecisiones en la información, se deberá enviar una solicitud de corrección a través del botón correspondiente, el cual redirigirá al correo electrónico designado para este propósito.
+    </p>
+</div>
             `;
             infoContainer.style.display = 'block';
         }
