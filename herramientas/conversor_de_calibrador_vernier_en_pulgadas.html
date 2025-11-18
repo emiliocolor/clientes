@@ -140,15 +140,10 @@
             gap: 8px;
         }
 
-        .header-nav-link:hover,
-        .header-nav-link.active {
-            background-color: var(--header-hover);
-            transform: translateY(-2px);
-        }
-
-        .header-nav-link i {
-            font-size: 1.1rem;
-        }
+.header-nav-link:hover,
+.header-nav-link.active {
+    text-decoration: underline;
+}
 
         /* MAIN CONTENT */
         .main-content {
@@ -314,6 +309,13 @@
         }
         
         .calculator h2 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        h3 {
             color: var(--primary-blue);
             margin-bottom: 25px;
             font-weight: 600;
@@ -704,19 +706,27 @@
                     <button class="copy-btn" id="copy-btn">Copiar resultado</button>
                 </div>
             </div>
-            
-            <div class="conversion-info">
-                <h4>Información sobre el calibrador vernier:</h4>
-                <p>El calibrador vernier en pulgadas tiene tres escalas:</p>
-                <ul>
-                    <li><strong>Escala principal:</strong> Mide pulgadas enteras y fracciones de 1/16 de pulgada</li>
-                    <li><strong>Escala vernier:</strong> Mide fracciones de 1/128 de pulgada</li>
-                </ul>
-                <p><strong>Fórmulas de conversión:</strong></p>
-                <p class="formula">1 pulgada = 2.54 centímetros</p>
-                <p class="formula">1 pulgada = 25.4 milímetros</p>
-                <p class="formula">1 centímetro = 10 milímetros</p>
-            </div>
+
+<div class="conversion-info">
+  <h4>Información sobre el calibrador vernier:</h4>
+  <p>El calibrador vernier en pulgadas tiene tres escalas:</p>
+  <ul>
+    <li><strong>Escala principal:</strong> Mide pulgadas enteras y fracciones de 1/16 de pulgada</li>
+    <li><strong>Escala vernier:</strong> Mide fracciones de 1/128 de pulgada</li>
+  </ul>
+  <p><strong>Fórmulas de conversión:</strong></p>
+  <p class="formula">1 pulgada = 2.54 centímetros</p>
+  <p class="formula">1 pulgada = 25.4 milímetros</p>
+  <p class="formula">1 centímetro = 10 milímetros</p>
+</div>
+<div>
+            <h3>Aprende a Usar Nuestro Conversor y el Calibrador Vernier</h3>
+<button style="border: 0; border-radius: 0; padding: 10px; cursor: pointer;" 
+        onclick="window.open('https://drive.google.com/file/d/1HCfVk9bUBR1UNqZ6DsbzWSKyyyDVyyN-/view?usp=sharing', '_blank')">
+  Ver PDF
+</button>
+
+</div>
         </div>
     </div>
 </main>
