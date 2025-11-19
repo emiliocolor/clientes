@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Antecedentes CAPES - Estudios sobre robótica educativa y STEM">
+    <meta name="keywords" content="CAPES, robótica educativa, STEM, antecedentes, estudios">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Antecedentes CAPES - Estudios sobre robótica educativa">
+    <meta property="og:description" content="Resumen de estudios sobre robótica educativa y su relación con el proyecto CAPES">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com/antecedentes-capes">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Antecedentes CAPES - Estudios sobre robótica educativa">
+    <meta name="twitter:description" content="Resumen de estudios sobre robótica educativa y su relación con el proyecto CAPES">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/emiversal/database/334d5dd44377663b5e46c9ae6d77582e33ee7281/favicon.png" type="image/png">
+
+    <title>Antecedentes CAPES - EmilioColor®</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com/antecedentes-capes">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            background-color: var(--header-hover);
+            transform: translateY(-2px);
+        }
+
+        .header-nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Página Antecedentes CAPES */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .page-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .page-subtitle {
+            color: var(--primary-gray);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .study-card {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .study-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 20px;
+        }
+
+        .study-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .study-authors {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .study-body {
+            padding: 25px;
+        }
+
+        .study-summary {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .study-note {
+            background-color: rgba(40, 69, 150, 0.1);
+            border-left: 4px solid var(--primary-blue);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .study-note-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .capes-highlight {
+            background-color: rgba(255, 193, 7, 0.2);
+            padding: 15px;
+            margin: 30px 0;
+        }
+
+        .capes-highlight h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .back-btn:hover {
+            background: var(--primary-blue-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Nuevos estilos para los estudios agregados */
+        .study-image-container {
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid var(--medium-gray);
+            padding: 15px;
+            background-color: var(--light-gray);
+        }
+
+        .study-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: var(--primary-gray);
+            font-size: 0.9rem;
+        }
+
+        .copy-apa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-gray);
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .copy-apa-btn:hover {
+            background: var(--primary-gray-dark);
+        }
+
+        .copy-apa-btn.copied {
+            background: var(--success-color);
+        }
+
+        /* Estilos específicos para los nuevos estudios sin bordes redondeados */
+        .new-study-card {
+            border-radius: 0;
+        }
+
+        .new-study-card .study-header {
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+            <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="https://emiliocolor.com/CAPES" class="header-nav-link">
+                <i class="fas fa-home"></i>
+                <span>Página principal</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+    
+    <div class="page-header">
+        <h1 class="page-title">Antecedentes CAPES</h1>
+        <p class="page-subtitle">Resumen de estudios sobre robótica educativa y su relación con el proyecto CAPES</p>
+    </div>
+
+    <div class="capes-highlight">
+        <h4><i class="fas fa-lightbulb"></i> Proyecto CAPES</h4>
+        <p>El proyecto CAPES es una iniciativa educativa que busca ofrecer un kit de robótica accesible y funcional para el aprendizaje práctico de robótica, electrónica y programación. A continuación se presentan los estudios que respaldan su desarrollo y relevancia en el contexto educativo actual.</p>
+    </div>
+
+    <div class="study-card">
+        <div class="study-header">
+            <h2 class="study-title">STORMLab: Modular Robotics Kit for STEM Education</h2>
+            <p class="study-authors">Susilo, A., et al. (2016)</p>
+        </div>
+        <div class="study-body">
+            <div class="study-summary">
+                <p>El estudio de Susilo et al. (2016) presenta STORMLab, un kit modular de robótica diseñado para la educación integrada en ciencia, tecnología, ingeniería y matemáticas (STEM). Este kit tiene como objetivo proporcionar una herramienta accesible y flexible que permita a los estudiantes construir y programar robots, facilitando la enseñanza de conceptos complejos de manera práctica y atractiva. Los autores destacan que, a pesar de los avances tecnológicos, muchos kits educativos disponibles en el mercado son costosos y requieren conocimientos técnicos avanzados, lo que limita su accesibilidad y efectividad en entornos educativos diversos.</p>
+                
+                <p>STORMLab se distingue por su diseño modular y de bajo costo, lo que permite a los estudiantes experimentar con la construcción y programación de robots sin la necesidad de equipos caros o conocimientos previos especializados. El kit está compuesto por componentes estándar y fácilmente disponibles, lo que facilita su implementación en una variedad de contextos educativos. Además, los autores enfatizan la importancia de proporcionar materiales educativos complementarios que guíen a los estudiantes en el proceso de aprendizaje, promoviendo una comprensión profunda de los principios de la robótica y la ingeniería.</p>
+                
+                <p>El estudio concluye que iniciativas como STORMLab son esenciales para democratizar la educación STEM, ofreciendo a los estudiantes de diversos contextos la oportunidad de desarrollar habilidades técnicas y de resolución de problemas que son fundamentales en el mundo actual.</p>
+            </div>
+            
+            <div class="study-note">
+                <div class="study-note-title">
+                    <i class="fas fa-exclamation-circle"></i> Nota importante
+                </div>
+                <p>El estudio de Susilo et al. (2016) demuestra que los kits modulares de robótica de bajo costo pueden ser herramientas efectivas para la enseñanza integrada de STEM, permitiendo a los estudiantes construir y programar robots de manera práctica y accesible. Sin embargo, la implementación exitosa de este tipo de kits requiere una infraestructura educativa adecuada y recursos docentes capacitados. El proyecto CAPES aborda esta necesidad al ofrecer un kit educativo accesible y funcional que permite aprender robótica, electrónica y programación de manera práctica y a bajo costo, sin depender de una infraestructura educativa avanzada. De esta manera, CAPES facilita el acceso a una educación STEM de calidad, incluso en contextos con recursos limitados.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="study-card">
+        <div class="study-header">
+            <h2 class="study-title">Artificial intelligence and machine learning in the STEAM classroom</h2>
+            <p class="study-authors">Karampelas, A. (2021)</p>
+        </div>
+        <div class="study-body">
+            <div class="study-summary">
+                <p>Karampelas, A. (2021). Artificial intelligence and machine learning in the STEAM classroom: Analysis of performance data and reflections of international high school students. Hellenic Journal of STEM Education, 1(2), 59–66. https://doi.org/10.51724/hjstemed.v1i2.13</p>
+                
+                <p>Este estudio examina la integración de la inteligencia artificial y el aprendizaje automático en aulas STEAM (Ciencia, Tecnología, Ingeniería, Artes y Matemáticas), analizando datos de rendimiento y reflexiones de estudiantes de secundaria internacionales. Los resultados demuestran que estas tecnologías pueden mejorar significativamente la comprensión y motivación de los estudiantes cuando se integran adecuadamente en el currículo educativo.</p>
+            </div>
+            
+            <div class="study-note">
+                <div class="study-note-title">
+                    <i class="fas fa-exclamation-circle"></i> Relevancia para CAPES
+                </div>
+                <p>El estudio de Karampelas (2021) demuestra que la integración de la inteligencia artificial y el aprendizaje automático en aulas STEAM puede mejorar significativamente la comprensión y motivación de los estudiantes. Sin embargo, estos resultados positivos se han observado principalmente en contextos con acceso previo a recursos tecnológicos adecuados. Esto resalta la importancia de contar con herramientas educativas accesibles, como el proyecto CAPES, que permita a los estudiantes experimentar directamente con procesos automatizados y desarrollar habilidades técnicas esenciales en un entorno práctico y asequible.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="study-card">
+        <div class="study-header">
+            <h2 class="study-title">Is it possible for young students to learn the AI-STEAM application with experiential learning?</h2>
+            <p class="study-authors">Hsu, T.-C., Abelson, H., Lao, N., & Chen, S.-C. (2021)</p>
+        </div>
+        <div class="study-body">
+            <div class="study-summary">
+                <p>Hsu, T.-C., Abelson, H., Lao, N., & Chen, S.-C. (2021). Is it possible for young students to learn the AI-STEAM application with experiential learning? Sustainability, 13(19), 11114. https://doi.org/10.3390/su131911114</p>
+                
+                <p>Esta investigación explora si los estudiantes jóvenes pueden adquirir conocimientos avanzados en inteligencia artificial y conceptos tecnológicos complejos mediante metodologías de aprendizaje experiencial. El estudio implementó un programa educativo que combinaba teoría y práctica, permitiendo a los estudiantes interactuar directamente con sistemas de IA. Los resultados mostraron mejoras significativas en la comprensión y habilidades técnicas de los participantes, respaldando la efectividad del aprendizaje experiencial en la enseñanza de conceptos tecnológicos avanzados.</p>
+            </div>
+            
+            <div class="study-note">
+                <div class="study-note-title">
+                    <i class="fas fa-exclamation-circle"></i> Relevancia para CAPES
+                </div>
+                <p>El estudio "Is It Possible for Young Students to Learn the AI-STEAM Application with Experiential Learning?" evidencia que los estudiantes jóvenes pueden adquirir conocimientos avanzados en inteligencia artificial y conceptos tecnológicos complejos mediante metodologías de aprendizaje experiencial, mostrando mejoras significativas en su comprensión y habilidades técnicas cuando interactúan directamente con sistemas prácticos. Esto respalda la necesidad y la efectividad de herramientas educativas que integren teoría y práctica de manera accesible y a bajo costo, como el proyecto CAPES.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nuevos estudios agregados -->
+    <div class="study-card new-study-card">
+        <div class="study-header">
+            <h2 class="study-title">Revisión de la plataforma robótica LEGO Mindstorms para aplicaciones educativas y de investigación</h2>
+            <p class="study-authors">Tello-Leal, E., Guerrero-Melendez, T. Y., & Saldivar-Alonso, V. (2013)</p>
+        </div>
+        <div class="study-body">
+            <div class="study-summary">
+                <p>Tello-Leal, E., Guerrero-Melendez, T. Y., & Saldivar-Alonso, V. (2013). Revisión de la plataforma robótica LEGO Mindstorms para aplicaciones educativas y de investigación. Sistemas & Telemática, 11(26), 9–27. Recuperado de https://www.redalyc.org/pdf/4115/411534395004.pdf</p>
+                
+                <p>Este estudio realiza una revisión exhaustiva de la plataforma robótica LEGO Mindstorms, analizando sus aplicaciones tanto en el ámbito educativo como de investigación. Los autores destacan que LEGO Mindstorms se ha convertido en una herramienta ampliamente utilizada para introducir conceptos de robótica, programación y resolución de problemas en entornos educativos. La plataforma combina elementos físicos (piezas de LEGO) con un entorno de programación visual, lo que permite a los estudiantes construir y programar robots de manera intuitiva.</p>
+                
+                <p>El estudio examina las capacidades técnicas de LEGO Mindstorms, incluyendo sus sensores, actuadores y el entorno de programación, así como su aplicación en diferentes niveles educativos. Los autores también discuten las limitaciones de la plataforma, particularmente en cuanto a su escalabilidad y aplicabilidad en proyectos de investigación más avanzados.</p>
+                
+                <div class="study-image-container">
+                    <img src="https://bricks-store.com/mystore/item/585/bb/45544-set-base-lego-mindstorms-education-ev3" alt="LEGO Mindstorms Education EV3" class="study-image">
+                    <p class="image-caption">Set base LEGO Mindstorms Education EV3</p>
+                </div>
+            </div>
+            
+            <div class="study-note">
+                <div class="study-note-title">
+                    <i class="fas fa-exclamation-circle"></i> Relevancia para CAPES
+                </div>
+                <p>El análisis de Tello-Leal et al. (2013) sobre LEGO Mindstorms destaca tanto las fortalezas como las limitaciones de las plataformas comerciales de robótica educativa. Si bien LEGO Mindstorms ha demostrado ser efectivo para introducir conceptos básicos de robótica, su alto costo y limitaciones técnicas pueden restringir su accesibilidad en contextos educativos con recursos limitados. El proyecto CAPES aborda estas limitaciones al ofrecer una alternativa más asequible y adaptable, que mantiene los beneficios educativos de la robótica práctica mientras supera las barreras económicas que suelen asociarse con plataformas comerciales como LEGO Mindstorms.</p>
+            </div>
+            
+            <button class="copy-apa-btn" data-apa="Tello-Leal, E., Guerrero-Melendez, T. Y., & Saldivar-Alonso, V. (2013). Revisión de la plataforma robótica LEGO Mindstorms para aplicaciones educativas y de investigación. Sistemas & Telemática, 11(26), 9–27. Recuperado de https://www.redalyc.org/pdf/4115/411534395004.pdf">
+                <i class="fas fa-copy"></i> Copiar referencia APA
+            </button>
+        </div>
+    </div>
+
+    <div class="study-card new-study-card">
+        <div class="study-header">
+            <h2 class="study-title">Uso del LEGO Mindstorms EV3 para el fortalecimiento del aprendizaje en el campo de la robótica</h2>
+            <p class="study-authors">Torres Salamea, H. M., Huaylla Sellán, J. D., & Morocho Ortega, C. G. (2024)</p>
+        </div>
+        <div class="study-body">
+            <div class="study-summary">
+                <p>Torres Salamea, H. M., Huaylla Sellán, J. D., & Morocho Ortega, C. G. (2024). Uso del LEGO Mindstorms EV3 para el fortalecimiento del aprendizaje en el campo de la robótica [Trabajo de titulación, Universidad del Azuay]. Repositorio Institucional de la Universidad del Azuay. https://dspace.uazuay.edu.ec/handle/datos/14250</p>
+                
+                <p>Este trabajo de titulación investiga el uso de LEGO Mindstorms EV3 para fortalecer el aprendizaje en el campo de la robótica. Los autores implementaron una serie de actividades educativas utilizando este kit robótico, evaluando su impacto en el desarrollo de habilidades técnicas y de resolución de problemas en estudiantes. El estudio se centra en cómo la plataforma LEGO Mindstorms EV3 puede facilitar la comprensión de conceptos complejos de robótica a través de un enfoque práctico y lúdico.</p>
+                
+                <p>Los resultados del estudio demuestran que el uso de LEGO Mindstorms EV3 mejora significativamente la comprensión de conceptos de robótica y programación, además de fomentar el trabajo en equipo y la creatividad. Los autores también destacan la importancia de contar con materiales educativos bien estructurados que guíen el proceso de aprendizaje cuando se utiliza esta plataforma.</p>
+                
+                <div class="study-image-container">
+                    <img src="https://pybricks.com/ev3-micropython/_images/color_sorter.jpg" alt="Proyectos con LEGO Mindstorms EV3" class="study-image">
+                    <p class="image-caption">Ejemplo de proyecto educativo con LEGO Mindstorms EV3</p>
+                </div>
+            </div>
+            
+            <div class="study-note">
+                <div class="study-note-title">
+                    <i class="fas fa-exclamation-circle"></i> Relevancia para CAPES
+                </div>
+                <p>La investigación de Torres Salamea et al. (2024) confirma la efectividad de los kits robóticos estructurados como LEGO Mindstorms EV3 en entornos educativos. Sin embargo, también señala implícitamente la necesidad de alternativas más económicas que puedan lograr resultados similares. El proyecto CAPES se posiciona como una solución que mantiene los beneficios pedagógicos demostrados por LEGO Mindstorms EV3 - aprendizaje práctico, desarrollo de habilidades de programación y fomento del pensamiento computacional - pero con un enfoque en la accesibilidad económica y la adaptabilidad a diferentes contextos educativos.</p>
+            </div>
+            
+            <button class="copy-apa-btn" data-apa="Torres Salamea, H. M., Huaylla Sellán, J. D., & Morocho Ortega, C. G. (2024). Uso del LEGO Mindstorms EV3 para el fortalecimiento del aprendizaje en el campo de la robótica [Trabajo de titulación, Universidad del Azuay]. Repositorio Institucional de la Universidad del Azuay. https://dspace.uazuay.edu.ec/handle/datos/14250">
+                <i class="fas fa-copy"></i> Copiar referencia APA
+            </button>
+        </div>
+    </div>
+
+    <div class="study-card new-study-card">
+        <div class="study-header">
+            <h2 class="study-title">Esta empresa logra que aprender a programar ¡sea cosa de niños!</h2>
+            <p class="study-authors">Villanueva, A. (2019)</p>
+        </div>
+        <div class="study-body">
+            <div class="study-summary">
+                <p>Villanueva, A. (2019, 9 de junio). Esta empresa logra que aprender a programar ¡sea cosa de niños! Tecnológico de Monterrey. https://conecta.tec.mx/es/noticias/nacional/educacion/esta-empresa-logra-que-aprender-programar-sea-cosa-de-ninos</p>
+                
+                <p>Este artículo presenta a Briko Robotics, una empresa mexicana que desarrolla kits de robótica educativa diseñados específicamente para niños. El enfoque de Briko Robotics se centra en hacer que la programación y la robótica sean accesibles y atractivas para los más jóvenes, utilizando un enfoque lúdico y práctico. La empresa ha desarrollado kits que combinan elementos físicos con una aplicación móvil, permitiendo a los niños programar comportamientos robóticos de manera intuitiva.</p>
+                
+                <p>El artículo destaca cómo Briko Robotics ha logrado implementar sus kits en diversas escuelas, mostrando resultados positivos en el desarrollo de habilidades de pensamiento computacional y resolución de problemas en los estudiantes. Además, se enfatiza el carácter innovador de ser una empresa mexicana que compite en el campo de la tecnología educativa a nivel internacional.</p>
+                
+                <div class="study-image-container">
+                    <img src="https://stemedupr.com/wp-content/uploads/2021/10/WRO-Competition-Set.jpeg" alt="Kits de Briko Robotics" class="study-image">
+                    <p class="image-caption">Kits de robótica educativa de Briko Robotics</p>
+                </div>
+            </div>
+            
+            <div class="study-note">
+                <div class="study-note-title">
+                    <i class="fas fa-exclamation-circle"></i> Relevancia para CAPES
+                </div>
+                <p>El caso de Briko Robotics, presentado por Villanueva (2019), demuestra que existen iniciativas locales que buscan democratizar el acceso a la educación en robótica y programación. Este ejemplo refuerza la viabilidad y necesidad de proyectos como CAPES, que comparten el objetivo de hacer la tecnología educativa más accesible. Mientras Briko Robotics se enfoca principalmente en el mercado infantil, CAPES amplía este enfoque para atender una gama más amplia de edades y contextos educativos, manteniendo el principio fundamental de accesibilidad y aprendizaje práctico.</p>
+            </div>
+            
+            <button class="copy-apa-btn" data-apa="Villanueva, A. (2019, 9 de junio). Esta empresa logra que aprender a programar ¡sea cosa de niños! Tecnológico de Monterrey. https://conecta.tec.mx/es/noticias/nacional/educacion/esta-empresa-logra-que-aprender-programar-sea-cosa-de-ninos">
+                <i class="fas fa-copy"></i> Copiar referencia APA
+            </button>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación</h4>
+                <a href="https://emiliocolor.com#inicio" class="footer-nav-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="https://emiliocolor.com#servicios" class="footer-nav-link" data-section="tecnologia" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-laptop-code"></i> Tecnología
+                </a>
+                <a href="https://emiliocolor.com/#educacion" class="footer-nav-link" data-section="educacion" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-graduation-cap"></i> Educación
+                </a>
+                <a href="https://emiliocolor.com#contacto" class="footer-nav-link" data-section="contacto" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-envelope"></i> Contacto
+                </a>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> contacto@emiliocolor.com</p>
+                <p><i class="fas fa-phone"></i> +52 1 55 1234 5678</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.linkedin.com/in/emiliocolor/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/emiliocolor" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolor/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@emiliocolor" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 EmilioColor®. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Función para copiar referencias APA
+    document.querySelectorAll('.copy-apa-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const apaReference = this.getAttribute('data-apa');
+            
+            // Crear un elemento temporal para copiar al portapapeles
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = apaReference;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            
+            // Cambiar temporalmente el texto del botón
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i> ¡Copiado!';
+            this.classList.add('copied');
+            
+            // Restaurar el texto original después de 2 segundos
+            setTimeout(() => {
+                this.innerHTML = originalText;
+                this.classList.remove('copied');
+            }, 2000);
+        });
+    });
+
+    // Efecto de desplazamiento suave para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Detectar scroll para efectos de header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.main-header');
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+        } else {
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        }
+    });
+</script>
+</body>
+</html>
