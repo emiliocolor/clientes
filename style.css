@@ -216,6 +216,108 @@ body {
     font-weight: 600;
 }
 
+/* Reemplazar los botones en .home-hero con imágenes de marcas */
+.home-hero .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.home-hero .brand-image-btn {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    cursor: pointer;
+}
+
+.home-hero .brand-image-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    padding: 8px;
+    background-color: white;
+}
+
+/* Animación de desaturación al pasar el cursor */
+.home-hero .brand-image-btn:hover img {
+    filter: grayscale(100%) brightness(90%);
+    transform: scale(1.1);
+}
+
+/* Efecto de brillo adicional */
+.home-hero .brand-image-btn:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+/* Tooltip emergente */
+.home-hero .brand-image-btn::after {
+    content: attr(data-brand);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.home-hero .brand-image-btn:hover::after {
+    opacity: 1;
+}
+
+/* Contenedor para las imágenes */
+.brand-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-hero .brand-image-btn {
+        width: 100px;
+        height: 100px;
+        margin: 0 5px;
+    }
+    
+    .brand-images-container {
+        gap: 10px;
+    }
+    
+    .home-hero .brand-image-btn:hover::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-hero .brand-image-btn {
+        width: 100px;
+        height: 100px;
+    }
+}
+
 .home-hero {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.123), rgba(0, 0, 0, 0.301)),
