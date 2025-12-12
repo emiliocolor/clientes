@@ -39,7 +39,7 @@
       "description": "Productos de papelería, servicios web profesionales. Acceso a ClassCloud℠ con más de 100,000 recursos en linea.",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+525625377747",
+        "telephone": "+525655333139",
         "contactType": "customer service",
         "email": "emiliocolormexico@gmail.com",
         "availableLanguage": ["es","en"]
@@ -134,18 +134,22 @@
                 <i class="fas fa-graduation-cap"></i> Educación
             </a>
         </li>
-        <li class="sidebar-nav-item">
+        <!--<li class="sidebar-nav-item">
     <a href="#classcloud" class="sidebar-nav-link" data-section="classcloud">
         <i class="fas fa-cloud"></i> ClassCloud
     </a>
-</li>
-
+</li>-->
         <!-- Quiénes somos -->
         <li class="sidebar-nav-item">
             <a href="#apoyos" class="sidebar-nav-link" data-section="apoyos">
                 <i class="fas fa-hand-holding-heart"></i> Apoyos
             </a>
         </li>
+<li class="sidebar-nav-item">
+<a href="#info" class="sidebar-nav-link" data-section="info-section">
+    <i class="fas fa-tools"></i> Info y Servicios
+    </a>
+</li>
         <li class="sidebar-nav-item">
             <a href="#contacto" class="sidebar-nav-link" data-section="contacto">
                 <i class="fas fa-envelope"></i> Contacto
@@ -159,160 +163,239 @@
         <div class="main-content">
             <!-- Sección Inicio -->
             <div id="inicio-section" class="active-section">
+<!-- Reemplaza esta sección en el index.html (dentro de .home-hero) -->
 <div class="home-hero">
     <div class="hero-content">
         <h1>EmilioColor® México</h1>
         <p>Explora todo lo que tenemos para ofrecerte.</p>
-<div class="hero-buttons">
-<a href="#transportes" class="btn btn-explore btn-silver">Transportes</a>
-<a href="#classcloud" class="btn btn-explore btn-silver">ClassCloud</a>
-<style>
-    .btn-silver {
-  background: linear-gradient(135deg, #ffffff 0%, #d9d9d9 25%, #bfbfbf 50%, #e6e6e6 75%, #a6a6a6 100%);
-  color: #000; /* contraste fuerte */
-  border: 1px solid #999;
-  font-weight: bold;
-  text-transform: uppercase;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2), inset 0 1px 2px rgba(255,255,255,0.8);
-  transition: all 0.3s ease;
-}
+        
+        <!-- Contenedor de imágenes de marcas -->
+        <div class="brand-images-container">
+            
+            <!-- EmilioColor -->
+            <a href="#info" 
+               class="brand-image-btn"
+               data-brand="EmilioColor®">
+                <img src="nueva_seccion/EC_BLANCO.png" alt="EmilioColor">
+            </a>
+            
+            <!-- AM-SHEV -->
+            <a href="https://transportes.emiliocolor.com/" 
+               class="brand-image-btn"
+               data-brand="AM-SHEV™">
+                <img src="nueva_seccion/AMSHEV1 - copia.png" alt="AM-SHEV">
+            </a>
+            
+            <!-- ClassCloud -->
+            <a href="https://classcloud.emiliocolor.com/" 
+               class="brand-image-btn"
+               data-brand="ClassCloud℠">
+                <img src="nueva_seccion/CLASSCLOUD.png" alt="ClassCloud">
+            </a>
+            
+            <!-- Inkspire -->
+            <a href="hhtps://emiliocolor.com/herramientas/no_disponible" 
+               class="brand-image-btn"
+               data-brand="Inkspire™">
+                <img src="nueva_seccion/INKSPIRE.png" alt="Inkspire">
+            </a>
+            
+            <!-- Emiversal Database -->
+            <a href="hhtps://emiliocolor.com/herramientas/no_disponible" 
+               class="brand-image-btn"
+               data-brand="Emiversal Database℠">
+                <img src="nueva_seccion/EMIVERSAL.png" alt="Emiversal Database">
+            </a>
+            
+            <!-- Icrefae -->
+            <a href="hhtps://emiliocolor.com/herramientas/no_disponible" 
+               class="brand-image-btn"
+               data-brand="Icrefae℠">
+                <img src="nueva_seccion/ICREFAE.png" alt="Icrefae">
+            </a>
+            
+            <!-- Benzico -->
+            <a href="hhtps://emiliocolor.com/herramientas/no_disponible" 
+               class="brand-image-btn"
+               data-brand="Benzico™">
+                <img src="nueva_seccion/BENZICO.png" alt="Benzico">
+            </a>
 
-.btn-silver:hover {
-  background: linear-gradient(135deg, #f2f2f2 0%, #c0c0c0 25%, #a6a6a6 50%, #d9d9d9 75%, #8c8c8c 100%);
-  color: #000;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.9);
-  transform: scale(1.05);
-}
+        </div>
 
-</style>
+        <!-- Texto legal añadido -->
+        <p class="legal-text">
+            Todas las marcas mencionadas son marcas comerciales, propiedad de EmilioColor®.  
+            Para más información consulta nuestros términos en 
+            <a href="https://emiliocolor.com/legalidad_y_garantias.html" target="_blank">legalidad y garantías</a>.
+        </p>
 
-    <a href="#servicios" class="btn btn-explore">Desarrollo Web</a>
-    <a href="#educacion" class="btn btn-explore">Cursos Pregrabados</a>
-    <a href="#productos" class="btn btn-explore">Papelería</a>
-</div>
     </div>
 </div>
 
+<!-- Estilos -->
+<style>
+    .brand-images-container {
+        margin-bottom: 40px; /* MÁS ESPACIO ENTRE IMÁGENES Y TEXTO LEGAL */
+    }
+
+    .legal-text {
+        font-size: 0.85rem !important; 
+        text-align: center;
+        margin-top: 20px;
+        opacity: 0.7;
+        line-height: 1.2;
+    }
+
+    .legal-text a {
+        color: inherit;
+        text-decoration: underline;
+    }
+</style>
 
 <div class="home-section">
     <div class="rounded-container">
-    <h2 class="mb-3"><i class="fas fa-info-circle"></i> ¿Qué es EmilioColor?</h2>
-<p style="text-align: justify;">
-EmilioColor® es una marca multisectorial de vanguardia que se dedica principalmente al sector de los transportes, que puede consultarse en https://transportes.emiliocolor.com/ ofrece principalmente productos de papelería, desarrollo web y cursos pregrabados. Cuenta con múltiples divisiones, incluyendo tecnología, educación, transporte, alimentos y papelería. Bajo el lema “Soluciones a tu medida”, proporciona productos y servicios innovadores que impulsan el desarrollo social y económico, integrando distintas industrias y promoviendo valores como trabajo en equipo, innovación y crecimiento, siempre adaptándose a las necesidades de cada comunidad en la que opera.
-                    </p>
 
-            <!-- Misión y Visión en dos columnas -->
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="p-3 bg-light rounded h-100">
-                        <h5 class="text-primary">Nuestra Misión</h5>
-                        <p class="small">Como equipo, nos comprometemos a impulsar desarrollo social y económico mediante soluciones multisectoriales innovadoras. Priorizamos alianzas estratégicas que generen valor tangible para las comunidades donde operamos.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="p-3 bg-light rounded h-100">
-                        <h5 class="text-primary">Nuestra Visión</h5>
-                        <p class="small">Aspiramos colectivamente a posicionarnos como referente internacional en integración empresarial, siendo reconocidos por nuestra capacidad para transformar industrias mediante enfoques interdisciplinarios y sostenibles.</p>
-                    </div>
-                </div>
-            </div>
+        <!-- NUEVA SECCIÓN: Novedades a la izquierda + ¿Qué es EmilioColor? a la derecha -->
+        <div class="row align-items-center mb-4">
 
-            <!-- Sección Nuestros Principios -->
-            <div class="mt-5">
-                <h4 class="mb-4"><i class="fas fa-heart text-primary mr-2"></i> Nuestros Principios</h4>
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <div class="text-center p-2">
-                            <i class="fas fa-users text-primary mb-2" style="font-size: 1.5rem;"></i>
-                            <h6>Trabajo en Equipo</h6>
-                            <p class="small">Valoramos la sinergia interdisciplinaria</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="text-center p-2">
-                            <i class="fas fa-lightbulb text-primary mb-2" style="font-size: 1.5rem;"></i>
-                            <h6>Innovación</h6>
-                            <p class="small">Fomentamos soluciones creativas</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="text-center p-2">
-                            <i class="fas fa-chart-line text-primary mb-2" style="font-size: 1.5rem;"></i>
-                            <h6>Crecimiento</h6>
-                            <p class="small">Nos adaptamos constantemente</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <div class="text-center p-2">
-                            <i class="fas fa-layer-group text-primary mb-2" style="font-size: 1.5rem;"></i>
-                            <h6>Multisectorialidad</h6>
-                            <p class="small">Integramos distintas industrias en cada proyecto</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<!-- Sección Áreas de Especialización -->
-<div class="mt-5">
-<h4 class="mb-4"><i class="fas fa-box-open text-primary mr-2"></i> ¿Qué ofrecemos?</h4>
+            <!-- Columna izquierda: Imagen + Novedades -->
+<div class="col-md-4 text-center mb-3">
+        <h4 class="text-primary">Novedades</h4>
 
-    <h5 class="text-primary mt-4">Por medios digitales</h5>
-    <div class="row mt-3">
-        <div class="col-md-6 col-lg-3 mb-3">
-            <div class="text-center p-2">
-                <i class="fas fa-chalkboard-teacher text-primary mb-2" style="font-size: 1.5rem;"></i>
-                <h6>Educación</h6>
-                <p class="small">Hemos desarrollado plataformas adaptativas que responden a las necesidades formativas actuales</p>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-3 mb-3">
-            <div class="text-center p-2">
-                <i class="fas fa-book-open text-primary mb-2" style="font-size: 1.5rem;"></i>
-                <h6>Papelería</h6>
-                <p class="small">Desarrollamos productos y soluciones útiles para entornos escolares y de oficina</p>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-3 mb-3">
-            <div class="text-center p-2">
-                <i class="fas fa-microchip text-primary mb-2" style="font-size: 1.5rem;"></i>
-                <h6>Tecnología</h6>
-                <p class="small">Diseñamos herramientas digitales con enfoque en usabilidad y seguridad</p>
-            </div>
-        </div>
-    </div>
-
-    <h5 class="text-primary mt-4">Con sede física</h5>
-    <div class="row mt-3">
-        <div class="col-md-6 col-lg-3 mb-3">
-            <div class="text-center p-2">
-                <i class="fas fa-shipping-fast text-primary mb-2" style="font-size: 1.5rem;"></i>
-                <h6>Transportes</h6>
-                <p class="small">Implementamos soluciones logísticas en colaboración con especialistas del sector</p>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-3 mb-3">
-            <div class="text-center p-2">
-                <i class="fas fa-apple-alt text-primary mb-2" style="font-size: 1.5rem;"></i>
-                <h6>Alimentos</h6>
-                <p class="small">Exploramos modelos de distribución con potencial de escalamiento sostenible</p>
-            </div>
-        </div>
-    </div>
+    <a href="https://cecyt9.asesorias.emiliocolor.com/" target="_blank">
+        <img src="nueva_seccion/NOVEDAD_1.png"
+             alt="Novedades"
+             class="img-fluid mb-2"
+             style="max-height: 180px; object-fit: cover; border: none !important; border-radius: 0 !important; box-shadow: none !important;">
+    </a>
+    <hr>
+    <small class="text-muted">Apoyos > Plataformas Educativas y Académicas</small>
 </div>
 
 
+            <!-- Columna derecha: ¿Qué es EmilioColor? -->
+            <div class="col-md-8">
+                <h2 class="mb-3"><i class="fas fa-info-circle"></i> ¿Qué es EmilioColor?</h2>
+                <p style="text-align: justify;">
+                    EmilioColor® es una empresa multisectorial de vanguardia conformada por diversas marcas especializadas en áreas como transportes, tecnología, educación y papelería, integrando soluciones innovadoras que se adaptan a las necesidades de cada sector.
+                </p>
+            </div>
+        </div>
+
+        <!-- Misión y Visión en dos columnas -->
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="p-3 bg-light rounded h-100">
+                    <h5 class="text-primary">Nuestra Misión</h5>
+                    <p class="small">Como equipo, nos comprometemos a impulsar desarrollo social y económico mediante soluciones multisectoriales innovadoras. Priorizamos alianzas estratégicas que generen valor tangible para las comunidades donde operamos.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="p-3 bg-light rounded h-100">
+                    <h5 class="text-primary">Nuestra Visión</h5>
+                    <p class="small">Aspiramos colectivamente a posicionarnos como referente internacional en integración empresarial, siendo reconocidos por nuestra capacidad para transformar industrias mediante enfoques interdisciplinarios y sostenibles.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Nuestros Principios -->
+        <div class="mt-5">
+            <h4 class="mb-4"><i class="fas fa-heart text-primary mr-2"></i> Nuestros Principios</h4>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <div class="text-center p-2">
+                        <i class="fas fa-users text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6>Trabajo en Equipo</h6>
+                        <p class="small">Valoramos la sinergia interdisciplinaria</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="text-center p-2">
+                        <i class="fas fa-lightbulb text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6>Innovación</h6>
+                        <p class="small">Fomentamos soluciones creativas</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="text-center p-2">
+                        <i class="fas fa-chart-line text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6>Crecimiento</h6>
+                        <p class="small">Nos adaptamos constantemente</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="text-center p-2">
+                        <i class="fas fa-layer-group text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6>Multisectorialidad</h6>
+                        <p class="small">Integramos distintas industrias en cada proyecto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Áreas de Especialización -->
+        <div class="mt-5">
+            <h4 class="mb-4"><i class="fas fa-box-open text-primary mr-2"></i> ¿Qué ofrecemos?</h4>
+
+            <h5 class="text-primary mt-4">Por medios digitales</h5>
+            <div class="row mt-3">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="text-center p-2">
+                        <i class="fas fa-chalkboard-teacher text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6>Educación</h6>
+                        <p class="small">Hemos desarrollado plataformas adaptativas que responden a las necesidades formativas actuales</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="text-center p-2">
+                        <i class="fas fa-book-open text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6>Papelería</h6>
+                        <p class="small">Desarrollamos productos y soluciones útiles para entornos escolares y de oficina</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="text-center p-2">
+                        <i class="fas fa-microchip text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6>Tecnología</h6>
+                        <p class="small">Diseñamos herramientas digitales con enfoque en usabilidad y seguridad</p>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="text-primary mt-4">Con sede física</h5>
+            <div class="row mt-3">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="text-center p-2">
+                        <i class="fas fa-shipping-fast text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6>Transportes</h6>
+                        <p class="small">Implementamos soluciones logísticas en colaboración con especialistas del sector</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="text-center p-2">
+                        <i class="fas fa-apple-alt text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6>Alimentos</h6>
+                        <p class="small">Exploramos modelos de distribución con potencial de escalamiento sostenible</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Sección Imagen Gráfica -->
-            <h4 class="mb-4"><i class="fas fa-images text-primary mr-2"></i> Imagen Gráfica Anterior</h4>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="text-center">
-                        <img src="img-logos/emiliocolor_r.jpg" alt="2023" class="img-fluid rounded mb-2 img-40">
-                        <p class="small"><strong>2023:</strong> Inicio de operaciones</p>
-                    </div>
+        <h4 class="mb-4"><i class="fas fa-images text-primary mr-2"></i> Imagen Gráfica Anterior</h4>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="text-center">
+                    <img src="img-logos/emiliocolor_r.jpg" alt="2023" class="img-fluid rounded mb-2 img-40">
+                    <p class="small"><strong>2023:</strong> Inicio de operaciones</p>
                 </div>
             </div>
+        </div>
+
     </div>
 </div>
+
 
             </div>
 <!-- SECCIÓN PRODUCTOS -->
@@ -1812,6 +1895,116 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script> -->
 
+<!-- Sección Información y Servicios -->
+<div id="info-section" class="rounded-container">
+    <h2 class="section-title">
+        <i class="fas fa-tools"></i> Información y Servicios
+    </h2>
+    <p class="section-subtitle">Accede a servicios posteriores a tu compra y consulta documentación importante.</p>
+
+    <div class="row mt-4 g-4">
+        
+        <!-- Servicios Post Compra -->
+        <div class="col-md-6">
+            <h5 class="mb-3 section-subheader">
+                <i class="fas fa-concierge-bell text-primary me-2"></i>
+                Servicios Post Compra
+            </h5>
+            <div class="d-flex flex-column gap-2">
+
+                <!-- Certificación -->
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScW39ELZFvXXxF0lMQ3O8W-Am9MFoug-KDOxEdZwGEwCfYxPQ/viewform?usp=header"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="d-block p-3 bg-light rounded text-decoration-none d-flex align-items-center hover-lift">
+                    <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
+                        style="width:45px; height:45px;">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div>
+                        <strong>Solicitar Certificación de Curso</strong>
+                        <p class="small text-muted mb-0">Obtén tu certificado oficial</p>
+                    </div>
+                </a>
+
+                <!-- Garantía Productos Físicos -->
+                <a href="#" 
+                    class="d-block p-3 bg-light rounded text-decoration-none d-flex align-items-center hover-lift">
+                    <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
+                        style="width:45px; height:45px;">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div>
+                        <strong>Solicitar Garantía de Productos Físicos</strong>
+                        <p class="small text-muted mb-0">Para facturación y garantía</p>
+                    </div>
+                </a>
+
+                <!-- Garantía Productos Digitales -->
+                <a href="#" 
+                    class="d-block p-3 bg-light rounded text-decoration-none d-flex align-items-center hover-lift">
+                    <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
+                        style="width:45px; height:45px;">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Solicitar Garantía de Productos Digitales</strong>
+                        <p class="small text-muted mb-0">Para facturación y garantía</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Información Adicional -->
+        <div class="col-md-6">
+            <h5 class="mb-3 section-subheader">
+                <i class="fas fa-info-circle text-primary me-2"></i>
+                Información Adicional
+            </h5>
+            <div class="d-flex flex-column gap-2">
+
+                <!-- Legalidad -->
+                <a href="https://emiliocolor.com/legalidad_y_garantias.html" target="_blank" 
+                    class="d-block p-3 bg-light rounded text-decoration-none hover-lift">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-file-contract text-primary me-3" style="font-size: 1.2rem;"></i>
+                        <div>
+                            <strong>Legalidad y Garantía</strong>
+                            <p class="small text-muted mb-0">Términos, condiciones y garantías</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Verificador de Identidad Público -->
+                <a href="#" target="_blank" 
+                    class="d-block p-3 bg-light rounded text-decoration-none hover-lift">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-id-card-alt text-primary me-3" style="font-size: 1.2rem;"></i>
+                        <div>
+                            <strong>Verificador de Identidad Público</strong>
+                            <p class="small text-muted mb-0">Consulta la existencia y vigencia de las credenciales que muestran nuestros trabajadores</p>
+                        </div>
+                    </div>
+                </a>
+<!-- Buzón de Quejas y Sugerencias -->
+<a href="#" target="_blank" 
+    class="d-block p-3 bg-light rounded text-decoration-none hover-lift">
+    <div class="d-flex align-items-center">
+        <i class="fas fa-comment-dots text-primary me-3" style="font-size: 1.2rem;"></i>
+        <div>
+            <strong>Buzón de Quejas y Sugerencias</strong>
+            <p class="small text-muted mb-0">Envíanos tus comentarios o sugerencias para mejorar</p>
+        </div>
+    </div>
+</a>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 <!-- Sección Contacto -->
 <div id="contacto-section" class="rounded-container">
@@ -1831,7 +2024,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="brand-contact-info">
                 <div class="contact-item mb-3">
                     <div class="d-flex align-items-center mb-1"><i class="fas fa-phone-alt text-primary me-2"></i><strong>Teléfono</strong></div>
-                    <a href="tel:+525625377747" class="d-block">+52 56 2537 7747</a>
+                    <a href="tel:+525655333139" class="d-block">+52 56 5533 3139</a>
                     <small class="text-muted">Lun-Vie, 9am - 1pm</small>
                 </div>
                 <div class="contact-item mb-3">
@@ -1840,7 +2033,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div class="contact-item mb-3">
                     <div class="d-flex align-items-center mb-1"><i class="fab fa-whatsapp text-primary me-2"></i><strong>WhatsApp</strong></div>
-                    <a href="https://wa.me/525625377747" target="_blank" class="d-block">+52 56 2537 7747</a>
+                    <a href="https://wa.me/525655333139" target="_blank" class="d-block">+52 56 5533 3139</a>
                                         <small class="text-muted">Lun-Vie, 9am - 9pm</small>
 
                 </div>
@@ -1859,7 +2052,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="col-md-6 col-lg-4 mb-4">
     <div class="brand-card h-100 p-4">
         <div class="brand-logo mb-3 text-center">
-<img src="img_marcas/AMSHEV.png" alt="AM.SHEV Logo" class="brand-logo-img brand-logo-img-large">
+<img src="nueva_seccion/AMSHEV1 - copia.png" alt="AM.SHEV Logo" class="brand-logo-img brand-logo-img-large">
 <style>
     .brand-logo-img-large {
     width: 140px !important;  /* Ajusta el tamaño que quieras */
@@ -1875,7 +2068,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="d-flex align-items-center mb-1">
                     <i class="fas fa-phone-alt text-primary me-2"></i><strong>Teléfono</strong>
                 </div>
-                <a href="tel:+525625377747" class="d-block">+52 55 4781 0563</a>
+                <a href="tel:+525547810563" class="d-block">+52 55 4781 0563</a>
                                     <small class="text-muted">Lun-Vie, 9am - 9pm</small>
 
             </div>
@@ -1889,7 +2082,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="d-flex align-items-center mb-1">
                     <i class="fab fa-whatsapp text-primary me-2"></i><strong>WhatsApp</strong>
                 </div>
-                <a href="https://wa.me/525625377747" target="_blank" class="d-block">+52 55 4781 0563</a>
+                <a href="https://wa.me/525547810563" target="_blank" class="d-block">+52 55 4781 0563</a>
                                                     <small class="text-muted">Lun-Vie, 9am - 9pm</small>
 
             </div>
@@ -1913,14 +2106,14 @@ document.addEventListener("DOMContentLoaded", function() {
             <h4 class="brand-name mt-2">ClassCloud <sup>℠</sup></h4>
             <p class="brand-tagline text-muted small">Submarca</p>
         </div>
-        <div class="brand-contact-info">
+                                                            <small class="text-muted"> <em>Temporalmente podrás contactarnos en el mismo teléfono y correo de EmilioColor.</em></small>
+        <!--<div class="brand-contact-info"> <hr>
             <div class="contact-item mb-3">
                 <div class="d-flex align-items-center mb-1">
                     <i class="fas fa-phone-alt text-primary me-2"></i><strong>Teléfono</strong>
                 </div>
-                <a href="tel:+525625377747" class="d-block">+52 56 2537 7747</a>
+                <a href="tel:+52" class="d-block">+52 -- ---- ----</a>
                                                     <small class="text-muted">Lun-Vie, 9am - 1pm</small>
-
             </div>
             <div class="contact-item mb-3">
                 <div class="d-flex align-items-center mb-1">
@@ -1932,11 +2125,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="d-flex align-items-center mb-1">
                     <i class="fab fa-whatsapp text-primary me-2"></i><strong>WhatsApp</strong>
                 </div>
-                <a href="https://wa.me/525625377747" target="_blank" class="d-block">+52 56 2537 7747</a>
+                <a href="https://wa.me/52" target="_blank" class="d-block">+52 -- ---- ----</a>
                                                     <small class="text-muted">Lun-Vie, 9am - 9pm</small>
-
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 
@@ -2016,70 +2208,8 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </div>
 </div>
-
-
-
 </div>
 
-    <!-- Sección de Servicios Post Compra e Información Adicional -->
-    <div class="additional-services-section mt-5 pt-4 border-top">
-        <div class="row">
-            <!-- Servicios Post Compra -->
-            <div class="col-md-6">
-                <h5 class="mb-3 section-subheader">
-                    <i class="fas fa-concierge-bell text-primary me-2"></i>
-                    Servicios Post Compra
-                </h5>
-                <div class="d-flex flex-column gap-2">
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScW39ELZFvXXxF0lMQ3O8W-Am9MFoug-KDOxEdZwGEwCfYxPQ/viewform?usp=header"
-   target="_blank" 
-   rel="noopener noreferrer"
-   class="d-block p-3 bg-light rounded text-decoration-none d-flex align-items-center hover-lift">
-    <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-         style="width:45px; height:45px;">
-        <i class="fas fa-certificate"></i>
-    </div>
-    <div>
-        <strong>Solicitar Certificación de Curso</strong>
-        <p class="small text-muted mb-0">Obtén tu certificado oficial</p>
-    </div>
-</a>
-
-                    <a href="#" 
-                       class="d-block p-3 bg-light rounded text-decoration-none d-flex align-items-center hover-lift">
-                        <div class="service-icon bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
-                             style="width:45px; height:45px;">
-                            <i class="fas fa-ticket-alt"></i>
-                        </div>
-                        <div>
-                            <strong>Solicitar Ticket Digital</strong>
-                            <p class="small text-muted mb-0">Para facturación y garantía</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Información Adicional -->
-            <div class="col-md-6">
-                <h5 class="mb-3 section-subheader">
-                    <i class="fas fa-info-circle text-primary me-2"></i>
-                    Información Adicional
-                </h5>
-                <div class="d-flex flex-column gap-2">
-                    <a href="https://emiliocolor.com/legalidad_y_garantias.html" target="_blank" 
-                       class="d-block p-3 bg-light rounded text-decoration-none hover-lift">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-file-contract text-primary me-3" style="font-size: 1.2rem;"></i>
-                            <div>
-                                <strong>Legalidad y Garantía</strong>
-                                <p class="small text-muted mb-0">Términos, condiciones y garantías</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer con logos -->
     <div class="text-center mt-5 pt-4 border-top">
@@ -2234,13 +2364,13 @@ document.addEventListener("DOMContentLoaded", function() {
             <footer class="footer">
                 <div class="container">
                     <img src="img-logos/logo_azul_alargado.png" alt="EmilioColor Logo" class="footer-logo">
-                    <p class="mb-0">© 2023 EmilioColor® Todos los derechos reservados.</p>
+                    <p class="mb-0">© 2023-2025 EmilioColor® Todos los derechos reservados.</p>
                 </div>
             </footer>
         </div>
     </div>
     <div class="float-buttons">
-        <a href="https://wa.me/525625377747?text=Hola,%20estoy%20interesado%20en%20los%20productos%20y%20servicios%20de%20EmilioColor®"
+        <a href="https://wa.me/525655333139?text=Hola,%20estoy%20interesado%20en%20los%20productos%20y%20servicios%20de%20EmilioColor®"
            class="float-btn whatsapp-btn"
            target="_blank"
            title="Contactar por WhatsApp">
@@ -2270,5 +2400,3 @@ document.addEventListener("DOMContentLoaded", function() {
 </style>
 </body>
 </html>
-
-
