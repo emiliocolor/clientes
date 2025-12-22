@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manual EmilioColor®: Guía completa para identificar, comprender y manejar los distintos niveles de violencia (psicológica, emocional, sexual) usando el Violentómetro. ¡Erradicar la violencia comienza por reconocerla!">
+    <meta name="keywords" content="violencia, manual, violentómetro, prevención, agresión, psicológica, emocional, sexual, abuso, delito, INMUJERES, México, EmilioColor">
+    <meta name="author" content="Emilio Calep - EmilioColor®">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://emiliocolor.com/manual_01">
+    <title>Manual para el Reconocimiento y Manejo de la Violencia - EmilioColor®</title>
+
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Manual: Reconocimiento y Manejo de la Violencia">
+    <meta property="og:description" content="Guía completa para identificar y actuar ante los niveles de violencia (física, psicológica, sexual) usando el Violentómetro. ¡Erradicar la violencia comienza por reconocerla!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com/manual_01">
+    <meta property="og:image" content="https://emiliocolor.com/img-logos/favicon.png"> <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tuusuario"> <meta name="twitter:title" content="Manual: Reconocimiento y Manejo de la Violencia">
+    <meta name="twitter:description" content="Guía completa para identificar y actuar ante los niveles de violencia (física, psicológica, sexual) usando el Violentómetro. ¡Erradicar la violencia comienza por reconocerla!">
+    <meta name="twitter:image" content="https://emiliocolor.com/img-logos/favicon.png">
+
+    <link rel="shortcut icon" href="https://emiliocolor.com/img-logos/favicon.png" type="image/png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration:  none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* MANUAL SPECIFIC STYLES */
+        .content-container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            border-radius: 0;
+        }
+
+        .content-container h2 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .manual-header {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .manual-cover {
+            flex: 0 0 300px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: auto;
+        }
+
+        .manual-cover-placeholder {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            padding: 0;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .manual-cover-placeholder img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ESTILO PARA EL PRECIO */
+        .manual-price { 
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue-dark);
+            margin-bottom: 15px;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .consultar-manual-btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            cursor: pointer;
+        }
+
+        .consultar-manual-btn:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(40, 69, 150, 0.2);
+            text-decoration: none; /* Asegura que no haya subrayado en hover */
+            color: white; /* Asegura que el color se mantenga en blanco */
+        }
+        
+        /* ESTILOS ESPECÍFICOS PARA EL BOTÓN DE COMPRA FÍSICA */
+        .manual-cover .comprar-fisico {
+            background: var(--light-gray); /* Fondo gris claro */
+            color: var(--primary-gray-dark); /* Texto gris oscuro */
+            border: 2px solid var(--primary-gray-light); /* Borde gris */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 10px; /* Espacio debajo del primer botón */
+        }
+        
+        .manual-cover .comprar-fisico:hover {
+            background: var(--primary-gray-darker) !important; /* Gris muy oscuro en hover */
+            color: white !important; /* Texto a blanco en hover */
+            border-color: white !important; /* Borde a blanco en hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .manual-cover .comprar-fisico i {
+            color: var(--primary-gray); /* Icono gris inicial */
+            transition: color 0.3s ease;
+        }
+        
+        .manual-cover .comprar-fisico:hover i {
+            color: white !important; /* Icono a blanco en hover */
+        }
+
+
+        .manual-info {
+            flex: 1;
+        }
+
+        .manual-title {
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .manual-subtitle {
+            color: var(--primary-gray-dark);
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .manual-author {
+            color: var(--primary-gray);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .manual-pages {
+            color: var(--primary-gray-light);
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .manual-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .manual-description p {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
+            font-weight: 600;
+            font-size: 1.6rem;
+        }
+
+        .subsection-title {
+            color: var(--primary-gray-dark);
+            margin: 25px 0 15px;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        .violentometro-levels {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .level-item {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .level-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .level-color {
+            flex: 0 0 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .level-info {
+            flex: 1;
+        }
+
+        .level-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .level-description {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .table-of-contents {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .table-of-contents th {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .table-of-contents td {
+            padding: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .table-of-contents tr:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        .table-of-contents tr:hover {
+            background-color: rgba(40, 69, 150, 0.05);
+        }
+
+        .page-number {
+            font-weight: 600;
+            color: var(--primary-blue);
+            width: 100px;
+        }
+
+        .quote-box {
+            background-color: #f0f7ff;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid var(--primary-blue);
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .quote-author {
+            text-align: right;
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--primary-gray-dark);
+        }
+
+        .methodology-block {
+            padding: 20px;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .methodology-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .methodology-description {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background-color: rgba(245, 158, 11, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--warning-color);
+        }
+
+        .warning-title {
+            color: var(--warning-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* ESTILOS PARA BOTONES DE ENLACE */
+        .material-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .material-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 2px solid var(--primary-blue);
+            padding: 20px 15px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            height: 120px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .material-button:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(40, 69, 150, 0.2);
+            border-color: var(--primary-blue);
+        }
+
+        .material-button i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .material-button span {
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+            
+            .manual-header {
+                flex-direction: column;
+            }
+            
+            .manual-cover {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+            
+            .manual-title {
+                font-size: 1.8rem;
+            }
+            
+            .manual-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .level-item {
+                flex-direction: column;
+            }
+            
+            .level-color {
+                flex: 0 0 50px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .table-of-contents {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .material-buttons {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .material-button {
+                height: 110px;
+                padding: 15px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .material-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .material-button {
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+            <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="https://emiliocolor.com/" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Página principal</span>
+            </a>
+        </nav>
+    </div>
+</header>
+    <main class="main-content">
+        <div class="content-container">
+            <div class="manual-header">
+                <div class="manual-cover">
+                    <div class="manual-cover-placeholder">
+                        <img src="img_productos_servicios/manual_01.png" alt="Portada del manual">
+                    </div>
+                    
+                    <p class="manual-price">Precio: $XXX.XX MXN</p>
+
+                    <a href="#indice" class="consultar-manual-btn">
+                        <i class="fas fa-book-open me-2"></i> Consultar manual digital
+                    </a>
+                    
+                    <a href="mailto:emiliocolor@emiliocolor.com?subject=Solicitud%20de%20Compra%20de%20Manual%20Físico%20EmilioColor&body=Me%20gustaría%20comprar%20una%20copia%20física%20del%20Manual%20para%20el%20Reconocimiento%20y%20Manejo%20de%20la%20Violencia.%20Por%20favor%20envíenme%20la%20información%20sobre%20el%20precio%20y%20el%20proceso%20de%20compra." 
+                       class="consultar-manual-btn comprar-fisico" 
+                       target="_blank">
+                        <i class="fas fa-shopping-cart me-2"></i> Comprar manual físico
+                    </a>
+
+                </div>
+
+                <div class="manual-info">
+                    <h1 class="manual-title">MANUAL PARA EL RECONOCIMIENTO Y MANEJO DE LA VIOLENCIA</h1>
+                    <h2 class="manual-subtitle">Erradicar la violencia comienza por reconocerla.</h2>
+                    <p class="manual-author"><i class="fas fa-user-edit"></i> EMILIO CALEP</p>
+                    <p class="manual-pages"><i class="fas fa-file-alt"></i> 113 páginas</p>
+                    
+                    <div class="manual-description">
+                        <p>México atraviesa actualmente una de las etapas más complejas en materia de violencia interpersonal y social. Las expresiones de agresión física, psicológica, emocional y sexual continúan afectando profundamente la vida cotidiana de millones de personas. Esta problemática se manifiesta en múltiples espacios: hogares, relaciones de pareja, escuelas, centros de trabajo y comunidades, donde muchas conductas violentas siguen normalizándose o minimizándose, lo que dificulta su detección oportuna y limita la capacidad de actuar a tiempo.</p>
+                        
+                        <p>Ante este panorama, herramientas educativas como el Violentómetro se han convertido en recursos fundamentales para visibilizar y comprender los distintos niveles de violencia que pueden surgir en las interacciones diarias. Desarrollado originalmente por instituciones mexicanas como el Instituto Nacional de las Mujeres (INMUJERES), el Violentómetro permite identificar tanto las manifestaciones sutiles como el control, las burlas o los celos excesivos como las agresiones más graves que ya constituyen delitos, promoviendo así la prevención y la intervención adecuada.</p>
+                        
+                        <p>Este manual surge ante la necesidad de contar con una guía clara, accesible y unificada que facilite a la población mexicana identificar, diferenciar y comprender las diversas formas de violencia presentes en la vida cotidiana. El Violentómetro ofrece una visión estructurada de conductas que muchas veces pasan desapercibidas o no se reconocen como violentas, y reúne en un solo esquema información que no siempre es fácil de distinguir sin una orientación adecuada. Por ello, este documento responde a la importancia de disponer de un material que explique, en un mismo espacio, qué comportamientos requieren límites personales, cuáles afectan la convivencia social en ámbitos como el hogar, la escuela o los centros de trabajo, y cuáles constituyen delitos que deben denunciarse conforme a los derechos establecidos en el marco jurídico mexicano.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="manual-description">
+                <p>Más allá de explicar, esta guía tiene el propósito de sensibilizar, orientar y empoderar a quienes la consulten. La violencia no debe normalizarse ni justificarse en ninguna de sus manifestaciones, y contar con información clara, acompañamiento adecuado y criterios para la toma de decisiones informadas es fundamental para construir relaciones sanas y entornos seguros. Al reunir en un solo documento los conceptos, niveles y rutas de acción, este manual busca fortalecer la conciencia social, promover la prevención y contribuir al desarrollo de una cultura basada en el respeto, la dignidad y la igualdad para todas las personas.</p>
+                
+                <div class="quote-box">
+                    "Como autor, deseo que este material no solo informe, sino que también inspire reflexión, crecimiento y cambio. Mi intención es ofrecer una herramienta que motive a cada lector a reconocerse como agente de transformación en su entorno, a cuestionar patrones aprendidos y a cultivar relaciones más conscientes y respetuosas. Confío en que este manual se convierta en un recurso que acompañe, fortalezca y dé claridad a quienes buscan comprender, sanar o prevenir situaciones de violencia. Que cada página contribuya a sembrar una nueva forma de relacionarnos: una donde el autocuidado, el respeto y la empatía sean la base de nuestra convivencia."
+                    <div class="quote-author">— EMILIO CALEP</div>
+                </div>                
+                <p>Todos tenemos derecho a ser quienes somos y a expresarnos de manera auténtica, así como a ser escuchados y comprendidos. No se trata de ser enaltecidos ni de recibir más consideración que los demás, sino de reconocer que todas las personas merecemos el mismo trato, el mismo respeto y las mismas oportunidades. La igualdad no implica que unos valgan más que otros, sino que cada voz, cada experiencia y cada identidad tienen el mismo valor dentro de nuestra convivencia social.</p>
+            </div>
+            
+            <h2 class="section-title" id="indice">Índice del Manual</h2>
+            <table class="table-of-contents">
+                <thead>
+                    <tr>
+                        <th>Sección</th>
+                        <th>Contenido</th>
+                        <th class="page-number">Páginas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3" style="background-color: #f0f0f0; font-weight: bold;">Introducción y fundamentos</td>
+                    </tr>
+                    <tr>
+                        <td>Introducción</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 9–10</td>
+                    </tr>
+                    <tr>
+                        <td>¿Qué es el Violentómetro?</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 11–12</td>
+                    </tr>
+                    <tr>
+                        <td>Divisiones del Violentómetro</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 13</td>
+                    </tr>
+                    <tr>
+                        <td>Objetivo del manual</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 14</td>
+                    </tr>
+                    <tr>
+                        <td>Metodología y manejo</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 15</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color: #f0f0f0; font-weight: bold;">Bloque A – Nivel Verde/Amarillo</td>
+                    </tr>
+                    <tr>
+                        <td>Violencias bajo control personal</td>
+                        <td>Introducción al bloque A</td>
+                        <td class="page-number">p. 16</td>
+                    </tr>
+                    <tr>
+                        <td>1. Bromas hirientes</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 17–19</td>
+                    </tr>
+                    <tr>
+                        <td>2. Chantaje emocional</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 20–22</td>
+                    </tr>
+                    <tr>
+                        <td>3. Mentir o engañar</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 23–25</td>
+                    </tr>
+                    <tr>
+                        <td>4. Ignorar (ley del hielo)</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 26–30</td>
+                    </tr>
+                    <tr>
+                        <td>5. Celar</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 31–36</td>
+                    </tr>
+                    <tr>
+                        <td>6. Acecho o vigilancia digital</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 37–41</td>
+                    </tr>
+                    <tr>
+                        <td>7. Culpabilizar</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 42-44</td>
+                    </tr>
+                    <tr>
+                        <td>8. Descalificar</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 45-48</td>
+                    </tr>
+                    <tr>
+                        <td>9. Ridiculizar u ofender</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 49-51</td>
+                    </tr>
+                    <tr>
+                        <td>10. Humillar en público</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 52–55</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color: #f0f0f0; font-weight: bold;">Bloque B – Nivel Naranja/Rojo</td>
+                    </tr>
+                    <tr>
+                        <td>Violencias fuera de control personal</td>
+                        <td>Introducción al bloque B</td>
+                        <td class="page-number">p. 56</td>
+                    </tr>
+                    <tr>
+                        <td>11. Intimidar o amenazar</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 57–60</td>
+                    </tr>
+                    <tr>
+                        <td>12. Controlar o prohibir</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 61–62</td>
+                    </tr>
+                    <tr>
+                        <td>13. Destruir artículos personales</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 63–64</td>
+                    </tr>
+                    <tr>
+                        <td>14. Manosear</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 65–66</td>
+                    </tr>
+                    <tr>
+                        <td>15. Caricias agresivas</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 67-69</td>
+                    </tr>
+                    <tr>
+                        <td>16. Golpear "jugando"</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 70-72</td>
+                    </tr>
+                    <tr>
+                        <td>17. Pellizcar o arañar</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 73-74</td>
+                    </tr>
+                    <tr>
+                        <td>18. Empujar o jalonear</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 75-77</td>
+                    </tr>
+                    <tr>
+                        <td>19. Cachetear</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 78-79</td>
+                    </tr>
+                    <tr>
+                        <td>20. Patear</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 80–81</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color: #f0f0f0; font-weight: bold;">Bloque C – Nivel Azul/Morado</td>
+                    </tr>
+                    <tr>
+                        <td>Delito penal</td>
+                        <td>Introducción al bloque C</td>
+                        <td class="page-number">p. 82-83</td>
+                    </tr>
+                    <tr>
+                        <td>21. Encerrar o aislar</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 84-86</td>
+                    </tr>
+                    <tr>
+                        <td>22. Sextorsión</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 87-89</td>
+                    </tr>
+                    <tr>
+                        <td>23. Amenazar con objetos o armas</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 90-92</td>
+                    </tr>
+                    <tr>
+                        <td>24. Difundir contenido íntimo sin consentimiento</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 93-95</td>
+                    </tr>
+                    <tr>
+                        <td>25. Amenazar de muerte</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 96-98</td>
+                    </tr>
+                    <tr>
+                        <td>26. Forzar una relación sexual</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 99-101</td>
+                    </tr>
+                    <tr>
+                        <td>27. Abuso sexual</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 102-104</td>
+                    </tr>
+                    <tr>
+                        <td>28. Violar</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 105-107</td>
+                    </tr>
+                    <tr>
+                        <td>29. Mutilar</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 108-110</td>
+                    </tr>
+                    <tr>
+                        <td>30. Asesinar (Homicidio/Feminicidio)</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 111-113</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background-color: #f0f0f0; font-weight: bold;">Cierre del manual</td>
+                    </tr>
+                    <tr>
+                        <td>Agradecimientos</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 114</td>
+                    </tr>
+                    <tr>
+                        <td>Derechos de autor y aviso legal</td>
+                        <td>- - -</td>
+                        <td class="page-number">p. 115</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 class="section-title" id="violento">¿Qué es el Violentómetro?</h2>
+            <div class="manual-description">
+                <p>El Violentómetro es una herramienta de prevención y concientización sobre la violencia, especialmente en las relaciones de pareja, desarrollada por instituciones como el Instituto Nacional de las Mujeres (INMUJERES) en México. Su objetivo es ayudar a identificar los distintos niveles de violencia para poder actuar antes de que se vuelva más grave, representándose generalmente como una escala de colores donde cada color indica un nivel de violencia: el verde significa respeto y relaciones sanas, donde no hay violencia; el amarillo señala señales de alerta, como comportamientos controladores o celos excesivos; el naranja representa violencia moderada, incluyendo insultos, amenazas o manipulación; y el rojo indica violencia grave, como agresiones físicas, sexuales o psicológicas severas. El violentómetro sirve como guía para que las personas reconozcan comportamientos dañinos, busquen ayuda y tomen decisiones para proteger su seguridad emocional y física.</p>
+            </div>
+            
+            
+            <h2 class="section-title">Materiales y Recursos Adicionales</h2>
+<div class="material-buttons">
+    <a href="https://www.ipn.mx/genero/materiales/violentometro.html?utm_source=emiliocolor.com" class="material-button" target="_blank">
+        <i class="fas fa-eye"></i>
+        <span>Violentómetro: detección de violencia cotidiana (Página web)</span>
+    </a>
+
+    <a href="https://www.constitucionpolitica.mx/titulo-1-garantias-individuales/capitulo-1-derechos-humanos/articulo-20-proceso-penal?utm_source=emiliocolor.com" class="material-button" target="_blank">
+        <i class="fas fa-scale-balanced"></i>
+        <span>Artículo 20. Proceso Penal (Página web)</span>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1igHIZ8Z2vE_RCbzADomo5mN2XTcicfNH/view?usp=sharing&utm_source=emiliocolor.com" class="material-button" target="_blank">
+        <i class="fas fa-file-lines"></i>
+        <span>Violentómetro Separador (ai)</span>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1c-xIOrOyGbdnDwY-1l-mFXXpFzwfj7VD/view?usp=sharing&utm_source=emiliocolor.com" class="material-button" target="_blank">
+        <i class="fas fa-ruler"></i>
+        <span>Violentómetro Regla (ai)</span>
+    </a>
+
+    <a href="https://drive.google.com/file/d/18i5cjzT4MtngrpiRG_FiO7-0mdhvA76x/view?usp=sharing&utm_source=emiliocolor.com" class="material-button" target="_blank">
+        <i class="fas fa-image"></i>
+        <span>Violentómetro Banner (ai)</span>
+    </a>
+</div>
+
+            
+            <h2 class="section-title">Divisiones del Violentómetro</h2>
+            <div class="manual-description">
+                <p>El violentómetro se organiza en diferentes niveles para identificar la gravedad de las conductas violentas y orientar sobre cómo actuar ante ellas. Para esta ocasión, nosotros establecimos una división por módulos, que permite clasificar las situaciones según su impacto y la responsabilidad de cada persona involucrada. Esta herramienta ayuda a diferenciar cuándo una conducta está bajo nuestro control, cuándo afecta nuestro entorno social y cuándo constituye un delito penal, proporcionando así una guía para reconocer comportamientos dañinos, buscar apoyo y proteger la seguridad emocional y física.</p>
+            </div>
+            
+            <div class="violentometro-levels">
+                <div class="level-item">
+                    <div class="level-color" style="background-color: #2ad308;">
+                        A
+                    </div>
+                    <div class="level-info">
+                        <div class="level-title">Nivel Verde/Amarillo - Violencias bajo control personal</div>
+                        <div class="level-description">
+                            <p>Todo lo que te pase estando en amarillo está bajo tu control, ya sea que seas la víctima o el agresor. Si eres víctima, gran parte de la solución es poner límites, los cuales se aprenden y fortalecen mediante un adecuado acompañamiento psicoterapéutico, ayudando a desarrollar autoconfianza, amor propio y autocuidado. Si eres agresor, el acompañamiento psicoterapéutico te permitirá comprender el origen de tus impulsos, entender por qué los tienes y, en casos más complejos, se te canalizará al especialista adecuado según tu situación.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="level-item">
+                    <div class="level-color" style="background-color: #ff6600;">
+                        B
+                    </div>
+                    <div class="level-info">
+                        <div class="level-title">Nivel Naranja/Rojo - Delito moral y social</div>
+                        <div class="level-description">
+                            <p>Todo lo que está en naranja es un delito moral y social. Algunos casos pueden estar contemplados dentro del marco penal, pero principalmente se refiere a acciones que generan daño dentro de tu círculo social, provocando sentimientos desagradables y reacciones sociales positivas o negativas: positivas porque la sociedad reconoce que la acción no es correcta, pero negativas porque quizá no recibirás defensa; socialmente solo tendrás dos opciones: soportar para aparentar valentía o denunciar ante la autoridad correspondiente (director, padres, superior, etc.), enfrentando las posibles consecuencias social que esto implique.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="level-item">
+                    <div class="level-color" style="background-color: #6600cc; color: white;">
+                        C
+                    </div>
+                    <div class="level-info">
+                        <div class="level-title">Nivel Azul/Morado - Delito penal</div>
+                        <div class="level-description">
+                            <p>Todo lo que está en azul o morado es un delito penal, es decir, acciones contempladas en el código penal que, al denunciarse, tendrán consecuencias jurídicas para el agresor. Además, como víctima, tienes derechos establecidos en el Artículo 20 de la Constitución Mexicana, incluyendo asesoría jurídica, acompañamiento con el Ministerio Público, atención médica y psicológica, reparación del daño y resguardo de tu identidad, entre otros.</p>
+                            <p>Aquí se presenta el artículo 20, actualizado a diciembre de 2025: El proceso penal será acusatorio y oral. Se regirá por los principios de publicidad, contradicción, concentración, continuidad e inmediación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Objetivo del manual</h2>
+            <div class="manual-description">
+                <p>El propósito de elaborar un manual sobre el Violentómetro es brindar a la sociedad una herramienta clara y accesible para comprender, identificar y prevenir los distintos niveles de violencia que pueden presentarse en las relaciones interpersonales, especialmente en el ámbito de la pareja, y así contribuir a la construcción de relaciones más sanas, seguras y respetuosas. Este tipo de guía educativa busca informar sobre las conductas que van desde actitudes leves, como bromas hirientes, celos excesivos o control sutil, hasta formas de violencia más graves, que incluyen insultos, manipulación, agresiones físicas, sexuales o psicológicas, y que en ciertos casos constituyen delitos penales. Al proporcionar una clasificación por niveles, verde, amarillo, naranja, rojo, azul o morado, permite a las personas identificar con claridad cuándo una situación está bajo su control, cuándo afecta su entorno social y cuándo requiere intervención legal o profesional, fomentando la prevención y la toma de decisiones informadas.</p>
+                
+                <p>Además, el documento busca sensibilizar sobre la importancia de reconocer los efectos de la violencia en la salud emocional, física y social, tanto de víctimas como de agresores, y resalta la relevancia del acompañamiento psicológico, la comunicación efectiva, el autocuidado, el respeto y la igualdad en todas las interacciones humanas. Al ofrecer ejemplos concretos y cotidianos, como bromas hirientes que muchas veces se normalizan, se pretende que las personas puedan identificar conductas dañinas antes de que escalen, promoviendo la reflexión sobre los patrones de comportamiento y la necesidad de establecer límites saludables.</p>
+                
+                <div class="quote-box">
+                    "Un niño, un maestro, un libro y un lápiz pueden cambiar el mundo."
+                    <div class="quote-author">— MALALA YOUSAFZAI</div>
+                </div>
+                
+                <p>En un plano más amplio, este material persigue empoderar a la población para actuar de manera responsable y consciente frente a situaciones de violencia, orientando sobre los recursos legales y sociales disponibles, y recordando que la prevención, la educación y la sensibilización son herramientas fundamentales para transformar la cultura, erradicar la violencia y construir una sociedad basada en el respeto, la igualdad y la dignidad de todas las personas.</p>
+            </div>
+            
+            <h2 class="section-title">Metodología y Manejo</h2>
+            <div class="manual-description">
+                <p>El Violentómetro es una herramienta didáctica que se divide en tres bloques, cada uno representando diferentes niveles de violencia, los cuales progresan en gravedad desde situaciones de violencia sutil hasta delitos penales graves. A continuación, se describe el manejo didáctico de cada bloque, acompañado de ejemplos visuales para facilitar la comprensión y la identificación de las conductas que se presentan en cada nivel.</p>
+            </div>
+            
+            <div class="methodology-block" style="background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);">
+                <div class="methodology-title">Bloque A: Nivel Verde/Amarillo – Violencias Bajo Control Personal</div>
+                <div class="methodology-description">
+                    <p>En este primer bloque, el Violentómetro abarca las formas más sutiles de violencia, que muchas veces son normalizadas en el día a día. Aquí, las personas involucradas, ya sea como víctimas o agresores, tienen mayor control personal sobre las situaciones. Este es el nivel en el que resulta esencial reconocer las primeras señales de violencia y establecer límites claros para prevenir su escalamiento.</p>
+                    <p>Durante esta sección, los lectores aprenderán a identificar conductas como las burlas, los celos excesivos o el chantaje emocional de manera gráfica con ejemplos. La didáctica se enfocará en reflexionar sobre estas manifestaciones que muchas veces pasan desapercibidas, ayudando a las personas a comprender que, aunque parecen inofensivas, son la base de problemas mayores si no se detienen a tiempo.</p>
+                    <p>Se utilizarán ejemplos visuales que muestren escenas cotidianas en las que estas actitudes pueden presentarse, y se brindarán estrategias para que los participantes puedan aprender a poner límites y a fortalecer su autoestima y autocuidado. Además, se fomentará la cultura de la denuncia, tanto para víctimas como los testigos presentes, con el fin de modificar los patrones de comportamiento a tiempo.</p>
+                </div>
+            </div>
+            
+            <div class="methodology-block" style="background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);">
+                <div class="methodology-title">Bloque B: Nivel Naranja/Rojo – Delito Moral y Social</div>
+                <div class="methodology-description">
+                    <p>En este segundo bloque, la violencia ha escalado y se convierte en un delito moral y social, con un impacto más profundo en las víctimas. Estas manifestaciones pueden no estar tipificadas como delitos penales, pero generan un daño emocional y social considerable. Aquí, el objetivo principal es que los participantes comprendan que ya no se trata solo de establecer límites, sino de actuar para proteger su bienestar emocional y social.</p>
+                    <p>Durante la exploración de este bloque, los ejemplos gráficos mostrarán situaciones como la humillación pública, la intimidación o los insultos constantes, que no solo dañan la autoestima de la víctima, sino que afectan su reputación y su círculo social. Se promoverá el diálogo sobre las reacciones sociales ante estos comportamientos, haciendo hincapié en cómo muchas veces las víctimas se enfrentan a la indiferencia o incluso a la revictimización por parte de su entorno.</p>
+                    <p>Se utilizarán ejemplos visuales para representar estas formas de violencia y se brindarán estrategias para que los participantes puedan denunciar y buscar apoyo en su entorno social o institucional. También se abordará la importancia de contar con un sistema de apoyo que les permita enfrentar las consecuencias emocionales y sociales de esta violencia.</p>
+                </div>
+            </div>
+            
+            <div class="methodology-block" style="background: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%);">
+                <div class="methodology-title">Bloque C: Nivel Rojo o Morado (Según la versión) – Delito Penal</div>
+                <div class="methodology-description">
+                    <p>Finalmente, en el tercer bloque, se presentan situaciones que constituyen un delito penal, las cuales están tipificadas en el código penal y requieren de intervención legal inmediata. Este nivel incluye acciones como las amenazas graves, la agresión física, el acoso sexual o el abuso, que son delitos que deben ser denunciados para garantizar la seguridad de la víctima y la sanción jurídica del agresor.</p>
+                    <p>En esta fase, se abordará cómo las personas pueden identificar estas conductas graves y qué pasos deben seguir para protegerse legalmente. Los ejemplos gráficos en este bloque ilustrarán situaciones de violencia física y sexual, resaltando la importancia de que las víctimas conozcan sus derechos, los cuales están estipulados en el Artículo 20 de la Constitución Mexicana.</p>
+                    <p>Además, se proporcionará información sobre los procedimientos de denuncia, incluyendo cómo hacerlos y qué tipo de apoyo se puede obtener. El manejo didáctico en este bloque se enfocará en capacitar a los participantes para que sepan cómo actuar de manera inmediata si se encuentran en una situación de este tipo o si conocen a alguien que lo esté. También se promoverá la creación de planes de acción personal para casos de emergencia, que incluyan contactos de instituciones y redes de apoyo.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación</h4>
+                <a href="https://emiliocolor.com#inicio" class="footer-nav-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="https://emiliocolor.com#servicios" class="footer-nav-link" data-section="tecnologia" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-laptop-code"></i> Tecnología
+                </a>
+                <a href="https://emiliocolor.com#cursos" class="footer-nav-link" data-section="educacion" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-graduation-cap"></i> Educación
+                </a>
+                <a href="https://emiliocolor.com#productos" class="footer-nav-link" data-section="productos" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-pencil-alt"></i> Papelería
+                </a>
+                <a href="https://emiliocolor.com#transportes" class="footer-nav-link" data-section="transportes" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-truck"></i> Transportes
+                </a>
+                <a href="https://emiliocolor.com/#classcloud" class="footer-nav-link" data-section="classcloud" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-cloud"></i> ClassCloud℠
+                </a>
+                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link" data-section="nosotros">
+                    <i class="fas fa-hands-helping"></i> Apoyos
+                </a>
+                <a href="https://emiliocolor.com/#contactos" class="footer-nav-link" data-section="contacto">
+                    <i class="fas fa-envelope"></i> Contacto
+                </a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +52 56 2537 7747</p>
+                <p><i class="fab fa-whatsapp"></i> +52 56 2537 7747</p>
+                <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+
+<br>
+<div class="footer-copyright">
+    <h4>Copyright</h4>
+    <a href="#" 
+       class="footer-nav-link" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        <i class="fas fa-file-alt"></i>
+        Consultar aviso legal
+    </a>
+</div>
+
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolormx/" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 EmilioColor® | Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="header_footer_dinamicos.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar header y footer dinámicos
+            loadHeader();
+            loadFooter();
+        });
+    </script>
+</body>
+</html>

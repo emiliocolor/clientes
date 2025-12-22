@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog personal de Emilio Calep - Experto en desarrollo, diseño y tecnología">
+    <meta name="keywords" content="Emilio Calep, blog personal, desarrollo web, diseño, tecnología, certificaciones">
+    <meta name="author" content="Emilio Calep">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Emilio Calep">
+    <meta property="og:title" content="Blog Personal de Emilio Calep">
+    <meta property="og:description" content="Desarrollador, diseñador y tecnólogo con amplia experiencia y certificaciones">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocalep.com">
+    <meta property="og:image" content="https://emiliocalep.com/assets/img/profile-og.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog Personal de Emilio Calep">
+    <meta name="twitter:description" content="Desarrollador, diseñador y tecnólogo con amplia experiencia y certificaciones">
+    <meta name="twitter:image" content="https://emiliocalep.com/assets/img/profile-og.jpg">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/favicon_herramientas.png" type="image/png">
+
+    <title>Blog Personal - Emilio Calep</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocalep.com">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            --profile-border: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            background-color: var(--header-hover);
+            text-decoration: none;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        .profile-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .profile-sidebar {
+            background: white;
+            padding: 25px;
+            border-radius: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--profile-border);
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            font-size: 1rem;
+            color: var(--primary-gray);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .profile-section {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .profile-section-title {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--medium-gray);
+            font-weight: 600;
+        }
+
+        .profile-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .profile-badge {
+            background-color: var(--light-gray);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary-blue);
+            border: 1px solid var(--medium-gray);
+        }
+
+        .profile-content {
+            background: white;
+            padding: 30px;
+            border-radius: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .section-subtitle {
+            color: var(--primary-blue-dark);
+            margin: 20px 0 15px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary-blue);
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background-color: var(--primary-blue);
+        }
+
+        .timeline-date {
+            color: var(--primary-gray);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .timeline-description {
+            color: var(--primary-gray);
+            line-height: 1.5;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .certification-card {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 0;
+            border-left: 4px solid var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .certification-name {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .certification-issuer {
+            font-size: 0.9rem;
+            color: var(--primary-gray);
+            margin-bottom: 5px;
+        }
+
+        .certification-date {
+            font-size: 0.85rem;
+            color: var(--primary-gray-light);
+        }
+
+        .resources-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .resources-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .resources-list li:last-child {
+            border-bottom: none;
+        }
+
+        .resource-icon {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            width: 30px;
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+            
+            .profile-sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="header-logo">
+                <div>
+                    <div class="header-logo-text">Emilio Calep</div>
+                    <div class="header-logo-subtext">Blog Personal</div>
+                </div>
+            </a>
+            <nav class="header-nav">
+                <a href="#inicio" class="header-nav-link active"><i class="fas fa-home"></i> <span>Inicio</span></a>
+                <a href="#formacion" class="header-nav-link"><i class="fas fa-graduation-cap"></i> <span>Formación</span></a>
+                <a href="#certificaciones" class="header-nav-link"><i class="fas fa-certificate"></i> <span>Certificaciones</span></a>
+                <a href="#recursos" class="header-nav-link"><i class="fas fa-tools"></i> <span>Recursos</span></a>
+                <a href="#contacto" class="header-nav-link"><i class="fas fa-envelope"></i> <span>Contacto</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" id="inicio">
+        <div class="profile-container">
+            <!-- Sidebar con información personal -->
+            <aside class="profile-sidebar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Emilio Calep" class="profile-image">
+                <h1 class="profile-name">Emilio Calep</h1>
+                <p class="profile-title">Desarrollador Full Stack & Diseñador UI/UX</p>
+                
+                <div class="profile-section">
+                    <h3 class="profile-section-title">Clubs y Asociaciones</h3>
+                    <div class="profile-badges">
+                        <span class="profile-badge">Club de Desarrollo Web</span>
+                        <span class="profile-badge">Asociación de Diseñadores UX</span>
+                        <span class="profile-badge">Comunidad JavaScript</span>
+                        <span class="profile-badge">Grupo de Innovación Tecnológica</span>
+                        <span class="profile-badge">Club de Emprendedores Digitales</span>
+                    </div>
+                </div>
+                
+                <div class="profile-section">
+                    <h3 class="profile-section-title">Habilidades</h3>
+                    <div class="profile-badges">
+                        <span class="profile-badge">JavaScript</span>
+                        <span class="profile-badge">React</span>
+                        <span class="profile-badge">Node.js</span>
+                        <span class="profile-badge">UI/UX Design</span>
+                        <span class="profile-badge">Python</span>
+                        <span class="profile-badge">Git</span>
+                        <span class="profile-badge">Bootstrap</span>
+                        <span class="profile-badge">SQL</span>
+                        <span class="profile-badge">Figma</span>
+                        <span class="profile-badge">Adobe Creative Suite</span>
+                    </div>
+                </div>
+                
+                <div class="profile-section">
+                    <h3 class="profile-section-title">Idiomas</h3>
+                    <div style="text-align: left;">
+                        <p><strong>Español:</strong> Nativo</p>
+                        <p><strong>Inglés:</strong> Avanzado (C1)</p>
+                        <p><strong>Portugués:</strong> Intermedio (B1)</p>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Contenido principal -->
+            <div class="profile-content">
+                <!-- Sección de Formación Académica -->
+                <section class="content-section" id="formacion">
+                    <h2 class="section-title">Formación Académica</h2>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018 - 2022</div>
+                        <h3 class="timeline-title">Ingeniería en Sistemas Computacionales</h3>
+                        <p class="timeline-description">Universidad Tecnológica Nacional - Especialización en desarrollo de software y arquitectura de sistemas.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - 2021</div>
+                        <h3 class="timeline-title">Diplomado en Diseño UX/UI</h3>
+                        <p class="timeline-description">Instituto de Diseño Digital - Enfoque en diseño centrado en el usuario, prototipado y pruebas de usabilidad.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019</div>
+                        <h3 class="timeline-title">Curso Avanzado de Desarrollo Web Full Stack</h3>
+                        <p class="timeline-description">Academia de Programación Digital - MERN Stack (MongoDB, Express, React, Node.js).</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2017 - 2018</div>
+                        <h3 class="timeline-title">Técnico en Desarrollo de Aplicaciones</h3>
+                        <p class="timeline-description">Centro de Formación Técnica - Desarrollo de aplicaciones móviles y web.</p>
+                    </div>
+                </section>
+                
+                <!-- Sección de Certificaciones -->
+                <section class="content-section" id="certificaciones">
+                    <h2 class="section-title">Certificaciones y Reconocimientos</h2>
+                    
+                    <h3 class="section-subtitle">Certificaciones Profesionales</h3>
+                    <div class="certifications-grid">
+                        <div class="certification-card">
+                            <h4 class="certification-name">AWS Certified Developer</h4>
+                            <p class="certification-issuer">Amazon Web Services</p>
+                            <p class="certification-date">Emitida: Junio 2023 | Vence: Junio 2026</p>
+                        </div>
+                        
+                        <div class="certification-card">
+                            <h4 class="certification-name">Google UX Design Professional Certificate</h4>
+                            <p class="certification-issuer">Google / Coursera</p>
+                            <p class="certification-date">Emitida: Marzo 2023</p>
+                        </div>
+                        
+                        <div class="certification-card">
+                            <h4 class="certification-name">React Developer Certification</h4>
+                            <p class="certification-issuer">Meta</p>
+                            <p class="certification-date">Emitida: Enero 2023</p>
+                        </div>
+                        
+                        <div class="certification-card">
+                            <h4 class="certification-name">Scrum Master Certified</h4>
+                            <p class="certification-issuer">Scrum Alliance</p>
+                            <p class="certification-date">Emitida: Noviembre 2022 | Vence: Noviembre 2024</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="section-subtitle" style="margin-top: 30px;">Reconocimientos y Premios</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <h3 class="timeline-title">Premio al Mejor Proyecto de Innovación Digital</h3>
+                        <p class="timeline-description">Reconocimiento por el desarrollo de una plataforma de educación interactiva para comunidades rurales.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <h3 class="timeline-title">Hackathon Nacional - Primer Lugar</h3>
+                        <p class="timeline-description">Equipo ganador en la categoría "Soluciones Tecnológicas para la Educación" con una aplicación de realidad aumentada.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020</div>
+                        <h3 class="timeline-title">Reconocimiento a la Excelencia Académica</h3>
+                        <p class="timeline-description">Mención honorífica por desempeño académico sobresaliente durante la carrera de Ingeniería.</p>
+                    </div>
+                </section>
+                
+                <!-- Sección de Recursos Digitales de Autoría -->
+                <section class="content-section" id="recursos">
+                    <h2 class="section-title">Recursos Digitales de Mi Autoría</h2>
+                    
+                    <h3 class="section-subtitle">Proyectos Destacados</h3>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <h3 class="timeline-title">Sistema de Gestión de Contenidos Educativos</h3>
+                        <p class="timeline-description">Plataforma web para creación y distribución de contenido educativo interactivo, utilizada por más de 50 instituciones educativas.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <h3 class="timeline-title">Biblioteca de Componentes UI Reutilizables</h3>
+                        <p class="timeline-description">Colección de más de 100 componentes React con documentación completa, utilizada por más de 500 desarrolladores.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <h3 class="timeline-title">Curso Online de Desarrollo Web Moderno</h3>
+                        <p class="timeline-description">Curso completo con más de 50 horas de video, ejercicios prácticos y proyectos reales. Más de 2,000 estudiantes inscritos.</p>
+                    </div>
+                    
+                    <h3 class="section-subtitle" style="margin-top: 30px;">Recursos Disponibles</h3>
+                    <ul class="resources-list">
+                        <li>
+                            <i class="fas fa-book resource-icon"></i>
+                            <div>
+                                <strong>Guía de Patrones de Diseño en JavaScript</strong>
+                                <p>PDF descargable con ejemplos prácticos y casos de uso</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-code resource-icon"></i>
+                            <div>
+                                <strong>Plantillas de Proyectos React</strong>
+                                <p>Repositorio GitHub con configuraciones iniciales optimizadas</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-palette resource-icon"></i>
+                            <div>
+                                <strong>Kit de Diseño UI para Figma</strong>
+                                <p>Sistema de diseño completo con componentes y estilos</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-video resource-icon"></i>
+                            <div>
+                                <strong>Tutoriales de Desarrollo Web</strong>
+                                <p>Canal de YouTube con más de 100 tutoriales gratuitos</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-tools resource-icon"></i>
+                            <div>
+                                <strong>Herramientas de Productividad para Devs</strong>
+                                <p>Colección de scripts y herramientas para optimizar el flujo de trabajo</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                        <div>
+                            <div style="font-size: 1.5rem; font-weight: bold;">Emilio Calep</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Blog Personal</div>
+                        </div>
+                    </div>
+                    <p>Desarrollador, diseñador y tecnólogo apasionado por crear soluciones innovadoras.</p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h4>Navegación</h4>
+                    <a href="#inicio" class="footer-nav-link"><i class="fas fa-chevron-right"></i> Inicio</a>
+                    <a href="#formacion" class="footer-nav-link"><i class="fas fa-chevron-right"></i> Formación Académica</a>
+                    <a href="#certificaciones" class="footer-nav-link"><i class="fas fa-chevron-right"></i> Certificaciones</a>
+                    <a href="#recursos" class="footer-nav-link"><i class="fas fa-chevron-right"></i> Recursos Digitales</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> contacto@emiliocalep.com</p>
+                    <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Madrid, España</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Sígueme</h4>
+                    <div class="footer-social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Emilio Calep. Todos los derechos reservados.</p>
+                <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 5px;">Diseñado y desarrollado por Emilio Calep</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling para navegación interna
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Actualizar clase activa en navegación
+                    document.querySelectorAll('.header-nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Actualizar navegación activa al hacer scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.header-nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentSection = '#' + section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentSection) {
+                    link.classList.add('active');
+                } else if (currentSection === '' && link.getAttribute('href') === '#inicio') {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Blog personal de Emilio Calep cargado correctamente');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programas Informáticos Libres y Licenciados (PILL). Descubre los mejores programas gratuitos, seguros y confiables.">
+    <meta name="keywords" content="programas gratuitos, software libre, herramientas digitales, programas licenciados">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Programas Informáticos Libres y Licenciados - PILL">
+    <meta property="og:description" content="Descubre los mejores programas informáticos libres y licenciados, seleccionados por EmilioColor®.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+    <meta property="og:image:secure_url" content="https://emiliocolor.com/assets/img/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- WhatsApp Preview (usa Open Graph, pero mejor asegurarlo) -->
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Programas Informáticos Libres y Licenciados - PILL">
+    <meta name="twitter:description" content="Descubre los mejores programas informáticos libres, gratuitos y licenciados.">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/favicon_herramientas.png" type="image/png">
+
+    <title>Programas Informáticos Libres y Licenciados - EmilioColor® PILL</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            background-color: var(--header-hover);
+            transform: translateY(-2px);
+        }
+
+        .header-nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* GALLERY STYLES */
+        .gallery-container {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 140px; /* Tamaño más pequeño para las imágenes */
+            object-fit: contain; /* Para mantener proporciones sin recortar */
+            background-color: var(--light-gray);
+            padding: 15px;
+        }
+        
+        .gallery-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gallery-item-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+        
+        .gallery-item-description {
+            color: var(--primary-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .gallery-item-link {
+            display: block;
+            text-align: center;
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item-link:hover {
+            background: var(--primary-blue-dark);
+            color: white;
+        }
+
+        /* LEGAL NOTICE STYLES */
+        .legal-notice {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 40px 0;
+        }
+        
+        .legal-notice h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .legal-notice p {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .legal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legal-btn:hover {
+            background: var(--primary-blue-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .legal-btn.secondary {
+            background: var(--primary-gray);
+        }
+        
+        .legal-btn.secondary:hover {
+            background: var(--primary-gray-dark);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .legal-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-image {
+                height: 160px; /* Un poco más grande en móviles */
+            }
+            
+            .legal-buttons {
+                flex-direction: column;
+            }
+            
+            .legal-btn {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+            <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="https://emiliocolor.com/" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Página principal</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<div class="container">
+    <h1 class="text-center mb-4" style="color: var(--primary-blue);">
+        Programas Informáticos Libres y Licenciados
+    </h1>
+    <p class="text-center mb-5">
+        Aquí encontrarás los mejores programas informáticos para tus necesidades académicas.
+    </p>
+
+    <div class="gallery-container">
+
+        <!-- ============================= -->
+        <!-- CATEGORÍA: PROGRAMAS GRATUITOS -->
+        <!-- ============================= -->
+        <h2 class="gallery-title">Programas Gratuitos / de Código Abierto</h2>
+        <p>
+            Estos programas pueden usarse libremente sin necesidad de pagar una licencia.
+            Algunos son de código abierto, lo que significa que su código fuente está disponible
+            para modificar y distribuir.
+        </p>
+
+        <div class="gallery-grid">
+
+            <!-- Item PSeInt -->
+            <div class="gallery-item">
+                <img src="https://plataforma.josedomingo.org/pledin/cursos/programacion/img/pseint.png" alt="PSeInt" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-item-title">PSeInt</h3>
+                    <p class="gallery-item-description">
+                        Programa que ayuda a aprender algoritmos y pseudocódigo de manera sencilla.
+                    </p>
+                    <a href="https://pseint.sourceforge.io" target="_blank" class="gallery-item-link">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Item WinRAR -->
+            <div class="gallery-item">
+                <img src="https://i0.wp.com/securityaffairs.com/wp-content/uploads/2021/10/Winrar-Logo.jpg?fit=542%2C500&ssl=1" alt="WinRAR" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-item-title">WinRAR</h3>
+                    <p class="gallery-item-description">
+                        Herramienta de compresión y descompresión de archivos compatible con múltiples formatos.
+                    </p>
+                    <a href="https://winrar.es/descargas" target="_blank" class="gallery-item-link">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Item KiCad -->
+            <div class="gallery-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/KiCad-Logo.svg/640px-KiCad-Logo.svg.png" alt="KiCad" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-item-title">KiCad</h3>
+                    <p class="gallery-item-description">
+                        Software de diseño de PCB de código abierto, completo y profesional.
+                    </p>
+                    <a href="https://kicad.org" target="_blank" class="gallery-item-link">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Item Dev C++ -->
+            <div class="gallery-item">
+                <img src="https://sistemasumma.com/wp-content/uploads/2014/08/dev-c.png" alt="Dev C++" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-item-title">Dev C++</h3>
+                    <p class="gallery-item-description">
+                        Entorno de desarrollo integrado (IDE) gratuito para programar en C/C++.
+                    </p>
+                    <a href="https://www.bloodshed.net/" target="_blank" class="gallery-item-link">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Item Arduino -->
+            <div class="gallery-item">
+                <img src="https://aprendiendoarduino.wordpress.com/wp-content/uploads/2016/03/arduino-genuino.png" alt="Arduino IDE" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-item-title">Arduino</h3>
+                    <p class="gallery-item-description">
+                        IDE oficial para programar placas Arduino, compatible con múltiples microcontroladores.
+                    </p>
+                    <a href="https://www.arduino.cc/en/software" target="_blank" class="gallery-item-link">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Item Visual Studio Code -->
+            <div class="gallery-item">
+                <img src="https://www.vozidea.com/wp-content/uploads/2017/02/visual-studio-code.png" alt="Visual Studio Code" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-item-title">Visual Studio Code</h3>
+                    <p class="gallery-item-description">
+                        Editor de código fuente ligero pero potente con soporte para múltiples lenguajes.
+                    </p>
+                    <a href="https://code.visualstudio.com" target="_blank" class="gallery-item-link">Descargar</a>
+                </div>
+            </div>
+
+        </div> <!-- /gallery-grid -->
+
+        <!-- ============================= -->
+        <!-- CATEGORÍA: PROGRAMAS LICENCIADOS -->
+        <!-- ============================= -->
+<h2 class="gallery-title" style="margin-top: 60px; margin-bottom: 20px;">
+    Programas Licenciados
+</h2>
+        <p>
+            Los programas licenciados requieren una licencia o pago para su uso completo.
+            Suelen estar protegidos por derechos de autor y no pueden modificarse ni distribuirse libremente.
+        </p>
+
+        <div class="gallery-grid">
+
+            <!-- Item PIC C Compiler -->
+            <div class="gallery-item">
+                <img src="https://images.dwncdn.net/images/t_app-icon-l/p/0561aea5-6bb7-4c0f-a7df-9a8221807025/3659168256/2212_4-76172170-iconimg64137.png" alt="PIC C Compiler" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-item-title">PIC C Compiler</h3>
+                    <p class="gallery-item-description">
+                        Compilador para microcontroladores PIC, ideal para proyectos embebidos.
+                    </p>
+                    <a href="https://mega.nz/file/kkFRARhI#5oqDb4hd7BWQ_NQwBEmFX2xA1ueB3nXPAsfXLREWLW0" target="_blank" class="gallery-item-link">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Item Proteus -->
+            <div class="gallery-item">
+                <img src="https://arduinofactory.fr/wp-content/uploads/2021/09/logo_proteus.png" alt="Proteus 8 Professional" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-item-title">Proteus 8 Professional</h3>
+                    <p class="gallery-item-description">
+                        Software de simulación y diseño de circuitos electrónicos, utilizado profesionalmente para pruebas de hardware y firmware.
+                    </p>
+                    <a href="https://drive.google.com/drive/folders/1-jn9GvAFLMlPjEN78Y6Xdm1xU2dIExyt?usp=sharing" target="_blank" class="gallery-item-link">Descargar</a>
+                </div>
+            </div>
+            <!-- Item Cade Simu -->
+<div class="gallery-item">
+  <img src="https://img.utdstc.com/icon/ee1/40a/ee140a89c718dedb6c27207c524d9b709481ef30e0d5d0e5271352c13b3ab5e0:200" alt="Cade Simu" class="gallery-image">
+  <div class="gallery-content">
+    <h3 class="gallery-item-title">Cade Simu</h3>
+    <p class="gallery-item-description">
+      Software de simulación de automatismos eléctricos, ideal para el diseño y prueba de circuitos con relés, contactores y PLCs.
+    </p>
+    <a href="https://drive.google.com/drive/folders/1G-ukTsP7k5o4h9krp_rmYNum6Z8MPsIq?usp=sharing" target="_blank" class="gallery-item-link">
+      Descargar
+    </a>
+  </div>
+</div>
+
+<!-- Item TIA Portal -->
+<div class="gallery-item" data-category="2">
+    <img src="https://www.udep.edu.pe/labsac/wp-content/uploads/sites/85/2023/03/soft12.png" alt="TIA Portal" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">TIA Portal</h3>
+        <p class="gallery-item-description">
+            Software de automatización industrial de Siemens para la programación y simulación de PLCs, HMIs y redes industriales.
+        </p>
+        <a href="https://drive.google.com/drive/folders/1A8HGbXyEW23n6yLo2HBhgseDAwU2RjO0?usp=sharing" target="_blank" class="gallery-item-link">
+            Descargar
+        </a>
+    </div>
+</div>
+
+
+<style>
+.gallery-btn {
+    flex: 1; /* mismo ancho */
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.btn-blue {
+    background-color: #007BFF;
+}
+
+.btn-blue:hover {
+    background-color: #0056b3;
+}
+
+.btn-green {
+    background-color: #28A745;
+}
+
+.btn-green:hover {
+    background-color: #1e7e34;
+}
+</style>
+
+    </div>
+</div>
+
+        </div> <!-- /gallery-grid -->
+
+    </div> <!-- /gallery-container -->
+
+        
+<div class="legal-notice">
+    <h3>Aviso Legal</h3>
+    <p>Contamos con sustentos legales con base en la LFDA en México. Al usar nuestra página y utilizar los programas aquí disponibles, aceptas lo marcado en nuestra página de Legalidad y Garantías.</p>
+    <p><strong>EmilioColor® - Términos legales, garantías y políticas</strong></p>
+    
+    <div class="legal-buttons">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com&su=Notice%20and%20Takedown%20Request%20-%20EmilioColor%C2%AE%20Legalidad%20y%20Garant%C3%ADas%20-%20PILL&body=Estimado%20equipo%20de%20EmilioColor%2C%0D%0A%0D%0ASoy%20titular%20(o%20representante%20autorizado)%20de%20los%20derechos%20de%20autor%20sobre%20el%20siguiente%20contenido%3A%0D%0A%0D%0A-%20Descripci%C3%B3n%20del%20contenido%3A%20%0D%0A-%20URL%20o%20enlace%20donde%20aparece%3A%20%0D%0A%0D%0ASolicito%20formalmente%20su%20retiro%20del%20sitio%20web%20EmilioColor%C2%AE%2C%20de%20conformidad%20con%20la%20Ley%20Federal%20de%20Derechos%20de%20Autor%20(LFDA)%2C%20art%C3%ADculos%20147%20y%20148.%0D%0A%0D%0AConforme%20a%20la%20Ley%20Federal%20de%20Derechos%20de%20Autor%2C%20solicitamos%20que%20el%20retiro%20del%20contenido%20se%20realice%20en%20un%20plazo%20no%20mayor%20a%2024%20horas%20a%20partir%20de%20la%20recepci%C3%B3n%20de%20esta%20notificaci%C3%B3n.%0D%0A%0D%0ADeclaraci%C3%B3n%3A%0D%0A-%20Creo%20de%20buena%20fe%20que%20el%20uso%20del%20material%20identificado%20no%20est%C3%A1%20autorizado%20por%20el%20titular%20de%20los%20derechos%2C%20su%20representante%20legal%20ni%20por%20la%20ley.%0D%0A-%20La%20informaci%C3%B3n%20proporcionada%20es%20exacta%20y%20soy%20el%20titular%20o%20estoy%20autorizado%20para%20actuar%20en%20su%20nombre.%0D%0A%0D%0AAtentamente%2C%0D%0A%5BNombre%20completo%5D%0D%0A%5BEntidad%20o%20empresa%2C%20si%20aplica%5D%0D%0A%5BCorreo%20electr%C3%B3nico%20de%20contacto%5D%0D%0A%5BFecha%5D" 
+           target="_blank" 
+           class="legal-btn">
+            <i class="fas fa-gavel"></i> Notice and Takedown
+        </a>
+
+        <a href="https://docs.google.com/document/d/1AYQ4ligk_OhjXCPM76ERCshpvAxfEs9tVHYT9Me1cH0/edit?usp=sharing" 
+           target="_blank" 
+           class="legal-btn secondary">
+            <i class="fas fa-file-contract"></i> Consultar Aviso Legal
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com&su=Solicitud%20de%20Agregar%20Más%20Programas%20-%20EmilioColor%C2%AE%20PILL&body=Estimado%20equipo%20de%20EmilioColor%2C%0D%0A%0D%0AMe%20gustar%C3%ADa%20solicitar%20la%20inclusi%C3%B3n%20de%20los%20siguientes%20programas%20en%20su%20plataforma%20EmilioColor%C2%AE%3A%0D%0A%0D%0A-%20Programa%201%20(Enlace%20si%20lo%20tienen)%0D%0A-%20Programa%202%20(Enlace%20si%20lo%20tienen)%0D%0A-%20Programa%203%20(Enlace%20si%20lo%20tienen)%0D%0A%0D%0AAgradecer%C3%ADa%20su%20consideraci%C3%B3n%20y%20quedo%20atento%20a%20cualquier%20informaci%C3%B3n%20adicional%20que%20necesiten." 
+   target="_blank" 
+   class="legal-btn">
+    <i class="fas fa-plus-circle"></i> Solicitar Nuevos Programas
+</a>
+
+    </div>
+
+    <p style="font-size: 0.9em; font-style: italic; margin-top: 1rem; color: #555;">
+        Nota: EmilioColor® no tiene control sobre la activación o desactivación de enlaces alojados en servicios externos como Mega, Google Drive o MediaFire. Sin embargo, podemos cesar la difusión o publicación de dichos enlaces en nuestra plataforma cuando sea requerido por motivos legales o a solicitud del titular de los derechos.
+    </p>
+</div>
+
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación</h4>
+                <a href="https://emiliocolor.com#inicio" class="footer-nav-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="https://emiliocolor.com#servicios" class="footer-nav-link" data-section="tecnologia" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-laptop-code"></i> Tecnología
+                </a>
+                <a href="https://emiliocolor.com/#educacion" class="footer-nav-link" data-section="educacion" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-graduation-cap"></i> Educación
+                </a>
+                <a href="https://emiliocolor.com#productos" class="footer-nav-link" data-section="productos" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-pencil-alt"></i> Papelería
+                </a>
+                <a href="https://emiliocolor.com#transportes" class="footer-nav-link" data-section="transportes" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-truck"></i> Transportes
+                </a>
+                <a href="https://emiliocolor.com/#classcloud" class="footer-nav-link" data-section="classcloud" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-cloud"></i> ClassCloud℠
+                </a>
+                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link" data-section="nosotros">
+                    <i class="fas fa-hands-helping"></i> Apoyos
+                </a>
+                <a href="https://emiliocolor.com/#contactos" class="footer-nav-link" data-section="contacto">
+                    <i class="fas fa-envelope"></i> Contacto
+                </a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +52 56 2537 7747</p>
+                <p><i class="fab fa-whatsapp"></i> +52 56 2537 7747</p>
+                <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolormx/" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 EmilioColor® - Programas Informáticos Libres y Licenciados | Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

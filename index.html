@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Mejorado -->
+    <meta name="description" content="EmilioColor® - Soluciones a tu medida en tecnología, educación, transportes y papelería. Innovación y calidad en cada servicio.">
+    <meta name="keywords" content="tecnología, educación, transportes, papelería, soluciones integrales, innovación, desarrollo, proyectos, marcas especializadas">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph Mejorado -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="EmilioColor® - Soluciones a tu medida">
+    <meta property="og:description" content="Empresa multisectorial especializada en tecnología, educación, transportes y papelería. Innovación, calidad y compromiso social.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card Mejorado -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EmilioColor® - Soluciones Integrales">
+    <meta name="twitter:description" content="Empresa multisectorial especializada en tecnología, educación, transportes y papelería.">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+    <meta name="twitter:site" content="@emiliocolor">
+    <meta name="twitter:creator" content="@emiliocolor">
+    
+    <!-- Schema.org para Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "EmilioColor®",
+        "url": "https://emiliocolor.com",
+        "logo": "https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png",
+        "description": "Empresa multisectorial especializada en tecnología, educación, transportes y papelería.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "MX",
+            "addressRegion": "México"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+52-56-5533-3139",
+            "contactType": "customer service",
+            "availableLanguage": ["Spanish", "English"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61558765116854",
+            "https://www.instagram.com/emiliocolorcom/"
+        ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/emiversal/database/334d5dd44377663b5e46c9ae6d77582e33ee7281/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/emiversal/database/334d5dd44377663b5e46c9ae6d77582e33ee7281/favicon.png">
+
+    <title>EmilioColor® - Soluciones a tu medida | Tecnología, Educación, Transportes, Papelería</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* BOTONES FLOTANTES */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-button:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-button.whatsapp {
+            background: var(--whatsapp-gradient);
+        }
+
+        .floating-button.gmail {
+            background: linear-gradient(135deg, #EA4335 0%, #D14836 100%);
+        }
+
+        .floating-button-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .floating-button:hover .floating-button-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 75px;
+        }
+
+        .floating-button-tooltip:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -5px;
+            transform: translateY(-50%);
+            border-width: 5px 0 5px 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
+        }
+
+        /* HEADER STYLES - MEJORADO */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 5px 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            transform: translateY(-2px);
+            text-decoration: underline;
+        }
+
+        .header-nav-link i {
+            font-size: 1rem;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* HERO SECTION MEJORADO */
+        .full-width-section {
+            width: 100%;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            width: 45%;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            color: white;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* SECCIÓN CON ACERCA DE Y NOVEDADES */
+        .about-and-news-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            gap: 30px;
+        }
+        
+        .about-section {
+            flex: 0 0 60%;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 0;
+        }
+
+        .about-section h2 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto 15px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* NUEVA SECCIÓN DE NOVEDADES */
+        .news-section {
+            flex: 0 0 40%;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 0;
+        }
+        
+        .news-title {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .news-carousel-container {
+            position: relative;
+            overflow: hidden;
+            border: 0;
+        }
+        
+        .news-slide {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .news-slide.active {
+            display: block;
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        .news-content h4 {
+            color: var(--primary-blue-dark);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .news-content p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .news-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        .news-link:hover {
+            color: var(--primary-blue-dark);
+            gap: 8px;
+        }
+        
+        .news-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        
+        .news-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .news-dot.active {
+            background-color: var(--primary-blue);
+        }
+        
+        .news-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+            border-radius: 0;
+        }
+        
+        .news-nav-btn:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .news-prev {
+            left: 10px;
+        }
+        
+        .news-next {
+            right: 10px;
+        }
+
+        /* SECCIÓN DE DIVISIONES CON IMÁGENES */
+        .divisions-header {
+            width: 100%;
+            padding: 60px 0 40px;
+            background-color: var(--primary-blue-dark);
+            color: white;
+            text-align: center;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .divisions-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .divisions-title span {
+            display: block;
+            line-height: 1.2;
+        }
+
+        .divisions-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .divisions-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            top: -20px;
+        }
+
+        .division-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 0;
+            margin: 0;
+        }
+
+        .division-card:hover {
+            transform: translateY(-10px);
+            z-index: 10;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .division-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .division-content {
+            padding: 25px;
+            background-color: white;
+        }
+
+        .division-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-blue-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .division-description {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text-dark);
+        }
+
+        /* CARRUSEL DE VERIFICACIÓN */
+        .verification-section {
+            background-color: #f1f1f1;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            border: 0;
+        }
+
+        .verification-title {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .carousel-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 0;
+        }
+
+        .carousel-slide {
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .verification-link {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+            border: 0;
+            font-size: 1.1rem;
+        }
+
+        .verification-link:hover {
+            background-color: var(--primary-blue-dark);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-dot.active {
+            background-color: var(--primary-blue);
+        }
+
+        /* NUEVA SECCIÓN: APOYOS SOCIALES */
+        .social-support-section {
+            width: 100%;
+            background-color: white;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            border: 0;
+        }
+
+        .social-support-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .social-support-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .social-support-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .social-support-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .social-support-title {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .social-support-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .social-support-link {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 0;
+            font-size: 1.1rem;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        .social-support-link:hover {
+            background-color: var(--primary-blue-dark);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* NUEVA SECCIÓN: NUESTRAS MARCAS */
+        .our-brands-section {
+            width: 100%;
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            border: 0;
+        }
+
+        .our-brands-title {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .brands-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .brand-card {
+            background-color: white;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 0;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .brand-logo {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background-color: white;
+        }
+
+        .brand-logo img {
+            max-width: 100%;
+            max-height: 140px;
+            object-fit: contain;
+        }
+
+        .brand-content {
+            padding: 25px;
+            background-color: white;
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            color: var(--primary-blue-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .brand-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        /* CONTENIDO FINAL CON TEXTO Y VIDEO */
+        .content-row {
+            display: flex;
+            margin-bottom: 40px;
+            gap: 40px;
+            border: 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+
+        .text-content {
+            flex: 0 0 60%;
+            max-width: 60%;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 0;
+        }
+
+        .video-content {
+            flex: 0 0 40%;
+            max-width: 40%;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 0;
+        }
+
+        .text-content h3,
+        .video-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border: 0;
+            margin-bottom: 20px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .stats {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .views {
+            color: var(--primary-gray-light);
+            font-size: 0.9rem;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* NUEVA SECCIÓN: PROYECTOS */
+        .big-projects-section {
+            width: 100%;
+            background-color: var(--primary-blue-dark);
+            color: white;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .big-projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .big-projects-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .big-projects-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        .big-projects-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .big-projects-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: white;
+            color: var(--primary-blue-dark);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: 0;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .big-projects-button:hover {
+            background-color: var(--primary-blue-light);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* SECCIÓN DE CONTACTO SIMPLIFICADA */
+        .contact-simple-section {
+            width: 100%;
+            background-color: white;
+            padding: 60px 20px 30px;
+            margin-bottom: 40px;
+            border: 0;
+        }
+
+        .contact-simple-title {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .contact-simple-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* CONTACTO EN TRES COLUMNAS */
+        .contact-three-columns {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-method-three {
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+            padding: 30px;
+            background-color: #f8f9fa;
+            transition: all 0.3s;
+        }
+
+        .contact-method-three:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon-three {
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-method-title-three {
+            font-size: 1.5rem;
+            color: var(--primary-blue-dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .contact-number-three {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .contact-email-three {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .contact-schedule-three {
+            font-size: 0.9rem;
+            color: var(--primary-gray-light);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .contact-button-three {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 0;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contact-button-three:hover {
+            background-color: var(--primary-blue-dark);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .whatsapp-button-three {
+            background-color: #25D366;
+        }
+
+        .whatsapp-button-three:hover {
+            background-color: #128C7E;
+        }
+
+/* LÍNEA DE DENUNCIAS – CARRUSEL (CORREGIDO) */
+.complaints-line-section {
+    background-color: #f1f1f1;
+    padding: 40px 20px;
+    margin-top: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.complaints-title {
+    font-size: 1.8rem;
+    color: #d9534f;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.complaints-carousel {
+    position: relative;
+    height: 80px;
+    overflow: hidden;
+}
+
+.complaints-slide {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #d9534f;
+    opacity: 0;
+    line-height: 1.3;
+    transition: opacity 1s ease;
+}
+
+.complaints-slide.active {
+    opacity: 1;
+}
+
+.complaints-slide span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+        /* REDES SOCIALES ABAJO */
+        .social-bottom-section {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+        }
+
+        .social-media-title-bottom {
+            font-size: 1.5rem;
+            color: var(--primary-blue-dark);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .social-media-icons-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .social-media-icon-bottom {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-media-icon-bottom:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-media-icon-bottom.facebook {
+            background-color: #1877F2;
+        }
+
+        .social-media-icon-bottom.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+
+        /* FOOTER STYLES - MEJORADO */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* ANIMACIONES */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 1200px) {
+            .divisions-container {
+                max-width: 100%;
+            }
+            
+            .division-card {
+                min-width: 250px;
+            }
+            
+            .brands-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-content {
+                width: 60%;
+                right: 5%;
+                padding: 30px;
+            }
+            
+            .about-and-news-container {
+                flex-direction: column;
+            }
+            
+            .about-section,
+            .news-section {
+                flex: 0 0 100%;
+            }
+            
+            .divisions-container {
+                flex-wrap: wrap;
+            }
+            
+            .division-card {
+                flex: 0 0 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+                margin-bottom: 20px;
+            }
+            
+            .social-support-container {
+                flex-direction: column;
+            }
+            
+            .content-row {
+                flex-direction: column;
+            }
+            
+            .text-content,
+            .video-content {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .contact-three-columns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-method-three {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 140px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+            
+            .header-nav-link span {
+                display: inline;
+            }
+            
+            .header-nav-link i {
+                font-size: 0.9rem;
+            }
+            
+            .hero-banner {
+                height: 500px;
+            }
+            
+            .hero-content {
+                width: 90%;
+                right: 5%;
+                left: 5%;
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.85);
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .about-section,
+            .news-section {
+                padding: 20px;
+            }
+            
+            .news-title {
+                font-size: 1.5rem;
+            }
+            
+            .contact-simple-title {
+                font-size: 2rem;
+            }
+            
+            .big-projects-title {
+                font-size: 2rem;
+            }
+            
+            .divisions-title {
+                font-size: 2rem;
+            }
+            
+            .division-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            .division-name {
+                font-size: 1.5rem;
+            }
+            
+            .verification-title {
+                font-size: 1.5rem;
+            }
+            
+            .social-support-title {
+                font-size: 1.8rem;
+            }
+            
+            .our-brands-title {
+                font-size: 2rem;
+            }
+            
+            .text-content,
+            .video-content {
+                padding: 20px;
+            }
+            
+            .text-content h3,
+            .video-content h3 {
+                font-size: 1.5rem;
+            }
+            
+            .brands-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-number-three {
+                font-size: 1.2rem;
+            }
+            
+            .contact-email-three {
+                font-size: 1.1rem;
+            }
+            
+            .complaints-slide {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 160px;
+            }
+            
+            .header-nav {
+                gap: 3px;
+            }
+            
+            .header-nav-link {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+            
+            .hero-banner {
+                height: 450px;
+            }
+            
+            .hero-content {
+                width: 95%;
+                right: 2.5%;
+                left: 2.5%;
+                padding: 15px;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.7rem;
+            }
+            
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+            
+            .divisions-title {
+                font-size: 1.5rem;
+            }
+            
+            .divisions-subtitle {
+                font-size: 1rem;
+            }
+            
+            .social-support-link {
+                display: block;
+                margin-right: 0;
+                text-align: center;
+            }
+            
+            .contact-simple-title {
+                font-size: 1.8rem;
+            }
+            
+            .big-projects-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-button-three {
+                display: block;
+                text-align: center;
+            }
+            
+            .contact-number-three {
+                font-size: 1.1rem;
+            }
+            
+            .contact-email-three {
+                font-size: 1rem;
+            }
+            
+            .floating-buttons {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .floating-button {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+            
+            .floating-button-tooltip {
+                display: none;
+            }
+            
+            .complaints-title {
+                font-size: 1.2rem;
+            }
+            
+            .complaints-slide {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Estilos para eliminar bordes redondeados */
+        .hero-banner, 
+        .hero-content,
+        .about-section,
+        .news-section,
+        .divisions-header,
+        .division-card,
+        .division-image,
+        .verification-section,
+        .carousel-container,
+        .verification-link,
+        .social-support-section,
+        .social-support-image,
+        .social-support-link,
+        .contact-form,
+        .form-control,
+        .submit-btn,
+        .our-brands-section,
+        .brand-card,
+        .brand-logo,
+        .text-content,
+        .video-content,
+        .video-wrapper,
+        .contact-simple-section,
+        .contact-button-three,
+        .footer-container {
+            border-radius: 0 !important;
+        }
+    </style>
+</head>
+<body>
+<!-- BOTONES FLOTANTES -->
+<div class="floating-buttons">
+    <a href="https://wa.me/525655333139?text=Hola%20Estoy%20interesado%20en%20sus%20servicios" class="floating-button whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="floating-button-tooltip">Escríbenos por WhatsApp</span>
+    </a>
+    <a href="mailto:emiliocolormexico@gmail.com" class="floating-button gmail">
+        <i class="fas fa-envelope"></i>
+        <span class="floating-button-tooltip">Envíanos un correo</span>
+    </a>
+</div>
+
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+            <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="#inicio" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#novedades" class="header-nav-link">
+                <i class="fas fa-newspaper"></i>
+                <span>Novedades</span>
+            </a>
+            <a href="#divisiones" class="header-nav-link">
+                <i class="fas fa-sitemap"></i>
+                <span>Divisiones</span>
+            </a>
+            <a href="#verification" class="header-nav-link">
+                <i class="fas fa-info-circle"></i>
+                <span>Info. Adicional</span>
+            </a>
+            <a href="#apoyos" class="header-nav-link">
+                <i class="fas fa-hands-helping"></i>
+                <span>Apoyos Sociales</span>
+            </a>
+            <a href="#proyectos" class="header-nav-link">
+                <i class="fas fa-lightbulb"></i>
+                <span>Proyectos</span>
+            </a>
+            <a href="#marcas" class="header-nav-link">
+                <i class="fas fa-tags"></i>
+                <span>Nuestras Marcas</span>
+            </a>
+            <a href="#contacto" class="header-nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contacto</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+    <!-- Banner principal con imagen a todo ancho y contenido a la derecha -->
+    <section class="full-width-section" id="inicio">
+        <div class="hero-banner">
+            <img src="img/river-5752716.jpg" alt="EmilioColor Soluciones Integrales" class="hero-image">
+            <div class="hero-content">
+                      <h2>Acerca de EmilioColor®</h2>
+            <p>EmilioColor® es una empresa multisectorial conformada por diversas marcas especializadas en áreas como transportes, tecnología, educación y papelería, integrando soluciones innovadoras que se adaptan a las necesidades de cada sector.</p>
+Nuestro modelo de negocio está orientado al consumidor, permitiéndonos ofrecer mayor eficiencia, mejores precios y una experiencia de compra optimizada.            </div>
+        </div>
+    </section>
+    
+    <!-- SECCIÓN CON ACERCA DE Y NOVEDADES -->
+    <div class="about-and-news-container" id="novedades">
+        <!-- Sección acerca de nuestro grupo comercial -->
+<section class="about-section">
+    <h2>Nuestro Propósito</h2>
+    <p>Existimos para crear valor sostenible, impulsando el desarrollo social y económico en las comunidades donde operamos a través de soluciones innovadoras y alianzas estratégicas.</p>
+
+    <h2>Nuestra Misión</h2>
+    <p>Hoy, como equipo, impulsamos el desarrollo social y económico mediante soluciones multisectoriales innovadoras, priorizando alianzas estratégicas que generen valor tangible.</p>
+
+    <h2>Nuestra Visión</h2>
+    <p>A largo plazo, aspiramos a posicionarnos como un referente internacional en integración empresarial, reconocidos por nuestra capacidad de transformar industrias mediante enfoques interdisciplinarios y sostenibles.</p>
+</section>
+
+        <!-- NUEVA SECCIÓN DE NOVEDADES -->
+        <section class="news-section">
+            <h2 class="news-title">Novedades</h2>
+            <div class="news-carousel-container">
+                <button class="news-nav-btn news-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="news-slide active">
+                    <img src="img_novedades/christmas-5861895_960_720.jpg" alt="Buzón Navideño" class="news-image">
+                    <div class="news-content">
+                        <h4>Buzón Navideño</h4>
+                        <p>Esta Navidad queremos regalarte 1 curso, el que tú elijas, con certificación totalmente gratuita. Participa y aprovecha esta oportunidad especial.</p>
+                        <a href="https://forms.gle/op1HfwWFB4KxsNQC8" class="news-link">Participar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-slide">
+                    <img src="img_novedades/NOVEDAD_1.png" alt="Plataforma Educativa" class="news-image">
+                    <div class="news-content">
+                        <h4>Nueva Plataforma de Asesorías del CECyT 9</h4>
+                        <p>Consulta de forma rápida y organizada los horarios de asesorías del área básica, humanística y tecnológica.</p>
+                        <a href="https://cecyt9.asesorias.emiliocolor.com/" class="news-link" target="_blank">Visitar Plataforma <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="news-slide">
+                    <img src="img_novedades/tipos_de_violencia_psicologica_4926_2_600.jpg" alt="Programa social" class="news-image">
+                    <div class="news-content">
+                        <h4>Manual para el Reconocimiento de Violencia</h4>
+                        <p>Emilio Calep presenta un manual de 113 páginas para reconocer y manejar situaciones de violencia.</p>
+                        <a href="https://emiliocolor.com/manual_01" class="news-link" target="_blank">Ver Manual <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <button class="news-nav-btn news-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="news-dots">
+                <div class="news-dot active" data-slide="0"></div>
+                <div class="news-dot" data-slide="1"></div>
+                <div class="news-dot" data-slide="2"></div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Sección de divisiones con imágenes -->
+    <section class="divisions-header" id="servicios">
+        <div class="divisions-title">
+            <span>Conoce</span>
+            <span>Nuestros</span>
+            <span>Servicios</span>
+        </div>
+        <div class="divisions-subtitle">Cada servicio especializado en su sector, trabajando juntos para crear valor</div>
+    </section>
+    
+    <div class="divisions-container" id="divisiones">
+        <div class="division-card">
+            <img src="img_divisiones/pluma_fuente.webp" alt="Papelería" class="division-image">
+            <div class="division-content">
+                <div class="division-name">PAPELERÍA</div>
+                <div class="division-description">Desarrollamos productos y soluciones útiles para entornos escolares y de oficina, incluyendo la línea INKSPIRE™ de hojas cuadriculadas en colores vibrantes.</div>
+            </div>
+        </div>
+        
+        <div class="division-card">
+            <img src="img_divisiones/F-350.jpg" alt="Transportes" class="division-image">
+            <div class="division-content">
+                <div class="division-name">TRANSPORTES</div>
+                <div class="division-description">AM-SHEV™ implementa soluciones logísticas en colaboración con especialistas del sector, ofreciendo servicios de transporte confiables y eficientes.</div>
+            </div>
+        </div>
+        
+        <div class="division-card">
+            <img src="img_divisiones/618W9FAxk6L._AC_UF894,1000_QL80_.jpg" alt="Tecnología" class="division-image">
+            <div class="division-content">
+                <div class="division-name">TECNOLOGÍA</div>
+                <div class="division-description">Diseñamos herramientas digitales con enfoque en usabilidad y seguridad, incluyendo desarrollo web, programas informáticos y soluciones tecnológicas personalizadas.</div>
+            </div>
+        </div>
+        
+        <div class="division-card">
+            <img src="img_divisiones/books-composition-3d-render-free-png.png" alt="Educación" class="division-image">
+            <div class="division-content">
+                <div class="division-name">EDUCACIÓN</div>
+                <div class="division-description">ClassCloud℠ y otras plataformas educativas que ofrecen recursos, cursos y herramientas para fortalecer el aprendizaje en diversos niveles educativos.</div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Carrusel de verificación de credenciales -->
+<section class="verification-section" id="verification">
+    <h3 class="verification-title">Información Adicional</h3>
+
+    <div class="carousel-container">
+
+        <div class="carousel-slide active">
+            <p>Para verificar la autenticidad de nuestras credenciales y certificaciones, visita nuestro portal oficial:</p>
+            <a href="https://emiliocolor.com/validador" class="verification-link" target="_blank">
+                <i class="fas fa-shield-alt"></i> Verificador de Identidad Público
+            </a>
+        </div>
+
+        <div class="carousel-slide">
+            <p>Consulta nuestros términos y condiciones en nuestra documentación oficial:</p>
+            <a href="https://emiliocolor.com/legalidad_y_garantias.html" class="verification-link" target="_blank">
+                <i class="fas fa-file-signature"></i> Legalidad
+            </a>
+        </div>
+
+        <div class="carousel-slide">
+            <p>Accede a nuestro programa de garantías:</p>
+            <a href="https://emiliocolor.com/herramientas/pill" class="verification-link" target="_blank">
+                <i class="fas fa-tools"></i> Garantía
+            </a>
+        </div>
+
+<div class="carousel-slide">
+    <p>Atención y servicio postventa EmilioColor®</p>
+    <a href="https://emiliocolor.com/#info" class="verification-link" target="_blank">
+        <i class="fas fa-info-circle"></i> Envíanos tus quejas o sugerencias
+    </a>
+</div>
+
+
+    </div>
+
+    <div class="carousel-dots">
+        <div class="carousel-dot active" data-slide="0"></div>
+        <div class="carousel-dot" data-slide="1"></div>
+        <div class="carousel-dot" data-slide="2"></div>
+        <div class="carousel-dot" data-slide="3"></div>
+    </div>
+</section>
+
+
+    
+    <!-- Sección final con texto y video -->
+    <section class="content-row">
+    <div class="text-content">
+        <h3>CREANDO CONSTANTEMENTE SOLUCIONES PARA LA COMUNIDAD.</h3>
+        <div class="views">Productos y servicios adaptados a tus necesidades</div>
+        <div class="stats">4 MARCAS ESPECIALIZADAS</div>
+        <p>Nuestra trayectoria nos ha permitido desarrollar soluciones innovadoras para distintos sectores, generando valor sostenible para nuestros clientes.</p>
+        <p>Operamos en México con colaboradores comprometidos con el liderazgo y la excelencia.</p>
+
+        <h4>Nuestros Principios</h4>
+        <div class="principles-grid">
+            <div class="principle-box">
+                <i class="fas fa-users"></i>
+                <h5>Trabajo en Equipo</h5>
+                <p>Sinergia interdisciplinaria</p>
+            </div>
+
+            <div class="principle-box">
+                <i class="fas fa-lightbulb"></i>
+                <h5>Innovación</h5>
+                <p>Soluciones creativas</p>
+            </div>
+
+            <div class="principle-box">
+                <i class="fas fa-chart-line"></i>
+                <h5>Crecimiento</h5>
+                <p>Adaptación constante</p>
+            </div>
+
+            <div class="principle-box">
+                <i class="fas fa-layer-group"></i>
+                <h5>Multisectorialidad</h5>
+                <p>Integración de industrias</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-content">
+        <h3>Nuestras Marcas</h3>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video corporativo EmilioColor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p>Conoce más sobre nuestras operaciones y compromiso con la innovación a través de nuestro video corporativo.</p>
+    </div>
+</section>
+
+<style>
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.principle-box {
+    background: #f5f5f5;
+    padding: 20px 12px;
+    text-align: center;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.principle-box i {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.principle-box h5 {
+    margin: 6px 0 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.principle-box p {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+.principle-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+</style>
+    
+    <!-- Nueva Sección: Apoyos Sociales -->
+    <section class="social-support-section" id="apoyos">
+        <div class="social-support-container">
+            <div class="social-support-content">
+                <h2 class="social-support-title"> Proyectos y Colaboraciones de Impacto Social</h2>
+                <p class="social-support-text">En EmilioColor®, creemos firmemente en devolver a la comunidad parte de lo que recibimos. Nuestros programas de responsabilidad social están diseñados para generar un impacto positivo y duradero en las comunidades donde operamos.</p>
+                <p class="social-support-text">Implementamos programas de educación, desarrollo comunitario y herramientas de apoyo que benefician a miles de personas cada año.</p>
+<a href="https://emiliocolor.com/#apoyos" class="social-support-link" target="_blank">
+    <i class="fas fa-graduation-cap"></i> Plataformas Educativas y Académicas
+</a>
+
+<a href="https://emiliocolor.com/herramientas/pill" class="social-support-link" target="_blank">
+    <i class="fas fa-tools"></i> Herramientas a la Comunidad
+</a>
+
+<a href="https://emiliocolor.com/herramientas/pill" class="social-support-link" target="_blank">
+    <i class="fas fa-globe"></i> Micrositios
+</a>
+
+            </div>
+            <div class="social-support-image">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Apoyos Sociales EmilioColor">
+            </div>
+        </div>
+    </section>
+    
+    <!-- NUEVA SECCIÓN: PROYECTOS -->
+    <section class="big-projects-section" id="proyectos">
+        <div class="big-projects-container">
+            <h2 class="big-projects-title">¿Tienes un Proyecto?</h2>
+            <div class="big-projects-subtitle">Te apoyamos para materializarlo</div>
+            <div class="big-projects-content">
+                <p>Si tienes una idea innovadora, un proyecto ambicioso o una visión que puede transformar tu sector, en EmilioColor® estamos listos para colaborar contigo.</p>
+                <p>Con nuestra experiencia multisectorial y equipo multidisciplinario, podemos ayudarte a desarrollar, planificar y ejecutar proyectos de gran escala en áreas de tecnología, educación, transporte o desarrollo comunitario.</p>
+                <p>Ofrecemos asesoría especializada, recursos técnicos y apoyo logístico para convertir tus ideas en realidades exitosas.</p>
+            </div>
+            <a href="#contacto" class="big-projects-button">
+                <i class="fas fa-lightbulb"></i> Cuéntanos tu Proyecto
+            </a>
+        </div>
+    </section>
+       <!-- Nueva Sección: Nuestras Marcas -->
+<section class="our-brands-section" id="marcas">
+    <h2 class="our-brands-title">Nuestras Marcas</h2>
+    <div class="brands-container">
+
+        <a href="#inicio" class="brand-link">
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="img_marcas/EC_BLANCO.png" alt="EmilioColor">
+                </div>
+                <div class="brand-content">
+                    <h3 class="brand-name">EMILIOCOLOR®</h3>
+                    <p class="brand-description">
+                        Marca matriz que consolida y gestiona un ecosistema de submarcas especializadas en sectores estratégicos como tecnología, educación, papelería y transporte, garantizando coherencia, calidad e innovación.
+                    </p>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://inkspire.emiliocolor.com" class="brand-link">
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="img_marcas/INKSPIRE.png" alt="Inkspire">
+                </div>
+                <div class="brand-content">
+                    <h3 class="brand-name">Inkspire™</h3>
+                    <p class="brand-description">
+                        Marca enfocada en el diseño, desarrollo y comercialización de productos funcionales y de calidad para entornos escolares, académicos y de oficina.
+                    </p>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://amshev.emiliocolor.com" class="brand-link">
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="img_marcas/AMSHEV1 - copia.png" alt="AM-SHEV">
+                </div>
+                <div class="brand-content">
+                    <h3 class="brand-name">AM-SHEV™</h3>
+                    <p class="brand-description">
+                        Marca especializada en la oferta de vehículos de trabajo confiables y eficientes, cuidadosamente seleccionados y sometidos a rigurosos procesos de revisión mecánica para asegurar desempeño, seguridad y durabilidad.
+                    </p>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://classcloud.emiliocolor.com" class="brand-link">
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="img_marcas/CLASSCLOUD.png" alt="ClassCloud">
+                </div>
+                <div class="brand-content">
+                    <h3 class="brand-name">CLASSCLOUD℠</h3>
+                    <p class="brand-description">
+                        Marca dedicada al desarrollo de plataformas educativas digitales y soluciones de aprendizaje que integran recursos, cursos y herramientas orientadas a la formación académica y profesional.
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <style>
+        .brand-link {
+    text-decoration: none;
+}
+
+    </style>
+</section>
+    <!-- SECCIÓN DE CONTACTO SIMPLIFICADA -->
+    <section class="contact-simple-section" id="contacto">
+        <h2 class="contact-simple-title">Contáctanos</h2>
+        <div class="contact-simple-container">
+            
+            <!-- TRES COLUMNAS: WhatsApp, Teléfono y Gmail -->
+            <div class="contact-three-columns">
+                <div class="contact-method-three">
+                    <div class="contact-icon-three">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="contact-method-title-three">WhatsApp</h3>
+                    <span class="contact-number-three">+52 56 5533 3139</span>
+                    <div class="contact-schedule-three">Lun-Vie, 9am - 9pm</div>
+                    <a href="https://wa.me/525655333139?text=Hola%20Estoy%20interesado%20en%20sus%20servicios" class="contact-button-three whatsapp-button-three" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+                    </a>
+                </div>
+                
+                <div class="contact-method-three">
+                    <div class="contact-icon-three">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="contact-method-title-three">Teléfono</h3>
+                    <span class="contact-number-three">+52 56 5533 3139</span>
+                    <div class="contact-schedule-three">Lun-Vie, 9am - 1pm</div>
+                    <a href="tel:+525655333139" class="contact-button-three">
+                        <i class="fas fa-phone"></i> Llamar ahora
+                    </a>
+                </div>
+                
+                <div class="contact-method-three">
+                    <div class="contact-icon-three">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-method-title-three">Correo Electrónico</h3>
+                    <span class="contact-email-three">emiliocolormexico@gmail.com</span>
+                    <div class="contact-schedule-three">Respuesta las 24 horas</div>
+                    <a href="mailto:emiliocolormexico@gmail.com" class="contact-button-three">
+                        <i class="fas fa-envelope"></i> Enviar correo
+                    </a>
+                </div>
+            </div>
+            
+            <!-- REDES SOCIALES ABAJO -->
+            <div class="social-bottom-section">
+                <h4 class="social-media-title-bottom">Síguenos en nuestras redes sociales</h4>
+                <div class="social-media-icons-bottom">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-media-icon-bottom facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolorcom/" class="social-media-icon-bottom instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación Rápida</h4>
+                <a href="#inicio" class="footer-nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="#novedades" class="footer-nav-link">
+                    <i class="fas fa-newspaper"></i> Novedades
+                </a>
+                <a href="#divisiones" class="footer-nav-link">
+                    <i class="fas fa-sitemap"></i> Divisiones
+                </a>
+                <a href="#verification" class="footer-nav-link">
+                    <i class="fas fa-info-circle"></i> Info. Adicional
+                </a>
+                <a href="#apoyos" class="footer-nav-link">
+                    <i class="fas fa-hands-helping"></i> Apoyos Sociales
+                </a>
+                <a href="#proyectos" class="footer-nav-link">
+                    <i class="fas fa-lightbulb"></i> Proyectos
+                </a>
+                <a href="#marcas" class="footer-nav-link">
+                    <i class="fas fa-tags"></i> Nuestras Marcas
+                </a>
+                <a href="#contacto" class="footer-nav-link">
+                    <i class="fas fa-envelope"></i> Contacto
+                </a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto Directo</h4>
+                <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +52 56 5533 3139</p>
+                <p><i class="fab fa-whatsapp"></i> +52 56 5533 3139</p>
+                <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+                <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 AM - 9:00 PM</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link" aria-label="Facebook EmilioColor">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolorcom/" class="social-link" aria-label="Instagram EmilioColor">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/525655333139" class="social-link" aria-label="WhatsApp EmilioColor">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:emiliocolormexico@gmail.com" class="social-link" aria-label="Email EmilioColor">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Conecta con nosotros para las últimas novedades</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2023-2025 EmilioColor® | Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">Tecnología, Educación, Transportes, Papelería - Soluciones a tu medida</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navegación activa
+        const navLinks = document.querySelectorAll('.header-nav-link, .footer-nav-link');
+        
+        function setActiveNavLink() {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section[id], div[id]').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + sectionId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', setActiveNavLink);
+        setActiveNavLink();
+        
+        // Smooth scroll para los enlaces de navegación
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Carrusel de verificación
+        const carouselSlides = document.querySelectorAll('.carousel-slide');
+        const carouselDots = document.querySelectorAll('.carousel-dot');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            // Ocultar todas las diapositivas
+            carouselSlides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Quitar clase active de todos los puntos
+            carouselDots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Mostrar la diapositiva seleccionada
+            carouselSlides[index].classList.add('active');
+            carouselDots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        // Configurar eventos para los puntos del carrusel
+        carouselDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Cambiar automáticamente las diapositivas cada 5 segundos
+        setInterval(() => {
+            let nextSlide = currentSlide + 1;
+            if (nextSlide >= carouselSlides.length) {
+                nextSlide = 0;
+            }
+            showSlide(nextSlide);
+        }, 5000);
+        
+        // CARRUSEL DE NOVEDADES
+        const newsSlides = document.querySelectorAll('.news-slide');
+        const newsDots = document.querySelectorAll('.news-dot');
+        const newsPrevBtn = document.querySelector('.news-prev');
+        const newsNextBtn = document.querySelector('.news-next');
+        let currentNewsSlide = 0;
+        
+        function showNewsSlide(index) {
+            // Validar índice
+            if (index >= newsSlides.length) index = 0;
+            if (index < 0) index = newsSlides.length - 1;
+            
+            // Ocultar todas las diapositivas
+            newsSlides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Quitar clase active de todos los puntos
+            newsDots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Mostrar la diapositiva seleccionada
+            newsSlides[index].classList.add('active');
+            newsDots[index].classList.add('active');
+            currentNewsSlide = index;
+        }
+        
+        // Configurar eventos para los puntos del carrusel de novedades
+        newsDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showNewsSlide(index);
+            });
+        });
+        
+        // Configurar botones de navegación
+        if (newsPrevBtn) {
+            newsPrevBtn.addEventListener('click', () => {
+                showNewsSlide(currentNewsSlide - 1);
+            });
+        }
+        
+        if (newsNextBtn) {
+            newsNextBtn.addEventListener('click', () => {
+                showNewsSlide(currentNewsSlide + 1);
+            });
+        }
+        
+        // Cambiar automáticamente las diapositivas de novedades cada 7 segundos
+        setInterval(() => {
+            showNewsSlide(currentNewsSlide + 1);
+        }, 7000);
+        
+        // Efecto hover en las tarjetas de división
+        const divisionCards = document.querySelectorAll('.division-card');
+        
+        divisionCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Asegurar que solo la tarjeta actual tenga el efecto elevado
+                divisionCards.forEach(c => {
+                    if (c !== card) {
+                        c.style.transform = 'scale(0.98)';
+                        c.style.zIndex = '1';
+                    }
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                // Restaurar todas las tarjetas a su estado normal
+                divisionCards.forEach(c => {
+                    c.style.transform = '';
+                    c.style.zIndex = '';
+                });
+            });
+        });
+        
+        // Efecto hover en las tarjetas de marca
+        const brandCards = document.querySelectorAll('.brand-card');
+        
+        brandCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                brandCards.forEach(c => {
+                    if (c !== card) {
+                        c.style.opacity = '0.8';
+                    }
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                brandCards.forEach(c => {
+                    c.style.opacity = '';
+                });
+            });
+        });
+        
+        // Efecto hover en los botones de contacto
+        const contactButtons = document.querySelectorAll('.contact-button-three');
+        
+        contactButtons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                contactButtons.forEach(b => {
+                    if (b !== button) {
+                        b.style.opacity = '0.8';
+                    }
+                });
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                contactButtons.forEach(b => {
+                    b.style.opacity = '';
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

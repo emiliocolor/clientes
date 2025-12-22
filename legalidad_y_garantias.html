@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EmilioColor® - Legalidad y Garantías">
+    <meta name="keywords" content="legalidad, garantías, términos de uso, privacidad, propiedad intelectual">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Legalidad y Garantías - EmilioColor®">
+    <meta property="og:description" content="Términos legales, garantías y políticas de EmilioColor®">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com/legalidad">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Legalidad y Garantías - EmilioColor®">
+    <meta name="twitter:description" content="Términos legales, garantías y políticas de EmilioColor®">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://emiliocolor.com/img/favicon_lyg.png" type="image/png">
+
+    <title>Legalidad y Garantías - EmilioColor®</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com/legalidad_y_garantias">
+
+    <style>
+        :root {
+            --primary-blue: #962828;
+            --primary-blue-light: #d81d1d;
+            --primary-blue-dark: #500d0d;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            background-color: var(--header-hover);
+            transform: translateY(-2px);
+        }
+
+        .header-nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Legal Page Styles */
+        .legal-container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            border-radius: 0;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .legal-header h1 {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .legal-header p {
+            color: var(--primary-gray);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-section {
+            margin-bottom: 40px;
+        }
+
+        .legal-section h2 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .legal-section h3 {
+            color: var(--primary-gray-dark);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .legal-section p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .legal-section ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .legal-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .legal-card {
+            background: var(--light-gray);
+            border-left: 4px solid var(--primary-blue);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .legal-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .legal-note {
+            background: #fff9e6;
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .legal-warning {
+            background: #ffe6e6;
+            border-left: 4px solid var(--danger-color);
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .legal-warning h4 {
+            color: var(--danger-color);
+            margin-bottom: 10px;
+        }
+
+        .platform-section {
+            background: var(--light-gray);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0;
+        }
+
+        .platform-section h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .platform-section p {
+            margin-bottom: 15px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .legal-container {
+                padding: 20px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+            <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="https://emiliocolor.com/" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Página principal</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="legal-container">
+        <div class="legal-header">
+            <h1>Legalidad y Garantías</h1>
+            <p>EmilioColor® - Términos legales, garantías y políticas</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>Declaración Legal de la Propiedad Intelectual</h2>
+            <p>La presente página web, incluyendo su diseño, código fuente, estructura, funcionalidades y contenido (excepto los logos y marcas registradas), es una obra intelectual creada y desarrollada por Emilio Calep Vargas Yáñez. Esta obra está protegida por la Ley Federal del Derecho de Autor en México.</p>
+            
+            <div class="legal-card">
+                <h4>Transferencia de Derechos</h4>
+                <p>Los derechos de autor de los desarrollos realizados por Emilio Calep Vargas Yáñez son transferidos continuamente a EmilioColor®, según lo establecido en la Ley Federal del Derecho de Autor (LFDA) de los Estados Unidos Mexicanos.</p>
+            </div>
+        </div>
+
+<!-- Términos y Condiciones – Plataformas Digitales Institucionales -->
+<div class="legal-section">
+    <h2>Términos y Condiciones en el Desarrollo de Plataformas Digitales Institucionales sin Fines de Lucro</h2>
+    <p>Plataformas desarrolladas específicamente para el <strong>Instituto Politécnico Nacional</strong> (IPN), en particular para el <strong>CECyT 9 Juan de Dios Bátiz Paredes</strong>, y sin fines de lucro.</p>
+
+    <div class="legal-card">
+        <h4>Propiedad Intelectual</h4>
+        <p>Todas las plataformas digitales desarrolladas para el IPN por <strong>EmilioColor®</strong> son obras intelectuales creadas originalmente por <strong>Emilio Calep Vargas Yáñez</strong>, quien transfiere voluntariamente los derechos de autor y uso a <strong>EmilioColor®</strong>.</p>
+        <p>Dichas plataformas, incluyendo diseño, código fuente, estructura, funcionalidades y contenido (excepto logotipos y marcas registradas), están protegidas por la <strong>Ley Federal del Derecho de Autor</strong> en México.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Uso No Lucrativo</h4>
+        <p>Las plataformas para el IPN solo pueden reproducirse, distribuirse o compartirse con fines <strong>no lucrativos</strong>, respetando:</p>
+        <ul>
+            <li>No modificar, alterar ni mutilar el contenido.</li>
+            <li>Citar explícitamente la fuente, incluyendo nombre de la plataforma y dirección electrónica.</li>
+            <li>Respetar la autoría y derechos de propiedad intelectual de <strong>Emilio Calep Vargas Yáñez</strong> y <strong>EmilioColor®</strong>.</li>
+            <li>Cumplir la normativa del IPN en desarrollo web y vinculación institucional: 
+                <a href="https://www.ipn.mx/vinculaci%C3%B3n/" target="_blank" rel="noopener">https://www.ipn.mx/vinculaci%C3%B3n/</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="legal-card">
+        <h4>Cita de Imágenes</h4>
+        <p>Las imágenes utilizadas en las plataformas para el IPN, incluyendo logotipos institucionales, están protegidas por derechos de autor y se citan como sigue:</p>
+        <ul>
+            <li>Instituto Politécnico Nacional. (s.f.). <em>Logotipo del IPN</em> [Imagen]. Recuperado de 
+                <a href="https://www.ipn.mx" target="_blank" rel="noopener">https://www.ipn.mx</a>
+            </li>
+            <li>Centro de Estudios Científicos y Tecnológicos Número 09 Juan de Dios Bátiz Paredes. (s.f.). <em>Logotipo del CECyT 9</em> [Imagen]. Recuperado de 
+                <a href="https://www.cecyt9.ipn.mx/" target="_blank" rel="noopener">https://www.cecyt9.ipn.mx/</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="legal-card">
+        <h4>Plataformas Digitales Desarrolladas para el IPN</h4>
+
+        <h5>Plataforma de Recursos Académicos (PRA)</h5>
+        <ul>
+            <li>No almacena información de usuarios ni documentos.</li>
+            <li>Facilita únicamente acceso a información alojada en servicios externos por terceros.</li>
+            <li>El acceso a recursos se realiza mediante enlaces a plataformas externas como Google Drive.</li>
+            <li>No se responsabiliza por la veracidad, licitud o vigencia del contenido alojado por terceros.</li>
+            <li>El uso de los recursos es responsabilidad exclusiva del usuario.</li>
+        </ul>
+
+        <h5>Plataforma de Horario de Asesorías (HORAS)</h5>
+        <ul>
+            <li>No almacena datos personales sensibles de los usuarios.</li>
+            <li>La información de horarios es proporcionada por el CECyT 9 y los usuarios responsables.</li>
+            <li>No garantiza la exactitud ni la actualización continua de la información publicada por terceros.</li>
+            <li>Corresponde a los usuarios verificar la vigencia y precisión de los horarios.</li>
+        </ul>
+    </div>
+<div class="legal-card" style="background: #f9f9f9; text-align: center;">
+    <h4>Fechas de las Plataformas</h4>
+    
+    <p><strong>Plataforma de Recursos Académicos (PRA):</strong></p>
+    <p>Inicio del proyecto: 06/10/2025</p>
+    <p>Fin / Última actualización: - - - </p>
+    
+    <p><strong>Plataforma de Horario de Asesorías (HORAS):</strong></p>
+    <p>Fecha del proyecto: 24/03/2025</p>
+    <p>Última actualización: 25/05/2025</p>
+</div>
+
+
+    <div class="legal-card">
+        <h4>Limitación Específica de Responsabilidad</h4>
+        <p><strong>EmilioColor®</strong> y su desarrollador principal, <strong>Emilio Calep Vargas Yáñez</strong>, se deslindan de cualquier responsabilidad legal, civil, administrativa o penal derivada del acceso, uso, reproducción, distribución o modificación de información, materiales o documentos disponibles en estas plataformas, incluyendo aquellos protegidos por derechos de autor conforme a la Ley Federal del Derecho de Autor de México, 2025.</p>
+        <p>Ninguna de estas plataformas almacena información de usuarios ni documentos en sus propios servidores. Todo el material es gestionado y alojado exclusivamente por terceros en servicios externos, que operan bajo sus propias políticas de privacidad y uso. EmilioColor® y Emilio Calep Vargas Yáñez únicamente facilitan el acceso a la información y no asumen responsabilidad sobre su veracidad, legalidad, integridad o vigencia.</p>
+        <p>Los responsables de subir o gestionar los materiales deben cumplir con las disposiciones legales aplicables y son responsables de agregar las citas correspondientes y respetar los derechos de autor. EmilioColor® y Emilio Calep Vargas Yáñez no asumen ninguna responsabilidad sobre la correcta citación, uso o gestión de los documentos proporcionados.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Disposiciones Finales</h4>
+        <p>La aceptación de estos términos se entiende por el uso de las plataformas y recursos desarrollados por <strong>EmilioColor®</strong>. Cualquier duda, solicitud de autorización de uso o reclamación relacionada con derechos de autor deberá dirigirse por escrito al titular: <strong>Emilio Calep Vargas Yáñez</strong>, o al correo de <strong>EmilioColor®</strong> disponible en la sección de contacto de su página oficial.</p>
+        <p><em>Última actualización: 7 de octubre de 2025.</em></p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Derechos Reservados</h4>
+        <p>Copyright © 2025. Quedan reservados todos los derechos de autor sobre las página web antes mencionadas. Cualquier uso no autorizado de este contenido podría constituir una infracción a los derechos de autor.</p>
+        <p>Todas las disposiciones contenidas en este documento están sustentadas en la Ley Federal del Derecho de Autor y demás legislación aplicable de los Estados Unidos Mexicanos.</p>
+    </div>
+    
+</div>
+
+<!-- Garantías Sobre Productos Físicos -->
+<div class="legal-section">
+    <h2>Garantías Sobre Productos Físicos</h2>
+    <p>Específicamente, los productos pertenecientes a la sección de papelería. Con base en lo anterior, EmilioColor® ofrece las siguientes garantías:</p>
+
+    <div class="legal-card">
+        <h4>Garantía de Calidad</h4>
+        <p>EmilioColor® garantiza que sus productos de papelería, como estilógrafos, blocks de notas, hojas personalizadas y etiquetas, cumplen con estándares de calidad que aseguran su funcionalidad y durabilidad bajo condiciones normales de uso. Las condiciones normales de uso deben consultarse en la página de productos de papelería de EmilioColor® antes de realizar la compra.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Garantía de Personalización</h4>
+        <p>Los productos personalizables, como hojas y etiquetas, se fabricarán de acuerdo con las especificaciones acordadas con el cliente. Cualquier error atribuible a EmilioColor® en la personalización será corregido sin costo adicional, siempre que el producto defectuoso sea conservado y entregado a EmilioColor® para su revisión.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Garantía de Entrega</h4>
+        <p>EmilioColor® se compromete a entregar los productos en el plazo acordado, siempre que las condiciones logísticas y externas lo permitan. En caso de retrasos atribuibles a EmilioColor®, se notificará oportunamente al cliente.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Limitaciones de Garantía</h4>
+        <p>Las garantías sobre productos físicos no cubren:</p>
+        <ul>
+            <li>Daños causados por uso indebido, manipulación inadecuada o modificaciones no autorizadas.</li>
+            <li>Productos que no permitan verificar la integridad de su fabricación original. Esto incluye aquellos que hayan sido dañados o alterados de forma que impida constatar que se trata de un producto auténtico y completo. Para que la garantía sea válida, incluso en productos abiertos o parcialmente usados, es obligatorio conservar al menos el logotipo de EmilioColor®, ya sea en su versión de 2023 o en la versión actualizada de 2025, en una ubicación visible del producto, de manera que se pueda constatar su autenticidad y origen.</li>
+            <li>Problemas derivados de transporte externo una vez entregado el producto al cliente.</li>
+        </ul>
+    </div>
+
+    <div class="legal-card">
+        <h4>Procedimiento para Hacer Válida la Garantía</h4>
+        <p>Para hacer efectiva la garantía de productos físicos, el cliente deberá enviar un correo a EmilioColor® con la siguiente información:</p>
+        <ul>
+            <li><strong>Asunto:</strong> Garantía de Productos Físicos</li>
+            <li><strong>Sección del Producto:</strong> Indicar a qué sección pertenece el producto (por ejemplo, papelería)</li>
+            <li><strong>Producto(s) Afectado(s):</strong> Nombre y descripción del producto</li>
+            <li><strong>Detalle de la Garantía:</strong> Indicar si la garantía aplica para una o varias unidades adquiridas</li>
+            <li><strong>Condiciones de Conservación:</strong> Si el producto es nuevo y está sellado, no hay inconvenientes. Si está abierto o usado, debe conservarse al menos el logotipo de EmilioColor® (versión 2023 o la actualizada 2025) para que la garantía sea válida</li>
+        </ul>
+        <p>EmilioColor® revisará la información enviada y coordinará la solución correspondiente según corresponda.</p>
+    </div>
+</div>
+<!-- Términos y Condiciones Generales para Proyectos Colaborativos de EmilioColor® -->
+<div class="legal-section">
+    <h2>Términos y Condiciones de Distribución, Licencia y Ganancias para Proyectos Colaborativos de EmilioColor®</h2>
+
+    <p>Para efectos de este acuerdo, se establecen las siguientes definiciones:</p>
+    <ul>
+        <li><strong>Proyecto:</strong> Cualquier desarrollo colaborativo con EmilioColor®, incluyendo todos sus componentes físicos, digitales, software, manuales, documentación, marca, nombres relacionados, diseños, derechos de autor, patentes y demás elementos vinculados.</li>
+        <li><strong>Titular:</strong> EmilioColor®, representado por <strong>Emilio Calep Vargas Yáñez</strong> o su sucesor legal debidamente autorizado.</li>
+        <li><strong>Distribuidor, Integrante de Equipo o Licenciatario Comercial:</strong> Cualquier persona física o moral que haya colaborado en el desarrollo del Proyecto y que acepte estos términos, o que mediante contrato de licencia firmado con el Titular, quede autorizada para distribuir, comercializar o revender el Proyecto.</li>
+        <li><strong>Ingresos o Ganancias:</strong> Todos los montos, utilidades, comisiones, regalías y contraprestaciones de cualquier tipo derivadas de la comercialización o explotación del Proyecto.</li>
+    </ul>
+
+    <div class="legal-card">
+        <h4>Licencia y Distribución</h4>
+        <p>El Titular concede a los Distribuidores una licencia limitada, no exclusiva y revocable para distribuir el Proyecto en la forma autorizada, siempre que acepten y cumplan estos términos. El Titular podrá revocar la licencia y retomar la explotación directa del Proyecto en cualquier momento, notificando previamente a los Distribuidores. Los Distribuidores no podrán sublicenciar, vender, ceder o transferir los derechos de distribución a terceros sin consentimiento expreso y por escrito del Titular. Ninguna persona o entidad, aparte del Titular representado por <strong>Emilio Calep Vargas Yáñez</strong>, podrá distribuir, comercializar o generar ganancias con el Proyecto salvo mediante contrato firmado con el Titular.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Propiedad Intelectual</h4>
+        <p>El Titular conserva la titularidad plena e irrevocable de todos los derechos de propiedad intelectual relacionados con el Proyecto, incluyendo derechos de autor, patentes, diseños, marcas y secretos industriales. Los Distribuidores reconocen que no adquieren ningún derecho de propiedad sobre el Proyecto, sino únicamente los derechos limitados de distribución conforme a este acuerdo.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Ingresos y Ganancias</h4>
+        <p>Los Distribuidores deberán entregar al Titular el ciento por ciento de las utilidades netas generadas por la venta o explotación del Proyecto, salvo que las partes acuerden otro porcentaje por escrito. Los Distribuidores deberán llevar contabilidad clara y auditable de ventas, costos y utilidades, y entregar reportes periódicos al Titular, quien podrá auditar dichas cuentas previa notificación razonable.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Vigencia y Terminación</h4>
+        <p>Este contrato o licencia tendrá una vigencia determinada o indefinida, según acuerden las partes. El Titular podrá darlo por terminado en caso de incumplimiento grave por parte de los Distribuidores, como el no pago, la sublicencia no autorizada o el uso no permitido del Proyecto. Al término o cancelación del contrato, los Distribuidores deberán cesar toda distribución, comercialización o explotación del Proyecto, retirar publicidad y destruir los materiales en su poder o entregarlos al Titular.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Responsabilidades y Confidencialidad</h4>
+        <p>El Titular garantiza que posee los derechos necesarios para otorgar esta licencia y que el Proyecto no infringe derechos de terceros, pero no se responsabiliza por usos no autorizados por los Distribuidores. Los Distribuidores asumen plena responsabilidad frente a terceros por la comercialización, calidad, cumplimiento de normativas locales y cualquier daño derivado de su actividad. Toda información técnica, comercial, de diseño, fórmulas y documentación interna del Proyecto será tratada como confidencial por los Distribuidores, quienes no podrán divulgarla sin consentimiento por escrito del Titular.</p>
+    </div>
+
+<div class="legal-card">
+    <h4>Uso de Marcas</h4>
+    <p>
+        El nombre <strong>EmilioColor®</strong> y cualquier marca asociada al Proyecto son marcas registradas o en proceso de registro del Titular.  
+        Los Distribuidores deberán utilizarlas conforme a las directrices establecidas por el Titular y no podrán modificarlas ni usar variantes no autorizadas.  
+        Asimismo, cualquier marca que se genere como resultado del desarrollo del Proyecto podrá ser absorbida por EmilioColor® y registrada o puesta en proceso de registro por el Titular.  
+        Los Distribuidores aceptan y reconocen este derecho del Titular. En caso de no estar conformes, deberán negociar los acuerdos pertinentes con el Titular; de lo contrario, se considerará que los Distribuidores renuncian a cualquier derecho sobre dicha marca y no podrán usarla de manera independiente.
+    </p>
+</div>
+<div class="legal-card">
+    <h4>Publicaciones Académicas, Titularidad y Derechos Patrimoniales</h4>
+    <p>
+        En caso de que el Proyecto sea utilizado como base o parte de una tesis, artículo académico o investigación, y los Distribuidores o Colaboradores sean mencionados como autores o coautores, se entenderá que dicha autoría tiene un carácter estrictamente académico y moral, conforme a lo previsto por la <strong>Ley Federal del Derecho de Autor de México (LFDA), edición 2025</strong>.
+    </p>
+    <p>
+        La titularidad patrimonial del Proyecto, así como de sus componentes físicos, digitales, software, documentación, nombre, diseño o marca, permanecerá en todo momento bajo el dominio de <strong>EmilioColor®</strong>, representado por <strong>Emilio Calep Vargas Yáñez</strong>. En consecuencia, los derechos de explotación, comercialización, reproducción y obtención de ganancias derivadas del Proyecto son exclusivos del Titular, salvo acuerdo expreso y por escrito que disponga lo contrario.
+    </p>
+    <p>
+        En caso de que durante el desarrollo o publicación del Proyecto surja una nueva marca, denominación o entidad derivada de la colaboración, y dicha marca o entidad tenga participación directa o indirecta de <strong>EmilioColor®</strong>, el Titular se reserva el derecho de absorber dicha marca o integrarla como parte de su portafolio comercial o educativo. En ese supuesto, <strong>EmilioColor®</strong> podrá registrarla ante las autoridades competentes como marca en proceso o definitiva, manteniendo la titularidad sobre los derechos patrimoniales del Proyecto asociado.
+    </p>
+    <p>
+        Los colaboradores que sean mencionados como autores o coautores académicos no adquieren derecho alguno sobre las ganancias, regalías, utilidades o ingresos derivados del Proyecto, ni sobre sus marcas asociadas. La participación académica o moral no implica cesión ni copropiedad patrimonial.
+    </p>
+    <p>
+        Este principio aplica incluso en los casos en que la tesis, artículo o documento académico haya sido aceptado, publicado o registrado por una institución educativa o autoridad competente, reconociendo que los derechos patrimoniales permanecen en poder de <strong>EmilioColor®</strong> y su titular.
+    </p>
+</div>
+
+
+    <div class="legal-card">
+        <h4>Leyes Aplicables y Resolución de Controversias</h4>
+        <p>Este contrato se regirá e interpretará conforme a las leyes de los Estados Unidos Mexicanos. Para la resolución de controversias, las partes se someten a la jurisdicción de los tribunales competentes en el domicilio del Titular, salvo que acuerden arbitraje u otro mecanismo alternativo.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Modificaciones y Validez</h4>
+        <p>Cualquier modificación o adición a este contrato deberá realizarse por escrito y contar con la firma de ambas partes. En caso de que alguna cláusula resulte inválida o inaplicable, las demás permanecerán plenamente vigentes. Este contrato constituye el acuerdo completo entre las partes respecto a su objeto y reemplaza cualquier entendimiento previo. Al firmar de conformidad, los Distribuidores reconocen y aceptan los términos y condiciones aplicables según lo establecido en este apartado.</p>
+    </div>
+</div>
+
+<div class="legal-section" style="border-left: 4px solid red; padding: 15px; background-color: #ffefef;">
+    <h2>Aviso Importante sobre Términos y Condiciones</h2>
+    <p>
+        <strong>EmilioColor®</strong> se reserva el derecho de modificar, actualizar o cambiar en cualquier momento estos <strong>Términos y Condiciones</strong>. 
+        El uso de cualquier herramienta, plataforma, producto o recurso de EmilioColor® implica la aceptación total de estos términos.
+    </p>
+    <p>
+        De igual forma, al hacer clic en "Acepto los Términos y Condiciones", ya sea en nuestras páginas web, plataformas digitales o al comprar productos físicos, el usuario reconoce y acepta expresamente todos los términos aquí descritos, incluyendo cualquier cambio futuro que se publique en el sitio oficial.
+    </p>
+    <p>
+        Las modificaciones a los Términos y Condiciones solo requerirán firma física en caso de que se trate de la ejecución de proyectos colaborativos específicos que así lo requieran. 
+        Para todos los demás usos, servicios o productos, las condiciones se aplican de manera digital y automática.
+    </p>
+    <p>
+        <strong>EmilioColor®</strong> no se hace responsable de cualquier incumplimiento, uso indebido o consecuencia derivada de la utilización de herramientas, productos, servicios y recursos más allá de lo establecido en estos términos y condiciones y en las secciones previas de este documento.
+    </p>
+</div>
+<!-- Términos Legales, Garantías y Políticas – Pill -->
+<div class="legal-section">
+    <h2>Términos Legales, Garantías y Políticas – Pill</h2>
+    <p>Contamos con sustentos legales con base en la Ley Federal de Derechos de Autor (LFDA) en México. Al usar nuestra página Pill y utilizar los programas disponibles, aceptas lo establecido en nuestra sección de Legalidad y Garantías de EmilioColor®.</p>
+
+    <div class="legal-card">
+        <h4>Uso de Contenido de Terceros</h4>
+        <p>Los programas, videos, materiales y contenidos difundidos a través de Pill pueden contener obras de terceros protegidas por la LFDA. Dicho contenido se utiliza únicamente con fines académicos, educativos o informativos, sin intención de lucro y sin afectar los derechos patrimoniales de los autores.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Propósito Educativo y Académico</h4>
+        <p>El contenido compartido en Pill se ofrece únicamente con fines educativos y de divulgación, conforme a los artículos 147 y 148 de la LFDA sobre excepciones para fines de enseñanza, investigación y análisis crítico.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Limitación de Responsabilidad</h4>
+        <p>EmilioColor® no se hace responsable de:</p>
+        <ul>
+            <li>La exactitud, veracidad o integridad del contenido creado por terceros.</li>
+            <li>Cualquier consecuencia legal derivada del uso del contenido difundido fuera del ámbito académico o educativo.</li>
+            <li>Reclamos por derechos de autor que puedan surgir por el uso de contenido de terceros; se recomienda a los usuarios no reproducir ni distribuir dicho contenido fuera de un contexto académico.</li>
+        </ul>
+    </div>
+
+    <div class="legal-card">
+        <h4>Reconocimiento de Derechos</h4>
+        <p>Todos los derechos de autor sobre los contenidos de terceros permanecen con sus respectivos titulares. EmilioColor® respeta y reconoce la propiedad intelectual de terceros, conforme a la LFDA.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Exención de Garantías</h4>
+        <p>El material difundido se proporciona “tal cual”, sin garantías expresas o implícitas de ningún tipo, incluyendo, sin limitación, garantías de titularidad, precisión o idoneidad para un fin particular.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Procedimiento de Retiro de Contenido (Cease & Desist / Notice and Takedown)</h4>
+        <p>Si un titular de derechos de autor considera que su obra ha sido difundida a través de Pill sin autorización, puede solicitar su retiro enviando un correo electrónico mediante el botón <strong>Notice and Takedown</strong>, disponible a continuación. EmilioColor® evaluará la solicitud y, de considerarlo procedente, removerá el contenido en un plazo no mayor a 24 horas.</p>
+        <div class="legal-btns">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com&su=Notice%20and%20Takedown%20Request%20-%20EmilioColor%C2%AE%20Legalidad%20y%20Garant%C3%ADas%20-%20PILL&body=Estimado%20equipo%20de%20EmilioColor%2C%0D%0A%0D%0ASoy%20titular%20(o%20representante%20autorizado)%20de%20los%20derechos%20de%20autor%20sobre%20el%20siguiente%20contenido%3A%0D%0A%0D%0A-%20Descripci%C3%B3n%20del%20contenido%3A%20%0D%0A-%20URL%20o%20enlace%20donde%20aparece%3A%20%0D%0A%0D%0ASolicito%20formalmente%20su%20retiro%20del%20sitio%20web%20EmilioColor%C2%AE%2C%20de%20conformidad%20con%20la%20Ley%20Federal%20de%20Derechos%20de%20Autor%20(LFDA)%2C%20art%C3%ADculos%20147%20y%20148.%0D%0A%0D%0AConforme%20a%20la%20Ley%20Federal%20de%20Derechos%20de%20Autor%2C%20solicitamos%20que%20el%20retiro%20del%20contenido%20se%20realice%20en%20un%20plazo%20no%20mayor%20a%2024%20horas%20a%20partir%20de%20la%20recepci%C3%B3n%20de%20esta%20notificaci%C3%B3n.%0D%0A%0D%0ADeclaraci%C3%B3n%3A%0D%0A-%20Creo%20de%20buena%20fe%20que%20el%20uso%20del%20material%20identificado%20no%20est%C3%A1%20autorizado%20por%20el%20titular%20de%20los%20derechos%2C%20su%20representante%20legal%20ni%20por%20la%20ley.%0D%0A-%20La%20informaci%C3%B3n%20proporcionada%20es%20exacta%20y%20soy%20el%20titular%20o%20estoy%20autorizado%20para%20actuar%20en%20su%20nombre.%0D%0A%0D%0AAtentamente%2C%0D%0A%5BNombre%20completo%5D%0D%0A%5BEntidad%20o%20empresa%2C%20si%20aplica%5D%0D%0A%5BCorreo%20electr%C3%B3nico%20de%20contacto%5D%0D%0A%5BFecha%5D" 
+               target="_blank" 
+               class="legal-btn">
+                <i class="fas fa-gavel"></i> Notice and Takedown
+            </a>
+
+            <a href="https://docs.google.com/document/d/1AYQ4ligk_OhjXCPM76ERCshpvAxfEs9tVHYT9Me1cH0/edit?usp=sharing" 
+               target="_blank" 
+               class="legal-btn secondary">
+                <i class="fas fa-file-contract"></i> Consultar Aviso Legal
+            </a>
+
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com&su=Solicitud%20de%20Agregar%20Más%20Programas%20-%20EmilioColor%C2%AE%20PILL&body=Estimado%20equipo%20de%20EmilioColor%2C%0D%0A%0D%0AMe%20gustar%C3%ADa%20solicitar%20la%20inclusi%C3%B3n%20de%20los%20siguientes%20programas%20en%20su%20plataforma%20EmilioColor%C2%AE%3A%0D%0A%0D%0A-%20Programa%201%20(Enlace%20si%20lo%20tienen)%0D%0A-%20Programa%202%20(Enlace%20si%20lo%20tienen)%0D%0A-%20Programa%203%20(Enlace%20si%20lo%20tienen)%0D%0A%0D%0AAgradecer%C3%ADa%20su%20consideraci%C3%B3n%20y%20quedo%20atento%20a%20cualquier%20informaci%C3%B3n%20adicional%20que%20necesiten." 
+               target="_blank" 
+               class="legal-btn">
+                <i class="fas fa-plus-circle"></i> Solicitar Nuevos Programas
+            </a>
+        </div>
+    </div>
+
+    <div class="legal-card">
+        <h4>Aceptación de Términos</h4>
+        <p>Al acceder a los contenidos de Pill, el usuario reconoce haber leído y comprendido este aviso legal y acuerda utilizar los materiales exclusivamente con fines académicos o educativos.</p>
+    </div>
+
+    <div class="legal-card">
+        <h4>Nota sobre Enlaces Externos</h4>
+        <p>EmilioColor® no tiene control sobre la activación o desactivación de enlaces alojados en servicios externos como Mega, Google Drive o MediaFire. Sin embargo, podemos cesar la difusión o publicación de dichos enlaces en nuestra plataforma cuando sea requerido por motivos legales o a solicitud del titular de los derechos.</p>
+    </div>
+</div>
+<style>
+    /* LEGAL BUTTON STYLES */
+.legal-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.legal-btn {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legal-btn:hover {
+    background: var(--primary-blue-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.legal-btn.secondary {
+    background: var(--primary-gray);
+}
+
+.legal-btn.secondary:hover {
+    background: var(--primary-gray-dark);
+}
+
+/* RESPONSIVE ADJUSTMENTS FOR LEGAL BUTTONS */
+@media (max-width: 992px) {
+    .legal-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .legal-buttons {
+        flex-direction: column;
+    }
+    
+    .legal-btn {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+</style>
+        <div class="legal-section">
+            <h2>Contacto</h2>
+            <p>Para cualquier consulta relacionada con aspectos legales, derechos de autor o uso de contenidos, puede contactarnos a través de:</p>
+            <ul>
+                <li><strong>Correo electrónico:</strong> emiliocolormexico@gmail.com</li>
+                <li><strong>Teléfono:</strong> +52 56 2537 7747</li>
+                <li><strong>WhatsApp:</strong> +52 56 2537 7747</li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación</h4>
+                <a href="https://emiliocolor.com#inicio" class="footer-nav-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="https://emiliocolor.com#servicios" class="footer-nav-link" data-section="tecnologia" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-laptop-code"></i> Tecnología
+                </a>
+                <a href="https://emiliocolor.com/#educacion" class="footer-nav-link" data-section="educacion" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-graduation-cap"></i> Educación
+                </a>
+                <a href="https://emiliocolor.com#productos" class="footer-nav-link" data-section="productos" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-pencil-alt"></i> Papelería
+                </a>
+                <a href="https://emiliocolor.com#transportes" class="footer-nav-link" data-section="transportes" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-truck"></i> Transportes
+                </a>
+                <a href="https://emiliocolor.com/#classcloud" class="footer-nav-link" data-section="classcloud" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-cloud"></i> ClassCloud℠
+                </a>
+                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link" data-section="nosotros">
+                    <i class="fas fa-hands-helping"></i> Apoyos
+                </a>
+                <a href="https://emiliocolor.com/#contactos" class="footer-nav-link" data-section="contacto">
+                    <i class="fas fa-envelope"></i> Contacto
+                </a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +52 56 2537 7747</p>
+                <p><i class="fab fa-whatsapp"></i> +52 56 2537 7747</p>
+                <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolormx/" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 EmilioColor® - Legalidad y Garantías | Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Back to top button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</body>
+</html>

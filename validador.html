@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verificador de Identidad Público - Consulta la existencia y vigencia de las credenciales que muestran nuestros trabajadores">
+    <meta name="keywords" content="verificador, identidad, credencial, trabajadores, consulta, vigencia">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Verificador de Identidad Público">
+    <meta property="og:description" content="Consulta la existencia y vigencia de las credenciales que muestran nuestros trabajadores">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Verificador de Identidad Público">
+    <meta name="twitter:description" content="Consulta la existencia y vigencia de las credenciales que muestran nuestros trabajadores">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/favicon_herramientas.png" type="image/png">
+
+    <title>Verificador de Identidad Público - EmilioColor®</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            text-decoration: none;
+            
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* VERIFICADOR STYLES */
+        .content-container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            border-radius: 0;
+        }
+
+        .content-container h2 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .category-title {
+            color: var(--primary-blue);
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .verification-form {
+            background-color: var(--light-gray);
+            padding: 25px;
+            border-radius: 0;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .verification-form h4 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0;
+            font-size: 16px;
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(40, 69, 150, 0.1);
+        }
+
+        .verify-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .verify-btn:hover {
+            background: var(--primary-blue-dark);
+        }
+
+        .verify-btn:disabled {
+            background: var(--primary-gray-light);
+            cursor: not-allowed;
+        }
+
+        /* RESULTADOS */
+        .result-container {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .status-card {
+            padding: 25px;
+            border-radius: 0;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary-gray);
+        }
+
+        .status-card.valid {
+            border-left-color: var(--success-color);
+            background-color: rgba(16, 185, 129, 0.05);
+        }
+
+        .status-card.expired {
+            border-left-color: var(--danger-color);
+            background-color: rgba(239, 68, 68, 0.05);
+        }
+
+        .status-card.not-found {
+            border-left-color: var(--warning-color);
+            background-color: rgba(245, 158, 11, 0.05);
+        }
+
+        .status-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-title.valid {
+            color: var(--success-color);
+        }
+
+        .status-title.expired {
+            color: var(--danger-color);
+        }
+
+        .status-title.not-found {
+            color: var(--warning-color);
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .info-table th {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            width: 30%;
+        }
+
+        .info-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .example-ids {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 0;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .example-ids h5 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .example-id {
+            display: inline-block;
+            background-color: white;
+            padding: 5px 10px;
+            margin: 0 5px 5px 0;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .example-id:hover {
+            background-color: rgba(40, 69, 150, 0.05);
+            border-color: var(--primary-blue);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading-spinner {
+            border: 3px solid var(--light-gray);
+            border-top: 3px solid var(--primary-blue);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .info-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+                <header class="main-header">
+                    <div class="header-container">
+                        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+                            <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+                        </a>
+                        
+                        <nav class="header-nav">
+                            <a href="https://emiliocolor.com/" class="header-nav-link active">
+                                <i class="fas fa-home"></i>
+                                <span>Regresar a inicio</span>
+                            </a>
+                                            <a href="https://emiliocolor.com/#contacto" class="header-nav-link">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Ayuda</span>
+                </a>
+                        </nav>
+                    </div>
+                </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-container">
+            <h2>Verificador de Identidad Público</h2>
+            
+            <div class="verification-form">
+                <h4>Consulta la existencia y vigencia de credenciales</h4>
+                <div class="form-group">
+                    <label for="employee-id" class="form-label">Identificador del Trabajador:</label>
+                    <input type="text" id="employee-id" class="form-input" placeholder="Ejemplo: amshev-0110000000" maxlength="50">
+                </div>
+                <button id="verify-btn" class="verify-btn">
+                    <i class="fas fa-search"></i>
+                    Verificar Credencial
+                </button>
+                
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Verificando credencial...</p>
+                </div>
+            </div>
+            
+            <div class="result-container" id="result-container">
+                <!-- Resultados se cargarán aquí dinámicamente -->
+            </div>
+            
+            <div class="warning">
+                <h5>Nota importante</h5>
+<p>
+  Este verificador de identidad público permite consultar la existencia y vigencia de las credenciales que muestran nuestros trabajadores. La información mostrada es de carácter público y se actualiza regularmente. Si detectas alguna inconsistencia, por favor repórtalo a nuestros 
+  <a href="https://emiliocolor.com/#contacto" target="_blank">medios de contacto</a>.
+</p>
+            </div>
+        </div>
+    </main>
+
+                <footer class="main-footer">
+                    <div class="footer-container">
+                        <div class="footer-content">
+                            <div class="footer-logo">
+                                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+                            </div>
+                            
+                            <div class="footer-nav">
+                                <h4>Navegación</h4>
+                                <a href="https://emiliocolor.com#inicio" class="footer-nav-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-home"></i> Inicio
+                                </a>
+                                                               <a href="https://emiliocolor.com#transportes" class="footer-nav-link" data-section="transportes" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-truck"></i> Transportes
+                                </a>
+                                                                <a href="https://emiliocolor.com#productos" class="footer-nav-link" data-section="productos" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-pencil-alt"></i> Papelería
+                                </a>
+                                <a href="https://emiliocolor.com#servicios" class="footer-nav-link" data-section="tecnologia" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-laptop-code"></i> Tecnología
+                                </a>
+                                <a href="https://emiliocolor.com#cursos" class="footer-nav-link" data-section="educacion" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-graduation-cap"></i> Educación
+                                </a>
+                                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link" data-section="nosotros">
+                                    <i class="fas fa-hands-helping"></i> Apoyos
+                                </a>
+                                    <a href="https://emiliocolor.com/#info" class="footer-nav-link" data-section="nosotros">
+                                    <i class="fas fa-tools"></i> Info y Servicios
+                                </a>
+                                <a href="https://emiliocolor.com/#contactos" class="footer-nav-link" data-section="contacto">
+                                    <i class="fas fa-envelope"></i> Contacto
+                                </a>
+                            </div>
+
+                            <div class="footer-contact">
+                                <h4>Contacto</h4>
+                                <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                                <p><i class="fas fa-phone-alt"></i> +52 56 5533 3139</p>
+                                <p><i class="fab fa-whatsapp"></i> +52 56 5533 3139</p>
+                                <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+<br>
+<div class="footer-copyright">
+    <h4>Copyright</h4>
+    <a href="#" 
+       class="footer-nav-link" 
+       target="_blank" 
+       rel="noopener noreferrer">
+        <i class="fas fa-file-alt"></i>
+        Consultar aviso legal
+    </a>
+</div>
+
+
+                            </div>
+                            
+                            <div class="footer-social">
+                                <h4>Síguenos</h4>
+                                <div class="footer-social-links">
+                                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/emiliocolormx/" class="social-link">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-bottom">
+                            <p>© 2025 EmilioColor® | Todos los derechos reservados.</p>
+                        </div>
+                    </div>
+                </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Base de datos de trabajadores
+                // Aumentar 1 día más a la fecha establecida, ya que el calculo resta 1, ejemplo (2025-12-10 => 2025-12-9)
+        const employeeDatabase = {
+            "amshev-0110031206": {
+                status: "active",
+                name: "Joel Pineda Jiménez",
+                position: "Content Manager",
+                department: "MARKETING",
+                location: "CIUDAD DE MÉXICO, CDMX",
+                startDate: "2025-12-10",
+                endDate: "2028-12-10",
+                employeeId: "amshev-0110031206",
+                photo: "default-avatar.png"
+            },
+            "amshev-8472531547": {
+                status: "active",
+                name: "Emilio Calep Vargas Yáñez",
+                position: "Supervisor del Área 2",
+                department: "Reacondicionamiento de Camionetas de Carga",
+                location: "CIUDAD DE MÉXICO, CDMX",
+                startDate: "2024-01-11",
+                endDate: "2027-01-11",
+                employeeId: "amshev-8472531547",
+                photo: "default-avatar.png"
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const verifyBtn = document.getElementById('verify-btn');
+            const employeeIdInput = document.getElementById('employee-id');
+            const resultContainer = document.getElementById('result-container');
+            const loadingElement = document.getElementById('loading');
+            const exampleIds = document.querySelectorAll('.example-id');
+            
+            // Función para verificar credencial
+            function verifyCredential() {
+                const employeeId = employeeIdInput.value.trim();
+                
+                if (!employeeId) {
+                    alert("Por favor, ingresa un identificador válido");
+                    return;
+                }
+                
+                // Mostrar loading
+                loadingElement.style.display = 'block';
+                verifyBtn.disabled = true;
+                
+                // Simular tiempo de verificación
+                setTimeout(() => {
+                    const employee = employeeDatabase[employeeId];
+                    
+                    // Ocultar loading
+                    loadingElement.style.display = 'none';
+                    verifyBtn.disabled = false;
+                    
+                    // Mostrar resultados
+                    displayResults(employeeId, employee);
+                    
+                    // Hacer scroll a los resultados
+                    resultContainer.scrollIntoView({ behavior: 'smooth' });
+                }, 800);
+            }
+            
+            // Función para mostrar resultados
+            function displayResults(employeeId, employeeData) {
+                resultContainer.style.display = 'block';
+                
+                if (!employeeData) {
+                    // Credencial no encontrada
+                    resultContainer.innerHTML = `
+                        <div class="status-card not-found">
+                            <h3 class="status-title not-found">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                Credencial No Encontrada
+                            </h3>
+                            <p>El identificador <strong>"${employeeId}"</strong> no se encuentra en nuestro sistema de registros.</p>
+                            <p>Por favor, verifica que el identificador sea correcto o contacta al departamento de recursos humanos para más información.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Determinar estado de vigencia
+                const today = new Date();
+                const endDate = new Date(employeeData.endDate);
+                let statusClass, statusText, statusIcon, statusMessage;
+                
+                if (employeeData.status === "expired" || endDate < today) {
+                    statusClass = "expired";
+                    statusText = "Credencial Vencida";
+                    statusIcon = "fa-exclamation-circle";
+                    statusMessage = "Esta credencial ha vencido y ya no es válida para identificación oficial.";
+                } else {
+                    statusClass = "valid";
+                    statusText = "Credencial Vigente";
+                    statusIcon = "fa-check-circle";
+                    statusMessage = "Esta credencial está vigente y es válida para identificación oficial.";
+                }
+                
+                // Calcular años de vigencia
+                const startDate = new Date(employeeData.startDate);
+                const endDateObj = new Date(employeeData.endDate);
+                const yearsValidity = Math.floor((endDateObj - startDate) / (1000 * 60 * 60 * 24 * 365));
+                
+                // Formatear fechas
+                const formatDate = (dateString) => {
+                    const date = new Date(dateString);
+                    return date.toLocaleDateString('es-MX', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    });
+                };
+                
+                // Crear HTML de resultados
+                resultContainer.innerHTML = `
+                    <div class="status-card ${statusClass}">
+                        <h3 class="status-title ${statusClass}">
+                            <i class="fas ${statusIcon}"></i>
+                            ${statusText}
+                        </h3>
+                        <p>${statusMessage}</p>
+                        <p><strong>Identificador:</strong> ${employeeId}</p>
+                        <p><strong>Vigencia:</strong> ${yearsValidity} año(s) (${formatDate(employeeData.startDate)} - ${formatDate(employeeData.endDate)})</p>
+                    </div>
+                    
+                    <h3 class="category-title">Información del Trabajador</h3>
+                    <table class="info-table">
+                        <tr>
+                            <th>Nombre</th>
+                            <td>${employeeData.name}</td>
+                        </tr>
+                        <tr>
+                            <th>ID de Empleado</th>
+                            <td>${employeeData.employeeId}</td>
+                        </tr>
+                        <tr>
+                            <th>Puesto</th>
+                            <td>${employeeData.position}</td>
+                        </tr>
+                        <tr>
+                            <th>Departamento</th>
+                            <td>${employeeData.department}</td>
+                        </tr>
+                        <tr>
+                            <th>Sede</th>
+                            <td>${employeeData.location}</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha de Inicio</th>
+                            <td>${formatDate(employeeData.startDate)}</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha de Vencimiento</th>
+                            <td>${formatDate(employeeData.endDate)}</td>
+                        </tr>
+                        <tr>
+                            <th>Estado</th>
+                            <td>
+                                <span class="badge ${statusClass === 'valid' ? 'bg-success' : 'bg-danger'}">
+                                    ${statusClass === 'valid' ? 'ACTIVO' : 'VENCIDO'}
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <div class="warning">
+                        <h5>Uso de la información</h5>
+                        <p>Esta información es de carácter público y está destinada únicamente para verificación de credenciales de identificación. El mal uso de esta información puede estar sujeto a acciones legales.</p>
+                    </div>
+                `;
+            }
+            
+            // Event Listeners
+            verifyBtn.addEventListener('click', verifyCredential);
+            
+            employeeIdInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    verifyCredential();
+                }
+            });
+            
+            // Ejemplos de identificadores
+            exampleIds.forEach(example => {
+                example.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+                    employeeIdInput.value = id;
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
