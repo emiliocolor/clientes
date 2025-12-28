@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<!-- Charset & Responsive -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO básico -->
+<title>Herramientas Digitales Gratuitas: Calculadoras, Conversores y Trucos | EmilioColor®</title>
+<meta name="description" content="Catálogo de herramientas digitales gratuitas: calculadoras online, conversores de unidades, codificadores de texto y trucos para videojuegos. Proyecto desarrollado por EmilioColor®.">
+
+<!-- Robots -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<meta name="google" content="notranslate">
+
+<!-- Autor -->
+<meta name="author" content="EmilioColor®">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://emiliocolor.com/herramientas/">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="EmilioColor®">
+<meta property="og:title" content="Herramientas Digitales Gratuitas - EmilioColor®">
+<meta property="og:description" content="Calculadoras, conversores, codificadores y trucos para videojuegos. Herramientas gratuitas creadas por EmilioColor®.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emiliocolor.com/herramientas/">
+<meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+<link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+
+<!-- CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Herramientas Digitales Gratuitas",
+  "description": "Colección de herramientas digitales gratuitas: calculadoras, conversores y trucos para videojuegos.",
+  "url": "https://emiliocolor.com/herramientas/",
+  "inLanguage": "es",
+  "publisher": {
+    "@type": "Organization",
+    "name": "EmilioColor®",
+    "url": "https://emiliocolor.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://emiliocolor.com/img-logos/logo_transparente_alargado.png"
+    },
+    "sameAs": [
+      "https://www.instagram.com/emiliocolorcom/",
+      "https://www.youtube.com/@EmilioColor"
+    ]
+  },
+  "datePublished": "2024-06-15",
+  "dateModified": "2025-01-28"
+}
+</script>
+
+
+</head>
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            transform: translateY(-2px);
+            text-decoration: underline;
+        }
+
+        .header-nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 46px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* GALLERY STYLES */
+        .gallery-container {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 140px; /* Tamaño más pequeño para las imágenes */
+            object-fit: contain; /* Para mantener proporciones sin recortar */
+            background-color: var(--light-gray);
+            padding: 15px;
+        }
+        
+        .gallery-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gallery-item-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+        
+        .gallery-item-description {
+            color: var(--primary-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .gallery-item-link {
+            display: block;
+            text-align: center;
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item-link:hover {
+            background: var(--primary-blue-dark);
+            color: white;
+        }
+
+        /* LEGAL NOTICE STYLES */
+        .legal-notice {
+            background: white;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 40px 0;
+        }
+        
+        .legal-notice h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .legal-notice p {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .legal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legal-btn:hover {
+            background: var(--primary-blue-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .legal-btn.secondary {
+            background: var(--primary-gray);
+        }
+        
+        .legal-btn.secondary:hover {
+            background: var(--primary-gray-dark);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .legal-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-image {
+                height: 160px; /* Un poco más grande en móviles */
+            }
+            
+            .legal-buttons {
+                flex-direction: column;
+            }
+            
+            .legal-btn {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+            <img src="https://emiliocolor.com/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="https://emiliocolor.com/" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Página principal</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<div class="container">
+    <h1 class="text-center mb-4" style="color: var(--primary-blue);">
+         Herramientas a la Comunidad
+    </h1>
+    <p class="text-center mb-5">
+Aquí encontrarás las mejores herramientas digitales desarrolladas por nosotros, adaptandonos a tus necesidades y requerimientos.
+
+    </p>
+
+    <div class="gallery-container">
+
+        <!-- ============================= -->
+        <!-- CATEGORÍA: PROGRAMAS GRATUITOS -->
+        <!-- ============================= -->
+        <h2 class="gallery-title">Calculadoras, Selectores, Conversores, De/Codificadores</h2>
+
+        <div class="gallery-grid">
+
+ <!-- Item Calculadora de Resistencias -->
+<div class="gallery-item">
+    <img src="img/resistencia.webp" alt="Calculadora de Resistencias" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Calculadora de Resistencias</h3>
+        <p class="gallery-item-description">
+            Herramienta para calcular el valor de resistencias eléctricas mediante códigos de colores.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/calculadora_de_resistencias.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+<!-- Item Codificador Código Emilio -->
+<div class="gallery-item">
+    <img src="img/codigo.png" alt="Codificador Código Emilio" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Codificador Código Emilio</h3>
+        <p class="gallery-item-description">
+            Utilidad para codificar y decodificar texto utilizando el Código Emilio.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/codificador_codigo_emilio.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+<!-- Item Conversor Centímetros a Pulgadas -->
+<div class="gallery-item">
+    <img src="img/regla.avif" alt="Conversor Centímetros a Pulgadas" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Conversor cm a pulgadas</h3>
+        <p class="gallery-item-description">
+            Convierte medidas de centímetros a pulgadas de forma rápida y precisa.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/conversor_centimetros_a_pulgadas.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+<!-- Item Conversor Calibrador Vernier -->
+<div class="gallery-item">
+    <img src="img/vernier.png" alt="Conversor Calibrador Vernier" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Conversor de Calibrador Vernier</h3>
+        <p class="gallery-item-description">
+            Convierte lecturas de calibrador vernier a pulgadas de manera sencilla.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/conversor_de_calibrador_vernier_en_pulgadas.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+<!-- Item Conversor de Texto -->
+<div class="gallery-item">
+    <img src="img/globotexto.png" alt="Conversor de Texto" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Conversor de Texto</h3>
+        <p class="gallery-item-description">
+            Herramienta para transformar texto a diferentes formatos como mayúsculas, minúsculas y más.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/conversor_de_texto.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+<!-- Item Conversor GitHub a Raw -->
+<div class="gallery-item">
+    <img src="img/github.jpg" alt="Conversor GitHub a Raw" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Conversor GitHub a Raw</h3>
+        <p class="gallery-item-description">
+            Convierte enlaces de GitHub en enlaces Raw para uso directo en proyectos.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/conversor_github_a_raw.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+<!-- Item Conversor Universal de Unidades -->
+<div class="gallery-item">
+    <img src="img/universal.png" alt="Conversor Universal de Unidades" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Conversor Universal de Unidades</h3>
+        <p class="gallery-item-description">
+            Conversor completo para transformar diferentes tipos de unidades de medida.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/conversor_universal_de_unidades.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+<!-- Item Selector de Emojis y Caracteres Especiales -->
+<div class="gallery-item">
+    <img src="img/emoji.png" alt="Selector de Emojis y Caracteres Especiales" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Selector de Emojis y Caracteres Especiales</h3>
+        <p class="gallery-item-description">
+            Selecciona y copia emojis y caracteres especiales para tus textos.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/selector_de_emojis_y_caracteres_especiales.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+<!-- Item Selector de Fondos -->
+<div class="gallery-item">
+    <img src="img/paisaje.jpg" alt="Selector de Fondos" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Selector de Fondos</h3>
+        <p class="gallery-item-description">
+            Herramienta para elegir fondos y estilos visuales para proyectos digitales.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/selector_de_fondos.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+
+        </div> <!-- /gallery-grid -->
+
+<!-- ============================= -->
+<!-- CATEGORÍA: MANUALES Y TRUCOS -->
+<!-- ============================= -->
+<h2 class="gallery-title" style="margin-top: 60px; margin-bottom: 20px;">
+    Manuales y Trucos Para Videojuegos
+</h2>
+
+<div class="gallery-grid">
+
+    <!-- Item GTA V -->
+    <div class="gallery-item">
+        <img src="https://freepngimg.com/save/169371-gta-5-photos-png-free-photo/524x562" alt="Trucos GTA V" class="gallery-image">
+        <div class="gallery-content">
+            <h3 class="gallery-item-title">Trucos GTA V</h3>
+            <p class="gallery-item-description">
+                Guía completa de trucos para Grand Theft Auto V, incluyendo vehículos, armas, habilidades especiales y efectos del juego.
+            </p>
+            <a href="https://emiliocolor.com/herramientas/trucos_gta_v.html" target="_blank" class="gallery-item-link">
+                Ver trucos
+            </a>
+        </div>
+    </div>
+
+    <!-- Item LEGO Jurassic World -->
+    <div class="gallery-item">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/73206bd9-257c-4f50-b1f3-59a306e24084/dfkxb28-ab5e45f7-9724-41f5-b2b4-4ace45309f95.png/v1/fill/w_512,h_512/lego_jurassic_world_icon_ico_by_hatemtiger_dfkxb28-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6Ii9mLzczMjA2YmQ5LTI1N2MtNGY1MC1iMWYzLTU5YTMwNmUyNDA4NC9kZmt4YjI4LWFiNWU0NWY3LTk3MjQtNDFmNS1iMmI0LTRhY2U0NTMwOWY5NS5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.HVoMWLCJ55NnyOnyUcxtX-xf7lM4TbGLH4EIq1JWm0o" alt="Trucos LEGO Jurassic World" class="gallery-image">
+        <div class="gallery-content">
+            <h3 class="gallery-item-title">Trucos LEGO Jurassic World</h3>
+            <p class="gallery-item-description">
+                Trucos y códigos para desbloquear personajes, dinosaurios y contenido especial en LEGO Jurassic World.
+            </p>
+            <a href="https://emiliocolor.com/herramientas/trucos_lego_jurassic_world.html" target="_blank" class="gallery-item-link">
+                Ver trucos
+            </a>
+        </div>
+    </div>
+
+    <!-- Item Age of Empires II -->
+    <div class="gallery-item">
+        <img src="https://retrogems.fr/wp-content/uploads/2025/07/age-of-empire-2-definitive-edition-logo.png" alt="Trucos Age of Empires II" class="gallery-image">
+        <div class="gallery-content">
+            <h3 class="gallery-item-title">Trucos Age of Empires II: Definitive, Conquerors, HD Edition</h3>
+            <p class="gallery-item-description">
+                Lista de trucos clásicos de Age of Empires II para obtener recursos, unidades especiales y ventajas estratégicas.
+            </p>
+            <a href="https://emiliocolor.com/herramientas/trucos_age_of_empires_ii.html" target="_blank" class="gallery-item-link">
+                Ver trucos
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+
+<style>
+.gallery-btn {
+    flex: 1; /* mismo ancho */
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.btn-blue {
+    background-color: #007BFF;
+}
+
+.btn-blue:hover {
+    background-color: #0056b3;
+}
+
+.btn-green {
+    background-color: #28A745;
+}
+
+.btn-green:hover {
+    background-color: #1e7e34;
+}
+</style>
+
+    </div>
+</div>
+
+        </div> <!-- /gallery-grid -->
+
+    </div> <!-- /gallery-container -->
+
+        
+<div class="legal-notice">
+    <h3>Aviso Legal</h3>
+
+    <p>
+        Contamos con sustentos legales conforme a la Ley Federal del Derecho de Autor (LFDA) vigente en los Estados Unidos Mexicanos.
+        Al acceder y utilizar esta página, así como las herramientas y recursos aquí disponibles, aceptas íntegramente
+        lo establecido en nuestra sección de Legalidad y Garantías.
+    </p>
+
+    <p>
+        <strong>EmilioColor® | Legalidad y Garantías</strong><br>
+        <em>Términos legales, garantías y políticas</em>
+    </p>
+
+    <p>
+        Queda estrictamente prohibida la reproducción, redistribución, duplicación, modificación,
+        publicación en otros sitios web o cualquier otra forma de explotación total o parcial de nuestras herramientas, 
+        enlaces curados, documentación y contenido, sin la autorización expresa y por escrito de EmilioColor®.
+    </p>
+
+    <p>
+        El uso indebido, la replicación no autorizada o la apropiación de cualquiera de los recursos ofrecidos en esta plataforma
+        podrá dar lugar a responsabilidades legales conforme a la LFDA y demás disposiciones aplicables.
+    </p>
+
+    <div class="legal-buttons">
+                <a href="https://emiliocolor.com/legalidad_y_garantias.html" 
+           target="_blank" 
+           class="legal-btn secondary">
+            <i class="fas fa-file-contract"></i> Legalidad y Garantías
+        </a>
+
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com
+&su=Solicitud%20de%20Nueva%20Herramienta%20o%20Truco%20de%20Videojuego%20-%20EmilioColor%C2%AE
+&body=Estimado%20equipo%20de%20EmilioColor%2C%0D%0A%0D%0AMe%20gustar%C3%ADa%20solicitar%20la%20inclusi%C3%B3n%20de%20una%20nueva%20herramienta%20o%20truco%20de%20videojuego%20en%20su%20plataforma%20EmilioColor%C2%AE%3A%0D%0A%0D%0A-%20Nombre%20de%20la%20herramienta%20o%20videojuego%0D%0A-%20Tipo%3A%20Herramienta%20%2F%20Truco%20de%20videojuego%0D%0A-%20Descripci%C3%B3n%20breve%0D%0A-%20Enlace%20o%20referencia%20(opcional)%0D%0A%0D%0AAgradezco%20su%20atenci%C3%B3n%20y%20quedo%20pendiente%20de%20cualquier%20informaci%C3%B3n%20adicional%20que%20sea%20necesaria."
+target="_blank"
+class="legal-btn">
+    <i class="fas fa-plus-circle"></i> Solicitar Nueva Herramienta o Truco
+</a>
+
+    </div>
+</div>
+
+
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://emiliocolor.com/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación Rápida</h4>
+                <a href="https://emiliocolor.com/#inicio" class="footer-nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="https://emiliocolor.com/#novedades" class="footer-nav-link">
+                    <i class="fas fa-newspaper"></i> Novedades
+                </a>
+                <a href="https://emiliocolor.com/#divisiones" class="footer-nav-link">
+                    <i class="fas fa-sitemap"></i> Divisiones
+                </a>
+                <a href="https://emiliocolor.com/#verification" class="footer-nav-link">
+                    <i class="fas fa-info-circle"></i> Info. Adicional
+                </a>
+                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link">
+                    <i class="fas fa-hands-helping"></i> Apoyos Sociales
+                </a>
+                <a href="https://emiliocolor.com/#proyectos" class="footer-nav-link">
+                    <i class="fas fa-lightbulb"></i> Proyectos
+                </a>
+                <a href="https://emiliocolor.com/#marcas" class="footer-nav-link">
+                    <i class="fas fa-tags"></i> Nuestras Marcas
+                </a>
+                <a href="https://emiliocolor.com/#contacto" class="footer-nav-link">
+                    <i class="fas fa-envelope"></i> Contacto
+                </a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto Directo</h4>
+                <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +52 56 5533 3139</p>
+                <p><i class="fab fa-whatsapp"></i> +52 56 5533 3139</p>
+                <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+                <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 AM - 9:00 PM</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link" aria-label="Facebook EmilioColor">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolorcom/" class="social-link" aria-label="Instagram EmilioColor">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/525655333139" class="social-link" aria-label="WhatsApp EmilioColor">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:emiliocolormexico@gmail.com" class="social-link" aria-label="Email EmilioColor">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Conecta con nosotros para las últimas novedades</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 EmilioColor® | Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">Tecnología, Educación, Transportes, Papelería - Soluciones a tu medida</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
