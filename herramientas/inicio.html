@@ -160,33 +160,29 @@
             opacity: 0.8;
         }
 
-        .header-nav {
-            display: flex;
-            gap: 5px;
-        }
+    .header-nav {
+        display: flex;
+        gap: 5px;
+    }
 
-        .header-nav-link {
-            padding: 10px 15px;
-            color: var(--text-light);
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            font-weight: 500;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .header-nav-link {
+        padding: 10px 15px;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+    }
 
-        .header-nav-link:hover,
-        .header-nav-link.active {
-            transform: translateY(-2px);
-            text-decoration: underline;
-        }
-
-        .header-nav-link i {
-            font-size: 1.1rem;
-        }
+    .header-nav-link:hover,
+    .header-nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
 
         /* MAIN CONTENT */
         .main-content {
@@ -525,19 +521,18 @@ Aquí encontrarás las mejores herramientas digitales desarrolladas por nosotros
         <!-- ============================= -->
         <!-- CATEGORÍA: PROGRAMAS GRATUITOS -->
         <!-- ============================= -->
-        <h2 class="gallery-title">Calculadoras, Selectores, Conversores, De/Codificadores</h2>
-
+        <h2 class="gallery-title">IA, Calculadoras, Selectores, Conversores, Codificadores</h2>
         <div class="gallery-grid">
 
- <!-- Item Calculadora de Resistencias -->
+<!-- Item EmilioColor AI -->
 <div class="gallery-item">
-    <img src="img/resistencia.webp" alt="Calculadora de Resistencias" class="gallery-image">
+    <img src="img/logo-emiliocolor_ai.png" alt="EmilioColor AI" class="gallery-image">
     <div class="gallery-content">
-        <h3 class="gallery-item-title">Calculadora de Resistencias</h3>
+        <h3 class="gallery-item-title">EmilioColor AI</h3>
         <p class="gallery-item-description">
-            Herramienta para calcular el valor de resistencias eléctricas mediante códigos de colores.
+            Inteligencia artificial generativa que funciona directamente en tu navegador. Totalmente local, privada y segura, sin enviar datos a servidores.
         </p>
-        <a href="https://emiliocolor.com/herramientas/calculadora_de_resistencias.html" target="_blank" class="gallery-item-link">Abrir</a>
+        <a href="https://emiliocolor.com/herramientas/emiliocolor_ai.html" target="_blank" class="gallery-item-link">Abrir</a>
     </div>
 </div>
 
@@ -550,6 +545,17 @@ Aquí encontrarás las mejores herramientas digitales desarrolladas por nosotros
             Utilidad para codificar y decodificar texto utilizando el Código Emilio.
         </p>
         <a href="https://emiliocolor.com/herramientas/codificador_codigo_emilio.html" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+ <!-- Item Calculadora de Resistencias -->
+<div class="gallery-item">
+    <img src="img/resistencia.webp" alt="Calculadora de Resistencias" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Calculadora de Resistencias</h3>
+        <p class="gallery-item-description">
+            Herramienta para calcular el valor de resistencias eléctricas mediante códigos de colores.
+        </p>
+        <a href="https://emiliocolor.com/herramientas/calculadora_de_resistencias.html" target="_blank" class="gallery-item-link">Abrir</a>
     </div>
 </div>
 
