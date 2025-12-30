@@ -13,18 +13,16 @@
     <meta property="og:title" content="Legalidad y Garantías - EmilioColor®">
     <meta property="og:description" content="Términos legales, garantías y políticas de EmilioColor®">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://emiliocolor.com/legalidad">
-    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+    <meta property="og:url" content="https://emiliocolor.com/legalidad_y_garantias">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Legalidad y Garantías - EmilioColor®">
     <meta name="twitter:description" content="Términos legales, garantías y políticas de EmilioColor®">
-    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="https://emiliocolor.com/img/favicon_lyg.png" type="image/png">
-
+<link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+<link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
     <title>Legalidad y Garantías - EmilioColor®</title>
 
     <!-- CSS -->
@@ -36,10 +34,10 @@
     <link rel="canonical" href="https://emiliocolor.com/legalidad_y_garantias">
 
     <style>
-        :root {
-            --primary-blue: #962828;
-            --primary-blue-light: #d81d1d;
-            --primary-blue-dark: #500d0d;
+         :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
             --primary-gray: #4d4d4d;
             --primary-gray-light: #a3a3a3;
             --primary-gray-lighter: #7c7c7c;
@@ -127,28 +125,24 @@
             gap: 5px;
         }
 
-        .header-nav-link {
-            padding: 10px 15px;
-            color: var(--text-light);
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            font-weight: 500;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .header-nav-link {
+        padding: 10px 15px;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+    }
 
-        .header-nav-link:hover,
-        .header-nav-link.active {
-            background-color: var(--header-hover);
-            transform: translateY(-2px);
-        }
-
-        .header-nav-link i {
-            font-size: 1.1rem;
-        }
+    .header-nav-link:hover,
+    .header-nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
 
         /* MAIN CONTENT */
         .main-content {
@@ -449,7 +443,7 @@
 <header class="main-header">
     <div class="header-container">
         <a href="https://emiliocolor.com" target="_blank" class="header-logo">
-            <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+            <img src="https://emiliocolor.com/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
         </a>
         
         <nav class="header-nav">
@@ -460,6 +454,7 @@
         </nav>
     </div>
 </header>
+
 
 <!-- Main Content -->
 <main class="main-content">
@@ -790,7 +785,6 @@
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 4px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -836,11 +830,11 @@
         <div class="legal-section">
             <h2>Contacto</h2>
             <p>Para cualquier consulta relacionada con aspectos legales, derechos de autor o uso de contenidos, puede contactarnos a través de:</p>
-            <ul>
-                <li><strong>Correo electrónico:</strong> emiliocolormexico@gmail.com</li>
-                <li><strong>Teléfono:</strong> +52 56 2537 7747</li>
-                <li><strong>WhatsApp:</strong> +52 56 2537 7747</li>
-            </ul>
+            <a href="https://emiliocolor.com/#contacto" 
+               target="_blank" 
+               class="legal-btn secondary">
+                <i class="fas fa-file-contract"></i> Consultar Medios de Contacto
+            </a>
         </div>
     </div>
 </main>
@@ -850,60 +844,69 @@
     <div class="footer-container">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+                <img src="https://emiliocolor.com/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
             </div>
             
             <div class="footer-nav">
-                <h4>Navegación</h4>
-                <a href="https://emiliocolor.com#inicio" class="footer-nav-link" target="_blank" rel="noopener noreferrer">
+                <h4>Navegación Rápida</h4>
+                <a href="https://emiliocolor.com/#inicio" class="footer-nav-link">
                     <i class="fas fa-home"></i> Inicio
                 </a>
-                <a href="https://emiliocolor.com#servicios" class="footer-nav-link" data-section="tecnologia" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-laptop-code"></i> Tecnología
+                <a href="https://emiliocolor.com/#novedades" class="footer-nav-link">
+                    <i class="fas fa-newspaper"></i> Novedades
                 </a>
-                <a href="https://emiliocolor.com/#educacion" class="footer-nav-link" data-section="educacion" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-graduation-cap"></i> Educación
+                <a href="https://emiliocolor.com/#divisiones" class="footer-nav-link">
+                    <i class="fas fa-sitemap"></i> Divisiones
                 </a>
-                <a href="https://emiliocolor.com#productos" class="footer-nav-link" data-section="productos" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-pencil-alt"></i> Papelería
+                <a href="https://emiliocolor.com/#verification" class="footer-nav-link">
+                    <i class="fas fa-info-circle"></i> Info. Adicional
                 </a>
-                <a href="https://emiliocolor.com#transportes" class="footer-nav-link" data-section="transportes" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-truck"></i> Transportes
+                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link">
+                    <i class="fas fa-hands-helping"></i> Apoyos Sociales
                 </a>
-                <a href="https://emiliocolor.com/#classcloud" class="footer-nav-link" data-section="classcloud" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-cloud"></i> ClassCloud℠
+                <a href="https://emiliocolor.com/#proyectos" class="footer-nav-link">
+                    <i class="fas fa-lightbulb"></i> Proyectos
                 </a>
-                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link" data-section="nosotros">
-                    <i class="fas fa-hands-helping"></i> Apoyos
+                <a href="https://emiliocolor.com/#marcas" class="footer-nav-link">
+                    <i class="fas fa-tags"></i> Nuestras Marcas
                 </a>
-                <a href="https://emiliocolor.com/#contactos" class="footer-nav-link" data-section="contacto">
+                <a href="https://emiliocolor.com/#contacto" class="footer-nav-link">
                     <i class="fas fa-envelope"></i> Contacto
                 </a>
             </div>
 
             <div class="footer-contact">
-                <h4>Contacto</h4>
+                <h4>Contacto Directo</h4>
                 <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
-                <p><i class="fas fa-phone-alt"></i> +52 56 2537 7747</p>
-                <p><i class="fab fa-whatsapp"></i> +52 56 2537 7747</p>
+                <p><i class="fas fa-phone-alt"></i> +52 56 5533 3139</p>
+                <p><i class="fab fa-whatsapp"></i> +52 56 5533 3139</p>
                 <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+                <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 AM - 9:00 PM</p>
             </div>
             
             <div class="footer-social">
                 <h4>Síguenos</h4>
                 <div class="footer-social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link" aria-label="Facebook EmilioColor">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://www.instagram.com/emiliocolormx/" class="social-link">
+                    <a href="https://www.instagram.com/emiliocolorcom/" class="social-link" aria-label="Instagram EmilioColor">
                         <i class="fab fa-instagram"></i>
                     </a>
+                    <a href="https://wa.me/525655333139" class="social-link" aria-label="WhatsApp EmilioColor">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:emiliocolormexico@gmail.com" class="social-link" aria-label="Email EmilioColor">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Conecta con nosotros para las últimas novedades</p>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>© 2025 EmilioColor® - Legalidad y Garantías | Todos los derechos reservados.</p>
+            <p>© 2025 EmilioColor® | Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">Tecnología, Educación, Transportes, Papelería - Soluciones a tu medida</p>
         </div>
     </div>
 </footer>
