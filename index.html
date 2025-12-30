@@ -190,7 +190,7 @@
             border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
         }
 
-        /* HEADER STYLES - MEJORADO */
+        /* HEADER STYLES */
         .main-header {
             background: var(--header-bg);
             color: white;
@@ -263,7 +263,7 @@
             min-height: calc(100vh - 400px);
         }
 
-        /* HERO SECTION MEJORADO */
+        /* HERO SECTION */
         .full-width-section {
             width: 100%;
             position: relative;
@@ -628,7 +628,9 @@
             margin-top: 30px;
         }
 
-        /* SECCIÓN DE APOYOS SOCIALES - REORGANIZADA */
+        /* SECCIÓN DE APOYOS SOCIALES */
+                /* Se reorganizó esta sección recientemente M-12 2025 */
+
         .social-support-section {
             width: 100%;
             background-color: white;
@@ -1136,55 +1138,6 @@
             background-color: #128C7E;
         }
 
-        /* LÍNEA DE DENUNCIAS – CARRUSEL (CORREGIDO) */
-        .complaints-line-section {
-            background-color: #f1f1f1;
-            padding: 40px 20px;
-            margin-top: 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .complaints-title {
-            font-size: 1.8rem;
-            color: #d9534f;
-            margin-bottom: 25px;
-            font-weight: 700;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .complaints-carousel {
-            position: relative;
-            height: 80px;
-            overflow: hidden;
-        }
-
-        .complaints-slide {
-            position: absolute;
-            width: 100%;
-            text-align: center;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #d9534f;
-            opacity: 0;
-            line-height: 1.3;
-            transition: opacity 1s ease;
-        }
-
-        .complaints-slide.active {
-            opacity: 1;
-        }
-
-        .complaints-slide span {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-            color: #555;
-            font-weight: 500;
-        }
-
         /* REDES SOCIALES ABAJO */
         .social-bottom-section {
             text-align: center;
@@ -1233,7 +1186,7 @@
             background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
         }
 
-        /* FOOTER STYLES - MEJORADO */
+        /* FOOTER STYLES */
         .main-footer {
             background: var(--footer-bg);
             color: white;
@@ -2444,7 +2397,8 @@ Educación; formación; servicios de entretenimiento; actividades deportivas y c
         </div>
         
         <div class="footer-bottom">
-            <p>© 2023-2025 EmilioColor® | Todos los derechos reservados.</p>
+            <p>© 2023-2025 EmilioColor®. Todo el contenido de este sitio (texto, imágenes, código, diseño, micrositios) 
+    está protegido por derechos de autor. Queda prohibida la reproducción total o parcial sin autorización.</p>
             <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">Tecnología, Educación, Transportes, Papelería - Soluciones a tu medida</p>
         </div>
     </div>
@@ -2452,23 +2406,20 @@ Educación; formación; servicios de entretenimiento; actividades deportivas y c
 
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://emiliocolor.com/proteccion-emiliocolor.js"></script>
 <script>
-    // Gestión del banner de términos y condiciones
     document.addEventListener('DOMContentLoaded', function() {
         const termsBanner = document.getElementById('termsBanner');
         const acceptTermsBtn = document.getElementById('acceptTerms');
         const declineTermsBtn = document.getElementById('declineTerms');
         const body = document.body;
         
-        // Verificar si ya se aceptaron los términos previamente
         const termsAccepted = localStorage.getItem('emiliocolor-terms-accepted');
         
         if (termsAccepted === 'true') {
-            // Si ya se aceptaron, ocultar el banner
             termsBanner.classList.add('hidden');
             body.classList.remove('terms-visible');
         } else {
-            // Mostrar banner y ajustar estilos
             termsBanner.classList.remove('hidden');
             body.classList.add('terms-visible');
         }
@@ -2478,7 +2429,6 @@ Educación; formación; servicios de entretenimiento; actividades deportivas y c
             localStorage.setItem('emiliocolor-terms-accepted', 'true');
             termsBanner.classList.add('hidden');
             body.classList.remove('terms-visible');
-            
             // Mostrar mensaje de confirmación
             showNotification('¡Gracias por aceptar nuestros términos y condiciones!');
         });
@@ -2487,14 +2437,10 @@ Educación; formación; servicios de entretenimiento; actividades deportivas y c
         declineTermsBtn.addEventListener('click', function() {
             // Redireccionar a página de términos o mostrar mensaje
             showNotification('Para usar este sitio web, es necesario aceptar los términos y condiciones.', 'warning');
-            
-            // Opcional: redirigir a la página de términos
-            // window.open('https://emiliocolor.com/legalidad_y_garantias.html', '_blank');
         });
         
-        // Función para mostrar notificaciones
+        // para mostrar notificaciones
         function showNotification(message, type = 'success') {
-            // Crear elemento de notificación
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
@@ -2528,7 +2474,7 @@ Educación; formación; servicios de entretenimiento; actividades deportivas y c
             }, 5000);
         }
         
-        // Añadir estilos de animación para notificaciones
+        // estilos de animación para notificaciones
         const style = document.createElement('style');
         style.textContent = `
             @keyframes slideIn {
@@ -2606,7 +2552,6 @@ Educación; formación; servicios de entretenimiento; actividades deportivas y c
         let currentNewsSlide = 0;
         
         function showNewsSlide(index) {
-            // Validar índice
             if (index >= newsSlides.length) index = 0;
             if (index < 0) index = newsSlides.length - 1;
             
@@ -2656,7 +2601,6 @@ Educación; formación; servicios de entretenimiento; actividades deportivas y c
         
         divisionCards.forEach(card => {
             card.addEventListener('mouseenter', () => {
-                // Asegurar que solo la tarjeta actual tenga el efecto elevado
                 divisionCards.forEach(c => {
                     if (c !== card) {
                         c.style.transform = 'scale(0.98)';
