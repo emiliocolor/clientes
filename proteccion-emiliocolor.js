@@ -9,7 +9,6 @@
  * 1. Bloqueo de clic derecho
  * 2. Bloqueo de teclas de acceso rápido
  * 3. Detección de herramientas de desarrollo
- * 4. Marca de agua digital visible e invisible
  * ====================================================
  */
 
@@ -20,6 +19,8 @@
     // CONFIGURACIÓN - CON AJUSTES PERSONALIZABLES
     // ============================================
     const CONFIG = {
+        empresa: 'EmilioColor®',
+        sitioWeb: 'https://emiliocolor.com',
         
         colores: {
             primario: '#284596',
@@ -244,151 +245,6 @@
         setInterval(verificarDevTools, 1000);
         
         console.log('✅ Detección de DevTools: ACTIVADA');
-    }
-    
-    // ============================================
-    // 4. FUNCIÓN: MARCA DE AGUA DIGITAL
-    // ============================================
-    function agregarMarcaAgua() {
-        const marcaAguaVisible = document.createElement('div');
-        marcaAguaVisible.id = 'ec-marca-agua-visible';
-        marcaAguaVisible.innerHTML = `
-            <div style="
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(90deg, 
-                    ${CONFIG.colores.primario}99 0%, 
-                    ${CONFIG.colores.oscuro}99 100%);
-                color: white;
-                text-align: center;
-                padding: 10px 20px;
-                font-size: 0.8rem;
-                z-index: 9998;
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 10px;
-                user-select: none;
-                pointer-events: none;
-            ">
-                <span style="display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-copyright" style="opacity: 0.9;"></i>
-                    ${new Date().getFullYear()} ${CONFIG.empresa}
-                </span>
-                
-                 <span style="display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-shield-alt" style="color: ${CONFIG.colores.blanco};"></i>
-                    Sistema de Protección para Código
-                </span>
-            </div>
-        `;
-        
-        const marcaAguaInvisible = document.createElement('div');
-        marcaAguaInvisible.style.cssText = `
-            display: none !important;
-            visibility: hidden !important;
-            height: 0 !important;
-            width: 0 !important;
-            overflow: hidden !important;
-            position: absolute !important;
-            top: -9999px !important;
-            left: -9999px !important;
-        `;
-        
-        const fechaActual = new Date().toLocaleDateString('es-MX', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-        
-        marcaAguaInvisible.innerHTML = `
-            <!-- 
-            =====================================================================
-            SISTEMA DE PROTECCIÓN DE CONTENIDO - ${CONFIG.empresa}
-            =====================================================================
-            Propietario: ${CONFIG.empresa}
-            Copyright: © ${new Date().getFullYear()} - Todos los derechos reservados
-            Sitio: ${window.location.hostname}
-            Fecha: ${fechaActual}
-            
-            Información de contacto:
-            Email: ${CONFIG.email}
-            Teléfono: ${CONFIG.telefono}
-            Sitio web: ${CONFIG.sitioWeb}
-            
-            Documentación legal:
-            Términos y condiciones: ${CONFIG.politica}
-            
-            ADVERTENCIA LEGAL:
-            Este código fuente, diseño, imágenes y contenido están protegidos por
-            derechos de autor y leyes de propiedad intelectual nacionales e
-            internacionales. Queda estrictamente prohibida la reproducción,
-            distribución, modificación o cualquier uso no autorizado.
-            
-            Las violaciones serán perseguidas legalmente conforme a la Ley Federal
-            del Derecho de Autor y otras legislaciones aplicables.
-            =====================================================================
-            -->
-        `;
-        
-        if (CONFIG.proteccion.protegerImagenes) {
-            function protegerImagenes() {
-                const imagenes = document.querySelectorAll('img:not([src*="logo"]):not([src*="favicon"]):not(.protegida)');
-                
-                imagenes.forEach(imagen => {
-                    if (imagen.width > 150 && imagen.height > 150) {
-                        imagen.classList.add('protegida');
-                        
-                        imagen.style.cssText += `
-                            position: relative;
-                            background-image: 
-                                linear-gradient(45deg, 
-                                    transparent 49%, 
-                                    rgba(40, 69, 150, 0.02) 50%, 
-                                    transparent 51%),
-                                linear-gradient(-45deg, 
-                                    transparent 49%, 
-                                    rgba(40, 69, 150, 0.02) 50%, 
-                                    transparent 51%);
-                            background-size: 20px 20px;
-                        `;
-                    }
-                });
-            }
-            
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', protegerImagenes);
-            } else {
-                protegerImagenes();
-            }
-            
-            setInterval(protegerImagenes, 5000);
-        }
-        
-        console.log(`%c🛡️  ${CONFIG.empresa.toUpperCase()} - SISTEMA DE PROTECCIÓN ACTIVO`, 
-                   `background: ${CONFIG.colores.primario}; 
-                    color: white; 
-                    font-size: 18px; 
-                    padding: 12px 20px; 
-                    border-radius: 0;
-                    font-weight: bold;
-                    letter-spacing: 1px;`);
-        
-        console.log(`%c📍 Contacto: ${CONFIG.email} | 📱 ${CONFIG.telefono}`, 
-                   `color: ${CONFIG.colores.secundario}; 
-                    font-size: 14px; 
-                    padding: 5px 10px;
-                    background: rgba(40, 69, 150, 0.1);`);
-        
-        document.body.appendChild(marcaAguaVisible);
-        document.body.appendChild(marcaAguaInvisible);
-        
-        console.log('✅ Marca de agua digital: ACTIVADA');
     }
     
     // ============================================
