@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EmilioColor® - Selector de Emojis y Caracteres Especiales">
+    <meta name="keywords" content="emojis, caracteres especiales, símbolos, marketing, papelería">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Selector de Emojis y Caracteres Especiales">
+    <meta property="og:description" content="Herramienta para seleccionar emojis y caracteres especiales para marketing">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Selector de Emojis y Caracteres Especiales">
+    <meta name="twitter:description" content="Herramienta para seleccionar emojis y caracteres especiales para marketing">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Favicon -->
+<link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+<link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+    <title>Selector de Emojis y Caracteres Especiales - EmilioColor®</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+    .header-nav-link {
+        padding: 10px 15px;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+    }
+
+    .header-nav-link:hover,
+    .header-nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Selector de Emojis y Caracteres Especiales */
+        .emoji-selector-container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            border-radius: 0;
+        }
+
+        .emoji-selector {
+            background-color: white;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            color: var(--text-dark);
+            border-radius: 0;
+        }
+        
+        .emoji-selector h2 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        
+        .category-selector {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .category-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .category-btn {
+            background: var(--light-gray);
+            border: 1px solid var(--medium-gray);
+            padding: 8px 15px;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        
+        .category-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+        
+        .category-btn:hover:not(.active) {
+            background: var(--medium-gray);
+        }
+        
+        .emoji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+            gap: 10px;
+            margin-bottom: 25px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .emoji-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            height: 50px;
+            background: var(--light-gray);
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .emoji-item:hover {
+            background: var(--medium-gray);
+            transform: scale(1.1);
+        }
+        
+        .output-area {
+            margin-top: 25px;
+        }
+        
+        .output-area h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .output-text {
+            width: 100%;
+            min-height: 100px;
+            padding: 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0;
+            background: var(--light-gray);
+            font-size: 16px;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            background: var(--button-gradient);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .action-btn:hover {
+            background: var(--button-hover-gradient);
+            transform: translateY(-2px);
+        }
+        
+        .action-btn:active {
+            transform: translateY(0);
+        }
+        
+        .copy-btn {
+            background: var(--primary-blue);
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-blue-dark);
+        }
+        
+        .clear-btn {
+            background: var(--danger-color);
+        }
+        
+        .clear-btn:hover {
+            background: var(--danger-hover);
+        }
+        
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor para header dinámico -->
+    <div id="dynamic-header"></div>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="emoji-selector-container">
+        <div class="emoji-selector">
+            <h2>Selector de Emojis y Caracteres Especiales</h2>
+            
+            <div class="category-selector">
+                <label>Seleccione una categoría:</label>
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="special">Caracteres Especiales</button>
+                    <button class="category-btn" data-category="spanish">Caracteres Español</button>
+                    <button class="category-btn" data-category="office">Papelería y Oficina</button>
+                    <button class="category-btn" data-category="money">Dinero y Finanzas</button>
+                    <button class="category-btn" data-category="colors">Colores</button>
+                    <button class="category-btn" data-category="documents">Documentos</button>
+                    <button class="category-btn" data-category="marketing">Marketing</button>
+                </div>
+            </div>
+            
+            <div class="emoji-grid" id="emoji-grid">
+                <!-- Los emojis se cargarán aquí dinámicamente -->
+            </div>
+            
+            <div class="output-area">
+                <h3>Texto generado:</h3>
+                <textarea class="output-text" id="output-text" placeholder="Los emojis y caracteres seleccionados aparecerán aquí..."></textarea>
+                <div class="action-buttons">
+                    <button class="action-btn copy-btn" id="copy-btn">Copiar texto</button>
+                    <button class="action-btn clear-btn" id="clear-btn">Limpiar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!-- Contenedor para footer dinámico -->
+    <div id="dynamic-footer"></div>
+        <!-- Script dinámico de header/footer -->
+    <script src="script-herramientas.js"></script>
+<!-- Notificación -->
+<div class="notification" id="notification">¡Texto copiado al portapapeles!</div>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Datos de emojis y caracteres por categoría
+    const emojiData = {
+        special: [
+            '@', '#', '$', '%', '&', '*', '(', ')', '[', ']', '{', '}', 
+            '©', '®', '™', '℠', '℗', '°', '±', '×', '÷', '=', '≠', '≈', 
+            '≤', '≥', '∞', '√', '∆', '∑', '∏', '∂', '∫', '∇', '∈', '∉', 
+            '⊂', '⊃', '∪', '∩', '∅', '∀', '∃', '∄', '∴', '∵', '∶', '∷', 
+            '∼', '≃', '≅', '≇', '≉', '≊', '≋', '≌', '≍', '≎', '≏', '≐', 
+            '≑', '≒', '≓', '≔', '≕', '≖', '≗', '≘', '≙', '≚', '≛', '≜', 
+            '≝', '≞', '≟', '≠', '≡', '≢', '≣', '≤', '≥', '≦', '≧', '≨', 
+            '≩', '≪', '≫', '≬', '≭', '≮', '≯', '≰', '≱', '≲', '≳', '≴', 
+            '≵', '≶', '≷', '≸', '≹', '≺', '≻', '≼', '≽', '≾', '≿', '⊀', 
+            '⊁', '⊂', '⊃', '⊄', '⊅', '⊆', '⊇', '⊈', '⊉', '⊊', '⊋', '⊌', 
+            '⊍', '⊎', '⊏', '⊐', '⊑', '⊒', '⊓', '⊔', '⊕', '⊖', '⊗', '⊘', 
+            '⊙', '⊚', '⊛', '⊜', '⊝', '⊞', '⊟', '⊠', '⊡', '⊢', '⊣', '⊤', 
+            '⊥', '⊦', '⊧', '⊨', '⊩', '⊪', '⊫', '⊬', '⊭', '⊮', '⊯', '⊰', 
+            '⊱', '⊲', '⊳', '⊴', '⊵', '⊶', '⊷', '⊸', '⊹', '⊺', '⊻', '⊼', 
+            '⊽', '⊾', '⊿', '⋀', '⋁', '⋂', '⋃', '⋄', '⋅', '⋆', '⋇', '⋈', 
+            '⋉', '⋊', '⋋', '⋌', '⋍', '⋎', '⋏', '⋐', '⋑', '⋒', '⋓', '⋔', 
+            '⋕', '⋖', '⋗', '⋘', '⋙', '⋚', '⋛', '⋜', '⋝', '⋞', '⋟', '⋠', 
+            '⋡', '⋢', '⋣', '⋤', '⋥', '⋦', '⋧', '⋨', '⋩', '⋪', '⋫', '⋬', 
+            '⋭', '⋮', '⋯', '⋰', '⋱', '⋲', '⋳', '⋴', '⋵', '⋶', '⋷', '⋸', 
+            '⋹', '⋺', '⋻', '⋼', '⋽', '⋾', '⋿'
+        ],
+        spanish: [
+            'á', 'é', 'í', 'ó', 'ú', 'ü', 'ñ', 'Á', 'É', 'Í', 'Ó', 'Ú', 'Ü', 'Ñ',
+            'à', 'è', 'ì', 'ò', 'ù', 'À', 'È', 'Ì', 'Ò', 'Ù',
+            'â', 'ê', 'î', 'ô', 'û', 'Â', 'Ê', 'Î', 'Ô', 'Û',
+            'ä', 'ë', 'ï', 'ö', 'ü', 'Ä', 'Ë', 'Ï', 'Ö', 'Ü',
+            'ã', 'õ', 'Ã', 'Õ',
+            'ç', 'Ç',
+            '¡', '¿', '«', '»', '´', '`', '¨', '^', '~'
+        ],
+        office: [
+            '📁', '📂', '📄', '📑', '📊', '📈', '📉', '📋', '📌', '📍', 
+            '✂️', '📎', '🖇️', '📏', '📐', '✏️', '✒️', '🖋️', '🖊️', '🖌️', 
+            '🖍️', '📝', '💼', '📒', '📓', '📔', '📕', '📖', '📗', '📘', 
+            '📙', '📚', '🔖', '🏷️', '📇', '📅', '📆', '🗂️', '🗄️', '🗑️', 
+            '🖥️', '💻', '⌨️', '🖨️', '🖱️', '🖲️', '💽', '💾', '💿', '📀', 
+            '📱', '📲', '☎️', '📞', '📟', '📠', '🔌', '🔋', '🕯️', '💡', 
+            '🔦', '🪔', '🧮', '⌛', '⏳', '🕰️', '⏰', '⏱️', '⏲️', '🕛', 
+            '🕧', '🕐', '🕜', '🕑', '🕝', '🕒', '🕞', '🕓', '🕟', '🕔', 
+            '🕠', '🕕', '🕡', '🕖', '🕢', '🕗', '🕣', '🕘', '🕤', '🕙', 
+            '🕥', '🕚', '🕦'
+        ],
+        money: [
+            '💰', '🪙', '💴', '💵', '💶', '💷', '💸', '💳', '🧾', '💹', 
+            '📈', '📉', '💱', '💲', '₿', '¢', '€', '£', '¥', '₹', 
+            '₽', '₩', '₪', '₫', '₭', '₮', '₯', '₰', '₱', '₲', 
+            '₳', '₴', '₵', '₶', '₷', '₸', '₺', '₻', '₼', '₽', 
+            '₾', '₿', '﷼', '﹩', '＄', '￠', '￡', '￥', '¤', '฿'
+        ],
+        colors: [
+            '🔴', '🟠', '🟡', '🟢', '🔵', '🟣', '🟤', '⚫', '⚪', '🟥', 
+            '🟧', '🟨', '🟩', '🟦', '🟪', '🟫', '⬛', '⬜', '◼️', '◻️', 
+            '◾', '◽', '▪️', '▫️', '🔶', '🔷', '🔸', '🔹', '🔺', '🔻', 
+            '💠', '🔲', '🔳', '🏴', '🚩', '🎌', '🏳️', '🏳️‍🌈', '🏳️‍⚧️', '🇺🇳'
+        ],
+        documents: [
+            '📄', '📃', '📑', '🧾', '📜', '📋', '📊', '📈', '📉', '🗃️', 
+            '🗄️', '🗂️', '📁', '📂', '📒', '📓', '📔', '📕', '📖', '📗', 
+            '📘', '📙', '📚', '🔖', '🏷️', '📇', '📅', '📆', '🗓️', '📝', 
+            '✏️', '🖋️', '🖊️', '🖌️', '🖍️', '📌', '📍', '✂️', '📎', '🖇️', 
+            '📏', '📐', '📋', '🖨️', '🖥️', '💻', '⌨️', '🖱️', '🖲️', '💽'
+        ],
+        marketing: [
+            '📢', '📣', '🔊', '🔔', '📯', '🎺', '🎉', '🎊', '🎈', '🪅', 
+            '🪩', '📸', '📷', '🖼️', '🎨', '🧩', '📱', '📲', '💻', '🖥️', 
+            '📡', '📺', '📻', '🎙️', '🎚️', '🎛️', '📼', '📹', '📽️', '🕶️', 
+            '👓', '👜', '💼', '🎒', '🧳', '👑', '💍', '💎', '📿', '💄', 
+            '👔', '👗', '👘', '🥻', '🩴', '👠', '👢', '👞', '🧦', '🧤', 
+            '🎩', '🧢', '👒', '🎓', '⛑️', '📌', '📍', '🛍️', '🛒', '💰'
+        ]
+    };
+
+    // Elementos DOM
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const emojiGrid = document.getElementById('emoji-grid');
+    const outputText = document.getElementById('output-text');
+    const copyBtn = document.getElementById('copy-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    const notification = document.getElementById('notification');
+
+    // Cargar emojis de la categoría inicial
+    loadEmojis('special');
+
+    // Configurar eventos para los botones de categoría
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remover clase activa de todos los botones
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            // Agregar clase activa al botón clickeado
+            this.classList.add('active');
+            // Cargar emojis de la categoría seleccionada
+            const category = this.getAttribute('data-category');
+            loadEmojis(category);
+        });
+    });
+
+    // Configurar evento para el botón de copiar
+    copyBtn.addEventListener('click', copyToClipboard);
+
+    // Configurar evento para el botón de limpiar
+    clearBtn.addEventListener('click', clearOutput);
+
+    // Función para cargar emojis en la cuadrícula
+    function loadEmojis(category) {
+        emojiGrid.innerHTML = '';
+        
+        if (emojiData[category]) {
+            emojiData[category].forEach(emoji => {
+                const emojiItem = document.createElement('div');
+                emojiItem.className = 'emoji-item';
+                emojiItem.textContent = emoji;
+                emojiItem.setAttribute('title', emoji);
+                
+                emojiItem.addEventListener('click', function() {
+                    addToOutput(emoji);
+                });
+                
+                emojiGrid.appendChild(emojiItem);
+            });
+        }
+    }
+
+    // Función para agregar emoji al área de salida
+    function addToOutput(emoji) {
+        outputText.value += emoji;
+        outputText.focus();
+    }
+
+    // Función para copiar al portapapeles
+    function copyToClipboard() {
+        if (outputText.value.trim() === '') {
+            showNotification('No hay texto para copiar', 'warning');
+            return;
+        }
+        
+        outputText.select();
+        document.execCommand('copy');
+        
+        // Mostrar notificación
+        showNotification('¡Texto copiado al portapapeles!');
+    }
+
+    // Función para limpiar el área de salida
+    function clearOutput() {
+        outputText.value = '';
+        showNotification('Área de texto limpiada', 'info');
+    }
+
+    // Función para mostrar notificación
+    function showNotification(message, type = 'success') {
+        notification.textContent = message;
+        
+        // Cambiar color según el tipo
+        if (type === 'warning') {
+            notification.style.background = 'var(--warning-color)';
+        } else if (type === 'info') {
+            notification.style.background = 'var(--primary-blue)';
+        } else {
+            notification.style.background = 'var(--success-color)';
+        }
+        
+        notification.style.display = 'block';
+        
+        // Ocultar después de 3 segundos
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EmilioColor® - Convertidor de Mayúsculas y Minúsculas">
+    <meta name="keywords" content="convertidor, mayúsculas, minúsculas, texto, formato">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Convertidor de Mayúsculas y Minúsculas">
+    <meta property="og:description" content="Herramienta para convertir texto entre mayúsculas, minúsculas y formato de título">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Convertidor de Mayúsculas y Minúsculas">
+    <meta name="twitter:description" content="Herramienta para convertir texto entre mayúsculas, minúsculas y formato de título">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Favicon -->
+<link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+<link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+    <title>Convertidor de Mayúsculas y Minúsculas - EmilioColor®</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+    .header-nav-link {
+        padding: 10px 15px;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+    }
+
+    .header-nav-link:hover,
+    .header-nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+            
+            .conversion-buttons {
+                flex-direction: column;
+            }
+            
+            .conversion-btn {
+                min-width: 100%;
+            }
+        }
+
+        /* Convertidor de Mayúsculas y Minúsculas Styles */
+        .calculator-container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            border-radius: 0;
+        }
+
+        .calculator {
+            background-color: white;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            color: var(--text-dark);
+            border-radius: 0;
+        }
+        
+        .calculator h2 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .calculator label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+        
+        .calculator textarea {
+            padding: 12px;
+            width: 100%;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0;
+            background-color: white;
+            color: var(--text-dark);
+            font-size: 16px;
+            transition: border 0.3s;
+            box-sizing: border-box;
+            resize: vertical;
+            min-height: 150px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .calculator textarea:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+        }
+        
+        .conversion-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .conversion-btn {
+            background: var(--button-gradient);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .conversion-btn:hover {
+            background: var(--button-hover-gradient);
+            transform: translateY(-2px);
+        }
+        
+        .conversion-btn:active {
+            transform: translateY(0);
+        }
+        
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: var(--light-gray);
+            border-radius: 0;
+            display: none;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .error {
+            color: white;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: var(--danger-color);
+            border-radius: 0;
+            display: none;
+            font-size: 15px;
+        }
+        
+        .conversion-value {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin: 10px 0;
+            word-break: break-word;
+            white-space: pre-wrap;
+        }
+        
+        .calculator hr {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+            margin: 18px 0;
+        }
+        
+        .copy-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 0;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-blue-dark);
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        .home-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+        }
+
+        .home-btn:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        .conversion-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-radius: 0;
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .conversion-info h4 {
+            color: var(--success-color);
+            margin-bottom: 10px;
+        }
+        
+        .formula {
+            font-family: 'Courier New', monospace;
+            background-color: var(--light-gray);
+            padding: 8px 12px;
+            border-radius: 0;
+            display: inline-block;
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+  <!-- Contenedor para header dinámico -->
+    <div id="dynamic-header"></div>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="calculator-container">
+        <div class="calculator">
+            
+            <h2>Convertidor de Mayúsculas y Minúsculas</h2>
+            
+            <div class="input-group">
+                <label for="input-text">Ingrese el texto a convertir:</label>
+                <textarea id="input-text" placeholder="Escriba o pegue aquí el texto que desea convertir..."></textarea>
+            </div>
+            
+            <div class="conversion-buttons">
+                <button class="conversion-btn" id="uppercase-btn">MAYÚSCULAS</button>
+                <button class="conversion-btn" id="lowercase-btn">minúsculas</button>
+                <button class="conversion-btn" id="titlecase-btn">Formato Título</button>
+                <button class="conversion-btn" id="sentencecase-btn">Formato Oración</button>
+                <button class="conversion-btn" id="alternating-btn">AlTeRnAr MaYúScUlAs</button>
+                <button class="conversion-btn" id="remove-accents-btn">Quitar Acentos</button>
+                <button class="conversion-btn" id="underscore-btn">Agregar_Guiones_Bajos</button>
+            </div>
+            
+            <div class="error" id="error"></div>
+            
+            <div class="result" id="result" style="display: none;">
+                <h3>TEXTO CONVERTIDO:</h3>
+                <hr>
+                <div class="conversion-item">
+                    <div class="conversion-value" id="converted-result"></div>
+                    <button class="copy-btn" id="copy-btn">Copiar texto</button>
+                </div>
+            </div>
+            
+            <div class="conversion-info">
+                <h4>Información sobre los formatos:</h4>
+                <ul>
+                    <li><strong>MAYÚSCULAS:</strong> Convierte todo el texto a letras mayúsculas</li>
+                    <li><strong>minúsculas:</strong> Convierte todo el texto a letras minúsculas</li>
+                    <li><strong>Formato Título:</strong> Convierte la primera letra de cada palabra a mayúscula</li>
+                    <li><strong>Formato Oración:</strong> Convierte la primera letra de cada oración a mayúscula</li>
+                    <li><strong>AlTeRnAr MaYúScUlAs:</strong> Alterna entre mayúsculas y minúsculas</li>
+                    <li><strong>Quitar Acentos:</strong> Elimina todos los acentos y caracteres especiales</li>
+                    <li><strong>Agregar_Guiones_Bajos:</strong> Reemplaza espacios por guiones bajos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!-- Contenedor para footer dinámico -->
+    <div id="dynamic-footer"></div>
+        <!-- Script dinámico de header/footer -->
+    <script src="script-herramientas.js"></script>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Configurar eventos para los botones de conversión
+    document.getElementById('uppercase-btn').addEventListener('click', function() {
+        convertText('uppercase');
+    });
+    
+    document.getElementById('lowercase-btn').addEventListener('click', function() {
+        convertText('lowercase');
+    });
+    
+    document.getElementById('titlecase-btn').addEventListener('click', function() {
+        convertText('titlecase');
+    });
+    
+    document.getElementById('sentencecase-btn').addEventListener('click', function() {
+        convertText('sentencecase');
+    });
+    
+    document.getElementById('alternating-btn').addEventListener('click', function() {
+        convertText('alternating');
+    });
+    
+    document.getElementById('remove-accents-btn').addEventListener('click', function() {
+        convertText('removeAccents');
+    });
+    
+    document.getElementById('underscore-btn').addEventListener('click', function() {
+        convertText('underscore');
+    });
+
+    // Configurar evento para el botón de copiar
+    document.getElementById('copy-btn').addEventListener('click', copyResult);
+
+    function convertText(type) {
+        const inputText = document.getElementById("input-text").value;
+        const errorElement = document.getElementById("error");
+        const resultElement = document.getElementById("result");
+        
+        errorElement.style.display = "none";
+        resultElement.style.display = "none";
+        
+        if (!inputText.trim()) {
+            showError("Por favor ingrese algún texto para convertir");
+            return;
+        }
+        
+        let convertedText = '';
+        
+        switch(type) {
+            case 'uppercase':
+                convertedText = inputText.toUpperCase();
+                break;
+            case 'lowercase':
+                convertedText = inputText.toLowerCase();
+                break;
+            case 'titlecase':
+                convertedText = toTitleCase(inputText);
+                break;
+            case 'sentencecase':
+                convertedText = toSentenceCase(inputText);
+                break;
+            case 'alternating':
+                convertedText = toAlternatingCase(inputText);
+                break;
+            case 'removeAccents':
+                convertedText = removeAccents(inputText);
+                break;
+            case 'underscore':
+                convertedText = addUnderscores(inputText);
+                break;
+            default:
+                convertedText = inputText;
+        }
+        
+        document.getElementById("converted-result").textContent = convertedText;
+        resultElement.style.display = "block";
+    }
+
+    function toTitleCase(text) {
+        return text.toLowerCase().replace(/\b\w/g, function(char) {
+            return char.toUpperCase();
+        });
+    }
+
+    function toSentenceCase(text) {
+        return text.toLowerCase().replace(/(^\s*|[.!?]\s+)(\w)/g, function(match, p1, p2) {
+            return p1 + p2.toUpperCase();
+        });
+    }
+
+    function toAlternatingCase(text) {
+        let result = '';
+        let upper = true;
+        
+        for (let i = 0; i < text.length; i++) {
+            const char = text[i];
+            if (/[a-zA-Z]/.test(char)) {
+                result += upper ? char.toUpperCase() : char.toLowerCase();
+                upper = !upper;
+            } else {
+                result += char;
+            }
+        }
+        
+        return result;
+    }
+
+    function removeAccents(text) {
+        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function addUnderscores(text) {
+        return text.replace(/\s+/g, '_');
+    }
+
+    function showError(message) {
+        const errorElement = document.getElementById("error");
+        errorElement.textContent = message;
+        errorElement.style.display = "block";
+    }
+
+    function copyResult() {
+        const resultText = document.getElementById("converted-result").textContent;
+        navigator.clipboard.writeText(resultText)
+            .then(() => {
+                const copyBtn = document.getElementById("copy-btn");
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = "¡Copiado!";
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Error al copiar: ', err);
+                showError("Error al copiar el texto");
+            });
+    }
+</script>
+</body>
+</html>

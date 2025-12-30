@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<!-- Charset & Responsive -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO principal -->
+<title>Plataformas Educativas y Académicas | EmilioColor®</title>
+<meta name="description" content="Plataformas educativas y académicas desarrolladas y respaldadas por EmilioColor®. Recursos digitales para estudiantes, docentes y comunidades educativas.">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<meta name="google" content="notranslate">
+
+<meta name="author" content="EmilioColor®">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://emiliocolor.com/plataformas/">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="EmilioColor®">
+<meta property="og:title" content="Plataformas Educativas y Académicas - EmilioColor®">
+<meta property="og:description" content="Catálogo de plataformas educativas y académicas: comunidades estudiantiles, software educativo y proyectos de apoyo al aprendizaje.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emiliocolor.com/plataformas/">
+<meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+<link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+
+<!-- Fonts & CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Plataformas Educativas y Académicas",
+  "description": "Catálogo de plataformas educativas y académicas desarrolladas o respaldadas por EmilioColor®.",
+  "url": "https://emiliocolor.com/plataformas/",
+  "inLanguage": "es",
+  "publisher": {
+    "@type": "Organization",
+    "name": "EmilioColor®",
+    "url": "https://emiliocolor.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://emiliocolor.com/img-logos/logo_transparente_alargado.png"
+    },
+    "sameAs": [
+      "https://www.instagram.com/emiliocolorcom/",
+      "https://www.youtube.com/@EmilioColor"
+    ]
+  },
+  "dateModified": "2025-01-28"
+}
+</script>
+
+</head>
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+    .header-nav-link {
+        padding: 10px 15px;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+    }
+
+    .header-nav-link:hover,
+    .header-nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 46px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+/* GALLERY STYLES - MODIFICADO */
+.gallery-container {
+    margin: 40px 0;
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* CAMBIO PRINCIPAL: 2 columnas en lugar de 4 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas por fila */
+    gap: 30px; /* Un poco más de espacio entre elementos */
+}
+
+.gallery-item {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imágenes un poco más grandes */
+.gallery-image {
+    width: 100%;
+    height: 180px; /* Aumentado de 140px */
+    object-fit: contain; /* Para mantener proporciones sin recortar */
+    background-color: var(--light-gray);
+    padding: 20px; /* Más padding */
+}
+
+.gallery-content {
+    padding: 20px; /* Más padding */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.gallery-item-description {
+    color: var(--primary-gray);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.gallery-item-link {
+    display: block;
+    text-align: center;
+    background: var(--primary-blue);
+    color: white;
+    padding: 12px; /* Un poco más de padding */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-bottom: 8px; /* Espacio entre botones */
+}
+
+.gallery-item-link:hover {
+    background: var(--primary-blue-dark);
+    color: white;
+}
+
+/* Estilos para múltiples botones en un item */
+.gallery-content a:last-child {
+    margin-bottom: 0;
+}
+
+        /* LEGAL NOTICE STYLES */
+        .legal-notice {
+            background: white;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 40px 0;
+        }
+        
+        .legal-notice h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .legal-notice p {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .legal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legal-btn:hover {
+            background: var(--primary-blue-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .legal-btn.secondary {
+            background: var(--primary-gray);
+        }
+        
+        .legal-btn.secondary:hover {
+            background: var(--primary-gray-dark);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .legal-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-image {
+                height: 160px; /* Un poco más grande en móviles */
+            }
+            
+            .legal-buttons {
+                flex-direction: column;
+            }
+            
+            .legal-btn {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+            <img src="https://emiliocolor.com/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="https://emiliocolor.com/" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Página principal</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<div class="container">
+    <h1 class="text-center mb-4" style="color: var(--primary-blue);">
+         Plataformas Educativas y Académicas
+    </h1>
+    <p class="text-center mb-5">
+Aquí encontrarás plataformas educativas y académicas desarrolladas por nosotros o en las que contamos con una colaboración directa.    </p>
+
+    <div class="gallery-container">
+        <div class="gallery-grid">
+
+<!-- Comunidad Estudiantil (Colaboradores) -->
+<div class="gallery-item">
+    <img src="img/CECECYT9-EC.png" alt="Comunidad Estudiantil CECyT 9" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">
+            Comunidad de Estudio del Centro de Estudios Científicos y Tecnológicos No. 9<br>
+            “Juan de Dios Bátiz”
+        </h3>
+
+        <p class="gallery-item-collab">
+            <strong>Somos colaboradores directos</strong>
+        </p>
+
+        <p class="gallery-item-description">
+            Comunidad creada por y para estudiantes, orientada al apoyo académico mutuo, el intercambio de materiales
+            de estudio y la promoción de una convivencia sana, participativa y colaborativa.
+        </p>
+
+        <div class="gallery-links">
+            <a href="https://chat.whatsapp.com/Lrppdhh5OZoAzxPEewWGJM" target="_blank" class="gallery-item-link">
+                Comunidad
+            </a>
+            <a href="https://sites.google.com/view/comunidad-de-estudio-cecyt9" target="_blank" class="gallery-item-link">
+                Página oficial
+            </a>
+            <a href="https://drive.google.com/file/d/1D02xWsTKr7VfdArUAT2HPzROw-hAYhr3/view?usp=sharing" target="_blank" class="gallery-item-link">
+                Permiso
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .gallery-item-collab {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+</style>
+            <div class="gallery-item">
+                <img src="img/pill.png" alt="PILL" class="gallery-image">
+                <div class="gallery-content">
+                            <p class="gallery-item-collab">
+            <strong>DESARROLLADA POR NOSOTROS</strong>
+        </p>
+                    <h3 class="gallery-item-title">Programas Informáticos Libres y Licenciados</h3>
+                    <p class="gallery-item-description">
+                        Plataforma que reúne programas informáticos gratuitos y licenciados para apoyar el estudio, el desarrollo académico y proyectos tecnológicos, con apego a la legalidad vigente.
+                    </p>
+                    <a href="https://emiliocolor.com/plataformas/pill" target="_blank" class="gallery-item-link">Acceder</a>
+                </div>
+            </div>
+<div class="gallery-item">
+    <img src="img/asesorias.png" alt="Asesorías CECyT 9 Juan de Dios Bátiz" class="gallery-image">
+    <div class="gallery-content">
+                                    <p class="gallery-item-collab">
+            <strong>DESARROLLADA POR NOSOTROS</strong>
+        </p>
+        <h3 class="gallery-item-title">
+            Plataforma de Asesorías del Centro de Estudios Científicos y Tecnológicos 9<br>
+            “Juan de Dios Bátiz”
+        </h3>
+        <p class="gallery-item-description">
+            Plataforma que facilita a estudiantes, docentes y personal administrativo del CECyT 9 el acceso rápido y organizado a los horarios de asesorías académicas.
+        </p>
+        <a href="https://cecyt9.asesorias.emiliocolor.com/" target="_blank" class="gallery-item-link">
+            Acceder
+        </a>
+    </div>
+</div>
+
+
+        </div> <!-- /gallery-grid -->
+
+
+<style>
+.gallery-btn {
+    flex: 1; /* mismo ancho */
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.btn-blue {
+    background-color: #007BFF;
+}
+
+.btn-blue:hover {
+    background-color: #0056b3;
+}
+
+.btn-green {
+    background-color: #28A745;
+}
+
+.btn-green:hover {
+    background-color: #1e7e34;
+}
+</style>
+
+    </div>
+</div>
+
+        </div> <!-- /gallery-grid -->
+
+    </div> <!-- /gallery-container -->
+
+        
+<div class="legal-notice">
+    <h3>Aviso Legal</h3>
+    <p>Contamos con sustentos legales con base en la LFDA en México. Al usar nuestra página y utilizar las plataformas aquí disponibles, aceptas lo marcado en nuestra página de Legalidad y Garantías.</p>
+    <p>
+        <strong>EmilioColor® | Legalidad y Garantías</strong><br>
+        <em>Términos legales, garantías y políticas</em>
+    </p>    
+    <div class="legal-buttons">
+                <a href="https://emiliocolor.com/legalidad_y_garantias.html" 
+           target="_blank" 
+           class="legal-btn secondary">
+            <i class="fas fa-file-contract"></i> Legalidad y Garantías
+        </a>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com&su=Propuesta%20de%20Ideas%20para%20Nuevas%20Plataformas%20Educativas%20y%20Acad%C3%A9micas%20%E2%80%93%20EmilioColor%C2%AE&body=Estimado%20equipo%20de%20EmilioColor%2C%0D%0A%0D%0APor%20medio%20del%20presente%2C%20me%20gustar%C3%ADa%20proponer%20una%20o%20m%C3%A1s%20ideas%20para%20el%20desarrollo%20de%20nuevas%20plataformas%20educativas%20y%20acad%C3%A9micas%2C%20las%20cuales%20podr%C3%ADan%20ser%20creadas%20de%20manera%20conjunta%2C%20desarrolladas%20directamente%20por%20EmilioColor%C2%AE%2C%20o%20bien%20impulsadas%20a%20partir%20de%20una%20colaboraci%C3%B3n%20activa%20entre%20ambas%20partes.%0D%0A%0D%0AA%20continuaci%C3%B3n%2C%20se%20presentan%20las%20ideas%20de%20plataformas%20educativas%20y%20acad%C3%A9micas%20propuestas%3A%0D%0A%0D%0A-%20Idea%20de%20Plataforma%201%20(Descripci%C3%B3n%20breve%2C%20incluyendo%20el%20tipo%20de%20colaboraci%C3%B3n%20propuesto%3A%20desarrollo%20conjunto%2C%20colaboraci%C3%B3n%20acad%C3%A9mica%2C%20licenciamiento%2C%20co-creaci%C3%B3n%20de%20contenidos%2C%20u%20otro%20esquema).%0D%0A-%20Idea%20de%20Plataforma%202%20(Descripci%C3%B3n%20breve%2C%20incluyendo%20el%20tipo%20de%20colaboraci%C3%B3n%20propuesto).%0D%0A-%20Idea%20de%20Plataforma%203%20(Descripci%C3%B3n%20breve%2C%20incluyendo%20el%20tipo%20de%20colaboraci%C3%B3n%20propuesto).%0D%0A%0D%0AQuedo%20atento%20a%20cualquier%20informaci%C3%B3n%20adicional%20que%20sea%20necesaria%20para%20evaluar%20la%20viabilidad%20de%20las%20propuestas%20y%20definir%20el%20esquema%20de%20colaboraci%C3%B3n%20m%C3%A1s%20adecuado.%0D%0A%0D%0AAtentamente." 
+   target="_blank" 
+   class="legal-btn">
+    <i class="fas fa-plus-circle"></i> Solicitar Nuevas Plataformas
+</a>
+
+    </div>
+</div>
+
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://emiliocolor.com/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación Rápida</h4>
+                <a href="https://emiliocolor.com/#inicio" class="footer-nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="https://emiliocolor.com/#novedades" class="footer-nav-link">
+                    <i class="fas fa-newspaper"></i> Novedades
+                </a>
+                <a href="https://emiliocolor.com/#divisiones" class="footer-nav-link">
+                    <i class="fas fa-sitemap"></i> Divisiones
+                </a>
+                <a href="https://emiliocolor.com/#verification" class="footer-nav-link">
+                    <i class="fas fa-info-circle"></i> Info. Adicional
+                </a>
+                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link">
+                    <i class="fas fa-hands-helping"></i> Apoyos Sociales
+                </a>
+                <a href="https://emiliocolor.com/#proyectos" class="footer-nav-link">
+                    <i class="fas fa-lightbulb"></i> Proyectos
+                </a>
+                <a href="https://emiliocolor.com/#marcas" class="footer-nav-link">
+                    <i class="fas fa-tags"></i> Nuestras Marcas
+                </a>
+                <a href="https://emiliocolor.com/#contacto" class="footer-nav-link">
+                    <i class="fas fa-envelope"></i> Contacto
+                </a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto Directo</h4>
+                <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +52 56 5533 3139</p>
+                <p><i class="fab fa-whatsapp"></i> +52 56 5533 3139</p>
+                <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+                <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 AM - 9:00 PM</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link" aria-label="Facebook EmilioColor">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolorcom/" class="social-link" aria-label="Instagram EmilioColor">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/525655333139" class="social-link" aria-label="WhatsApp EmilioColor">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:emiliocolormexico@gmail.com" class="social-link" aria-label="Email EmilioColor">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Conecta con nosotros para las últimas novedades</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 EmilioColor® | Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">Tecnología, Educación, Transportes, Papelería - Soluciones a tu medida</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

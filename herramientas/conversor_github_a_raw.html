@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Convertidor GitHub a RAW - Herramienta Gratis | EmilioColor</title>
+  <meta name="description" content="Convierte fácilmente enlaces de GitHub a formato RAW. Herramienta gratuita para desarrolladores creada por EmilioColor. Transforma URLs con 'blob' a enlaces RAW directos.">
+  <meta name="keywords" content="github a raw, convertidor github, enlace raw, github raw converter, emiliocolor, herramienta desarrolladores, url raw github">
+  <meta name="author" content="EmilioColor">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Convertidor GitHub a RAW - Herramienta Gratis | EmilioColor">
+  <meta property="og:description" content="Convierte fácilmente enlaces de GitHub a formato RAW. Herramienta gratuita para desarrolladores.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emiliocolor.com/github_a_raw">
+<link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+<link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Convertidor GitHub a RAW - Herramienta Gratis | EmilioColor">
+  <meta name="twitter:description" content="Convierte fácilmente enlaces de GitHub a formato RAW. Herramienta gratuita para desarrolladores.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://github.com/emiliocolor/mx/raw/2683006dbbc92ea02006bdc335a34042a0686bc5/img/favicon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: url('https://raw.githubusercontent.com/emiversal/database/82e46224a535efc7eec6d57d0c88d5cafae1743f/img_background_logins/perro2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .glass-container {
+      background: rgba(255, 255, 255, 0.336);
+      border-radius: 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1.section-title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: white;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+    }
+
+    input.search-input {
+      margin-bottom: 15px;
+      border-radius: 0;
+      border: 1px solid #777;
+      padding: 12px 2px;
+      background: rgba(255, 255, 255, 0.836);
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    .btn-transparent, .btn-clear, .btn-copy, .btn-add, .btn-pdf {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-align: center;
+      display: inline-block;
+      margin: 5px;
+    }
+
+    .btn-transparent {
+      color: #222;
+      background: #bbb;
+    }
+
+    .btn-transparent:hover {
+      background: #999;
+    }
+
+    .btn-clear {
+      background: #777;
+      color: white;
+    }
+
+    .btn-clear:hover {
+      background: #555;
+    }
+
+    .btn-copy {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .btn-copy:hover {
+      background: #45a049;
+    }
+
+    .btn-add {
+      background: #2196F3;
+      color: white;
+    }
+
+    .btn-add:hover {
+      background: #0b7dda;
+    }
+
+    .btn-pdf {
+      background: #f44336;
+      color: white;
+    }
+
+    .btn-pdf:hover {
+      background: #da190b;
+    }
+
+    .conversion-item {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 15px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      text-align: left;
+      position: relative;
+    }
+
+    .conversion-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    .conversion-url {
+      font-family: Arial, sans-serif;
+      word-break: break-all;
+      margin-bottom: 10px;
+    }
+
+    .conversion-raw {
+      font-family: Arial, sans-serif;
+      word-break: break-all;
+      color: #0066cc;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+      justify-content: center;
+    }
+
+    .conversions-container {
+      margin-top: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .footer-logo-favicon {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      height: 30px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .footer-logo-favicon:hover {
+      transform: scale(1.1);
+    }
+
+    .title-input {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-content">
+    <div class="glass-container">
+      <h1 class="section-title">Convertidor de GitHub a RAW</h1>
+      <input type="text" id="conversionTitle" class="search-input title-input" placeholder="Título para esta conversión (opcional)">
+      <input type="text" id="githubUrl" class="search-input" placeholder="Pega aquí el enlace al archivo en GitHub (con 'blob')">
+      <div class="btn-row">
+        <button class="btn-clear" onclick="resetForm()">Reiniciar</button>
+        <button class="btn-transparent" onclick="convertToRaw()">Convertir</button>
+        <button class="btn-add" onclick="addConversion()">Agregar</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn-pdf" onclick="generatePDF()">Guardar PDF</button>
+      </div>
+      <div id="conversions-container" class="conversions-container"></div>
+    </div>
+  </div>
+
+  <!-- Logo fijo con enlace directo a emiliocolor.com -->
+  <a href="https://emiliocolor.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://emiliocolor.com/img-logos/logo_transparente_alargado.png" class="footer-logo-favicon" alt="Logo EmilioColor - Herramientas para desarrolladores">
+  </a>
+
+  <script>
+    const conversions = [];
+    
+    function convertToRaw() {
+      const input = document.getElementById("githubUrl");
+      const titleInput = document.getElementById("conversionTitle");
+      const url = input.value.trim();
+      const title = titleInput.value.trim() || "Conversión sin título";
+
+      const match = url.match(/^https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/blob\/([^\/]+)\/(.+)$/);
+
+      if (!match) {
+        alert("❌ Enlace inválido. Asegúrate de pegar un enlace con 'blob'.");
+        return;
+      }
+
+      const [, user, repo, branch, path] = match;
+      const rawUrl = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${path}`;
+      
+      const conversion = {
+        title: title,
+        originalUrl: url,
+        rawUrl: rawUrl,
+        date: new Date().toLocaleString()
+      };
+      
+      displayConversion(conversion);
+      resetForm();
+    }
+    
+    function addConversion() {
+      convertToRaw();
+    }
+    
+    function displayConversion(conversion) {
+      conversions.push(conversion);
+      const container = document.getElementById("conversions-container");
+      
+      const item = document.createElement("div");
+      item.className = "conversion-item";
+      item.innerHTML = `
+        <div class="conversion-title">${conversion.title}</div>
+        <div class="conversion-url"><strong>Original:</strong> ${conversion.originalUrl}</div>
+        <div class="conversion-raw"><strong>RAW:</strong> ${conversion.rawUrl}</div>
+        <button class="btn-copy" onclick="copyToClipboard('${conversion.rawUrl}')">Copiar RAW</button>
+        <div style="font-size: 0.8rem; color: #666; margin-top: 5px;">${conversion.date}</div>
+      `;
+      
+      container.appendChild(item);
+      container.scrollTop = container.scrollHeight;
+    }
+    
+    function copyToClipboard(text) {
+      const tempInput = document.createElement("input");
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      alert("Enlace copiado al portapapeles: " + text);
+    }
+    
+    function resetForm() {
+      document.getElementById("githubUrl").value = "";
+      document.getElementById("conversionTitle").value = "";
+    }
+    
+    function generatePDF() {
+      if (conversions.length === 0) {
+        alert("No hay conversiones para guardar.");
+        return;
+      }
+      
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      
+      // Agregar marca de agua
+      doc.setFontSize(40);
+      doc.setTextColor(200, 200, 200);
+      doc.text('EmilioColor® | GitHub a RAW', 105, 150, {angle: 45, align: 'center'});
+      doc.setTextColor(0, 0, 0);
+      
+      // Título del documento
+      doc.setFontSize(18);
+      doc.text('Conversiones GitHub a RAW', 105, 15, {align: 'center'});
+      doc.setFontSize(12);
+      doc.text(`Generado: ${new Date().toLocaleString()}`, 105, 22, {align: 'center'});
+      
+      // Contenido
+      let y = 35;
+      doc.setFontSize(12);
+      doc.setFont('helvetica', 'normal');
+      
+      conversions.forEach((conv, index) => {
+        if (y > 280) {
+          doc.addPage();
+          y = 20;
+        }
+        
+        doc.setFontSize(14);
+        doc.text(`${index + 1}. ${conv.title}`, 14, y);
+        y += 7;
+        
+        doc.setFontSize(10);
+        doc.text(`Fecha: ${conv.date}`, 14, y);
+        y += 7;
+        
+        doc.text(`Original:`, 14, y);
+        y += 5;
+        doc.text(conv.originalUrl, 20, y, {maxWidth: 170});
+        y += 10;
+        
+        doc.text(`RAW:`, 14, y);
+        y += 5;
+        doc.text(conv.rawUrl, 20, y, {maxWidth: 170});
+        y += 15;
+      });
+      
+      doc.save(`GitHub_a_RAW_${new Date().toISOString().slice(0,10)}.pdf`);
+    }
+  </script>
+
+</body>
+</html>

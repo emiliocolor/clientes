@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Charset & Responsive -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO básico -->
+  <title>EmilioColor AI - Inteligencia Artificial Local Segura | EmilioColor®</title>
+  <meta name="description" content="EmilioColor AI - Inteligencia artificial generativa local que funciona directamente en tu navegador. Totalmente seguro, privado y sin enviar datos a servidores.">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  <meta name="google" content="notranslate">
+
+  <!-- Autor -->
+  <meta name="author" content="EmilioColor®">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://emiliocolor.com/herramientas/emiliocolor_ai.html">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="EmilioColor®">
+  <meta property="og:title" content="EmilioColor AI - Inteligencia Artificial Local Segura">
+  <meta property="og:description" content="EmilioColor AI - Inteligencia artificial generativa local que funciona directamente en tu navegador. Totalmente seguro, privado y sin enviar datos a servidores.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emiliocolor.com/herramientas/emiliocolor_ai.html">
+  <meta property="og:image" content="https://emiliocolor.com/assets/img/webllm-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+  <link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+
+  <!-- CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- JSON-LD para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "EmilioColor AI",
+    "url": "https://emiliocolor.com/herramientas/emiliocolor_ai.html",
+    "description": "EmilioColor AI - Inteligencia artificial generativa local que funciona directamente en tu navegador. Totalmente seguro, privado y sin enviar datos a servidores.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Navegador Web",
+    "featureList": [
+      "Generación de texto mediante inteligencia artificial local",
+      "Funciona directamente en el navegador",
+      "Sin enviar datos a servidores",
+      "Privacidad y seguridad 100% garantizada"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "EmilioColor®"
+    }
+  }
+  </script>
+</head>
+
+<style>
+    :root {
+        --primary-blue: #284596;
+        --primary-blue-light: #1d4ed8;
+        --primary-blue-dark: #0d1d50;
+        --primary-gray: #4d4d4d;
+        --primary-gray-light: #a3a3a3;
+        --primary-gray-lighter: #7c7c7c;
+        --primary-gray-dark: #464646;
+        --primary-gray-darker: #303030;
+        --secondary-gray: #808080;
+        --accent-gray: #696969;
+        --light-gray: #f8fafc;
+        --medium-gray: #e2e8f0;
+        --dark-gray: #1e293b;
+        --text-dark: #2c333d;
+        --text-light: #f1f5f9;
+        --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+        --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+        --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+        --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+        --success-color: #10b981;
+        --warning-color: #f59e0b;
+        --danger-color: #ef4444;
+        --danger-hover: #dc2626;
+        --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+        --user-message-blue: #1a56db;
+        --user-message-dark: #0d3c9c;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--light-gray);
+        color: var(--text-dark);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 80px;
+    }
+
+    /* HEADER STYLES */
+    .main-header {
+        background: var(--header-bg);
+        color: white;
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-bottom: 2px solid var(--primary-blue-dark);
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .header-logo img {
+        height: 30px;
+    }
+
+    .header-logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .header-logo-subtext {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    .header-nav {
+        display: flex;
+        gap: 5px;
+    }
+
+    .header-nav-link {
+        padding: 10px 15px;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+    }
+
+    .header-nav-link:hover,
+    .header-nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    /* CHAT CONTAINER */
+    .chat-main-content {
+        flex: 1;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .chat-wrapper {
+        background: white;
+        border: 1px solid var(--medium-gray);
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 180px);
+        min-height: 600px;
+        overflow: hidden;
+    }
+
+    .chat-header {
+        background: var(--header-bg);
+        color: white;
+        padding: 20px;
+        border-bottom: 1px solid var(--primary-blue-dark);
+    }
+
+    .chat-header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .chat-logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        height: 70px;
+    }
+
+    .chat-logo {
+        width: 250px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+    }
+
+    .chat-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .chat-titles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .chat-titles h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .chat-titles p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+
+    .cache-info {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cache-size {
+        font-weight: 600;
+        color: #f1f5f9;
+    }
+
+    .clear-cache-btn {
+        background: rgba(239, 68, 68, 0.9);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .clear-cache-btn:hover {
+        background: var(--danger-hover);
+    }
+
+    .model-selector {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    select {
+        padding: 10px 20px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        outline: none;
+        min-width: 250px;
+        transition: all 0.3s;
+    }
+
+    select:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    select option {
+        background: var(--primary-gray-darker);
+        color: white;
+        padding: 10px;
+    }
+
+    .model-description {
+        margin-top: 12px;
+        font-size: 0.85rem;
+        opacity: 0.8;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .tech-note {
+        font-size: 0.75rem;
+        opacity: 0.6;
+        text-align: center;
+        margin-top: 5px;
+        font-style: italic;
+    }
+
+    .status-bar {
+        background: var(--light-gray);
+        padding: 12px 20px;
+        border-bottom: 1px solid var(--medium-gray);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.85rem;
+    }
+
+    .status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .status-dot {
+        width: 10px;
+        height: 10px;
+        background: var(--secondary-gray);
+    }
+
+    .status-dot.loading { background: var(--warning-color); animation: pulse 1.5s infinite; }
+    .status-dot.ready { background: var(--success-color); }
+    .status-dot.error { background: var(--danger-color); }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+
+    .chat-container {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        background: var(--light-gray);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .message {
+        max-width: 80%;
+        padding: 16px 20px;
+        line-height: 1.6;
+        position: relative;
+        animation: slideIn 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        word-wrap: break-word;
+        border: 1px solid var(--medium-gray);
+    }
+
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .user-message {
+        align-self: flex-end;
+        background: linear-gradient(135deg, var(--user-message-blue) 0%, var(--user-message-dark) 100%);
+        color: white;
+        border: 1px solid var(--primary-blue-dark);
+    }
+
+    .bot-message {
+        align-self: flex-start;
+        background: white;
+        color: var(--text-dark);
+        border: 1px solid var(--medium-gray);
+    }
+
+    /* Estilos para formato Markdown en mensajes del bot */
+    .bot-message strong,
+    .bot-message b {
+        font-weight: 700;
+        color: var(--primary-blue-dark);
+    }
+
+    .bot-message em,
+    .bot-message i {
+        font-style: italic;
+    }
+
+    .bot-message ul,
+    .bot-message ol {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .bot-message li {
+        margin-bottom: 5px;
+    }
+
+    .bot-message p {
+        margin-bottom: 10px;
+    }
+
+    .bot-message code {
+        background-color: var(--light-gray);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9em;
+        color: var(--primary-blue);
+    }
+
+    .bot-message pre {
+        background-color: var(--light-gray);
+        padding: 12px;
+        border-radius: 5px;
+        overflow-x: auto;
+        margin: 10px 0;
+        border: 1px solid var(--medium-gray);
+    }
+
+    .bot-message pre code {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .bot-message blockquote {
+        border-left: 4px solid var(--primary-blue);
+        padding-left: 12px;
+        margin: 10px 0;
+        color: var(--primary-gray);
+        font-style: italic;
+    }
+
+    .typing-indicator {
+        align-self: flex-start;
+        background: white;
+        padding: 16px 20px;
+        border: 1px solid var(--medium-gray);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .typing-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--secondary-gray);
+        animation: typing 1.4s infinite;
+    }
+
+    .typing-dot:nth-child(1) { animation-delay: 0s; }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typing {
+        0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+        30% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    .input-container {
+        padding: 20px;
+        border-top: 1px solid var(--medium-gray);
+        background: white;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .input-wrapper {
+        flex: 1;
+        position: relative;
+    }
+
+    input {
+        width: 100%;
+        padding: 16px 24px;
+        padding-right: 50px;
+        border: 2px solid var(--medium-gray);
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s;
+        background: var(--light-gray);
+        color: var(--text-dark);
+    }
+
+    input:focus {
+        border-color: var(--primary-blue);
+        box-shadow: 0 0 0 3px rgba(40, 69, 150, 0.1);
+    }
+
+    input:disabled {
+        background: #f1f5f9;
+        cursor: not-allowed;
+        color: var(--primary-gray-lighter);
+    }
+
+    .send-button {
+        padding: 16px 32px;
+        background: var(--button-gradient);
+        color: white;
+        border: none;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-width: 120px;
+        border: 1px solid var(--primary-gray);
+    }
+
+    .send-button:hover:not(:disabled) {
+        background: var(--button-hover-gradient);
+    }
+
+    .send-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        background: var(--secondary-gray);
+    }
+
+    .load-model-btn {
+        padding: 10px 20px;
+        background: var(--button-gradient);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .load-model-btn:hover:not(:disabled) {
+        background: var(--button-hover-gradient);
+    }
+
+    .loading-screen {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        text-align: center;
+        background: var(--light-gray);
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid var(--medium-gray);
+        animation: spin 1s linear infinite;
+        margin-bottom: 24px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .progress-container {
+        width: 100%;
+        max-width: 400px;
+        margin: 24px 0;
+    }
+
+    .progress-bar {
+        height: 8px;
+        background: var(--medium-gray);
+        overflow: hidden;
+        margin-bottom: 12px;
+        border: 1px solid var(--medium-gray);
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: var(--header-bg);
+        width: 0%;
+        transition: width 0.3s ease;
+    }
+
+    .progress-text {
+        font-size: 0.9rem;
+        color: var(--secondary-gray);
+        text-align: center;
+        min-height: 24px;
+    }
+
+    .info-box {
+        background: #dbeafe;
+        border: 1px solid #bfdbfe;
+        padding: 16px;
+        margin: 16px 0;
+        color: var(--primary-blue-dark);
+        font-size: 0.9rem;
+    }
+
+    .warning-box {
+        background: #fef3c7;
+        border: 1px solid #fde68a;
+        padding: 16px;
+        margin: 16px 0;
+        color: #92400e;
+        font-size: 0.9rem;
+    }
+
+    .error-box {
+        background: #fee2e2;
+        border: 1px solid #fecaca;
+        padding: 16px;
+        margin: 16px 0;
+        color: #991b1b;
+        font-size: 0.9rem;
+    }
+
+    .stats {
+        display: flex;
+        gap: 20px;
+        margin-top: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .stat {
+        text-align: center;
+        padding: 12px;
+        background: white;
+        border: 1px solid var(--medium-gray);
+        min-width: 100px;
+        background: var(--card-gradient);
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+        color: var(--primary-gray);
+        margin-top: 4px;
+    }
+
+    .model-recommendation {
+        background: var(--card-gradient);
+        border: 1px solid var(--medium-gray);
+        padding: 16px;
+        margin: 16px 0;
+        color: var(--primary-blue-dark);
+        font-size: 0.9rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .message-time {
+        font-size: 0.75rem;
+        opacity: 0.6;
+        margin-top: 8px;
+        text-align: right;
+    }
+
+    .notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: white;
+        padding: 16px 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 1000;
+        animation: slideInRight 0.3s ease;
+        border-left: 4px solid var(--success-color);
+        max-width: 350px;
+        border: 1px solid var(--medium-gray);
+    }
+
+    @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    .notification.success {
+        border-left-color: var(--success-color);
+    }
+
+    .notification.error {
+        border-left-color: var(--danger-color);
+    }
+
+    .close-notification {
+        background: none;
+        border: none;
+        color: var(--primary-gray-light);
+        cursor: pointer;
+        font-size: 18px;
+        padding: 4px;
+        min-width: auto;
+    }
+
+    /* Botón de pausa */
+    .pause-button {
+        padding: 8px 16px;
+        background: linear-gradient(135deg, var(--warning-color) 0%, #d97706 100%);
+        color: white;
+        border: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 1px solid #d97706;
+        margin-left: 10px;
+    }
+
+    .pause-button:hover:not(:disabled) {
+        background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    }
+
+    .pause-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* FOOTER STYLES */
+    .main-footer {
+        background: var(--footer-bg);
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: auto;
+        border-top: 2px solid #333;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-logo img {
+        height: 46px;
+        margin-bottom: 15px;
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-nav-link {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-nav-link:hover {
+        color: white;
+        transform: translateX(5px);
+    }
+
+    .footer-contact h4,
+    .footer-social h4 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+    }
+
+    .footer-contact p {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-social-links {
+        display: flex;
+        gap: 15px;
+    }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+    @media (max-width: 768px) {
+        body {
+            padding-top: 120px;
+        }
+        
+        .header-nav-link span {
+            display: none;
+        }
+        
+        .chat-wrapper {
+            height: calc(100vh - 200px);
+        }
+        
+        .chat-header-top {
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .cache-info {
+            align-self: stretch;
+            justify-content: space-between;
+        }
+        
+        .model-selector {
+            flex-direction: column;
+        }
+        
+        select {
+            min-width: 100%;
+        }
+        
+        .message {
+            max-width: 90%;
+        }
+        
+        .stats {
+            gap: 10px;
+        }
+        
+        .stat {
+            min-width: 80px;
+            padding: 8px;
+        }
+        
+        .input-container {
+            flex-direction: column;
+        }
+        
+        .send-button, .pause-button {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Contenedor para header dinámico -->
+    <div id="dynamic-header"></div>
+
+<!-- Main Chat Content -->
+<main class="chat-main-content">
+    <div class="chat-wrapper">
+        <div class="chat-header">
+            <div class="chat-header-top">
+                <div class="chat-logo-container">
+                    <div class="chat-logo">
+                        <img src="img/emiliocolor_ai.png" alt="EmilioColor LLM Logo">
+                    </div>
+                </div>
+                <div class="cache-info">
+                    <span>Cache: <span id="cacheSize" class="cache-size">Calculando...</span></span>
+                    <button id="clearCacheBtn" class="clear-cache-btn">
+                        <span>🗑️</span>
+                        <span>Limpiar</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="model-selector">
+                <select id="modelSelect">
+                    <option value="Llama-3.2-3B-Instruct-q4f32_1-MLC">🌟 EmilioColor LLM v1 (1.5GB)</option>
+                    <option value="Phi-3-mini-4k-instruct-q4f32_1-MLC">⚡ EmilioColor LLM v2 (1.4GB)</option>
+                    <option value="Qwen2.5-1.5B-Instruct-q4f32_1-MLC">🌐 EmilioColor LLM v3 (800MB)</option>
+                    <option value="Qwen2.5-0.5B-Instruct-q4f32_1-MLC">💡 EmilioColor LLM v4 (300MB)</option>
+                </select>
+                <button id="loadModelBtn" class="load-model-btn">Cargar Modelo</button>
+            </div>
+            
+            <div id="modelDescription" class="model-description">
+                Selecciona un modelo y haz clic en "Cargar Modelo" para comenzar
+            </div>
+            <div class="tech-note">
+                Funciona con WebLLM - Motor de IA local con WebGPU
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div class="status">
+                <div class="status-dot loading" id="statusDot"></div>
+                <span id="statusText">Verificando compatibilidad...</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span id="modelInfo">Sin modelo cargado</span>
+                <button id="pauseButton" class="pause-button" disabled style="display: none;">
+                    <span>⏸️</span>
+                    <span>Pausar</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="chatArea" class="chat-container">
+            <div class="loading-screen" id="loadingScreen">
+                <div class="spinner"></div>
+                <h3>EmilioColor AI</h3>
+                <p id="loadingText">Selecciona un modelo de la lista superior</p>
+                
+                <div class="model-recommendation">
+                    <strong>💡 Recomendación:</strong>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li><strong>EmilioColor LLM v1</strong> - Mejor calidad general (1.5GB)</li>
+                        <li><strong>EmilioColor LLM v2</strong> - Excelente velocidad (1.4GB)</li>
+                        <li><strong>EmilioColor LLM v3</strong> - Excelente en español (800MB)</li>
+                        <li><strong>EmilioColor LLM v4</strong> - Para hardware limitado (300MB)</li>
+                    </ul>
+                    <p style="margin-top: 10px; font-size: 0.8rem; color: var(--primary-gray);">
+                        Todos los modelos funcionan con WebLLM - Tecnología de IA local
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <strong>ℹ️ Información importante:</strong>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li>Chrome/Edge 113+ con WebGPU habilitado</li>
+                        <li>4GB+ RAM recomendada para modelos grandes</li>
+                        <li>Los modelos se almacenan en cache del navegador</li>
+                        <li>Primera descarga puede tardar varios minutos</li>
+                        <li>Subsecuentes cargas serán instantáneas</li>
+                    </ul>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-value" id="ramUsage">-</div>
+                        <div class="stat-label">RAM Estimada</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="downloadSize">-</div>
+                        <div class="stat-label">Tamaño Descarga</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="speedEstimate">-</div>
+                        <div class="stat-label">Velocidad Est.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Selecciona y carga un modelo primero..."
+                    disabled
+                >
+            </div>
+            <button id="pauseButtonInput" class="pause-button" disabled>
+                <span>⏸️</span>
+                <span>Pausar</span>
+            </button>
+            <button id="sendButton" class="send-button" disabled>
+                <span>Enviar</span>
+                <span>🚀</span>
+            </button>
+        </div>
+    </div>
+</main>
+
+    <!-- Contenedor para footer dinámico -->
+    <div id="dynamic-footer"></div>
+        <!-- Script dinámico de header/footer -->
+    <script src="script-herramientas.js"></script>
+
+<!-- JavaScript del Chat -->
+<script type="module">
+    class WebLLMChat {
+        constructor() {
+            this.engine = null;
+            this.isInitialized = false;
+            this.isGenerating = false;
+            this.isPaused = false;
+            this.currentModel = null;
+            this.chatHistory = [];
+            this.compatibilityChecked = false;
+            this.cacheSize = '0 MB';
+            this.currentStream = null;
+            this.pauseController = null;
+            
+            // Elementos DOM
+            this.elements = {
+                chatArea: document.getElementById('chatArea'),
+                loadingScreen: document.getElementById('loadingScreen'),
+                userInput: document.getElementById('userInput'),
+                sendButton: document.getElementById('sendButton'),
+                pauseButton: document.getElementById('pauseButton'),
+                pauseButtonInput: document.getElementById('pauseButtonInput'),
+                statusDot: document.getElementById('statusDot'),
+                statusText: document.getElementById('statusText'),
+                modelInfo: document.getElementById('modelInfo'),
+                modelSelect: document.getElementById('modelSelect'),
+                modelDescription: document.getElementById('modelDescription'),
+                loadModelBtn: document.getElementById('loadModelBtn'),
+                loadingText: document.getElementById('loadingText'),
+                ramUsage: document.getElementById('ramUsage'),
+                downloadSize: document.getElementById('downloadSize'),
+                speedEstimate: document.getElementById('speedEstimate'),
+                cacheSize: document.getElementById('cacheSize'),
+                clearCacheBtn: document.getElementById('clearCacheBtn'),
+                progressFill: null,
+                progressText: null
+            };
+            
+            // Modelos disponibles - solo nombres EmilioColor LLM v1-v4
+            this.models = {
+                'Llama-3.2-3B-Instruct-q4f32_1-MLC': {
+                    name: 'EmilioColor LLM v1',
+                    version: 'v1',
+                    size: 1500,
+                    ram: 2000,
+                    description: 'Mejor calidad general, contexto 128K, excelente en tareas complejas',
+                    speed: 'Media'
+                },
+                'Phi-3-mini-4k-instruct-q4f32_1-MLC': {
+                    name: 'EmilioColor LLM v2',
+                    version: 'v2',
+                    size: 1400,
+                    ram: 1600,
+                    description: 'Muy rápido, buena calidad, contexto 4K tokens',
+                    speed: 'Rápida'
+                },
+                'Qwen2.5-1.5B-Instruct-q4f32_1-MLC': {
+                    name: 'EmilioColor LLM v3',
+                    version: 'v3',
+                    size: 800,
+                    ram: 1000,
+                    description: 'Excelente en español, contexto 32K, muy buena relación tamaño/calidad',
+                    speed: 'Media-rápida'
+                },
+                'Qwen2.5-0.5B-Instruct-q4f32_1-MLC': {
+                    name: 'EmilioColor LLM v4',
+                    version: 'v4',
+                    size: 300,
+                    ram: 500,
+                    description: 'Muy ligero, para hardware limitado o pruebas rápidas',
+                    speed: 'Muy rápida'
+                }
+            };
+            
+            this.init();
+        }
+        
+        async init() {
+            this.updateStatus('Inicializando...', 'loading');
+            this.updateModelStats();
+            
+            // Event listeners
+            this.elements.loadModelBtn.addEventListener('click', () => this.loadModel());
+            this.elements.modelSelect.addEventListener('change', () => this.updateModelStats());
+            this.elements.sendButton.addEventListener('click', () => this.handleSendMessage());
+            this.elements.clearCacheBtn.addEventListener('click', () => this.clearCache());
+            this.elements.pauseButton.addEventListener('click', () => this.togglePause());
+            this.elements.pauseButtonInput.addEventListener('click', () => this.togglePause());
+            
+            this.elements.userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    this.handleSendMessage();
+                }
+            });
+            
+            // Verificar compatibilidad y cache
+            await this.checkCompatibility();
+            await this.updateCacheSize();
+            
+            // Actualizar tamaño de cache cada 30 segundos
+            setInterval(() => this.updateCacheSize(), 30000);
+        }
+        
+        togglePause() {
+            if (!this.isGenerating) return;
+            
+            this.isPaused = !this.isPaused;
+            
+            if (this.isPaused) {
+                if (this.pauseController) {
+                    this.pauseController.abort();
+                }
+                this.elements.pauseButton.innerHTML = '<span>▶️</span><span>Reanudar</span>';
+                this.elements.pauseButtonInput.innerHTML = '<span>▶️</span><span>Reanudar</span>';
+                this.updateStatus('Generación pausada', 'warning');
+            } else {
+                this.elements.pauseButton.innerHTML = '<span>⏸️</span><span>Pausar</span>';
+                this.elements.pauseButtonInput.innerHTML = '<span>⏸️</span><span>Pausar</span>';
+                this.updateStatus('Generando respuesta...', 'loading');
+                // Reanudar la generación enviando un nuevo mensaje
+                this.handleSendMessage(true);
+            }
+        }
+        
+        async updateCacheSize() {
+            if ('storage' in navigator && 'estimate' in navigator.storage) {
+                try {
+                    const estimate = await navigator.storage.estimate();
+                    const usedMB = Math.round((estimate.usage || 0) / (1024 * 1024));
+                    const quotaMB = Math.round((estimate.quota || 0) / (1024 * 1024));
+                    this.cacheSize = `${usedMB} MB`;
+                    this.elements.cacheSize.textContent = `${usedMB} MB / ${quotaMB} MB`;
+                } catch (error) {
+                    console.warn('No se pudo obtener tamaño de cache:', error);
+                    this.elements.cacheSize.textContent = 'No disponible';
+                }
+            } else {
+                this.elements.cacheSize.textContent = 'No soportado';
+            }
+        }
+        
+        async clearCache() {
+            if (!confirm('¿Estás seguro de que quieres limpiar el cache? Esto eliminará todos los modelos descargados y la próxima carga será más lenta.')) {
+                return;
+            }
+            
+            try {
+                this.updateStatus('Limpiando cache...', 'loading');
+                
+                // Intentar usar la API de Cache Storage
+                if ('caches' in window) {
+                    const cacheNames = await caches.keys();
+                    for (const cacheName of cacheNames) {
+                        if (cacheName.includes('webllm') || cacheName.includes('mlc')) {
+                            await caches.delete(cacheName);
+                        }
+                    }
+                }
+                
+                // Resetear el chat
+                this.resetChat();
+                
+                // Actualizar tamaño de cache
+                await this.updateCacheSize();
+                
+                // Mostrar notificación
+                this.showNotification('¡Cache limpiado!', 'El cache ha sido limpiado exitosamente. Los modelos deberán descargarse nuevamente.', 'success');
+                
+                this.updateStatus('✅ Cache limpiado', 'ready');
+                
+            } catch (error) {
+                console.error('Error limpiando cache:', error);
+                this.showNotification('Error', 'No se pudo limpiar completamente el cache.', 'error');
+                this.updateStatus('❌ Error limpiando cache', 'error');
+            }
+        }
+        
+        showNotification(title, message, type = 'success') {
+            // Crear elemento de notificación
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-icon">${type === 'success' ? '✅' : '❌'}</div>
+                <div class="notification-content">
+                    <div class="notification-title">${title}</div>
+                    <div class="notification-message">${message}</div>
+                </div>
+                <button class="close-notification" onclick="this.parentElement.remove()">×</button>
+            `;
+            
+            // Agregar al body
+            document.body.appendChild(notification);
+            
+            // Auto-eliminar después de 5 segundos
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+        
+        updateModelStats() {
+            const modelId = this.elements.modelSelect.value;
+            const model = this.models[modelId];
+            
+            if (model) {
+                this.elements.modelDescription.textContent = model.description;
+                this.elements.ramUsage.textContent = `${Math.round(model.ram / 1000)}GB`;
+                this.elements.downloadSize.textContent = `${model.size}MB`;
+                
+                // Calcular tiempo estimado (asumiendo 10MB/s)
+                const timeSeconds = Math.ceil(model.size / 10);
+                const minutes = Math.floor(timeSeconds / 60);
+                const seconds = timeSeconds % 60;
+                this.elements.speedEstimate.textContent = minutes > 0 
+                    ? `${minutes}m ${seconds}s`
+                    : `${seconds}s`;
+            }
+        }
+        
+        async checkCompatibility() {
+            let issues = [];
+            
+            // Verificar WebGPU
+            if (!navigator.gpu) {
+                issues.push('WebGPU no habilitado. Ve a chrome://flags/#enable-unsafe-webgpu');
+                this.elements.loadModelBtn.disabled = true;
+                this.elements.loadingText.textContent = 'WebGPU no detectado. Habilítalo en chrome://flags';
+            } else {
+                try {
+                    const adapter = await navigator.gpu.requestAdapter();
+                    if (!adapter) {
+                        issues.push('No se pudo obtener adaptador WebGPU');
+                    }
+                } catch (e) {
+                    issues.push(`Error WebGPU: ${e.message}`);
+                    this.elements.loadModelBtn.disabled = true;
+                }
+            }
+            
+            if (issues.length > 0) {
+                this.updateStatus('Problemas de compatibilidad', 'error');
+                this.showWarning(issues.join('\n'));
+            } else {
+                this.updateStatus('✅ Navegador compatible', 'ready');
+                this.elements.loadingText.textContent = 'Selecciona un modelo y haz clic en "Cargar Modelo"';
+            }
+            
+            this.compatibilityChecked = true;
+        }
+        
+        async loadModel() {
+            if (!this.compatibilityChecked) {
+                await this.checkCompatibility();
+                return;
+            }
+            
+            if (this.isInitialized) {
+                if (confirm('¿Recargar modelo? Se perderá la conversación actual.')) {
+                    this.resetChat();
+                } else {
+                    return;
+                }
+            }
+            
+            const modelId = this.elements.modelSelect.value;
+            this.currentModel = modelId;
+            const modelInfo = this.models[modelId];
+            
+            this.updateStatus(`Preparando ${modelInfo.name}...`, 'loading');
+            this.elements.loadingText.textContent = `Iniciando descarga de ${modelInfo.name}...`;
+            this.showLoadingScreen();
+            
+            try {
+                // Deshabilitar controles durante carga
+                this.elements.loadModelBtn.disabled = true;
+                this.elements.modelSelect.disabled = true;
+                this.elements.clearCacheBtn.disabled = true;
+                
+                // Crear elementos de progreso
+                this.createProgressElements();
+                
+                // Importar WebLLM dinámicamente
+                this.updateStatus('Importando WebLLM...', 'loading');
+                this.elements.progressText.textContent = 'Descargando bibliotecas WebLLM...';
+                
+                let webllm;
+                try {
+                    webllm = await import('https://esm.run/@mlc-ai/web-llm');
+                } catch (importError) {
+                    console.log('Primera importación falló, intentando alternativa...');
+                    webllm = await import('https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.46/dist/index.mjs');
+                }
+                
+                this.updateStatus('Creando motor...', 'loading');
+                this.elements.progressText.textContent = 'Inicializando motor de IA...';
+                
+                // Configuración optimizada
+                const engineConfig = {
+                    initProgressCallback: (info) => {
+                        console.log('Progreso:', info);
+                        this.handleProgressUpdate(info);
+                    }
+                };
+                
+                this.updateStatus(`Cargando ${modelInfo.name}...`, 'loading');
+                this.elements.progressText.textContent = `Descargando modelo (${modelInfo.size}MB)...`;
+                
+                // Crear el engine
+                this.engine = await webllm.CreateMLCEngine(modelId, engineConfig);
+                
+                // Éxito
+                this.isInitialized = true;
+                this.updateStatus('✅ Modelo listo', 'ready');
+                this.elements.modelInfo.textContent = `Modelo: ${modelInfo.name}`;
+                
+                // Actualizar cache size después de la descarga
+                await this.updateCacheSize();
+                
+                // Mostrar interfaz de chat
+                this.showChatInterface();
+                
+                // Agregar mensaje de bienvenida
+                const welcomeMessage = this.formatMarkdown(
+                    `¡Hola! Soy **${modelInfo.name}** cargado localmente en tu navegador usando WebLLM. 🤖\n\n` +
+                    `• **Tamaño**: ${modelInfo.size}MB\n` +
+                    `• **RAM estimada**: ${Math.round(modelInfo.ram / 1000)}GB\n` +
+                    `• **Velocidad**: ${modelInfo.speed}\n` +
+                    `• **Tecnología**: Funciona con WebLLM - Motor de IA local\n\n` +
+                    '¿En qué puedo ayudarte hoy?'
+                );
+                
+                this.addMessage(welcomeMessage, 'bot');
+                
+                this.showNotification('Modelo cargado', `${modelInfo.name} cargado exitosamente. ¡Listo para conversar!`, 'success');
+                
+            } catch (error) {
+                console.error('Error completo:', error);
+                this.updateStatus('❌ Error', 'error');
+                
+                let errorMessage = '';
+                
+                if (error.message.includes('WebGPU') || error.message.includes('gpu')) {
+                    errorMessage = 
+                        'Error de WebGPU. Por favor:\n\n' +
+                        '1. Asegúrate de tener Chrome 113+ o Edge 113+\n' +
+                        '2. Ve a chrome://flags/#enable-unsafe-webgpu\n' +
+                        '3. Activa "Unsafe WebGPU"\n' +
+                        '4. Reinicia el navegador\n' +
+                        '5. Vuelve a intentar';
+                } else if (error.message.includes('fetch') || error.message.includes('network')) {
+                    errorMessage = 
+                        'Error de red. Verifica:\n\n' +
+                        '1. Tu conexión a internet\n' +
+                        '2. Intenta desactivar bloqueadores de anuncios\n' +
+                        '3. Puede que el servidor esté ocupado\n\n' +
+                        'Error técnico: ' + error.message.substring(0, 200);
+                } else {
+                    errorMessage = 
+                        `Error: ${error.message || 'Desconocido'}\n\n` +
+                        'Sugerencias:\n' +
+                        '1. Intenta con un modelo más pequeño\n' +
+                        '2. Recarga la página\n' +
+                        '3. Verifica la consola para más detalles';
+                }
+                
+                this.showError(errorMessage);
+                
+            } finally {
+                this.elements.loadModelBtn.disabled = false;
+                this.elements.modelSelect.disabled = false;
+                this.elements.clearCacheBtn.disabled = false;
+            }
+        }
+        
+        handleProgressUpdate(info) {
+            if (info.text) {
+                this.updateStatus(info.text, 'loading');
+                
+                if (this.elements.progressText) {
+                    this.elements.progressText.textContent = info.text;
+                }
+            }
+            
+            if (info.progress !== undefined && this.elements.progressFill) {
+                this.elements.progressFill.style.width = `${info.progress * 100}%`;
+            }
+        }
+        
+        createProgressElements() {
+            // Crear contenedor de progreso si no existe
+            if (!this.elements.progressContainer) {
+                const container = document.createElement('div');
+                container.className = 'progress-container';
+                container.innerHTML = `
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">Iniciando descarga...</div>
+                `;
+                
+                const recommendation = this.elements.loadingScreen.querySelector('.model-recommendation');
+                if (recommendation) {
+                    recommendation.parentNode.insertBefore(container, recommendation);
+                } else {
+                    this.elements.loadingScreen.appendChild(container);
+                }
+                
+                this.elements.progressFill = container.querySelector('.progress-fill');
+                this.elements.progressText = container.querySelector('.progress-text');
+            }
+        }
+        
+        showLoadingScreen() {
+            this.elements.chatArea.innerHTML = '';
+            this.elements.chatArea.appendChild(this.elements.loadingScreen);
+            this.elements.loadingScreen.style.display = 'flex';
+        }
+        
+        showChatInterface() {
+            this.elements.loadingScreen.style.display = 'none';
+            this.elements.chatArea.innerHTML = '';
+            this.elements.userInput.disabled = false;
+            this.elements.sendButton.disabled = false;
+            this.elements.pauseButton.style.display = 'flex';
+            this.elements.pauseButton.disabled = false;
+            this.elements.userInput.focus();
+            this.elements.userInput.placeholder = 'Escribe tu mensaje...';
+        }
+        
+        async handleSendMessage(isResume = false) {
+            if (!this.isInitialized || (this.isGenerating && !isResume)) return;
+            
+            const message = this.elements.userInput.value.trim();
+            if (!message && !isResume) return;
+            
+            if (!isResume) {
+                // Agregar mensaje del usuario
+                this.addMessage(message, 'user');
+                this.elements.userInput.value = '';
+                this.elements.userInput.disabled = true;
+                this.elements.sendButton.disabled = true;
+                this.elements.pauseButton.disabled = false;
+                this.elements.pauseButtonInput.disabled = false;
+                this.isGenerating = true;
+                this.isPaused = false;
+                
+                // Agregar al historial
+                this.chatHistory.push({ role: 'user', content: message });
+            }
+            
+            // Mostrar indicador de escritura
+            this.showTypingIndicator();
+            
+            try {
+                // Configurar controlador para pausa
+                this.pauseController = new AbortController();
+                
+                // Generar respuesta con streaming
+                const chunks = await this.engine.chat.completions.create({
+                    messages: this.chatHistory,
+                    stream: true,
+                    temperature: 0.7,
+                    max_tokens: 512
+                }, { signal: this.pauseController.signal });
+                
+                this.currentStream = chunks;
+                
+                // Crear mensaje vacío del bot si es nuevo
+                let botMessage;
+                if (!isResume) {
+                    botMessage = this.addMessage('', 'bot');
+                } else {
+                    // Encontrar el último mensaje del bot
+                    const messages = this.elements.chatArea.querySelectorAll('.bot-message');
+                    botMessage = messages[messages.length - 1];
+                }
+                
+                let fullResponse = botMessage ? botMessage.querySelector('div').textContent : '';
+                
+                // Procesar streaming
+                for await (const chunk of chunks) {
+                    if (this.isPaused) {
+                        break;
+                    }
+                    
+                    const content = chunk.choices[0]?.delta?.content || '';
+                    if (content) {
+                        fullResponse += content;
+                        if (botMessage) {
+                            botMessage.querySelector('div').innerHTML = this.formatMarkdown(fullResponse);
+                        }
+                        this.scrollToBottom();
+                    }
+                }
+                
+                if (!this.isPaused) {
+                    // Agregar respuesta completa al historial
+                    this.chatHistory.push({ role: 'assistant', content: fullResponse });
+                    
+                    // Habilitar controles
+                    this.elements.userInput.disabled = false;
+                    this.elements.sendButton.disabled = false;
+                    this.elements.pauseButton.disabled = true;
+                    this.elements.pauseButtonInput.disabled = true;
+                    this.isGenerating = false;
+                    this.elements.userInput.focus();
+                    
+                    this.updateStatus('✅ Listo', 'ready');
+                } else {
+                    // Si está pausado, actualizar historial parcialmente
+                    const lastAssistantIndex = this.chatHistory.findIndex(msg => msg.role === 'assistant');
+                    if (lastAssistantIndex !== -1) {
+                        this.chatHistory[lastAssistantIndex].content = fullResponse;
+                    } else {
+                        this.chatHistory.push({ role: 'assistant', content: fullResponse });
+                    }
+                }
+                
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    console.log('Generación pausada');
+                    this.updateStatus('Generación pausada', 'warning');
+                } else {
+                    console.error('Error generando respuesta:', error);
+                    this.hideTypingIndicator();
+                    this.addMessage(
+                        'Lo siento, hubo un error generando la respuesta. ' +
+                        'Por favor, intenta de nuevo.',
+                        'bot'
+                    );
+                    this.elements.userInput.disabled = false;
+                    this.elements.sendButton.disabled = false;
+                    this.elements.pauseButton.disabled = true;
+                    this.elements.pauseButtonInput.disabled = true;
+                    this.isGenerating = false;
+                    this.updateStatus('❌ Error', 'error');
+                }
+            } finally {
+                this.hideTypingIndicator();
+                if (!this.isPaused) {
+                    this.scrollToBottom();
+                }
+            }
+        }
+        
+        // Formatear markdown a HTML básico
+        formatMarkdown(text) {
+            // Reemplazar **texto** con <strong>texto</strong>
+            let formatted = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            // Reemplazar *texto* con <em>texto</em>
+            formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            // Reemplazar `código` con <code>código</code>
+            formatted = formatted.replace(/`(.*?)`/g, '<code>$1</code>');
+            
+            // Reemplazar listas con viñetas
+            formatted = formatted.replace(/^\s*[-*]\s+(.+)$/gm, '<li>$1</li>');
+            
+            // Agrupar elementos de lista en <ul>
+            formatted = formatted.replace(/(<li>.*?<\/li>)/g, '<ul>$1</ul>');
+            
+            // Reemplazar líneas que comienzan con > como blockquotes
+            formatted = formatted.replace(/^\s*>\s+(.+)$/gm, '<blockquote>$1</blockquote>');
+            
+            // Dividir en párrafos (doble salto de línea)
+            formatted = formatted.replace(/\n\n+/g, '</p><p>');
+            
+            // Reemplazar saltos de línea simples con <br>
+            formatted = formatted.replace(/\n/g, '<br>');
+            
+            // Asegurar que esté envuelto en párrafos
+            if (!formatted.startsWith('<p>')) {
+                formatted = '<p>' + formatted;
+            }
+            if (!formatted.endsWith('</p>')) {
+                formatted = formatted + '</p>';
+            }
+            
+            return formatted;
+        }
+        
+        // Métodos de UI
+        addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const time = new Date().toLocaleTimeString([], { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+            
+            if (sender === 'bot') {
+                messageDiv.innerHTML = `
+                    <div>${text}</div>
+                    <div class="message-time">${time}</div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div>${text}</div>
+                    <div class="message-time">${time}</div>
+                `;
+            }
+            
+            this.elements.chatArea.appendChild(messageDiv);
+            this.scrollToBottom();
+            
+            return messageDiv;
+        }
+        
+        showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <span style="margin-left: 12px; color: #64748b; font-size: 0.9rem;">El modelo está escribiendo...</span>
+            `;
+            
+            this.elements.chatArea.appendChild(typingDiv);
+            this.scrollToBottom();
+        }
+        
+        hideTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+        
+        updateStatus(text, type = 'loading') {
+            this.elements.statusText.textContent = text;
+            this.elements.statusDot.className = 'status-dot ' + type;
+        }
+        
+        showWarning(message) {
+            const warningDiv = document.createElement('div');
+            warningDiv.className = 'warning-box';
+            warningDiv.textContent = message;
+            this.elements.chatArea.appendChild(warningDiv);
+        }
+        
+        showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-box';
+            errorDiv.innerHTML = `
+                <strong>❌ Error al cargar el modelo:</strong><br>
+                ${message.replace(/\n/g, '<br>')}
+                <div style="margin-top: 12px;">
+                    <button onclick="window.chatApp.loadModel()" style="
+                        background: var(--danger-color);
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        margin-right: 8px;
+                    ">
+                        Reintentar
+                    </button>
+                    <button onclick="window.location.reload()" style="
+                        background: var(--primary-blue);
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                    ">
+                        Recargar Página
+                    </button>
+                </div>
+            `;
+            
+            this.elements.chatArea.appendChild(errorDiv);
+        }
+        
+        resetChat() {
+            this.chatHistory = [];
+            this.elements.chatArea.innerHTML = '';
+            this.isInitialized = false;
+            this.isGenerating = false;
+            this.isPaused = false;
+            this.engine = null;
+            this.currentStream = null;
+            this.pauseController = null;
+            this.updateStatus('Listo para cargar modelo', 'loading');
+            this.elements.modelInfo.textContent = 'Sin modelo cargado';
+            this.elements.userInput.disabled = true;
+            this.elements.sendButton.disabled = true;
+            this.elements.pauseButton.disabled = true;
+            this.elements.pauseButtonInput.disabled = true;
+            this.elements.pauseButton.style.display = 'none';
+            this.elements.userInput.placeholder = 'Selecciona y carga un modelo primero...';
+            this.elements.pauseButton.innerHTML = '<span>⏸️</span><span>Pausar</span>';
+            this.elements.pauseButtonInput.innerHTML = '<span>⏸️</span><span>Pausar</span>';
+        }
+        
+        scrollToBottom() {
+            this.elements.chatArea.scrollTop = this.elements.chatArea.scrollHeight;
+        }
+    }
+    
+    // Inicializar cuando se carga la página
+    window.addEventListener('DOMContentLoaded', () => {
+        window.chatApp = new WebLLMChat();
+    });
+</script>
+
+</body>
+</html>
