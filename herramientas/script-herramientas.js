@@ -2,7 +2,7 @@
  * ====================================================
  * SISTEMA INTEGRADO DE LAYOUT Y PROTECCIÓN - EMILIOCOLOR®
  * Archivo: script-emiliocolor-integrado.js
- * Versión: 1.0.0
+ * Versión: 1.1.0
  * Fecha: ${new Date().toISOString().split('T')[0]}
  * ====================================================
  * Este script integra:
@@ -38,7 +38,8 @@
             protegerImagenes: true,
             registroIntentos: true,
             umbralDevTools: 160,
-            maxIntentos: 3
+            maxIntentos: 5,
+            excluirDispositivosMoviles: true // Nueva opción
         },
         
         // Mensajes del sistema
@@ -152,6 +153,30 @@
     let devToolsAbierto = false;
     let intentosDevTools = 0;
     let notificacionActiva = false;
+
+    // ============================================
+    // DETECCIÓN DE DISPOSITIVO
+    // ============================================
+    
+    /**
+     * Detecta si el dispositivo es móvil
+     */
+    function esDispositivoMovil() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const anchoPantalla = window.innerWidth;
+        
+        // Detección por User Agent
+        const esMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+        
+        // Detección por tamaño de pantalla
+        const esMobilePorTamano = anchoPantalla <= 768;
+        
+        // Detección por características táctiles
+        const tienePantallaTactil = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        
+        // Es móvil si cumple alguna condición
+        return (esMobileUA || esMobilePorTamano) && tienePantallaTactil;
+    }
 
     // ============================================
     // FUNCIONES DE LAYOUT DINÁMICO
@@ -388,41 +413,87 @@
     }
     
     /**
-     * Detección de DevTools
+     * Detección MEJORADA de DevTools
      */
     function detectarDevTools() {
         if (!CONFIG.proteccion.detectarDevTools) return;
         
+        // Si está configurado para excluir móviles y es un dispositivo móvil, no activar detección
+        if (CONFIG.proteccion.excluirDispositivosMoviles && esDispositivoMovil()) {
+            console.log('📱 Detección de DevTools desactivada para dispositivos móviles');
+            return;
+        }
+        
         function verificarDevTools() {
-            const anchoDiferencia = Math.abs(window.outerWidth - window.innerWidth);
-            const altoDiferencia = Math.abs(window.outerHeight - window.innerHeight);
+            const esMobile = esDispositivoMovil();
             
-            const porDimensiones = anchoDiferencia > CONFIG.proteccion.umbralDevTools || 
-                                   altoDiferencia > CONFIG.proteccion.umbralDevTools;
+            // Método 1: Diferencia de dimensiones (solo para desktop)
+            let porDimensiones = false;
             
+            // Solo aplicar método de dimensiones en dispositivos no móviles
+            if (!esMobile) {
+                const anchoDiferencia = Math.abs(window.outerWidth - window.innerWidth);
+                const altoDiferencia = Math.abs(window.outerHeight - window.innerHeight);
+                
+                porDimensiones = anchoDiferencia > CONFIG.proteccion.umbralDevTools || 
+                                 altoDiferencia > CONFIG.proteccion.umbralDevTools;
+            }
+            
+            // Método 2: Tiempo de debugger (funciona en ambos)
             const tiempoInicio = performance.now();
             debugger;
             const tiempoFin = performance.now();
             const tiempoDebugger = tiempoFin - tiempoInicio;
-            const porDebugger = tiempoDebugger > 100;
             
-            if ((porDimensiones || porDebugger) && !devToolsAbierto) {
+            // Umbral más alto para móviles que suelen ser más lentos
+            const umbralDebugger = esMobile ? 200 : 100;
+            const porDebugger = tiempoDebugger > umbralDebugger;
+            
+            // Método 3: Verificación de consola (solo desktop)
+            let porConsole = false;
+            if (!esMobile) {
+                const consola = {
+                    get isOpen() {
+                        const element = document.createElement('div');
+                        Object.defineProperty(element, 'id', {
+                            get: function() {
+                                porConsole = true;
+                                return '';
+                            }
+                        });
+                        console.log(element);
+                        return porConsole;
+                    }
+                };
+                consola.isOpen;
+            }
+            
+            // Solo activar si estamos en desktop y hay indicios reales
+            const devToolsDetectado = (!esMobile && (porDimensiones || porDebugger || porConsole)) || 
+                                      (esMobile && porDebugger); // En móviles solo por debugger
+            
+            if (devToolsDetectado && !devToolsAbierto) {
                 devToolsAbierto = true;
                 intentosDevTools++;
                 
-                mostrarNotificacionSeguridad(CONFIG.mensajes.devToolsDetectado);
-                
-                console.log('%c⚠️ HERRAMIENTAS DETECTADAS ⚠️', 
+                console.log(`%c⚠️ HERRAMIENTAS DETECTADAS (${esMobile ? 'Móvil' : 'Desktop'}) ⚠️`, 
                            `color: ${CONFIG.colores.peligro}; font-size: 14px; font-weight: bold;`);
                 console.log(`%cIntento #${intentosDevTools} registrado`, 
                            `color: ${CONFIG.colores.primario}; font-size: 12px;`);
                 
+                // Mostrar notificación solo si no es un falso positivo en móvil
+                if (!(esMobile && !porDebugger)) {
+                    mostrarNotificacionSeguridad(CONFIG.mensajes.devToolsDetectado);
+                }
+                
                 if (CONFIG.proteccion.registroIntentos) {
                     localStorage.setItem('ec_devtools_intentos', intentosDevTools.toString());
                     localStorage.setItem('ec_devtools_ultimo', new Date().toISOString());
+                    localStorage.setItem('ec_devtools_dispositivo', esMobile ? 'movil' : 'desktop');
                 }
                 
-                if (intentosDevTools >= CONFIG.proteccion.maxIntentos) {
+                // Redirección solo después de múltiples intentos en desktop
+                if (intentosDevTools >= CONFIG.proteccion.maxIntentos && !esMobile) {
                     setTimeout(() => {
                         console.log('%c🔀 REDIRIGIENDO POR SEGURIDAD', 
                                    `color: ${CONFIG.colores.peligro}; font-size: 16px; font-weight: bold;`);
@@ -430,14 +501,16 @@
                     }, 2000);
                 }
                 
-            } else if (!porDimensiones && !porDebugger) {
+            } else if (!devToolsDetectado) {
                 devToolsAbierto = false;
             }
         }
         
-        setInterval(verificarDevTools, 1000);
+        // Intervalo de verificación más espaciado para móviles
+        const intervalo = esDispositivoMovil() ? 2000 : 1000;
+        setInterval(verificarDevTools, intervalo);
         
-        console.log('✅ Detección de DevTools: ACTIVADA');
+        console.log(`✅ Detección de DevTools: ACTIVADA (${esDispositivoMovil() ? 'Modo Móvil' : 'Modo Desktop'})`);
     }
     
     /**
@@ -516,6 +589,10 @@
                     <span>
                         <i class="fas fa-user-shield" style="margin-right: 3px;"></i>
                         Sistema activo
+                    </span>
+                    <span>
+                        <i class="fas fa-mobile-alt" style="margin-right: 3px;"></i>
+                        ${esDispositivoMovil() ? 'Móvil' : 'Desktop'}
                     </span>
                 </div>
             </div>
@@ -627,7 +704,8 @@
             detalle: detalle,
             timestamp: new Date().toISOString(),
             url: window.location.href,
-            userAgent: navigator.userAgent.substring(0, 100)
+            userAgent: navigator.userAgent.substring(0, 100),
+            dispositivo: esDispositivoMovil() ? 'movil' : 'desktop'
         };
         
         console.log(`%c📝 INTENTO REGISTRADO: ${tipo}`, 
@@ -713,6 +791,9 @@
                     font-weight: bold;
                     text-align: center;`);
         
+        console.log(`%cDispositivo detectado: ${esDispositivoMovil() ? 'Móvil' : 'Desktop'}`, 
+                   `color: ${CONFIG.colores.primario}; font-weight: bold;`);
+        
         if (verificarModoAdministrador()) {
             console.log('%cLa protección está desactivada para este usuario.', 
                        'color: #10b981; font-weight: bold;');
@@ -730,6 +811,7 @@
         
         const fechaInicio = new Date().toLocaleString('es-MX');
         localStorage.setItem('ec_proteccion_iniciada', fechaInicio);
+        localStorage.setItem('ec_proteccion_dispositivo', esDispositivoMovil() ? 'movil' : 'desktop');
         
         console.log(`%c✅ SISTEMA DE PROTECCIÓN ACTIVO DESDE: ${fechaInicio}`, 
                    `color: ${CONFIG.colores.exito}; font-weight: bold;`);
@@ -764,6 +846,7 @@
     // ============================================
     window.EmilioColorSistema = {
         config: CONFIG,
+        esDispositivoMovil: esDispositivoMovil,
         layout: {
             cargarComponentes: loadDynamicComponents,
             ajustarPadding: adjustBodyPadding
