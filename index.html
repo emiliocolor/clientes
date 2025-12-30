@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+    <link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+
     <!-- SEO Mejorado -->
     <meta name="description" content="EmilioColor® - Soluciones a tu medida en tecnología, educación, transportes y papelería. Innovación y calidad en cada servicio.">
     <meta name="keywords" content="tecnología, educación, transportes, papelería, soluciones integrales, innovación, desarrollo, proyectos, marcas especializadas">
@@ -18,7 +20,6 @@
     <meta property="og:description" content="Empresa multisectorial especializada en tecnología, educación, transportes y papelería. Innovación, calidad y compromiso social.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://emiliocolor.com">
-    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
     <meta property="og:locale" content="es_MX">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -27,7 +28,6 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="EmilioColor® - Soluciones Integrales">
     <meta name="twitter:description" content="Empresa multisectorial especializada en tecnología, educación, transportes y papelería.">
-    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
     <meta name="twitter:site" content="@emiliocolor">
     <meta name="twitter:creator" content="@emiliocolor">
     
@@ -38,7 +38,7 @@
         "@type": "Organization",
         "name": "EmilioColor®",
         "url": "https://emiliocolor.com",
-        "logo": "https://raw.githubusercontent.com/emiliocolor/clientes/7964bf0b3468b2c6dda633ed93dfd34807f32795/img-logos/logo_transparente_alargado.png",
+        "logo": "https://emiliocolor.com/img-logos/favicon.png",
         "description": "Empresa multisectorial especializada en tecnología, educación, transportes y papelería.",
         "address": {
             "@type": "PostalAddress",
@@ -71,6 +71,7 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://emiliocolor.com">
+</head>
 
     <style>
         :root {
@@ -332,14 +333,14 @@
             color: var(--primary-blue);
             margin-bottom: 20px;
             font-weight: 600;
-            text-align: center;
+            text-align: left;
             font-size: 2rem;
         }
 
         .about-section p {
             max-width: 800px;
             margin: 0 auto 15px;
-            text-align: center;
+            text-align: left;
             line-height: 1.6;
         }
 
@@ -564,34 +565,46 @@
             font-weight: 600;
         }
 
-        .carousel-container {
-            max-width: 800px;
+        .verification-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border: 0;
         }
 
-        .carousel-slide {
-            display: none;
-            animation: fadeIn 1s ease;
+        .verification-card {
+            flex: 1 1 300px;
+            max-width: 350px;
+            background: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
         }
 
-        .carousel-slide.active {
-            display: block;
+        .verification-card p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
         .verification-link {
             display: inline-block;
             background-color: var(--primary-blue);
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 20px;
             transition: all 0.3s;
             border: 0;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            box-sizing: border-box;
         }
 
         .verification-link:hover {
@@ -600,31 +613,26 @@
             color: white;
         }
 
-        .carousel-dots {
+        .verification-link-gray {
+            background-color: #575d63;
+        }
+
+        .verification-link-gray:hover {
+            background-color: #484b4e;
+        }
+
+        /* CONTENEDOR PARA BOTÓN DE PROYECTOS */
+        .projects-button-container {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
-            gap: 10px;
+            margin-top: 30px;
         }
 
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            background-color: #ccc;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .carousel-dot.active {
-            background-color: var(--primary-blue);
-        }
-
-        /* NUEVA SECCIÓN: APOYOS SOCIALES */
+        /* SECCIÓN DE APOYOS SOCIALES - REORGANIZADA */
         .social-support-section {
             width: 100%;
             background-color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             margin-bottom: 40px;
             border: 0;
         }
@@ -632,60 +640,134 @@
         .social-support-container {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .social-support-content {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .social-support-image {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .social-support-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
         }
 
         .social-support-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--primary-blue);
-            margin-bottom: 20px;
-            font-weight: 600;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-align: center;
         }
 
         .social-support-text {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 50px;
             color: var(--text-dark);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* CONTENEDOR DE IMAGEN Y ESTADÍSTICAS */
+        .social-stats-container {
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 0;
+        }
+
+        .social-stats-image {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .social-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 100%;
+        }
+
+        .stat-item {
+            background-color: var(--light-gray);
+            padding: 30px 20px;
+            border-top: 5px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 0;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .stat-plus {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            vertical-align: super;
+            margin-left: 5px;
+        }
+
+        /* BOTONES DE ACCIÓN DE APOYOS SOCIALES */
+        .social-support-buttons {
+            display: flex;
+            justify-content: left;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
         }
 
         .social-support-link {
             display: inline-block;
             background-color: var(--primary-blue);
             color: white;
-            padding: 15px 30px;
+            padding: 16px 32px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
             border: 0;
             font-size: 1.1rem;
-            margin-right: 15px;
-            margin-bottom: 15px;
+            min-width: 250px;
+            text-align: center;
         }
 
         .social-support-link:hover {
             background-color: var(--primary-blue-dark);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             color: white;
+        }
+
+        .social-support-link.part-of {
+            background-color: var(--success-color);
+        }
+
+        .social-support-link.part-of:hover {
+            background-color: #0da271;
+        }
+
+        .social-support-link i {
+            margin-right: 10px;
         }
 
         /* NUEVA SECCIÓN: NUESTRAS MARCAS */
@@ -830,6 +912,52 @@
             font-size: 0.9rem;
             margin-top: 10px;
             margin-bottom: 20px;
+        }
+
+        /* PRINCIPIOS EN CUADRÍCULA - MODIFICADO PARA 2 POR FILA */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .principle-box {
+            background: #f5f5f5;
+            padding: 25px 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            min-height: 150px;
+        }
+
+        .principle-box i {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        .principle-box h5 {
+            margin: 10px 0 5px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-blue-dark);
+        }
+
+        .principle-box p {
+            font-size: 13px;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .principle-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            background: #f0f0f0;
         }
 
         /* NUEVA SECCIÓN: PROYECTOS */
@@ -1008,54 +1136,54 @@
             background-color: #128C7E;
         }
 
-/* LÍNEA DE DENUNCIAS – CARRUSEL (CORREGIDO) */
-.complaints-line-section {
-    background-color: #f1f1f1;
-    padding: 40px 20px;
-    margin-top: 0;
-    overflow: hidden;
-    position: relative;
-}
+        /* LÍNEA DE DENUNCIAS – CARRUSEL (CORREGIDO) */
+        .complaints-line-section {
+            background-color: #f1f1f1;
+            padding: 40px 20px;
+            margin-top: 0;
+            overflow: hidden;
+            position: relative;
+        }
 
-.complaints-title {
-    font-size: 1.8rem;
-    color: #d9534f;
-    margin-bottom: 25px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+        .complaints-title {
+            font-size: 1.8rem;
+            color: #d9534f;
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.complaints-carousel {
-    position: relative;
-    height: 80px;
-    overflow: hidden;
-}
+        .complaints-carousel {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
 
-.complaints-slide {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #d9534f;
-    opacity: 0;
-    line-height: 1.3;
-    transition: opacity 1s ease;
-}
+        .complaints-slide {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #d9534f;
+            opacity: 0;
+            line-height: 1.3;
+            transition: opacity 1s ease;
+        }
 
-.complaints-slide.active {
-    opacity: 1;
-}
+        .complaints-slide.active {
+            opacity: 1;
+        }
 
-.complaints-slide span {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1.1rem;
-    color: #555;
-    font-weight: 500;
-}
+        .complaints-slide span {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #555;
+            font-weight: 500;
+        }
 
         /* REDES SOCIALES ABAJO */
         .social-bottom-section {
@@ -1133,7 +1261,7 @@
         }
 
         .footer-logo img {
-            height: 50px;
+            height: 46px;
             margin-bottom: 15px;
         }
 
@@ -1214,6 +1342,103 @@
             to { opacity: 1; }
         }
 
+        /* ENLACES DE MARCAS */
+        .brand-link {
+            text-decoration: none;
+        }
+
+        /* BANNER DE ACEPTACIÓN DE TÉRMINOS */
+        .terms-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-blue-dark);
+            color: white;
+            padding: 15px 20px;
+            z-index: 9999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .terms-banner.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .terms-content {
+            flex: 1;
+            margin-right: 20px;
+            font-size: 0.95rem;
+        }
+
+        .terms-content a {
+            color: #4dc0ff;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .terms-content a:hover {
+            color: #7dd3fc;
+        }
+
+        .terms-buttons {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .terms-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .terms-accept {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        .terms-accept:hover {
+            background-color: #0da271;
+            transform: translateY(-2px);
+        }
+
+        .terms-decline {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .terms-decline:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .terms-learn {
+            background-color: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .terms-learn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Ajustar body cuando el banner está visible */
+        body.terms-visible {
+            padding-top: 120px;
+        }
+
+        .terms-visible .main-header {
+            top: 60px;
+        }
+
         /* RESPONSIVE STYLES */
         @media (max-width: 1200px) {
             .divisions-container {
@@ -1226,6 +1451,14 @@
             
             .brands-container {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .verification-card {
+                max-width: 45%;
+            }
+            
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1263,10 +1496,6 @@
                 flex: 0 0 calc(50% - 20px);
                 max-width: calc(50% - 20px);
                 margin-bottom: 20px;
-            }
-            
-            .social-support-container {
-                flex-direction: column;
             }
             
             .content-row {
@@ -1311,6 +1540,34 @@
             
             .footer-social-links {
                 justify-content: center;
+            }
+            
+            .verification-card {
+                max-width: 100%;
+            }
+            
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .terms-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .terms-content {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            body.terms-visible {
+                padding-top: 140px;
+            }
+            
+            .terms-visible .main-header {
+                top: 80px;
             }
         }
 
@@ -1387,7 +1644,15 @@
             }
             
             .social-support-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            
+            .social-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
             }
             
             .our-brands-title {
@@ -1416,8 +1681,45 @@
                 font-size: 1.1rem;
             }
             
-            .complaints-slide {
-                font-size: 1.5rem;
+            .social-support-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-support-link {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .principle-box {
+                padding: 20px 12px;
+                min-height: 140px;
+            }
+            
+            .principle-box i {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+            
+            .principle-box h5 {
+                font-size: 15px;
+            }
+            
+            .principle-box p {
+                font-size: 12px;
+            }
+            
+            body.terms-visible {
+                padding-top: 160px;
+            }
+            
+            .terms-visible .main-header {
+                top: 100px;
             }
         }
 
@@ -1462,10 +1764,17 @@
                 font-size: 1rem;
             }
             
-            .social-support-link {
-                display: block;
-                margin-right: 0;
-                text-align: center;
+            .social-support-title {
+                font-size: 1.8rem;
+            }
+            
+            .social-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
             }
             
             .contact-simple-title {
@@ -1504,12 +1813,46 @@
                 display: none;
             }
             
-            .complaints-title {
-                font-size: 1.2rem;
+            .verification-section {
+                padding: 40px 15px;
             }
             
-            .complaints-slide {
-                font-size: 1.3rem;
+            .verification-card {
+                padding: 20px 15px;
+                min-height: 220px;
+            }
+            
+            .verification-link {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .principles-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .principle-box {
+                min-height: 120px;
+                padding: 20px;
+            }
+            
+            .terms-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .terms-btn {
+                width: 100%;
+                padding: 10px;
+            }
+            
+            body.terms-visible {
+                padding-top: 180px;
+            }
+            
+            .terms-visible .main-header {
+                top: 120px;
             }
         }
 
@@ -1522,10 +1865,9 @@
         .division-card,
         .division-image,
         .verification-section,
-        .carousel-container,
+        .verification-card,
         .verification-link,
         .social-support-section,
-        .social-support-image,
         .social-support-link,
         .contact-form,
         .form-control,
@@ -1538,12 +1880,39 @@
         .video-wrapper,
         .contact-simple-section,
         .contact-button-three,
-        .footer-container {
+        .footer-container,
+        .social-stats-container,
+        .stat-item,
+        .principle-box {
+            border-radius: 0 !important;
+        }
+        
+        .terms-banner,
+        .terms-btn {
             border-radius: 0 !important;
         }
     </style>
-</head>
 <body>
+<!-- BANNER DE ACEPTACIÓN DE TÉRMINOS Y CONDICIONES -->
+<div class="terms-banner" id="termsBanner">
+    <div class="terms-content">
+        Este sitio web utiliza cookies y requiere la aceptación de nuestros 
+        Términos y Condiciones
+        para una mejor experiencia. Al continuar navegando, aceptas nuestra política de privacidad y términos de uso.
+    </div>
+    <div class="terms-buttons">
+        <button class="terms-btn terms-learn" onclick="window.open('https://emiliocolor.com/legalidad_y_garantias.html', '_blank')">
+            <i class="fas fa-book"></i>  Leer Términos
+        </button>
+        <button class="terms-btn terms-decline" id="declineTerms">
+            <i class="fas fa-times"></i> Rechazar
+        </button>
+        <button class="terms-btn terms-accept" id="acceptTerms">
+            <i class="fas fa-check"></i> Aceptar
+        </button>
+    </div>
+</div>
+
 <!-- BOTONES FLOTANTES -->
 <div class="floating-buttons">
     <a href="https://wa.me/525655333139?text=Hola%20Estoy%20interesado%20en%20sus%20servicios" class="floating-button whatsapp" target="_blank">
@@ -1607,274 +1976,262 @@
         <div class="hero-banner">
             <img src="img/river-5752716.jpg" alt="EmilioColor Soluciones Integrales" class="hero-image">
             <div class="hero-content">
-                      <h2>Acerca de EmilioColor®</h2>
-            <p>EmilioColor® es una empresa multisectorial conformada por diversas marcas especializadas en áreas como transportes, tecnología, educación y papelería, integrando soluciones innovadoras que se adaptan a las necesidades de cada sector.</p>
-Nuestro modelo de negocio está orientado al consumidor, permitiéndonos ofrecer mayor eficiencia, mejores precios y una experiencia de compra optimizada.            </div>
+                <h2>Acerca de EmilioColor®</h2>
+                <p>EmilioColor® es una empresa multisectorial conformada por diversas marcas especializadas en áreas como transportes, tecnología, educación y papelería, integrando soluciones innovadoras que se adaptan a las necesidades de cada sector.</p>
+                <p>Nuestro modelo de negocio está orientado al consumidor, permitiéndonos ofrecer mayor eficiencia, mejores precios y una experiencia de compra optimizada.</p>
+            </div>
         </div>
     </section>
     
-    <!-- SECCIÓN CON ACERCA DE Y NOVEDADES -->
-    <div class="about-and-news-container" id="novedades">
-        <!-- Sección acerca de nuestro grupo comercial -->
-<section class="about-section">
-    <h2>Nuestro Propósito</h2>
-    <p>Existimos para crear valor sostenible, impulsando el desarrollo social y económico en las comunidades donde operamos a través de soluciones innovadoras y alianzas estratégicas.</p>
+<!-- SECCIÓN CON ACERCA DE Y NOVEDADES -->
+<div class="about-and-news-container" id="novedades">
+    <!-- Sección acerca de nuestro grupo comercial -->
+    <section class="about-section" style="text-align: left !important;">
+        <h2>CREANDO SOLUCIONES PARA TODOS.</h2>
+        <div class="views">Productos y servicios adaptados a tus necesidades</div>
+        <div class="stats">4 DIVISIONES ESPECIALIZADAS</div>
+        <p>Nuestra trayectoria nos ha permitido desarrollar soluciones innovadoras para distintos sectores, generando valor sostenible para nuestros clientes.</p>
+        <p>Operamos en México con colaboradores comprometidos con el liderazgo y la excelencia.</p>
+<a href="#divisiones" class="verification-link verification-link-gray">
+    <i class="fas fa-cube"></i> Conocer Divisiones
+</a>
+    </section>
 
-    <h2>Nuestra Misión</h2>
-    <p>Hoy, como equipo, impulsamos el desarrollo social y económico mediante soluciones multisectoriales innovadoras, priorizando alianzas estratégicas que generen valor tangible.</p>
+    <!-- NUEVA SECCIÓN DE NOVEDADES -->
+    <section class="news-section">
+        <h2 class="news-title">Novedades</h2>
+        <div class="news-carousel-container">
+            <!-- Botón anterior -->
+            <button class="news-nav-btn news-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
 
-    <h2>Nuestra Visión</h2>
-    <p>A largo plazo, aspiramos a posicionarnos como un referente internacional en integración empresarial, reconocidos por nuestra capacidad de transformar industrias mediante enfoques interdisciplinarios y sostenibles.</p>
-</section>
-
-        <!-- NUEVA SECCIÓN DE NOVEDADES -->
-        <section class="news-section">
-            <h2 class="news-title">Novedades</h2>
-            <div class="news-carousel-container">
-                <button class="news-nav-btn news-prev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                
-                <div class="news-slide active">
-                    <img src="img_novedades/christmas-5861895_960_720.jpg" alt="Buzón Navideño" class="news-image">
-                    <div class="news-content">
-                        <h4>Buzón Navideño</h4>
-                        <p>Esta Navidad queremos regalarte 1 curso, el que tú elijas, con certificación totalmente gratuita. Participa y aprovecha esta oportunidad especial.</p>
-                        <a href="https://forms.gle/op1HfwWFB4KxsNQC8" class="news-link">Participar <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            <!-- Slides -->
+            <div class="news-slide active">
+                <img src="https://aecconsultoras.com/wp-content/uploads/2025/07/Inteligencia-artificial-y-consultoria-1200x675-1.jpg" alt="EmilioColor AI" class="news-image">
+                <div class="news-content">
+                    <h4>EmilioColor AI</h4>
+                    <p>Inteligencia artificial generativa que funciona directamente en tu navegador. Totalmente local, privada y segura, sin enviar datos a servidores.</p>
+                    <a href="https://emiliocolor.com/herramientas/emiliocolor_ai.html" class="news-link">Utilizar <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="news-slide">
-                    <img src="img_novedades/NOVEDAD_1.png" alt="Plataforma Educativa" class="news-image">
-                    <div class="news-content">
-                        <h4>Nueva Plataforma de Asesorías del CECyT 9</h4>
-                        <p>Consulta de forma rápida y organizada los horarios de asesorías del área básica, humanística y tecnológica.</p>
-                        <a href="https://cecyt9.asesorias.emiliocolor.com/" class="news-link" target="_blank">Visitar Plataforma <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="news-slide">
-                    <img src="img_novedades/tipos_de_violencia_psicologica_4926_2_600.jpg" alt="Programa social" class="news-image">
-                    <div class="news-content">
-                        <h4>Manual para el Reconocimiento de Violencia</h4>
-                        <p>Emilio Calep presenta un manual de 113 páginas para reconocer y manejar situaciones de violencia.</p>
-                        <a href="https://emiliocolor.com/manual_01" class="news-link" target="_blank">Ver Manual <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <button class="news-nav-btn news-next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
-            <div class="news-dots">
-                <div class="news-dot active" data-slide="0"></div>
-                <div class="news-dot" data-slide="1"></div>
-                <div class="news-dot" data-slide="2"></div>
+
+            <div class="news-slide">
+                <img src="https://h-dnsys.github.io/dnsys/imagen/aso2.jpg" alt="Plataforma Educativa" class="news-image">
+                <div class="news-content">
+                    <h4>Nueva Plataforma de Asesorías del CECyT 9</h4>
+                    <p>Consulta de forma rápida y organizada los horarios de asesorías del área básica, humanística y tecnológica.</p>
+                    <a href="https://cecyt9.asesorias.emiliocolor.com/" class="news-link" target="_blank">Visitar Plataforma <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-        </section>
-    </div>
+            <div class="news-slide">
+                <img src="img_novedades/christmas-5861895_960_720.jpg" alt="Buzón Navideño" class="news-image">
+                <div class="news-content">
+                    <h4>Entregas Completas del Buzón Navideño</h4>
+                    <p>Agradecemos sinceramente la participación de todos en esta oportunidad especial.</p>
+                </div>
+            </div>
+            <!-- Botón siguiente -->
+            <button class="news-nav-btn news-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Puntos del carrusel -->
+        <div class="news-dots">
+            <div class="news-dot active" data-slide="0"></div>
+            <div class="news-dot" data-slide="1"></div>
+            <div class="news-dot" data-slide="2"></div>
+        </div>
+    </section>
+</div>
     
     <!-- Sección de divisiones con imágenes -->
-    <section class="divisions-header" id="servicios">
+    <section class="divisions-header" id="divisiones">
         <div class="divisions-title">
             <span>Conoce</span>
-            <span>Nuestros</span>
-            <span>Servicios</span>
+            <span>Nuestras</span>
+            <span>Divisiones</span>
         </div>
         <div class="divisions-subtitle">Cada servicio especializado en su sector, trabajando juntos para crear valor</div>
     </section>
     
     <div class="divisions-container" id="divisiones">
-        <div class="division-card">
+        <div class="division-card" data-link="#">
             <img src="img_divisiones/pluma_fuente.webp" alt="Papelería" class="division-image">
             <div class="division-content">
                 <div class="division-name">PAPELERÍA</div>
-                <div class="division-description">Desarrollamos productos y soluciones útiles para entornos escolares y de oficina, incluyendo la línea INKSPIRE™ de hojas cuadriculadas en colores vibrantes.</div>
+                <div class="division-description">
+                    Estilógrafos, plumas fuente y papel cuadriculado o de carpeta al por mayor
+                </div>
+                <em>Servicio ofrecido por Inkspire™</em>
             </div>
         </div>
-        
-        <div class="division-card">
+
+        <div class="division-card" data-link="https://amshev.emiliocolor.com">
             <img src="img_divisiones/F-350.jpg" alt="Transportes" class="division-image">
             <div class="division-content">
                 <div class="division-name">TRANSPORTES</div>
-                <div class="division-description">AM-SHEV™ implementa soluciones logísticas en colaboración con especialistas del sector, ofreciendo servicios de transporte confiables y eficientes.</div>
+                                <div class="division-description">
+                    Compra y venta de camionetas de carga
+                </div>
+                                <em>Servicio ofrecido por AM-SHEV™</em>
             </div>
         </div>
-        
-        <div class="division-card">
+
+        <div class="division-card" data-link="#">
             <img src="img_divisiones/618W9FAxk6L._AC_UF894,1000_QL80_.jpg" alt="Tecnología" class="division-image">
             <div class="division-content">
                 <div class="division-name">TECNOLOGÍA</div>
-                <div class="division-description">Diseñamos herramientas digitales con enfoque en usabilidad y seguridad, incluyendo desarrollo web, programas informáticos y soluciones tecnológicas personalizadas.</div>
+                                <div class="division-description">
+Desarrollo web, optimización SEO, diseño UX/UI, sitios responsivos, mantenimiento, integración de e-commerce, hosting y dominios                </div>
             </div>
         </div>
-        
-        <div class="division-card">
+
+        <div class="division-card" data-link="https://classcloud.emiliocolor.com">
             <img src="img_divisiones/books-composition-3d-render-free-png.png" alt="Educación" class="division-image">
             <div class="division-content">
                 <div class="division-name">EDUCACIÓN</div>
-                <div class="division-description">ClassCloud℠ y otras plataformas educativas que ofrecen recursos, cursos y herramientas para fortalecer el aprendizaje en diversos niveles educativos.</div>
+                                <div class="division-description">
+                    Cursos, formación, libros y audiolibros, recursos digitales de todo tipo
+                </div>
+                                <em>Servicio ofrecido por ClassCloud℠</em>
             </div>
         </div>
     </div>
     
-<!-- Carrusel de verificación de credenciales -->
-<section class="verification-section" id="verification">
-    <h3 class="verification-title">Información Adicional</h3>
+    <script>
+        document.querySelectorAll('.division-card').forEach(card => {
+            card.addEventListener('click', () => {
+                window.open(card.dataset.link, '_blank');
+            });
+        });
+    </script>
+    
+    <!-- Sección de Información Adicional -->
+    <section class="verification-section" id="verification">
+        <h3 class="verification-title">Información Adicional</h3>
 
-    <div class="carousel-container">
+        <div class="verification-grid">
+            <div class="verification-card">
+                <p>Para verificar la autenticidad de nuestras credenciales y certificaciones, visita nuestro portal oficial:</p>
+                <a href="https://emiliocolor.com/validador" class="verification-link" target="_blank">
+                    <i class="fas fa-shield-alt"></i> Verificador de Identidad Público
+                </a>
+            </div>
 
-        <div class="carousel-slide active">
-            <p>Para verificar la autenticidad de nuestras credenciales y certificaciones, visita nuestro portal oficial:</p>
-            <a href="https://emiliocolor.com/validador" class="verification-link" target="_blank">
-                <i class="fas fa-shield-alt"></i> Verificador de Identidad Público
-            </a>
+            <div class="verification-card">
+                <p>Consulta nuestros términos y condiciones en nuestra documentación oficial:</p>
+                <a href="https://emiliocolor.com/legalidad_y_garantias.html"
+                   class="verification-link verification-link-gray"
+                   target="_blank">
+                    <i class="fas fa-file-signature"></i> Legalidad y Garantías
+                </a>
+            </div>
+
+            <div class="verification-card">
+                <p>Atención y servicio postventa EmilioColor®</p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com&su=Quejas%20y%20Sugerencias%20-%20EmilioColor%C2%AE&body=Estimado%20equipo%20de%20Atenci%C3%B3n%20Postventa%20EmilioColor%2C%0D%0A%0D%0APor%20medio%20del%20presente%2C%20deseo%20compartir%20la%20siguiente%20queja%20o%20sugerencia%20relacionada%20con%20mi%20experiencia%20con%20EmilioColor%C2%AE.%0D%0A%0D%0A---%20DATOS%20DEL%20CLIENTE%20---%0D%0A%0D%0ANombre%20completo%3A%0D%0ACorreo%20electr%C3%B3nico%3A%0D%0ATel%C3%A9fono%20de%20contacto%3A%0D%0AN%C3%BAmero%20de%20pedido%20o%20n%C3%BAmero%20de%20comprobante%20(opcional)%3A%0D%0A%0D%0A---%20DETALLE%20DEL%20MENSAJE%20---%0D%0A%0D%0ATipo%20de%20mensaje%20(Queja%20o%20Sugerencia)%3A%0D%0A%0D%0ADescripci%C3%B3n%20detallada%20del%20caso%3A%0D%0A%0D%0AQuedo%20atento%20a%20su%20respuesta%20y%20agradezco%20de%20antemano%20la%20atenci%C3%B3n%20brindada.%0D%0A%0D%0AAtentamente."
+                   target="_blank"
+                   class="verification-link">
+                    <i class="fas fa-info-circle"></i> Envíanos tus quejas o sugerencias
+                </a>
+            </div>
         </div>
-
-        <div class="carousel-slide">
-            <p>Consulta nuestros términos y condiciones en nuestra documentación oficial:</p>
-            <a href="https://emiliocolor.com/legalidad_y_garantias.html" class="verification-link" target="_blank">
-                <i class="fas fa-file-signature"></i> Legalidad
-            </a>
-        </div>
-
-        <div class="carousel-slide">
-            <p>Accede a nuestro programa de garantías:</p>
-            <a href="https://emiliocolor.com/herramientas/pill" class="verification-link" target="_blank">
-                <i class="fas fa-tools"></i> Garantía
-            </a>
-        </div>
-
-<div class="carousel-slide">
-    <p>Atención y servicio postventa EmilioColor®</p>
-    <a href="https://emiliocolor.com/#info" class="verification-link" target="_blank">
-        <i class="fas fa-info-circle"></i> Envíanos tus quejas o sugerencias
-    </a>
-</div>
-
-
-    </div>
-
-    <div class="carousel-dots">
-        <div class="carousel-dot active" data-slide="0"></div>
-        <div class="carousel-dot" data-slide="1"></div>
-        <div class="carousel-dot" data-slide="2"></div>
-        <div class="carousel-dot" data-slide="3"></div>
-    </div>
-</section>
-
-
+    </section>
     
     <!-- Sección final con texto y video -->
     <section class="content-row">
-    <div class="text-content">
-        <h3>CREANDO CONSTANTEMENTE SOLUCIONES PARA LA COMUNIDAD.</h3>
-        <div class="views">Productos y servicios adaptados a tus necesidades</div>
-        <div class="stats">4 MARCAS ESPECIALIZADAS</div>
-        <p>Nuestra trayectoria nos ha permitido desarrollar soluciones innovadoras para distintos sectores, generando valor sostenible para nuestros clientes.</p>
-        <p>Operamos en México con colaboradores comprometidos con el liderazgo y la excelencia.</p>
+        <div class="text-content">
+            <h3>Nuestro Propósito</h3>
+            <p>Existimos para crear valor sostenible, impulsando el desarrollo social y económico en las comunidades donde operamos a través de soluciones innovadoras y alianzas estratégicas.</p>
 
-        <h4>Nuestros Principios</h4>
-        <div class="principles-grid">
-            <div class="principle-box">
-                <i class="fas fa-users"></i>
-                <h5>Trabajo en Equipo</h5>
-                <p>Sinergia interdisciplinaria</p>
-            </div>
+            <h3>Nuestra Misión</h3>
+            <p>Hoy, como equipo, impulsamos el desarrollo social y económico mediante soluciones multisectoriales innovadoras, priorizando alianzas estratégicas que generen valor tangible.</p>
 
-            <div class="principle-box">
-                <i class="fas fa-lightbulb"></i>
-                <h5>Innovación</h5>
-                <p>Soluciones creativas</p>
-            </div>
+            <h3>Nuestra Visión</h3>
+            <p>A largo plazo, aspiramos a posicionarnos como un referente internacional en integración empresarial, reconocidos por nuestra capacidad de transformar industrias mediante enfoques interdisciplinarios y sostenibles.</p>
+        </div>
 
-            <div class="principle-box">
-                <i class="fas fa-chart-line"></i>
-                <h5>Crecimiento</h5>
-                <p>Adaptación constante</p>
-            </div>
+        <div class="video-content">
+           <h3>Nuestros Principios</h3>
+            <div class="principles-grid">
+                <div class="principle-box">
+                    <i class="fas fa-users"></i>
+                    <h5>Trabajo en Equipo</h5>
+                    <p>Sinergia interdisciplinaria</p>
+                </div>
 
-            <div class="principle-box">
-                <i class="fas fa-layer-group"></i>
-                <h5>Multisectorialidad</h5>
-                <p>Integración de industrias</p>
+                <div class="principle-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <h5>Innovación</h5>
+                    <p>Soluciones creativas</p>
+                </div>
+
+                <div class="principle-box">
+                    <i class="fas fa-chart-line"></i>
+                    <h5>Crecimiento</h5>
+                    <p>Adaptación constante</p>
+                </div>
+
+                <div class="principle-box">
+                    <i class="fas fa-layer-group"></i>
+                    <h5>Multisectorialidad</h5>
+                    <p>Integración de industrias</p>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="video-content">
-        <h3>Nuestras Marcas</h3>
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video corporativo EmilioColor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <p>Conoce más sobre nuestras operaciones y compromiso con la innovación a través de nuestro video corporativo.</p>
-    </div>
-</section>
-
-<style>
-.principles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 16px;
-    margin-top: 16px;
-}
-
-.principle-box {
-    background: #f5f5f5;
-    padding: 20px 12px;
-    text-align: center;
-    aspect-ratio: 1 / 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.principle-box i {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.principle-box h5 {
-    margin: 6px 0 4px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.principle-box p {
-    font-size: 12px;
-    color: #666;
-    margin: 0;
-}
-
-.principle-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-</style>
+    </section>
     
-    <!-- Nueva Sección: Apoyos Sociales -->
-    <section class="social-support-section" id="apoyos">
-        <div class="social-support-container">
-            <div class="social-support-content">
-                <h2 class="social-support-title"> Proyectos y Colaboraciones de Impacto Social</h2>
-                <p class="social-support-text">En EmilioColor®, creemos firmemente en devolver a la comunidad parte de lo que recibimos. Nuestros programas de responsabilidad social están diseñados para generar un impacto positivo y duradero en las comunidades donde operamos.</p>
-                <p class="social-support-text">Implementamos programas de educación, desarrollo comunitario y herramientas de apoyo que benefician a miles de personas cada año.</p>
-<a href="https://emiliocolor.com/#apoyos" class="social-support-link" target="_blank">
-    <i class="fas fa-graduation-cap"></i> Plataformas Educativas y Académicas
-</a>
-
-<a href="https://emiliocolor.com/herramientas/pill" class="social-support-link" target="_blank">
-    <i class="fas fa-tools"></i> Herramientas a la Comunidad
-</a>
-
-<a href="https://emiliocolor.com/herramientas/pill" class="social-support-link" target="_blank">
-    <i class="fas fa-globe"></i> Micrositios
-</a>
-
+    <!-- Sección: Apoyos Sociales dentro de contenedor estilo content-row -->
+    <section class="content-row" id="apoyos">
+        <!-- Contenedor de texto y botones -->
+        <div class="text-content">
+            <h3>Proyectos y Colaboraciones de Impacto Social</h3>
+            <p>En EmilioColor®, creemos firmemente en devolver a la comunidad parte de lo que recibimos. Nuestros programas de responsabilidad social están diseñados para generar un impacto positivo y duradero en las comunidades donde operamos.</p>
+            <p>Implementamos programas de educación, desarrollo comunitario y herramientas de apoyo que benefician a miles de personas cada año.</p>
+            
+            <!-- Botones de acción -->
+            <div class="social-support-buttons">
+                <a href="https://emiliocolor.com/plataformas/inicio" class="social-support-link" target="_blank">
+                    <i class="fas fa-graduation-cap"></i> Plataformas Educativas y Académicas
+                </a>
+                
+                <a href="https://emiliocolor.com/herramientas/inicio" class="social-support-link" target="_blank">
+                    <i class="fas fa-tools"></i> Herramientas a la Comunidad
+                </a>
+                
+                <a href="#proyectos" class="social-support-link part-of">
+                    <i class="fas fa-handshake"></i> ¿Cómo puedo ser parte?
+                </a>
             </div>
-            <div class="social-support-image">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Apoyos Sociales EmilioColor">
+        </div>
+
+        <!-- Contenedor de estadísticas -->
+        <div class="video-content">
+            <div class="social-stats-grid">
+                                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span class="stat-number">2,600<span class="stat-plus">+</span></span>
+                    <div class="stat-label">Personas Beneficiadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <span class="stat-number">13<span class="stat-plus">+</span></span>
+                    <div class="stat-label">Herramientas Desarrolladas</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <span class="stat-number">3<span class="stat-plus">+</span></span>
+                    <div class="stat-label">Plataformas Educativas y Académicas</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1889,79 +2246,78 @@ Nuestro modelo de negocio está orientado al consumidor, permitiéndonos ofrecer
                 <p>Con nuestra experiencia multisectorial y equipo multidisciplinario, podemos ayudarte a desarrollar, planificar y ejecutar proyectos de gran escala en áreas de tecnología, educación, transporte o desarrollo comunitario.</p>
                 <p>Ofrecemos asesoría especializada, recursos técnicos y apoyo logístico para convertir tus ideas en realidades exitosas.</p>
             </div>
-            <a href="#contacto" class="big-projects-button">
-                <i class="fas fa-lightbulb"></i> Cuéntanos tu Proyecto
+            
+            <!-- CONTENEDOR PARA EL BOTÓN (NO OCUPA TODO EL ANCHO) -->
+            <div class="projects-button-container">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emiliocolormexico@gmail.com
+&su=Propuesta%20de%20Proyecto%20-%20EmilioColor%C2%AE
+&body=Estimado%20equipo%20de%20Proyectos%20EmilioColor%2C%0D%0A%0D%0APor%20medio%20del%20presente%2C%20me%20gustar%C3%ADa%20presentarles%20el%20siguiente%20proyecto%20para%20su%20consideraci%C3%B3n.%0D%0A%0D%0A---%20DATOS%20DEL%20CONTACTO%20---%0D%0A%0D%0ANombre%20completo%3A%0D%0ACorreo%20electr%C3%B3nico%3A%0D%0ATel%C3%A9fono%20de%20contacto%3A%0D%0AEmpresa%20u%20Organizaci%C3%B3n%3A%0D%0A%0D%0A---%20DETALLE%20DEL%20PROYECTO%20---%0D%0A%0D%0ASector%20(tecnolog%C3%ADa%2C%20educaci%C3%B3n%2C%20transporte%2C%20etc.)%3A%0D%0AObjetivo%20del%20proyecto%3A%0D%0AAlcance%20estimado%3A%0D%0APlazos%20tentativos%3A%0D%0APresupuesto%20estimado%20(opcional)%3A%0D%0A%0D%0AQuedo%20atento%20a%20su%20respuesta%20y%20agradezco%20su%20tiempo.%0D%0A%0D%0AAtentamente%2C"
+                   target="_blank"
+                   class="verification-link verification-link-gray">
+                    <i class="fas fa-lightbulb"></i> Cuéntanos tu Proyecto
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Nueva Sección: Nuestras Marcas -->
+    <section class="our-brands-section" id="marcas">
+        <h2 class="our-brands-title">Nuestras Marcas</h2>
+        <div class="brands-container">
+
+            <a href="#inicio" class="brand-link">
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="img_marcas/EC_BLANCO.png" alt="EmilioColor">
+                    </div>
+                    <div class="brand-content">
+                        <h3 class="brand-name">EMILIOCOLOR®</h3>
+                        <p class="brand-description">
+Servicios científicos y tecnológicos                    </div>
+                </div>
+            </a>
+
+            <a href="https://inkspire.emiliocolor.com" class="brand-link">
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="img_marcas/INKSPIRE.png" alt="Inkspire">
+                    </div>
+                    <div class="brand-content">
+                        <h3 class="brand-name">Inkspire™</h3>
+                        <p class="brand-description">
+Productos de imprenta                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://amshev.emiliocolor.com" class="brand-link">
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="img_marcas/AMSHEV1 - copia.png" alt="AM-SHEV">
+                    </div>
+                    <div class="brand-content">
+                        <h3 class="brand-name">AM-SHEV™</h3>
+                        <p class="brand-description">
+Vehículos y aparatos para el transporte terrestre, aéreo o acuático de personas o de mercancías                </p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://classcloud.emiliocolor.com" class="brand-link">
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="img_marcas/CLASSCLOUD.png" alt="ClassCloud">
+                    </div>
+                    <div class="brand-content">
+                        <h3 class="brand-name">CLASSCLOUD℠</h3>
+                        <p class="brand-description">
+Educación; formación; servicios de entretenimiento; actividades deportivas y culturales.                        </p>
+                    </div>
+                </div>
             </a>
         </div>
     </section>
-       <!-- Nueva Sección: Nuestras Marcas -->
-<section class="our-brands-section" id="marcas">
-    <h2 class="our-brands-title">Nuestras Marcas</h2>
-    <div class="brands-container">
-
-        <a href="#inicio" class="brand-link">
-            <div class="brand-card">
-                <div class="brand-logo">
-                    <img src="img_marcas/EC_BLANCO.png" alt="EmilioColor">
-                </div>
-                <div class="brand-content">
-                    <h3 class="brand-name">EMILIOCOLOR®</h3>
-                    <p class="brand-description">
-                        Marca matriz que consolida y gestiona un ecosistema de submarcas especializadas en sectores estratégicos como tecnología, educación, papelería y transporte, garantizando coherencia, calidad e innovación.
-                    </p>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://inkspire.emiliocolor.com" class="brand-link">
-            <div class="brand-card">
-                <div class="brand-logo">
-                    <img src="img_marcas/INKSPIRE.png" alt="Inkspire">
-                </div>
-                <div class="brand-content">
-                    <h3 class="brand-name">Inkspire™</h3>
-                    <p class="brand-description">
-                        Marca enfocada en el diseño, desarrollo y comercialización de productos funcionales y de calidad para entornos escolares, académicos y de oficina.
-                    </p>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://amshev.emiliocolor.com" class="brand-link">
-            <div class="brand-card">
-                <div class="brand-logo">
-                    <img src="img_marcas/AMSHEV1 - copia.png" alt="AM-SHEV">
-                </div>
-                <div class="brand-content">
-                    <h3 class="brand-name">AM-SHEV™</h3>
-                    <p class="brand-description">
-                        Marca especializada en la oferta de vehículos de trabajo confiables y eficientes, cuidadosamente seleccionados y sometidos a rigurosos procesos de revisión mecánica para asegurar desempeño, seguridad y durabilidad.
-                    </p>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://classcloud.emiliocolor.com" class="brand-link">
-            <div class="brand-card">
-                <div class="brand-logo">
-                    <img src="img_marcas/CLASSCLOUD.png" alt="ClassCloud">
-                </div>
-                <div class="brand-content">
-                    <h3 class="brand-name">CLASSCLOUD℠</h3>
-                    <p class="brand-description">
-                        Marca dedicada al desarrollo de plataformas educativas digitales y soluciones de aprendizaje que integran recursos, cursos y herramientas orientadas a la formación académica y profesional.
-                    </p>
-                </div>
-            </div>
-        </a>
-    </div>
-    <style>
-        .brand-link {
-    text-decoration: none;
-}
-
-    </style>
-</section>
+    
     <!-- SECCIÓN DE CONTACTO SIMPLIFICADA -->
     <section class="contact-simple-section" id="contacto">
         <h2 class="contact-simple-title">Contáctanos</h2>
@@ -2064,7 +2420,7 @@ Nuestro modelo de negocio está orientado al consumidor, permitiéndonos ofrecer
                 <p><i class="fas fa-phone-alt"></i> +52 56 5533 3139</p>
                 <p><i class="fab fa-whatsapp"></i> +52 56 5533 3139</p>
                 <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
-                <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 AM - 9:00 PM</p>
+                <p><i class="fas fa-clock"></i>Lun–Vie, 09:00–21:00 | Sáb–Dom, 10:00–20:00</p>
             </div>
             
             <div class="footer-social">
@@ -2097,7 +2453,108 @@ Nuestro modelo de negocio está orientado al consumidor, permitiéndonos ofrecer
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    // Gestión del banner de términos y condiciones
     document.addEventListener('DOMContentLoaded', function() {
+        const termsBanner = document.getElementById('termsBanner');
+        const acceptTermsBtn = document.getElementById('acceptTerms');
+        const declineTermsBtn = document.getElementById('declineTerms');
+        const body = document.body;
+        
+        // Verificar si ya se aceptaron los términos previamente
+        const termsAccepted = localStorage.getItem('emiliocolor-terms-accepted');
+        
+        if (termsAccepted === 'true') {
+            // Si ya se aceptaron, ocultar el banner
+            termsBanner.classList.add('hidden');
+            body.classList.remove('terms-visible');
+        } else {
+            // Mostrar banner y ajustar estilos
+            termsBanner.classList.remove('hidden');
+            body.classList.add('terms-visible');
+        }
+        
+        // Aceptar términos
+        acceptTermsBtn.addEventListener('click', function() {
+            localStorage.setItem('emiliocolor-terms-accepted', 'true');
+            termsBanner.classList.add('hidden');
+            body.classList.remove('terms-visible');
+            
+            // Mostrar mensaje de confirmación
+            showNotification('¡Gracias por aceptar nuestros términos y condiciones!');
+        });
+        
+        // Rechazar términos
+        declineTermsBtn.addEventListener('click', function() {
+            // Redireccionar a página de términos o mostrar mensaje
+            showNotification('Para usar este sitio web, es necesario aceptar los términos y condiciones.', 'warning');
+            
+            // Opcional: redirigir a la página de términos
+            // window.open('https://emiliocolor.com/legalidad_y_garantias.html', '_blank');
+        });
+        
+        // Función para mostrar notificaciones
+        function showNotification(message, type = 'success') {
+            // Crear elemento de notificación
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 25px;
+                background-color: ${type === 'success' ? '#10b981' : '#f59e0b'};
+                color: white;
+                border-radius: 5px;
+                z-index: 10000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                animation: slideIn 0.3s ease;
+                max-width: 400px;
+            `;
+            
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-triangle'}" style="margin-right: 10px;"></i>
+                ${message}
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Eliminar después de 5 segundos
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 5000);
+        }
+        
+        // Añadir estilos de animación para notificaciones
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
         // Navegación activa
         const navLinks = document.querySelectorAll('.header-nav-link, .footer-nav-link');
         
@@ -2140,44 +2597,6 @@ Nuestro modelo de negocio está orientado al consumidor, permitiéndonos ofrecer
                 }
             });
         });
-        
-        // Carrusel de verificación
-        const carouselSlides = document.querySelectorAll('.carousel-slide');
-        const carouselDots = document.querySelectorAll('.carousel-dot');
-        let currentSlide = 0;
-        
-        function showSlide(index) {
-            // Ocultar todas las diapositivas
-            carouselSlides.forEach(slide => {
-                slide.classList.remove('active');
-            });
-            
-            // Quitar clase active de todos los puntos
-            carouselDots.forEach(dot => {
-                dot.classList.remove('active');
-            });
-            
-            // Mostrar la diapositiva seleccionada
-            carouselSlides[index].classList.add('active');
-            carouselDots[index].classList.add('active');
-            currentSlide = index;
-        }
-        
-        // Configurar eventos para los puntos del carrusel
-        carouselDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
-            });
-        });
-        
-        // Cambiar automáticamente las diapositivas cada 5 segundos
-        setInterval(() => {
-            let nextSlide = currentSlide + 1;
-            if (nextSlide >= carouselSlides.length) {
-                nextSlide = 0;
-            }
-            showSlide(nextSlide);
-        }, 5000);
         
         // CARRUSEL DE NOVEDADES
         const newsSlides = document.querySelectorAll('.news-slide');
@@ -2292,6 +2711,49 @@ Nuestro modelo de negocio está orientado al consumidor, permitiéndonos ofrecer
                 });
             });
         });
+        
+        // ANIMACIÓN DE CONTADORES
+        function animateCounter(element, finalValue, duration = 2000) {
+            const startValue = 0;
+            const increment = finalValue / (duration / 16); // 60fps
+            let currentValue = startValue;
+            
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= finalValue) {
+                    currentValue = finalValue;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(currentValue).toLocaleString();
+            }, 16);
+        }
+        
+        // Iniciar animación de contadores cuando se hace scroll hasta la sección
+        function initCounters() {
+            const counterSection = document.getElementById('apoyos');
+            const counters = document.querySelectorAll('.stat-number');
+            
+            if (counterSection && counters.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            counters.forEach(counter => {
+                                const valueText = counter.textContent.replace('+', '').replace(',', '');
+                                const value = parseInt(valueText);
+                                if (!counter.classList.contains('animated')) {
+                                    animateCounter(counter, value);
+                                    counter.classList.add('animated');
+                                }
+                            });
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(counterSection);
+            }
+        }
+        
+        initCounters();
     });
 </script>
 </body>
