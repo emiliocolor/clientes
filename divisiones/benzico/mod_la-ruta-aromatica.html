@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<!-- Charset & Responsive -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO básico -->
+<title>Materiales | La Ruta Aromática - EmilioColor®</title>
+<meta name="description" content="Catálogo de herramientas digitales gratuitas: calculadoras online, conversores de unidades, codificadores de texto y trucos para videojuegos. Proyecto desarrollado por EmilioColor®.">
+
+<!-- Robots -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<meta name="google" content="notranslate">
+
+<!-- Autor -->
+<meta name="author" content="EmilioColor®">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://emiliocolor.com/herramientas/">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="EmilioColor®">
+<meta property="og:title" content="Herramientas Digitales Gratuitas - EmilioColor®">
+<meta property="og:description" content="Calculadoras, conversores, codificadores y trucos para videojuegos. Herramientas gratuitas creadas por EmilioColor®.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emiliocolor.com/herramientas/">
+<meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+<link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+
+<!-- CSS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Herramientas Digitales Gratuitas",
+  "description": "Colección de herramientas digitales gratuitas: calculadoras, conversores y trucos para videojuegos.",
+  "url": "https://emiliocolor.com/herramientas/",
+  "inLanguage": "es",
+  "publisher": {
+    "@type": "Organization",
+    "name": "EmilioColor®",
+    "url": "https://emiliocolor.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://emiliocolor.com/img-logos/logo_transparente_alargado.png"
+    },
+    "sameAs": [
+      "https://www.instagram.com/emiliocolorcom/",
+      "https://www.youtube.com/@EmilioColor"
+    ]
+  },
+  "datePublished": "2024-06-15",
+  "dateModified": "2025-01-28"
+}
+</script>
+
+
+</head>
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+    .header-nav {
+        display: flex;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+    .header-nav-link {
+        padding: 10px 15px;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+    }
+
+    .header-nav-link:hover,
+    .header-nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 46px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* GALLERY STYLES */
+        .gallery-container {
+            margin: 40px 0;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 140px; /* Tamaño más pequeño para las imágenes */
+            object-fit: contain; /* Para mantener proporciones sin recortar */
+            background-color: var(--light-gray);
+            padding: 15px;
+        }
+        
+        .gallery-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .gallery-item-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+        
+        .gallery-item-description {
+            color: var(--primary-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .gallery-item-link {
+            display: block;
+            text-align: center;
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item-link:hover {
+            background: var(--primary-blue-dark);
+            color: white;
+        }
+
+        /* LEGAL NOTICE STYLES */
+        .legal-notice {
+            background: white;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 40px 0;
+        }
+        
+        .legal-notice h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .legal-notice p {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .legal-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legal-btn:hover {
+            background: var(--primary-blue-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .legal-btn.secondary {
+            background: var(--primary-gray);
+        }
+        
+        .legal-btn.secondary:hover {
+            background: var(--primary-gray-dark);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .legal-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-image {
+                height: 160px; /* Un poco más grande en móviles */
+            }
+            
+            .legal-buttons {
+                flex-direction: column;
+            }
+            
+            .legal-btn {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <a href="https://emiliocolor.com" target="_blank" class="header-logo">
+            <img src="https://emiliocolor.com/img-logos/logo_transparente_alargado.png" alt="EmilioColor Logo">
+        </a>
+        
+        <nav class="header-nav">
+            <a href="https://emiliocolor.com/" class="header-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Página principal</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+<div class="container">
+    <h1 class="text-center mb-4" style="color: var(--primary-blue);">
+Materiales | La Ruta Aromática</h1>
+
+    <div class="gallery-container">
+
+        <!-- ============================= -->
+        <!-- CATEGORÍA: PROGRAMAS GRATUITOS -->
+        <!-- ============================= -->
+<style>
+    .gallery-item-collab {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+</style>
+        <div class="gallery-grid">
+
+<!-- Item EmilioColor AI -->
+<div class="gallery-item">
+    <img src="https://static.vecteezy.com/system/resources/previews/038/566/807/non_2x/quick-response-3d-icon-illustration-feedback-3d-rendering-free-png.png" alt="EmilioColor AI" class="gallery-image">
+    <div class="gallery-content">
+        <h3 class="gallery-item-title">Documento de respuestas para el Moderador</h3>
+        <a href="https://docs.google.com/document/d/1NI4q3u-HKn_ZgvOwjDYxOL6UX9gaHlILRycy6dCcncU/edit?usp=sharing" target="_blank" class="gallery-item-link">Abrir</a>
+    </div>
+</div>
+
+        </div> <!-- /gallery-grid -->
+
+    </div> <!-- /gallery-container -->
+
+        
+<div class="legal-notice">
+    <h3>Aviso Legal</h3>
+
+    <p>
+        Contamos con sustentos legales conforme a la Ley Federal del Derecho de Autor (LFDA) vigente en los Estados Unidos Mexicanos.
+        Al acceder y utilizar esta página, así como las herramientas y recursos aquí disponibles, aceptas íntegramente
+        lo establecido en nuestra sección de Legalidad y Garantías.
+    </p>
+
+    <p>
+        <strong>EmilioColor® | Legalidad y Garantías</strong><br>
+        <em>Términos legales, garantías y políticas</em>
+    </p>
+
+    <p>
+        Queda estrictamente prohibida la reproducción, redistribución, duplicación, modificación,
+        publicación en otros sitios web o cualquier otra forma de explotación total o parcial de nuestras herramientas, 
+        enlaces curados, documentación y contenido, sin la autorización expresa y por escrito de EmilioColor®.
+    </p>
+
+    <p>
+        El uso indebido, la replicación no autorizada o la apropiación de cualquiera de los recursos ofrecidos en esta plataforma
+        podrá dar lugar a responsabilidades legales conforme a la LFDA y demás disposiciones aplicables.
+    </p>
+
+    <div class="legal-buttons">
+                <a href="https://emiliocolor.com/legalidad_y_garantias.html" 
+           target="_blank" 
+           class="legal-btn secondary">
+            <i class="fas fa-file-contract"></i> Legalidad y Garantías
+        </a>
+    </div>
+</div>
+
+
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://emiliocolor.com/img-logos/logo_transparente_alargado_leyenda.png" alt="EmilioColor Logo">
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación Rápida</h4>
+                <a href="https://emiliocolor.com/#inicio" class="footer-nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="https://emiliocolor.com/#novedades" class="footer-nav-link">
+                    <i class="fas fa-newspaper"></i> Novedades
+                </a>
+                <a href="https://emiliocolor.com/#divisiones" class="footer-nav-link">
+                    <i class="fas fa-sitemap"></i> Divisiones
+                </a>
+                <a href="https://emiliocolor.com/#verification" class="footer-nav-link">
+                    <i class="fas fa-info-circle"></i> Info. Adicional
+                </a>
+                <a href="https://emiliocolor.com/#apoyos" class="footer-nav-link">
+                    <i class="fas fa-hands-helping"></i> Apoyos Sociales
+                </a>
+                <a href="https://emiliocolor.com/#proyectos" class="footer-nav-link">
+                    <i class="fas fa-lightbulb"></i> Proyectos
+                </a>
+                <a href="https://emiliocolor.com/#marcas" class="footer-nav-link">
+                    <i class="fas fa-tags"></i> Nuestras Marcas
+                </a>
+                <a href="https://emiliocolor.com/#contacto" class="footer-nav-link">
+                    <i class="fas fa-envelope"></i> Contacto
+                </a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto Directo</h4>
+                <p><i class="fas fa-envelope"></i> emiliocolormexico@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +52 56 5533 3139</p>
+                <p><i class="fab fa-whatsapp"></i> +52 56 5533 3139</p>
+                <p><i class="fas fa-map-marker-alt"></i> Operando desde México</p>
+                <p><i class="fas fa-clock"></i>Lun–Vie, 09:00–21:00 | Sáb–Dom, 10:00–20:00</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="footer-social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61558765116854" class="social-link" aria-label="Facebook EmilioColor">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/emiliocolorcom/" class="social-link" aria-label="Instagram EmilioColor">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/525655333139" class="social-link" aria-label="WhatsApp EmilioColor">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:emiliocolormexico@gmail.com" class="social-link" aria-label="Email EmilioColor">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Conecta con nosotros para las últimas novedades</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 EmilioColor® | Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;">Tecnología, Educación, Transportes, Papelería - Soluciones a tu medida</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://emiliocolor.com/proteccion-emiliocolor.js"></script>
+
+</body>
+</html>
+
