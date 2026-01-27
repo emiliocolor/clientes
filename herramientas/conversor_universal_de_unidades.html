@@ -64,6 +64,8 @@
             --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
             --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+            --coconi-color: #ff6b35;
+            --coconi-dark: #e55a2b;
         }
 
         body {
@@ -605,6 +607,33 @@
             font-family: 'Courier New', monospace;
         }
 
+        /* Estilos específicos para COCONI */
+        .coconi-unit {
+            border-left: 3px solid var(--coconi-color) !important;
+        }
+
+        .coconi-unit .unit {
+            color: var(--coconi-color) !important;
+        }
+
+        .coconi-category h4 {
+            color: var(--coconi-color) !important;
+            border-bottom-color: var(--coconi-color) !important;
+        }
+
+        .coconi-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(229, 90, 43, 0.1) 100%);
+            border-radius: 0;
+            border-left: 4px solid var(--coconi-color);
+        }
+
+        .coconi-info h4 {
+            color: var(--coconi-color);
+            margin-bottom: 10px;
+        }
+
         @media (max-width: 768px) {
             .measurement-group {
                 grid-template-columns: 1fr;
@@ -685,7 +714,20 @@
                     <li><strong>Sistema Imperial/Americano:</strong> Usado principalmente en Estados Unidos</li>
                     <li><strong>Sistema Internacional (SI):</strong> Sistema estándar usado en ciencia</li>
                 </ul>
-                <p>Seleccione el tipo de unidad y la unidad de origen para ver todas las conversiones posibles.</p>
+            </div>
+            
+            <div class="coconi-info">
+                <h4>Unidad COCONI</h4>
+                <p>El <strong>COCONI</strong> es una unidad de medida completa que representa:</p>
+                <ul>
+                    <li><strong>Peso/Masa:</strong> 1 COCONI = 74.73 kg</li>
+                    <li><strong>Longitud:</strong> 1 COCONI = 1.50 metros de altura</li>
+                    <li><strong>Volumen:</strong> 1 COCONI = 77.7 litros</li>
+                    <li><strong>Temperatura:</strong> 1 COCONI = 37 °C (temperatura corporal)</li>
+                    <li><strong>Área:</strong> 1 COCONI = 1.7997 m²</li>
+                    <li><strong>Velocidad:</strong> 1 COCONI/s = 1.40 m/s</li>
+                </ul>
+                <p><em>Nota: Todas las conversiones a COCONI son relativas a la categoría seleccionada.</em></p>
             </div>
         </div>
     </div>
@@ -699,7 +741,7 @@
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Definición de unidades por categoría
+    // Definición de unidades por categoría CON COCONI
     const unitCategories = {
         length: {
             name: "Longitud",
@@ -711,7 +753,8 @@
                 "in": { name: "Pulgadas", factor: 0.0254 },
                 "ft": { name: "Pies", factor: 0.3048 },
                 "yd": { name: "Yardas", factor: 0.9144 },
-                "mi": { name: "Millas", factor: 1609.344 }
+                "mi": { name: "Millas", factor: 1609.344 },
+                "coconi": { name: " COCONI (altura)", factor: 1.5, isCoconi: true }
             }
         },
         weight: {
@@ -723,7 +766,8 @@
                 "t": { name: "Toneladas", factor: 1000 },
                 "oz": { name: "Onzas", factor: 0.0283495 },
                 "lb": { name: "Libras", factor: 0.453592 },
-                "st": { name: "Stones", factor: 6.35029 }
+                "st": { name: "Stones", factor: 6.35029 },
+                "coconi": { name: " COCONI (peso)", factor: 74.73, isCoconi: true }
             }
         },
         volume: {
@@ -737,7 +781,8 @@
                 "cup": { name: "Tazas", factor: 0.236588 },
                 "pt": { name: "Pintas", factor: 0.473176 },
                 "qt": { name: "Cuartos", factor: 0.946353 },
-                "gal": { name: "Galones", factor: 3.78541 }
+                "gal": { name: "Galones", factor: 3.78541 },
+                "coconi": { name: " COCONI (volumen)", factor: 77.7, isCoconi: true }
             }
         },
         temperature: {
@@ -745,7 +790,8 @@
             units: {
                 "c": { name: "Celsius", factor: 1, offset: 0 },
                 "f": { name: "Fahrenheit", factor: 5/9, offset: -32 },
-                "k": { name: "Kelvin", factor: 1, offset: -273.15 }
+                "k": { name: "Kelvin", factor: 1, offset: -273.15 },
+                "coconi": { name: " COCONI (temp.)", factor: 1, offset: 0, baseValue: 37, isCoconi: true }
             }
         },
         area: {
@@ -760,7 +806,8 @@
                 "ft2": { name: "Pies cuadrados", factor: 0.092903 },
                 "yd2": { name: "Yardas cuadradas", factor: 0.836127 },
                 "ac": { name: "Acres", factor: 4046.86 },
-                "mi2": { name: "Millas cuadradas", factor: 2589988.11 }
+                "mi2": { name: "Millas cuadradas", factor: 2589988.11 },
+                "coconi": { name: " COCONI (área)", factor: 1.7997, isCoconi: true }
             }
         },
         speed: {
@@ -770,7 +817,8 @@
                 "kph": { name: "Kilómetros por hora", factor: 0.277778 },
                 "mph": { name: "Millas por hora", factor: 0.44704 },
                 "knot": { name: "Nudos", factor: 0.514444 },
-                "ftps": { name: "Pies por segundo", factor: 0.3048 }
+                "ftps": { name: "Pies por segundo", factor: 0.3048 },
+                "coconi": { name: " COCONI/s (velocidad)", factor: 1.40, isCoconi: true }
             }
         }
     };
@@ -853,7 +901,7 @@
         // Agrupar resultados por sistema
         const metricResults = [];
         const imperialResults = [];
-        const otherResults = [];
+        const coconiResults = [];
         
         for (const unitKey in units) {
             if (unitKey === fromUnit) continue;
@@ -862,63 +910,99 @@
             const result = {
                 unit: unitKey,
                 name: units[unitKey].name,
-                value: convertedValue
+                value: convertedValue,
+                isCoconi: units[unitKey].isCoconi || false
             };
             
             // Clasificar por sistema
-            if (['mm', 'cm', 'm', 'km', 'mg', 'g', 'kg', 't', 'ml', 'cl', 'l', 'm3', 'mm2', 'cm2', 'm2', 'ha', 'km2', 'mps', 'kph'].includes(unitKey)) {
+            if (units[unitKey].isCoconi) {
+                coconiResults.push(result);
+            } else if (['mm', 'cm', 'm', 'km', 'mg', 'g', 'kg', 't', 'ml', 'cl', 'l', 'm3', 'mm2', 'cm2', 'm2', 'ha', 'km2', 'mps', 'kph'].includes(unitKey)) {
                 metricResults.push(result);
             } else if (['in', 'ft', 'yd', 'mi', 'oz', 'lb', 'st', 'floz', 'cup', 'pt', 'qt', 'gal', 'in2', 'ft2', 'yd2', 'ac', 'mi2', 'mph', 'ftps'].includes(unitKey)) {
                 imperialResults.push(result);
-            } else {
-                otherResults.push(result);
             }
         }
         
         // Mostrar resultados agrupados
         if (metricResults.length > 0) {
-            displayResultGroup(resultsContainer, "Sistema Métrico", metricResults);
+            displayResultGroup(resultsContainer, "Sistema Métrico", metricResults, false);
         }
         
         if (imperialResults.length > 0) {
-            displayResultGroup(resultsContainer, "Sistema Imperial/Americano", imperialResults);
+            displayResultGroup(resultsContainer, "Sistema Imperial/Americano", imperialResults, false);
         }
         
-        if (otherResults.length > 0) {
-            displayResultGroup(resultsContainer, "Otras Unidades", otherResults);
+        // Siempre mostrar resultados de COCONI
+        if (coconiResults.length > 0) {
+            displayResultGroup(resultsContainer, "Sistema COCONI", coconiResults, true);
+        } else if (fromUnit !== 'coconi') {
+            // Si no hay resultados de COCONI pero la unidad de origen no es COCONI, calcular
+            const coconiValue = baseValue / getCoconiFactor(category);
+            const coconiResult = {
+                unit: 'coconi',
+                name: 'COCONI',
+                value: coconiValue,
+                isCoconi: true
+            };
+            displayResultGroup(resultsContainer, "Sistema COCONI", [coconiResult], true);
         }
         
         document.getElementById('result').style.display = 'block';
+    }
+
+    function getCoconiFactor(category) {
+        // Factores de conversión para COCONI en cada categoría
+        const coconiFactors = {
+            'length': 1.5,      // metros
+            'weight': 74.73,    // kg
+            'volume': 77.7,     // litros
+            'area': 1.7997,     // m²
+            'speed': 1.40       // m/s
+        };
+        return coconiFactors[category] || 1;
     }
 
     function convertTemperature(value, fromUnit, resultsContainer) {
         const conversions = {
             'c': {
                 'f': (c) => (c * 9/5) + 32,
-                'k': (c) => c + 273.15
+                'k': (c) => c + 273.15,
+                'coconi': (c) => c / 37  // Relativo a 37°C
             },
             'f': {
                 'c': (f) => (f - 32) * 5/9,
-                'k': (f) => (f - 32) * 5/9 + 273.15
+                'k': (f) => (f - 32) * 5/9 + 273.15,
+                'coconi': (f) => ((f - 32) * 5/9) / 37
             },
             'k': {
                 'c': (k) => k - 273.15,
-                'f': (k) => (k - 273.15) * 9/5 + 32
+                'f': (k) => (k - 273.15) * 9/5 + 32,
+                'coconi': (k) => (k - 273.15) / 37
+            },
+            'coconi': {
+                'c': (coconi) => coconi * 37,
+                'f': (coconi) => (coconi * 37 * 9/5) + 32,
+                'k': (coconi) => (coconi * 37) + 273.15
             }
         };
         
         const metricResults = [];
         const imperialResults = [];
+        const coconiResults = [];
         
         for (const toUnit in conversions[fromUnit]) {
             const convertedValue = conversions[fromUnit][toUnit](value);
             const result = {
                 unit: toUnit,
-                name: unitCategories.temperature.units[toUnit].name,
-                value: convertedValue
+                name: unitCategories.temperature.units[toUnit]?.name || 'COCONI (temp.)',
+                value: convertedValue,
+                isCoconi: toUnit === 'coconi'
             };
             
-            if (toUnit === 'c' || toUnit === 'k') {
+            if (toUnit === 'coconi') {
+                coconiResults.push(result);
+            } else if (toUnit === 'c' || toUnit === 'k') {
                 metricResults.push(result);
             } else {
                 imperialResults.push(result);
@@ -927,19 +1011,38 @@
         
         // Mostrar resultados agrupados
         if (metricResults.length > 0) {
-            displayResultGroup(resultsContainer, "Sistema Métrico/Internacional", metricResults);
+            displayResultGroup(resultsContainer, "Sistema Métrico/Internacional", metricResults, false);
         }
         
         if (imperialResults.length > 0) {
-            displayResultGroup(resultsContainer, "Sistema Imperial/Americano", imperialResults);
+            displayResultGroup(resultsContainer, "Sistema Imperial/Americano", imperialResults, false);
+        }
+        
+        if (coconiResults.length > 0) {
+            displayResultGroup(resultsContainer, "Sistema COCONI", coconiResults, true);
+        } else if (fromUnit !== 'coconi') {
+            // Calcular valor en COCONI
+            let tempInC;
+            if (fromUnit === 'c') tempInC = value;
+            else if (fromUnit === 'f') tempInC = (value - 32) * 5/9;
+            else if (fromUnit === 'k') tempInC = value - 273.15;
+            
+            const coconiValue = tempInC / 37;
+            const coconiResult = {
+                unit: 'coconi',
+                name: 'COCONI (temp.)',
+                value: coconiValue,
+                isCoconi: true
+            };
+            displayResultGroup(resultsContainer, "Sistema COCONI", [coconiResult], true);
         }
         
         document.getElementById('result').style.display = 'block';
     }
 
-    function displayResultGroup(container, title, results) {
+    function displayResultGroup(container, title, results, isCoconi) {
         const categoryDiv = document.createElement('div');
-        categoryDiv.className = 'result-category';
+        categoryDiv.className = `result-category ${isCoconi ? 'coconi-category' : ''}`;
         
         const titleEl = document.createElement('h4');
         titleEl.textContent = title;
@@ -947,7 +1050,7 @@
         
         results.forEach(result => {
             const resultItem = document.createElement('div');
-            resultItem.className = 'result-item';
+            resultItem.className = `result-item ${result.isCoconi ? 'coconi-unit' : ''}`;
             
             const unitSpan = document.createElement('span');
             unitSpan.className = 'unit';
@@ -955,7 +1058,7 @@
             
             const valueSpan = document.createElement('span');
             valueSpan.className = 'value';
-            valueSpan.textContent = formatNumber(result.value);
+            valueSpan.textContent = formatNumber(result.value) + (result.unit === 'coconi' ? ' COCONI' : '');
             
             resultItem.appendChild(unitSpan);
             resultItem.appendChild(valueSpan);
