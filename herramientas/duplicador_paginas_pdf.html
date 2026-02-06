@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EmilioColor® - Duplicador de PDF">
+    <meta name="keywords" content="duplicador, pdf, páginas, documentos, herramientas">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Duplicador de PDF">
+    <meta property="og:description" content="Herramienta para duplicar páginas de PDF">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Duplicador de PDF">
+    <meta name="twitter:description" content="Herramienta para duplicar páginas de PDF">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+    <link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+    <title>Duplicador de PDF - EmilioColor®</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .header-nav-link {
+            padding: 10px 15px;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid transparent;
+        }
+
+        .header-nav-link:hover,
+        .header-nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Duplicador de PDF Styles */
+        .duplicator-container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            border-radius: 0;
+        }
+
+        .duplicator {
+            background-color: white;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            color: var(--text-dark);
+            border-radius: 0;
+        }
+        
+        .duplicator h2 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .duplicator label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        .duplicator input, .duplicator select {
+            padding: 12px;
+            width: 100%;
+            border: 1px solid var(--medium-gray);
+            border-radius: 0;
+            background-color: white;
+            color: var(--text-dark);
+            font-size: 16px;
+            transition: border 0.3s;
+            box-sizing: border-box;
+        }
+        
+        .duplicator input:focus, .duplicator select:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+        }
+        
+        .duplicator button {
+            background: var(--button-gradient);
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .duplicator button:hover {
+            background: var(--button-hover-gradient);
+            transform: translateY(-2px);
+        }
+        
+        .duplicator button:active {
+            transform: translateY(0);
+        }
+        
+        .error {
+            color: white;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: var(--danger-color);
+            border-radius: 0;
+            display: none;
+            font-size: 15px;
+        }
+        
+        .success {
+            color: white;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: var(--success-color);
+            border-radius: 0;
+            display: none;
+            font-size: 15px;
+        }
+        
+        .file-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--light-gray);
+            border-radius: 0;
+            border-left: 4px solid var(--primary-blue);
+            display: none;
+        }
+        
+        .file-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--light-gray);
+            border-radius: 0;
+            border-left: 4px solid var(--warning-color);
+        }
+        
+        .instructions h4 {
+            color: var(--warning-color);
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        /* Botón de convertir más pequeño en computadora */
+        @media (min-width: 768px) {
+            .duplicator button {
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor para header dinámico -->
+    <div id="dynamic-header"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="duplicator-container">
+            <div class="duplicator">
+                <h2>Duplicador de Páginas PDF</h2>
+                
+                <div class="input-group">
+                    <label for="pdfInput">Seleccionar archivo PDF:</label>
+                    <input type="file" id="pdfInput" accept=".pdf">
+                </div>
+                
+                <div class="input-group">
+                    <label for="cantidad">¿Cuántas páginas totales quieres?</label>
+                    <select id="cantidad">
+                        <option value="10">10 páginas</option>
+                        <option value="20">20 páginas</option>
+                        <option value="30">30 páginas</option>
+                        <option value="40">40 páginas</option>
+                        <option value="50">50 páginas</option>
+                        <option value="60">60 páginas</option>
+                        <option value="70">70 páginas</option>
+                        <option value="80">80 páginas</option>
+                        <option value="90">90 páginas</option>
+                        <option value="100">100 páginas</option>
+                        <option value="110">110 páginas</option>
+                        <option value="120">120 páginas</option>
+                        <option value="130">130 páginas</option>
+                        <option value="140">140 páginas</option>
+                        <option value="150">150 páginas</option>
+                        <option value="160">160 páginas</option>
+                        <option value="170">170 páginas</option>
+                        <option value="180">180 páginas</option>
+                        <option value="190">190 páginas</option>
+                        <option value="200">200 páginas</option>
+                    </select>
+                </div>
+                
+                <button onclick="procesarPDF()">Generar y Descargar</button>
+                
+                <div class="error" id="error"></div>
+                <div class="success" id="success"></div>
+                
+                <div class="file-info" id="file-info">
+                    <h4>Información del archivo:</h4>
+                    <p><strong>Nombre:</strong> <span id="file-name"></span></p>
+                    <p><strong>Tamaño:</strong> <span id="file-size"></span></p>
+                    <p><strong>Páginas totales a generar:</strong> <span id="total-pages"></span></p>
+                </div>
+                
+                <div class="instructions">
+                    <h4>Instrucciones de uso:</h4>
+                    <ul>
+                        <li>Selecciona un archivo PDF válido</li>
+                        <li>Elige la cantidad total de páginas que deseas en el nuevo documento</li>
+                        <li>Haz clic en "Generar y Descargar"</li>
+                        <li>El sistema duplicará la primera página del PDF original hasta alcanzar el número de páginas solicitado</li>
+                        <li>El nuevo archivo se descargará automáticamente</li>
+                    </ul>
+                    <p><strong>Nota:</strong> Solo se duplicará la primera página del PDF original.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contenedor para footer dinámico -->
+    <div id="dynamic-footer"></div>
+    
+    <!-- Script dinámico de header/footer -->
+    <script src="script-herramientas.js"></script>
+    
+    <!-- Script para PDF-Lib -->
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Configurar evento para mostrar información del archivo
+        document.getElementById('pdfInput').addEventListener('change', function() {
+            const file = this.files[0];
+            const errorElement = document.getElementById('error');
+            const successElement = document.getElementById('success');
+            const fileInfoElement = document.getElementById('file-info');
+            
+            errorElement.style.display = 'none';
+            successElement.style.display = 'none';
+            
+            if (!file) {
+                fileInfoElement.style.display = 'none';
+                return;
+            }
+            
+            // Validar que sea un PDF
+            if (file.type !== 'application/pdf') {
+                showError("Por favor, selecciona un archivo PDF válido.");
+                this.value = '';
+                fileInfoElement.style.display = 'none';
+                return;
+            }
+            
+            // Mostrar información del archivo
+            document.getElementById('file-name').textContent = file.name;
+            document.getElementById('file-size').textContent = formatFileSize(file.size);
+            document.getElementById('total-pages').textContent = document.getElementById('cantidad').value;
+            
+            fileInfoElement.style.display = 'block';
+        });
+        
+        // Configurar evento para actualizar información cuando cambia el número de páginas
+        document.getElementById('cantidad').addEventListener('change', function() {
+            if (document.getElementById('pdfInput').files.length > 0) {
+                document.getElementById('total-pages').textContent = this.value;
+            }
+        });
+        
+        async function procesarPDF() {
+            const input = document.getElementById('pdfInput');
+            const total = parseInt(document.getElementById('cantidad').value);
+            const errorElement = document.getElementById('error');
+            const successElement = document.getElementById('success');
+            
+            errorElement.style.display = 'none';
+            successElement.style.display = 'none';
+            
+            if (input.files.length === 0) {
+                showError("Por favor, sube un archivo PDF.");
+                return;
+            }
+            
+            const file = input.files[0];
+            
+            try {
+                // Mostrar mensaje de procesamiento
+                showSuccess("Procesando PDF, por favor espera...");
+                
+                const bytes = await file.arrayBuffer();
+                const originalDoc = await PDFLib.PDFDocument.load(bytes);
+                const nuevoDoc = await PDFLib.PDFDocument.create();
+                
+                // Verificar que el PDF tenga al menos una página
+                if (originalDoc.getPageCount() === 0) {
+                    showError("El PDF no contiene páginas.");
+                    return;
+                }
+                
+                // Copiamos la primera página del original
+                const [paginaACopiar] = await nuevoDoc.copyPages(originalDoc, [0]);
+                
+                // Agregar las páginas duplicadas
+                for (let i = 0; i < total; i++) {
+                    nuevoDoc.addPage(paginaACopiar);
+                }
+                
+                const nuevoBytes = await nuevoDoc.save();
+                const blob = new Blob([nuevoBytes], { type: "application/pdf" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `pdf_duplicado_${total}_paginas.pdf`;
+                a.click();
+                
+                // Limpiar URL después de la descarga
+                setTimeout(() => {
+                    URL.revokeObjectURL(url);
+                }, 100);
+                
+                showSuccess(`PDF generado exitosamente con ${total} páginas. La descarga comenzará automáticamente.`);
+                
+            } catch (error) {
+                console.error('Error al procesar el PDF:', error);
+                showError("Ocurrió un error al procesar el PDF. Por favor, verifica que el archivo sea válido.");
+            }
+        }
+        
+        function showError(message) {
+            const errorElement = document.getElementById("error");
+            errorElement.textContent = message;
+            errorElement.style.display = "block";
+            
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                errorElement.style.display = "none";
+            }, 5000);
+        }
+        
+        function showSuccess(message) {
+            const successElement = document.getElementById("success");
+            successElement.textContent = message;
+            successElement.style.display = "block";
+            
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                successElement.style.display = "none";
+            }, 5000);
+        }
+        
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        // Permitir procesar al presionar Enter en el select
+        document.getElementById('cantidad').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                procesarPDF();
+            }
+        });
+    </script>
+</body>
+</html>
