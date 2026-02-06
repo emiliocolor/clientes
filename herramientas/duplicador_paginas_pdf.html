@@ -434,6 +434,23 @@
                 display: block;
             }
         }
+        
+        /* Loader para procesamiento */
+        .loader {
+            display: none;
+            margin: 20px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -477,7 +494,9 @@
                     </select>
                 </div>
                 
-                <button onclick="procesarPDF()">Generar y Descargar</button>
+                <div class="loader" id="loader"></div>
+                
+                <button onclick="procesarPDF()" id="process-btn">Generar y Descargar</button>
                 
                 <div class="error" id="error"></div>
                 <div class="success" id="success"></div>
@@ -498,7 +517,7 @@
                         <li>El sistema duplicará la primera página del PDF original hasta alcanzar el número de páginas solicitado</li>
                         <li>El nuevo archivo se descargará automáticamente</li>
                     </ul>
-                    <p><strong>Nota:</strong> Solo se duplicará la primera página del PDF original.</p>
+                    <p><strong>Nota:</strong> Solo se duplicará la primera página del PDF original. Las dimensiones de impresión se mantendrán correctamente.</p>
                 </div>
             </div>
         </div>
@@ -559,6 +578,8 @@
             const total = parseInt(document.getElementById('cantidad').value);
             const errorElement = document.getElementById('error');
             const successElement = document.getElementById('success');
+            const loader = document.getElementById('loader');
+            const processBtn = document.getElementById('process-btn');
             
             errorElement.style.display = 'none';
             successElement.style.display = 'none';
@@ -571,7 +592,11 @@
             const file = input.files[0];
             
             try {
-                // Mostrar mensaje de procesamiento
+                // Mostrar loader y deshabilitar botón
+                loader.style.display = 'block';
+                processBtn.disabled = true;
+                processBtn.textContent = 'Procesando...';
+                
                 showSuccess("Procesando PDF, por favor espera...");
                 
                 const bytes = await file.arrayBuffer();
@@ -581,24 +606,47 @@
                 // Verificar que el PDF tenga al menos una página
                 if (originalDoc.getPageCount() === 0) {
                     showError("El PDF no contiene páginas.");
+                    resetUI(loader, processBtn);
                     return;
                 }
                 
-                // Copiamos la primera página del original
-                const [paginaACopiar] = await nuevoDoc.copyPages(originalDoc, [0]);
+                // Obtener las dimensiones de la primera página
+                const primeraPagina = originalDoc.getPages()[0];
+                const { width, height } = primeraPagina.getSize();
                 
-                // Agregar las páginas duplicadas
+                // SOLUCIÓN SIMPLE Y EFECTIVA:
+                // 1. Crear un documento que solo tiene la primera página
+                const singlePageDoc = await PDFLib.PDFDocument.create();
+                const [singlePage] = await singlePageDoc.copyPages(originalDoc, [0]);
+                singlePageDoc.addPage(singlePage);
+                
+                // 2. Guardar ese documento de una página
+                const singlePageBytes = await singlePageDoc.save();
+                
+                // 3. Para cada página que necesitamos:
                 for (let i = 0; i < total; i++) {
-                    nuevoDoc.addPage(paginaACopiar);
+                    // Cargar el documento de una página
+                    const tempDoc = await PDFLib.PDFDocument.load(singlePageBytes);
+                    
+                    // Copiar la página
+                    const [tempPage] = await nuevoDoc.copyPages(tempDoc, [0]);
+                    
+                    // Agregar la página copiada
+                    nuevoDoc.addPage(tempPage);
                 }
                 
+                // Guardar el nuevo documento
                 const nuevoBytes = await nuevoDoc.save();
+                
+                // Crear y descargar el blob
                 const blob = new Blob([nuevoBytes], { type: "application/pdf" });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = `emiliocolor_duplicado_${total}_paginas.pdf`;
+                document.body.appendChild(a);
                 a.click();
+                document.body.removeChild(a);
                 
                 // Limpiar URL después de la descarga
                 setTimeout(() => {
@@ -609,7 +657,18 @@
                 
             } catch (error) {
                 console.error('Error al procesar el PDF:', error);
-                showError("Ocurrió un error al procesar el PDF. Por favor, verifica que el archivo sea válido.");
+                showError("Ocurrió un error al procesar el PDF. Error: " + error.message);
+            } finally {
+                // Restaurar UI
+                resetUI(loader, processBtn);
+            }
+        }
+        
+        function resetUI(loader, processBtn) {
+            if (loader) loader.style.display = 'none';
+            if (processBtn) {
+                processBtn.disabled = false;
+                processBtn.textContent = 'Generar y Descargar';
             }
         }
         
@@ -649,7 +708,14 @@
                 procesarPDF();
             }
         });
+        
+        // Prevenir múltiples clics en el botón
+        document.getElementById('process-btn').addEventListener('click', function(e) {
+            if (this.disabled) {
+                e.preventDefault();
+                return false;
+            }
+        });
     </script>
 </body>
-
 </html>
