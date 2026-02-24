@@ -47,17 +47,12 @@
 
         /* espacio exclusivo para imagen del logo (header) */
         .header-logo-img {
-            width: 70px;                /* tamaño fijo para contener la imagen */
-            height: 70px;
-            background: #eaf4ed;         /* fondo suave mientras no hay imagen */
-            border-radius: 16px;
+            width: 100px;                /* tamaño fijo para contener la imagen */
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #2a7450;
             font-size: 0.9rem;
-            border: 2px dashed #7daf8f;
-            overflow: hidden;            /* por si la imagen es más grande */
         }
 
         .header-logo-img img {
@@ -354,16 +349,12 @@
 
         /* espacio exclusivo para imagen del logo en footer (mismo tamaño que header) */
         .footer-logo-img {
-            width: 70px;
-            height: 70px;
+            width: 100px;
+            height: 80px;
             background: #eaf4ed;
-            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px dashed #7daf8f;
-            color: #2a7450;
-            font-size: 0.8rem;
             overflow: hidden;
         }
 
@@ -414,9 +405,7 @@
     <header>
         <div class="container header-content">
             <div class="header-logo-img" title="espacio para logo">
-                <!-- Aquí va tu logo: <img src="logo-empresa.png" alt="Eco-Útiles"> 
-                Por ahora se ve un fondo neutro -->
-                <span style="opacity:0.5; font-size:0.9rem;">logo</span>
+              <img src="favicon.png" alt="Eco-Útiles"> 
             </div>
             <nav class="nav-menu">
                 <a href="#">Organigrama</a>
@@ -523,14 +512,7 @@
             <div class="info-card">
                 <i class="fas fa-eraser"></i>
                 <h3>Producto estrella</h3>
-                <p>Goma de borrar ecológica · 100% reciclable · hecha con caucho natural, bambú y resina vegetal. A solo $5 pesos.</p>
-            </div>
-
-            <!-- Podemos repetir algún dato? Completamos 6 elementos visuales (estética) pero ya cubrimos todo. Agregamos un dato de sostenibilidad -->
-            <div class="info-card">
-                <i class="fas fa-hand-holding-heart"></i>
-                <h3>Impacto social</h3>
-                <p>Donamos parte de nuestras ganancias a organizaciones ambientales. Cada goma ayuda a reforestar y limpiar océanos.</p>
+                <p>Goma de borrar ecológica (Eco-Goma) · 100% reciclable</p>
             </div>
         </div>
     </main>
@@ -539,20 +521,20 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-logo-img" title="espacio para logo">
-                <span style="opacity:0.5;">logo</span>
+                              <img src="favicon.png" alt="Eco-Útiles"> 
             </div>
-            <div class="footer-links">
+           <!-- <div class="footer-links">
                 <a href="#">LinkedIn</a>
                 <a href="#">Instagram</a>
                 <a href="#">Contacto</a>
                 <a href="#">FAQ</a>
-            </div>
+            </div> -->
             <div class="copyright">
                 <i class="far fa-copyright"></i> 2026 Eco-Útiles
             </div>
         </div>
         <div class="container" style="margin-top:1rem; font-size:0.85rem; color:#73a887; border-top:1px dashed #c1dfce; padding-top:0.8rem;">
-            <i class="fas fa-recycle"></i> 100% materiales reutilizables · #EcoÚtiles
+            <i class="fas fa-recycle"></i> 100% materiales reutilizables - Amor por el planeta
         </div>
     </footer>
 </body>
