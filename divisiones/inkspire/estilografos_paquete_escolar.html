@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EmilioColor® - Paquete Escolar Estilógrafos">
+    <meta name="keywords" content="estilógrafos, paquete escolar, material educativo, escritura, dibujo técnico">
+    <meta name="author" content="EmilioColor®">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor®">
+    <meta property="og:title" content="Paquete Escolar de Estilógrafos">
+    <meta property="og:description" content="Conjunto completo de estilógrafos profesionales para estudiantes y artistas">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emiliocolor.com">
+    <meta property="og:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paquete Escolar de Estilógrafos">
+    <meta name="twitter:description" content="Conjunto completo de estilógrafos profesionales para estudiantes y artistas">
+    <meta name="twitter:image" content="https://emiliocolor.com/assets/img/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png">
+    <link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png">
+    <title>Paquete Escolar de Estilógrafos - EmilioColor®</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com">
+
+    <style>
+        :root {
+            --primary-blue: #284596;
+            --primary-blue-light: #1d4ed8;
+            --primary-blue-dark: #0d1d50;
+            --primary-gray: #4d4d4d;
+            --primary-gray-light: #a3a3a3;
+            --primary-gray-lighter: #7c7c7c;
+            --primary-gray-dark: #464646;
+            --primary-gray-darker: #303030;
+            --secondary-gray: #808080;
+            --accent-gray: #696969;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #1e293b;
+            --text-dark: #2c333d;
+            --text-light: #f1f5f9;
+            --header-bg: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 50%, var(--primary-blue-light) 100%);
+            --header-hover: rgba(255, 255, 255, 0.1);
+            --button-gradient: linear-gradient(135deg, var(--primary-gray) 0%, var(--primary-gray-light) 100%);
+            --button-hover-gradient: linear-gradient(135deg, var(--primary-gray-dark) 0%, var(--primary-gray) 100%);
+            --card-gradient: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --danger-hover: #dc2626;
+            --footer-bg: linear-gradient(135deg, #010101 0%, #5c5c5c 50%, #000000 100%);
+            --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --whatsapp-hover: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER STYLES */
+        .main-header {
+            background: var(--header-bg);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-logo img {
+            height: 30px;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-logo-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 5px;
+        }
+
+    .header-nav-link {
+        padding: 10px 15px;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: 500;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid transparent;
+    }
+
+    .header-nav-link:hover,
+    .header-nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        /* MAIN CONTENT */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            min-height: calc(100vh - 400px);
+        }
+
+        /* PRODUCT PAGE STYLES */
+        .product-page {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* Product Images Section */
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-image-container {
+            width: 100%;
+            height: 400px;
+            background-color: #f8f9fa;
+            border: 1px solid #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .main-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .thumbnail-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            border-color: var(--primary-blue);
+            transform: scale(1.05);
+        }
+
+        .thumbnail.active {
+            border-color: var(--primary-blue);
+        }
+
+        /* Product Info Section */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .product-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .product-category {
+            color: var(--secondary-gray);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .features-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 25px;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list li i {
+            color: var(--success-color);
+        }
+
+        /* Stock and Price */
+        .stock-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stock-label {
+            font-weight: 600;
+            color: var(--primary-gray);
+        }
+
+        .stock-value {
+            font-weight: 700;
+            color: var(--success-color);
+            font-size: 1.3rem;
+        }
+
+        .stock-warning {
+            color: var(--warning-color);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .current-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            color: var(--primary-gray);
+        }
+
+        /* Quantity Selector */
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .quantity-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-gray);
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            border: 1px solid var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .quantity-input {
+            width: 70px;
+            height: 40px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: 1px solid var(--medium-gray);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background: var(--whatsapp-gradient);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .whatsapp-btn:hover {
+            background: var(--whatsapp-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            color: white;
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(0);
+        }
+
+        /* FOOTER STYLES */
+        .main-footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-nav-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact h4,
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo {
+                align-items: center;
+            }
+            
+            .footer-social-links {
+                justify-content: center;
+            }
+            
+            .main-image-container {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px;
+            }
+            
+            .product-page {
+                padding: 20px;
+            }
+            
+            .header-nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .header-nav-link span {
+                display: none;
+            }
+            
+            .header-nav-link i {
+                font-size: 1.2rem;
+            }
+            
+            .product-title {
+                font-size: 1.8rem;
+            }
+            
+            .current-price {
+                font-size: 2rem;
+            }
+            
+            .main-image-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .thumbnail-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .quantity-selector {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .whatsapp-btn {
+                padding: 15px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor para header dinámico -->
+    <div id="dynamic-header"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="product-page">
+            <div class="product-container">
+                <!-- Sección de imágenes del producto -->
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img id="main-image" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Paquete Escolar de Estilógrafos" class="main-image">
+                    </div>
+                    
+                    <div class="thumbnail-container">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Estilógrafos - Vista completa" class="thumbnail active" onclick="changeMainImage(this.src, this)">
+                        
+                        <img src="https://images.unsplash.com/photo-1581094794328-eecfdf1cda67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Estilógrafos - Vista lateral" class="thumbnail" onclick="changeMainImage(this.src, this)">
+                        
+                        <img src="https://images.unsplash.com/photo-1581094794327-3d8b6b9c5c0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Estilógrafos - Detalle de puntas" class="thumbnail" onclick="changeMainImage(this.src, this)">
+                        
+                        <img src="https://images.unsplash.com/photo-1581094794326-3d8b6b9c5c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Estilógrafos - En uso" class="thumbnail" onclick="changeMainImage(this.src, this)">
+                        
+                        <img src="https://images.unsplash.com/photo-1581094794325-3d8b6b9c5c0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                             alt="Estilógrafos - Empaque" class="thumbnail" onclick="changeMainImage(this.src, this)">
+                    </div>
+                </div>
+                
+                <!-- Sección de información del producto -->
+                <div class="product-info">
+                    <h1 class="product-title">Paquete Escolar de Estilógrafos</h1>
+                    
+                    <div class="product-category">
+                        <i class="fas fa-pen-fancy"></i> Material de Dibujo y Escritura
+                    </div>
+                    
+<p class="product-description">
+    Conjunto completo de estilógrafos profesionales, desarrollado para estudiantes, artistas y profesionales del diseño. El paquete incluye tres estilógrafos en colores azul, rojo y negro, ideales para trabajos que requieren máxima precisión, como dibujo técnico, ilustración y caligrafía.
+</p>
+
+<ul class="features-list">
+    <li><i class="fas fa-check-circle"></i> Incluye estilógrafos en color azul, rojo y negro</li>
+    <li><i class="fas fa-check-circle"></i> Tinta de secado rápido que evita manchas</li>
+    <li><i class="fas fa-check-circle"></i> Puntas de alta precisión con excelente durabilidad</li>
+    <li><i class="fas fa-check-circle"></i> Capacidad de escritura superior a 500 metros</li>
+    <li><i class="fas fa-check-circle"></i> Bolsa de almacenamiento resistente incluida</li>
+    <li><i class="fas fa-check-circle"></i> Perfectos para dibujo técnico, ilustración y caligrafía</li>
+</ul>
+
+                    
+                    <div class="stock-info">
+                        <div class="stock-label">Piezas disponibles:</div>
+                        <div class="stock-value" id="stock-count">56</div>
+                        <div class="stock-warning">
+                            <i class="fas fa-exclamation-circle"></i> ¡Solo quedan 56 unidades!
+                        </div>
+                    </div>
+                    
+                    <div class="price-container">
+                        <span class="current-price" id="product-price">35.00</span>
+                        <span class="currency">MXN</span>
+                    </div>
+                    
+                    <div class="quantity-selector">
+                        <div class="quantity-label">Cantidad:</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" id="decrease-qty">-</button>
+                            <input type="number" class="quantity-input" id="quantity" value="1" min="1" max="56">
+                            <button class="quantity-btn" id="increase-qty">+</button>
+                        </div>
+                        <div class="total-price">
+                            Total: <span id="total-price">35</span> MXN
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="whatsapp-btn" id="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> COMPRAR POR WHATSAPP
+                    </a>
+                    
+                    <div class="additional-info">
+<p>
+    <i class="fas fa-shipping-fast"></i> Entrega disponible por Metro en la Ciudad de México. Entrega gratuita en compras iguales o superiores a $210 MXN.
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Contenedor para footer dinámico -->
+    <div id="dynamic-footer"></div>
+
+    <!-- Script dinámico de header/footer -->
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://emiliocolor.com/herramientas/script-herramientas.js"></script>
+
+    <script>
+        // Variables del producto
+        const productPrice = 35;
+        const stockCount = 56;
+        const whatsappNumber = "525655333139";
+        const productName = "Paquete Escolar de Estilógrafos";
+        
+        // Elementos del DOM
+        const quantityInput = document.getElementById('quantity');
+        const decreaseBtn = document.getElementById('decrease-qty');
+        const increaseBtn = document.getElementById('increase-qty');
+        const totalPriceElement = document.getElementById('total-price');
+        const stockElement = document.getElementById('stock-count');
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        
+        // Inicializar valores
+        stockElement.textContent = stockCount;
+        updateTotalPrice();
+        
+        // Cambiar imagen principal al hacer clic en miniaturas
+        function changeMainImage(src, thumbnail) {
+            document.getElementById('main-image').src = src;
+            
+            // Remover clase active de todas las miniaturas
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            
+            // Agregar clase active a la miniatura clickeada
+            thumbnail.classList.add('active');
+        }
+        
+        // Actualizar precio total
+        function updateTotalPrice() {
+            const quantity = parseInt(quantityInput.value);
+            const totalPrice = productPrice * quantity;
+            totalPriceElement.textContent = totalPrice;
+        }
+        
+        // Controladores de eventos para botones de cantidad
+        decreaseBtn.addEventListener('click', function() {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+                updateTotalPrice();
+            }
+        });
+        
+        increaseBtn.addEventListener('click', function() {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue < stockCount) {
+                quantityInput.value = currentValue + 1;
+                updateTotalPrice();
+            } else {
+                alert(`Solo tenemos ${stockCount} unidades disponibles`);
+            }
+        });
+        
+        // Actualizar al cambiar manualmente el valor
+        quantityInput.addEventListener('change', function() {
+            let value = parseInt(this.value);
+            
+            if (isNaN(value) || value < 1) {
+                this.value = 1;
+            } else if (value > stockCount) {
+                this.value = stockCount;
+                alert(`Solo tenemos ${stockCount} unidades disponibles`);
+            }
+            
+            updateTotalPrice();
+        });
+        
+        // Configurar enlace de WhatsApp
+        function setupWhatsAppLink() {
+            const quantity = parseInt(quantityInput.value);
+            const totalPrice = productPrice * quantity;
+            
+            // Crear mensaje personalizado
+            const message = `Hola, me interesa comprar el *${productName}*%0A%0A` +
+                           `*Cantidad:* ${quantity} unidad(es)%0A` +
+                           `*Precio unitario:* $${productPrice} MXN%0A` +
+                           `*Total a pagar:* $${totalPrice} MXN%0A%0A` +
+                           `Me gustaría realizar la compra. ¿Podrían ayudarme con el proceso?`;
+            
+            // Crear enlace de WhatsApp
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+            
+            // Actualizar enlace del botón
+            whatsappBtn.href = whatsappLink;
+        }
+        
+        // Configurar enlace de WhatsApp inicial y al cambiar la cantidad
+        setupWhatsAppLink();
+        quantityInput.addEventListener('input', setupWhatsAppLink);
+        decreaseBtn.addEventListener('click', setupWhatsAppLink);
+        increaseBtn.addEventListener('click', setupWhatsAppLink);
+        
+        // Añadir interactividad a las miniaturas
+        document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                // Ya manejado por changeMainImage, pero agregamos soporte adicional
+                setupWhatsAppLink();
+            });
+        });
+    </script>
+</body>
+</html>
