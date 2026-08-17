@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Verificador de Identidad Público - Consulta la existencia y vigencia de las credenciales de los colaboradores de EmilioColor." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="EmilioColor" />
+    <meta property="og:title" content="Verificador de Identidad Público · EmilioColor" />
+    <meta property="og:description" content="Consulta la vigencia de las credenciales de nuestros colaboradores." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emiliocolor.com/verificador" />
+    <meta property="og:image" content="https://emiliocolor.com/img-logos/og-image.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Verificador de Identidad Público · EmilioColor" />
+    <meta name="twitter:description" content="Consulta la vigencia de las credenciales de nuestros colaboradores." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://emiliocolor.com/img-logos/favicon.png" />
+    <link rel="apple-touch-icon" href="https://emiliocolor.com/img-logos/favicon.png" />
+    <link rel="manifest" href="https://emiliocolor.com/manifest.json" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://emiliocolor.com/verificador" />
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        /* ============================================
+           RESET Y VARIABLES (mismo diseño que index)
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #F8FAFC;
+            --bg-white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #475569;
+            --blue-primary: #1D4ED8;
+            --blue-light: #3B82F6;
+            --blue-soft: #DBEAFE;
+            --border-light: #E2E8F0;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --font: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--bg-primary);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 70px; /* espacio para header fijo */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-header h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+        }
+        .section-header h2 span {
+            color: var(--blue-primary);
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+           HEADER (idéntico al index)
+           ============================================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 16px 0;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 29px;
+            width: auto;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--blue-primary);
+        }
+
+        .btn-outline-header {
+            border: 1.5px solid var(--blue-primary);
+            padding: 8px 22px;
+            border-radius: 30px;
+            color: var(--blue-primary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .btn-outline-header:hover {
+            background: var(--blue-primary);
+            color: #fff;
+        }
+
+        .btn-outline-header::after {
+            display: none;
+        }
+
+        nav a:not(.btn-outline-header)::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--blue-primary);
+            transition: 0.3s;
+        }
+
+        nav a:not(.btn-outline-header):hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* ============================================
+           FOOTER (idéntico al index)
+           ============================================ */
+        footer {
+            padding: 60px 0 30px;
+            background: var(--bg-white);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 8px;
+            max-width: 300px;
+        }
+
+        .footer-col h5 {
+            font-size: 1rem;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .footer-col a {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--blue-primary);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 14px;
+            margin-top: 12px;
+        }
+
+        .footer-socials a {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            transition: 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--blue-primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-light);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ============================================
+           CONTENIDO PRINCIPAL DEL VERIFICADOR
+           ============================================ */
+        .verificador-main {
+            padding: 40px 0 60px;
+            background: var(--bg-primary);
+        }
+
+        .verificador-card {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 40px 35px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .verificador-card h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .verificador-card h1 span {
+            color: var(--blue-primary);
+        }
+        .verificador-card .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .form-verificador {
+            background: var(--bg-primary);
+            padding: 25px 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        .form-verificador label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .form-verificador .input-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .form-verificador input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 18px;
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            font-family: var(--font);
+            font-size: 1rem;
+            transition: 0.3s;
+            background: var(--bg-white);
+        }
+
+        .form-verificador input:focus {
+            outline: none;
+            border-color: var(--blue-primary);
+            box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+        }
+
+        .btn-verificar {
+            background: var(--blue-primary);
+            color: #fff;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3);
+        }
+
+        .btn-verificar:hover {
+            background: #1E3A8A;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(29, 78, 216, 0.4);
+        }
+
+        .btn-verificar:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .loading .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-light);
+            border-top: 4px solid var(--blue-primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 12px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Resultados */
+        .result-container {
+            display: none;
+            margin-top: 30px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .status-card {
+            padding: 20px 25px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            background: var(--bg-primary);
+        }
+
+        .status-card.valid {
+            background: rgba(16, 185, 129, 0.05);
+        }
+        .status-card.expired {
+            background: rgba(239, 68, 68, 0.05);
+        }
+        .status-card.not-found {
+            background: rgba(245, 158, 11, 0.05);
+        }
+
+        .status-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .status-title.valid { color: #10b981; }
+        .status-title.expired { color: #ef4444; }
+        .status-title.not-found { color: #f59e0b; }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.95rem;
+        }
+
+        .info-table th {
+            background: var(--blue-primary);
+            color: #fff;
+            padding: 10px 15px;
+            text-align: left;
+            font-weight: 600;
+            width: 30%;
+        }
+
+        .info-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid var(--border-light);
+            background: var(--bg-white);
+        }
+
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge-estado {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            background: #10b981;
+            color: #fff;
+        }
+        .badge-estado.vencido {
+            background: #ef4444;
+        }
+
+        /* Niveles de sede */
+        .niveles-sede {
+            margin-top: 30px;
+            padding: 20px 25px;
+            background: var(--bg-primary);
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+        }
+
+        .niveles-sede h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .niveles-sede ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 20px;
+        }
+
+        .niveles-sede li {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .niveles-sede li strong {
+            color: var(--text-dark);
+            font-weight: 600;
+            min-width: 30px;
+        }
+
+        .niveles-sede li .codigo {
+            font-weight: 700;
+            color: var(--blue-primary);
+            background: var(--blue-soft);
+            padding: 0 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .nota-importante {
+            margin-top: 25px;
+            padding: 16px 20px;
+            background: #fef9e7;
+            border-radius: 8px;
+        }
+
+        .nota-importante h5 {
+            font-weight: 600;
+            color: #b45309;
+            margin-bottom: 4px;
+        }
+
+        .nota-importante p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* ============================================
+           RESPONSIVE (igual que index)
+           ============================================ */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .niveles-sede ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-white);
+                padding: 24px 16px;
+                border-bottom: 1px solid var(--border-light);
+                gap: 16px;
+            }
+            nav.open {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            .verificador-card {
+                padding: 24px 16px;
+            }
+            .form-verificador {
+                padding: 20px 16px;
+            }
+            .form-verificador .input-group {
+                flex-direction: column;
+            }
+            .btn-verificar {
+                width: 100%;
+                justify-content: center;
+            }
+            .info-table {
+                display: block;
+                overflow-x: auto;
+            }
+            .niveles-sede ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .verificador-card h1 {
+                font-size: 1.8rem;
+            }
+            .status-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    HEADER (idéntico al index)
+    ============================================ -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://emiliocolor.com/img-logos/logo_azul_alargado.png" alt="EmilioColor - Grupo Comercial" width="auto" height="29" />
+            </div>
+            <nav id="mainNav">
+                <a href="https://emiliocolor.com/#about">Nosotros</a>
+                <a href="https://emiliocolor.com/#noticias">Noticias</a>
+                <a href="https://emiliocolor.com/#inversionistas">Inversionistas</a>
+                <a href="https://emiliocolor.com/#ecosystem">Marcas</a>
+                <a href="https://emiliocolor.com/#valor">Valor</a>
+                <a href="https://emiliocolor.com/#info-adicional">Info. Adicional</a>
+                <a href="https://emiliocolor.com/#contact">Contacto</a>
+                <a href="#" class="btn-outline-header"><i class="fas fa-user"></i> Área Cliente</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+    CONTENIDO PRINCIPAL
+    ============================================ -->
+    <main class="verificador-main">
+        <div class="container">
+            <div class="verificador-card">
+                <h1>Verificador de <span>Identidad</span></h1>
+                <p class="subtitle">Consulta la existencia y vigencia de las credenciales de nuestros colaboradores.</p>
+
+                <!-- Formulario -->
+                <div class="form-verificador">
+                    <label for="employeeId">Identificador del trabajador:</label>
+                    <div class="input-group">
+                        <input type="text" id="employeeId" placeholder="Ej. emiliocolor-7649" maxlength="50" />
+                        <button class="btn-verificar" id="verifyBtn">
+                            <i class="fas fa-search"></i> Verificar
+                        </button>
+                    </div>
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p style="color: var(--text-muted);">Verificando credencial...</p>
+                    </div>
+                </div>
+
+                <!-- Contenedor de resultados -->
+                <div class="result-container" id="resultContainer"></div>
+
+                <!-- Niveles de sede -->
+                <div class="niveles-sede">
+                    <h3><i class="fas fa-map-pin" style="color: var(--blue-primary);"></i> Niveles de sede en Ciudad de México, México</h3>
+                    <ul>
+                        <li><span class="codigo">00</span> <strong>Directores</strong> y <strong>Asuntos Jurídicos</strong></li>
+                        <li><span class="codigo">01</span> <strong>Gerentes</strong></li>
+                        <li><span class="codigo">02</span> <strong>Jefes de área</strong></li>
+                        <li><span class="codigo">03</span> <strong>Supervisores</strong></li>
+                        <li><span class="codigo">04</span> <strong>Todos los demás</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Nota importante -->
+                <div class="nota-importante">
+                    <h5><i class="fas fa-info-circle"></i> Nota importante</h5>
+                    <p>
+                        Este verificador permite consultar la vigencia de las credenciales oficiales de nuestros colaboradores.
+                        La información es de carácter público y se actualiza regularmente. Si detectas alguna inconsistencia,
+                        repórtalo a nuestros <a href="https://emiliocolor.com/#contact" style="color: var(--blue-primary); font-weight: 600;">medios de contacto</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============================================
+    FOOTER (idéntico al index)
+    ============================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="https://emiliocolor.com/img-logos/logo_azul_alargado_leyenda.png" alt="EmilioColor - Grupo Comercial" style="height:45px; width:auto;" />
+                    </div>
+                    <p>Grupo comercial comprometido con la excelencia en transporte, software y papelería.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/people/Emilio-Color/61558765116854/" aria-label="Facebook de EmilioColor"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/emiliocolorcom/" aria-label="Instagram de EmilioColor"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Mapa del sitio</h5>
+                    <a href="https://emiliocolor.com/#hero">Inicio</a>
+                    <a href="https://emiliocolor.com/#noticias">Noticias y novedades</a>
+                    <a href="https://emiliocolor.com/#inversionistas">Inversionistas</a>
+                    <a href="https://emiliocolor.com/#ecosystem">Marcas especializadas</a>
+                    <a href="https://emiliocolor.com/#valor">Valor percibido</a>
+                    <a href="https://emiliocolor.com/#info-adicional">Información Adicional</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Legal</h5>
+                    <a href="https://juridico.emiliocolor.com/privacidad" target="_blank">Aviso de privacidad</a>
+                    <a href="https://juridico.emiliocolor.com/terminos" target="_blank">Términos y condiciones</a>
+                    <a href="https://juridico.emiliocolor.com/cookies" target="_blank">Política de cookies</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Medios de contacto</h5>
+                    <a href="mailto:contacto@emiliocolor.com">contacto@emiliocolor.com</a>
+                    <a href="mailto:dep.juridico@emiliocolor.com">dep.juridico@emiliocolor.com</a>
+                    <a href="tel:+525655333139">+52 (56) 5533 3139</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2023-<span id="current-year"></span> EmilioColor. Todos los derechos reservados.</span>
+                <script>
+                    document.getElementById("current-year").textContent = new Date().getFullYear();
+                </script>
+                <span>Hecho con <i class="fas fa-heart" style="color:#1d4be1;"></i> en México</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    JAVASCRIPT (verificador + menú)
+    ============================================ -->
+    <script>
+        // ===== MENÚ HAMBURGUESA =====
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('mainNav');
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+            });
+        });
+
+        // ===== BASE DE DATOS DE COLABORADORES =====
+        const employeeDatabase = {
+            "emiliocolor-7649": {
+                name: "Emilio Calep Vargas Yáñez",
+                position: "DIRECTOR GENERAL",
+                department: "DIRECCIÓN EJECUTIVA",
+                location: "Ciudad de México, México (00)",
+                startDate: "2026-01-01",
+                endDate: "2029-01-01",
+                employeeId: "emiliocolor-7649",
+                status: "active"
+            },
+            "emiliocolor-5717": {
+                name: "Evan Santiago Vargas Yáñez",
+                position: "DIRECTOR COMERCIAL",
+                department: "DIRECCIÓN EJECUTIVA",
+                location: "Ciudad de México, México (00)",
+                startDate: "2026-01-01",
+                endDate: "2029-01-01",
+                employeeId: "emiliocolor-5717",
+                status: "active"
+            },
+            "emiliocolor-4642": {
+                name: "Teresa Isabel Yáñez González",
+                position: "DIRECTORA FINANCIERA Y REPRESENTANTE JURÍDICA",
+                department: "DIRECCIÓN EJECUTIVA",
+                location: "Ciudad de México, México (00)",
+                startDate: "2026-01-01",
+                endDate: "2029-01-01",
+                employeeId: "emiliocolor-4642",
+                status: "active"
+            },
+            "emiliocolor-9391": {
+                name: "Mario Alberto Vargas Sáenz",
+                position: "DIRECTOR DE OPERACIONES",
+                department: "DIRECCIÓN EJECUTIVA",
+                location: "Ciudad de México, México (00)",
+                startDate: "2026-01-01",
+                endDate: "2029-01-01",
+                employeeId: "emiliocolor-9391",
+                status: "active"
+            },
+            "emiliocolor-5847": {
+                name: "Virginia González Rosas",
+                position: "GERENTE COMERCIAL Y REPRESENTANTE JURÍDICA",
+                department: "ADMINISTRACIÓN EJECUTIVA",
+                location: "Ciudad de México, México (01)",
+                startDate: "2026-01-01",
+                endDate: "2029-01-01",
+                employeeId: "emiliocolor-5847",
+                status: "active"
+            },
+            "emiliocolor-2945": {
+                name: "Enrique Yáñez Iglesias",
+                position: "DIRECTOR DE ASUNTOS JURÍDICOS",
+                department: "DIRECCIÓN EJECUTIVA",
+                location: "Ciudad de México, México (00)",
+                startDate: "2026-01-01",
+                endDate: "2029-01-01",
+                employeeId: "emiliocolor-2945",
+                status: "active"
+            },
+            "emiliocolor-1113": {
+                name: "Luis Roberto Torres González",
+                position: "GERENTE DE RECURSOS HUMANOS",
+                department: "ADMINISTRACIÓN EJECUTIVA",
+                location: "Ciudad de México, México (01)",
+                startDate: "2026-01-01",
+                endDate: "2029-01-01",
+                employeeId: "emiliocolor-1113",
+                status: "active"
+            }
+        };
+
+        // ===== LÓGICA DE VERIFICACIÓN =====
+        const verifyBtn = document.getElementById('verifyBtn');
+        const employeeIdInput = document.getElementById('employeeId');
+        const resultContainer = document.getElementById('resultContainer');
+        const loadingElement = document.getElementById('loading');
+
+        function verifyCredential() {
+            const employeeId = employeeIdInput.value.trim();
+
+            if (!employeeId) {
+                alert("Por favor, ingresa un identificador válido.");
+                return;
+            }
+
+            // Mostrar loading
+            loadingElement.style.display = 'block';
+            verifyBtn.disabled = true;
+            resultContainer.style.display = 'none';
+
+            // Simular tiempo de verificación
+            setTimeout(() => {
+                loadingElement.style.display = 'none';
+                verifyBtn.disabled = false;
+
+                const employee = employeeDatabase[employeeId];
+                displayResult(employeeId, employee);
+
+                // Scroll a resultados
+                resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 600);
+        }
+
+        function displayResult(employeeId, employeeData) {
+            resultContainer.style.display = 'block';
+
+            if (!employeeData) {
+                resultContainer.innerHTML = `
+                    <div class="status-card not-found">
+                        <h3 class="status-title not-found">
+                            <i class="fas fa-exclamation-triangle"></i> Credencial no encontrada
+                        </h3>
+                        <p>El identificador <strong>"${employeeId}"</strong> no se encuentra en nuestro sistema de registros.</p>
+                        <p>Verifica que el identificador sea correcto o contacta al departamento de recursos humanos.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Determinar vigencia (todas son activas, pero mantenemos la lógica)
+            const today = new Date();
+            const endDate = new Date(employeeData.endDate);
+            const isValid = employeeData.status === 'active' && endDate >= today;
+
+            const statusClass = isValid ? 'valid' : 'expired';
+            const statusText = isValid ? 'Credencial vigente' : 'Credencial vencida';
+            const statusIcon = isValid ? 'fa-check-circle' : 'fa-exclamation-circle';
+            const statusMessage = isValid
+                ? 'Esta credencial está vigente y es válida para identificación oficial.'
+                : 'Esta credencial ha vencido y ya no es válida para identificación oficial.';
+
+            const formatDate = (dateStr) => {
+                const d = new Date(dateStr);
+                return d.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' });
+            };
+
+            const badgeClass = isValid ? '' : 'vencido';
+
+            resultContainer.innerHTML = `
+                <div class="status-card ${statusClass}">
+                    <h3 class="status-title ${statusClass}">
+                        <i class="fas ${statusIcon}"></i> ${statusText}
+                    </h3>
+                    <p>${statusMessage}</p>
+                    <p><strong>Identificador:</strong> ${employeeId}</p>
+                    <p><strong>Vigencia:</strong> ${formatDate(employeeData.startDate)} - ${formatDate(employeeData.endDate)}</p>
+                </div>
+
+                <h3 style="font-size:1.3rem; font-weight:600; margin-top:20px; color:var(--text-dark);">
+                    <i class="fas fa-user-circle" style="color:var(--blue-primary);"></i> Información del colaborador
+                </h3>
+                <table class="info-table">
+                    <tr>
+                        <th>Nombre</th>
+                        <td>${employeeData.name}</td>
+                    </tr>
+                    <tr>
+                        <th>ID de empleado</th>
+                        <td>${employeeData.employeeId}</td>
+                    </tr>
+                    <tr>
+                        <th>Puesto</th>
+                        <td>${employeeData.position}</td>
+                    </tr>
+                    <tr>
+                        <th>Departamento</th>
+                        <td>${employeeData.department}</td>
+                    </tr>
+                    <tr>
+                        <th>Sede</th>
+                        <td>${employeeData.location}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha de inicio</th>
+                        <td>${formatDate(employeeData.startDate)}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha de vencimiento</th>
+                        <td>${formatDate(employeeData.endDate)}</td>
+                    </tr>
+                    <tr>
+                        <th>Estado</th>
+                        <td><span class="badge-estado ${badgeClass}">${isValid ? 'ACTIVO' : 'VENCIDO'}</span></td>
+                    </tr>
+                </table>
+            `;
+        }
+
+        // Eventos
+        verifyBtn.addEventListener('click', verifyCredential);
+        employeeIdInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') verifyCredential();
+        });
+    </script>
+</body>
+</html>
